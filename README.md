@@ -31,7 +31,7 @@
 
 #### 采用vue
 - vue组件
-- vue-router 单页应用
+- vue-router spa
 
 #### 功能模块
 - 首页文章列表
@@ -40,15 +40,16 @@
 - 文章分类
 
 #### 组件
-- 布局（antd）
-- md 正文（显示目录, 正文, antd 分享、喜欢按钮)
-- 评论(antd 表单)
-- 文章简介悬浮框（文章列表中）
+.
 
-### mobile 前端
+### 架构
 
-- FrameWork：redux
-- View：react
-- Router：react-router
-- Ajax：superagent
-- Click：react-fastclick
+- spa 路由
+    - 各类功能模块
+
+- data
+    - server
+    - Model
+        - 管理 model 的方法（以前写到了 vm 的 metheds 里，这次要分离出来。）
+        - model 有关更改服务器数据的方法应该使用server层的方法协助完成。
+    - vm（methods 应该是单纯的响应事件，假如事件与model有关，那么应该调用 Model 里的方法来协助完成，Model.add(object)，其中add方法）

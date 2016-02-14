@@ -23,7 +23,7 @@ module.exports.setRouters = function (app, models) {
     var tagRest = restful.model(
             'tag',
             models.tagSchema
-        ).methods(['get']);
+        ).methods(['get', 'put', 'post', 'delete']);
 
     tagRest.register(app, '/api/tags');
 

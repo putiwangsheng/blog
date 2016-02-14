@@ -15,7 +15,6 @@
     "body-parser": "~1.13.2",
     "byline": "^4.2.1",
     "compression": "^1.6.0",
-    "crawlme": "0.0.7",
     "ejs": "~2.3.3",
     "es6-promise": "^3.0.2",
     "express": "~4.13.1",
