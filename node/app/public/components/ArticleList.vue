@@ -11,10 +11,12 @@
         <div class="class-tags">
             <h4>分类</h4>
             <p  v-for="classTag in classTags"
+                class="tag"
                 :classTag="classTag"
                 :index="$index"
-                track-by="_id">
-                <a :href="'#/article'">{{classTag.tagName}}</a>
+                track-by="$index">
+                <a :href="'#/article'">{{classTag}}</a>
+                <!-- <span>{{articleNumber}}</span> -->
             </p>
         </div>
     </section>
@@ -22,50 +24,64 @@
 
 <script>
 import Item from './Item.vue';
-import Classification from './Classification.vue';
 import url from '../url.js';
 
 export default{
+
     name: "ArticleList",
 
     components: {
         Item
     },
 
-  data () {
+    data () {
       return {
           items: [],
           classTags: []
       };
-  },
+    },
 
-  route: {
-      data: function(){
-          let self = this;
+    route: {
+        data: function(){
+            let self = this,
+              tagArr = [];
 
-          $.get(url.articleUrl, function(data){
+            console.log(self.items);
+            $.get(url.articleUrl, function(data){
 
               if(typeof data === "string"){
                   data = JSON.parse(data);
               };
 
+              self.getDate(data);
               self.items = data;
-          });
 
-          $.get(url.tagUrl, function(data){
+              let tagArr = self.uniqTagArr(data);
+              self.classTags = tagArr;
+            });
+        }
+    },
 
-              if(typeof data === "string"){
-                  data = JSON.parse(data);
-              };
+    methods: {
+      uniqTagArr: function(arr){
+          let uniqArr = {};
+          for(let i = 0, len = arr.length; i < len; i++){
+              uniqArr[arr[i].parentTagName] = true;
+          };
 
-              // data.forEach(function(element, index, array){
-              //     self.classTags.push(element.tagName);
-              // })
-              self.classTags = data;
+          return Object.keys(uniqArr);
+      },
 
+      getDate: function(arr){
+          arr.forEach(function(element){
+              let dateArr = element.date.split('T');
+              element.date = dateArr[0];
+
+            //   let markdown = require("markdown").markdown;
+            //   $('.article-content').html(markdown.toHTML(element.md));
           });
       }
-  }
+    }
 
 }
 </script>
@@ -95,11 +111,15 @@ export default{
     padding: 1rem;
     margin: .5rem 0 1.5rem 0;
 }
-h4{
+.class-tags h4{
     padding-bottom: .5rem;
     border-bottom: .1rem dashed #ea7bf7;
 }
-.class-tags p{
+.tag{
     padding: .3rem 0 0 0;
+    color: #666;
+}
+.tag:hover{
+    color: rgb(191, 112, 220);
 }
 </style>

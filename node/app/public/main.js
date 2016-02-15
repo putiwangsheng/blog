@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import App from './components/App.vue';
 import ArticleList from './components/ArticleList.vue';
 import Article from './components/Article.vue';
+import TagArticleList from './components/TagArticleList.vue';
 
 Vue.use(VueRouter);
 
@@ -12,8 +13,11 @@ router.map({
     '/': {
         component: ArticleList,
     },
-    '/article': {
+    '/article/:_id': {
         component: Article
+    },
+    '/tagArticle': {
+        component: TagArticleList
     }
 });
 

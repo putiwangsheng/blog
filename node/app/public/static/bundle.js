@@ -66,6 +66,10 @@
 	
 	var _Article2 = _interopRequireDefault(_Article);
 	
+	var _TagArticleList = __webpack_require__(41);
+	
+	var _TagArticleList2 = _interopRequireDefault(_TagArticleList);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	_vue2.default.use(_vueRouter2.default);
@@ -76,8 +80,11 @@
 	    '/': {
 	        component: _ArticleList2.default
 	    },
-	    '/article': {
+	    '/article/:_id': {
 	        component: _Article2.default
+	    },
+	    '/tagArticle': {
+	        component: _TagArticleList2.default
 	    }
 	});
 	
@@ -10117,7 +10124,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\r\n.wrapper{\r\n    padding: 3rem 8%;\r\n}\r\n.clearfix:after {\r\n    content: '.';\r\n    display: block;\r\n    height: 0;\r\n    visibility: hidden;\r\n    clear: both;\r\n}\r\n.article-list{\r\n    width: 70%;\r\n    margin: 0 7% 0 0;\r\n    float: left;\r\n}\r\n.class-tags{\r\n    width: 20%;\r\n    float: left;\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 1.5rem 0;\r\n}\r\nh4{\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n}\r\n.class-tags p{\r\n    padding: .3rem 0 0 0;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/ArticleList.vue?602f7ce8"],"names":[],"mappings":";AAyEA;IACA,iBAAA;CACA;AACA;IACA,aAAA;IACA,eAAA;IACA,UAAA;IACA,mBAAA;IACA,YAAA;CACA;AACA;IACA,WAAA;IACA,iBAAA;IACA,YAAA;CACA;AACA;IACA,WAAA;IACA,YAAA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,cAAA;IACA,yBAAA;CACA;AACA;IACA,sBAAA;IACA,oCAAA;CACA;AACA;IACA,qBAAA;CACA","file":"ArticleList.vue","sourcesContent":["<template>\r\n    <section class=\"wrapper clearfix\">\r\n        <div class=\"article-list\">\r\n            <item v-for=\"item in items\"\r\n            :item=\"item\"\r\n            :index=\"$index\"\r\n            track-by=\"_id\">\r\n            </item>\r\n        </div>\r\n\r\n        <div class=\"class-tags\">\r\n            <h4>分类</h4>\r\n            <p  v-for=\"classTag in classTags\"\r\n                :classTag=\"classTag\"\r\n                :index=\"$index\"\r\n                track-by=\"_id\">\r\n                <a :href=\"'#/article'\">{{classTag.tagName}}</a>\r\n            </p>\r\n        </div>\r\n    </section>\r\n</template>\r\n\r\n<script>\r\nimport Item from './Item.vue';\r\nimport Classification from './Classification.vue';\r\nimport url from '../url.js';\r\n\r\nexport default{\r\n    name: \"ArticleList\",\r\n\r\n    components: {\r\n        Item\r\n    },\r\n\r\n  data () {\r\n      return {\r\n          items: [],\r\n          classTags: []\r\n      };\r\n  },\r\n\r\n  route: {\r\n      data: function(){\r\n          let self = this;\r\n\r\n          $.get(url.articleUrl, function(data){\r\n\r\n              if(typeof data === \"string\"){\r\n                  data = JSON.parse(data);\r\n              };\r\n\r\n              self.items = data;\r\n          });\r\n\r\n          $.get(url.tagUrl, function(data){\r\n\r\n              if(typeof data === \"string\"){\r\n                  data = JSON.parse(data);\r\n              };\r\n\r\n              // data.forEach(function(element, index, array){\r\n              //     self.classTags.push(element.tagName);\r\n              // })\r\n              self.classTags = data;\r\n\r\n          });\r\n      }\r\n  }\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n.wrapper{\r\n    padding: 3rem 8%;\r\n}\r\n.clearfix:after {\r\n    content: '.';\r\n    display: block;\r\n    height: 0;\r\n    visibility: hidden;\r\n    clear: both;\r\n}\r\n.article-list{\r\n    width: 70%;\r\n    margin: 0 7% 0 0;\r\n    float: left;\r\n}\r\n.class-tags{\r\n    width: 20%;\r\n    float: left;\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 1.5rem 0;\r\n}\r\nh4{\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n}\r\n.class-tags p{\r\n    padding: .3rem 0 0 0;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\r\n.wrapper{\r\n    padding: 3rem 8%;\r\n}\r\n.clearfix:after {\r\n    content: '.';\r\n    display: block;\r\n    height: 0;\r\n    visibility: hidden;\r\n    clear: both;\r\n}\r\n.article-list{\r\n    width: 70%;\r\n    margin: 0 7% 0 0;\r\n    float: left;\r\n}\r\n.class-tags{\r\n    width: 20%;\r\n    float: left;\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 1.5rem 0;\r\n}\r\n.class-tags h4{\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n}\r\n.tag{\r\n    padding: .3rem 0 0 0;\r\n    color: #666;\r\n}\r\n.tag:hover{\r\n    color: rgb(191, 112, 220);\r\n}\r\n", "", {"version":3,"sources":["/./public/components/ArticleList.vue?57a602bb"],"names":[],"mappings":";AAyFA;IACA,iBAAA;CACA;AACA;IACA,aAAA;IACA,eAAA;IACA,UAAA;IACA,mBAAA;IACA,YAAA;CACA;AACA;IACA,WAAA;IACA,iBAAA;IACA,YAAA;CACA;AACA;IACA,WAAA;IACA,YAAA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,cAAA;IACA,yBAAA;CACA;AACA;IACA,sBAAA;IACA,oCAAA;CACA;AACA;IACA,qBAAA;IACA,YAAA;CACA;AACA;IACA,0BAAA;CACA","file":"ArticleList.vue","sourcesContent":["<template>\r\n    <section class=\"wrapper clearfix\">\r\n        <div class=\"article-list\">\r\n            <item v-for=\"item in items\"\r\n            :item=\"item\"\r\n            :index=\"$index\"\r\n            track-by=\"_id\">\r\n            </item>\r\n        </div>\r\n\r\n        <div class=\"class-tags\">\r\n            <h4>分类</h4>\r\n            <p  v-for=\"classTag in classTags\"\r\n                class=\"tag\"\r\n                :classTag=\"classTag\"\r\n                :index=\"$index\"\r\n                track-by=\"$index\">\r\n                <a :href=\"'#/article'\">{{classTag}}</a>\r\n                <!-- <span>{{articleNumber}}</span> -->\r\n            </p>\r\n        </div>\r\n    </section>\r\n</template>\r\n\r\n<script>\r\nimport Item from './Item.vue';\r\nimport url from '../url.js';\r\n\r\nexport default{\r\n\r\n    name: \"ArticleList\",\r\n\r\n    components: {\r\n        Item\r\n    },\r\n\r\n    data () {\r\n      return {\r\n          items: [],\r\n          classTags: []\r\n      };\r\n    },\r\n\r\n    route: {\r\n        data: function(){\r\n            let self = this,\r\n              tagArr = [];\r\n\r\n            console.log(self.items);\r\n            $.get(url.articleUrl, function(data){\r\n\r\n              if(typeof data === \"string\"){\r\n                  data = JSON.parse(data);\r\n              };\r\n\r\n              self.getDate(data);\r\n              self.items = data;\r\n\r\n              let tagArr = self.uniqTagArr(data);\r\n              self.classTags = tagArr;\r\n            });\r\n        }\r\n    },\r\n\r\n    methods: {\r\n      uniqTagArr: function(arr){\r\n          let uniqArr = {};\r\n          for(let i = 0, len = arr.length; i < len; i++){\r\n              uniqArr[arr[i].parentTagName] = true;\r\n          };\r\n\r\n          return Object.keys(uniqArr);\r\n      },\r\n\r\n      getDate: function(arr){\r\n          arr.forEach(function(element){\r\n              let dateArr = element.date.split('T');\r\n              element.date = dateArr[0];\r\n\r\n            //   let markdown = require(\"markdown\").markdown;\r\n            //   $('.article-content').html(markdown.toHTML(element.md));\r\n          });\r\n      }\r\n    }\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n.wrapper{\r\n    padding: 3rem 8%;\r\n}\r\n.clearfix:after {\r\n    content: '.';\r\n    display: block;\r\n    height: 0;\r\n    visibility: hidden;\r\n    clear: both;\r\n}\r\n.article-list{\r\n    width: 70%;\r\n    margin: 0 7% 0 0;\r\n    float: left;\r\n}\r\n.class-tags{\r\n    width: 20%;\r\n    float: left;\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 1.5rem 0;\r\n}\r\n.class-tags h4{\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n}\r\n.tag{\r\n    padding: .3rem 0 0 0;\r\n    color: #666;\r\n}\r\n.tag:hover{\r\n    color: rgb(191, 112, 220);\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -10128,6 +10135,10 @@
 
 	'use strict';
 	
+	var _keys = __webpack_require__(29);
+	
+	var _keys2 = _interopRequireDefault(_keys);
+	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
@@ -10136,17 +10147,39 @@
 	
 	var _Item2 = _interopRequireDefault(_Item);
 	
-	var _Classification = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./Classification.vue\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-	
-	var _Classification2 = _interopRequireDefault(_Classification);
-	
 	var _url = __webpack_require__(28);
 	
 	var _url2 = _interopRequireDefault(_url);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// <template>
+	//     <section class="wrapper clearfix">
+	//         <div class="article-list">
+	//             <item v-for="item in items"
+	//             :item="item"
+	//             :index="$index"
+	//             track-by="_id">
+	//             </item>
+	//         </div>
+	//
+	//         <div class="class-tags">
+	//             <h4>分类</h4>
+	//             <p  v-for="classTag in classTags"
+	//                 class="tag"
+	//                 :classTag="classTag"
+	//                 :index="$index"
+	//                 track-by="$index">
+	//                 <a :href="'#/article'">{{classTag}}</a>
+	//                 <!-- <span>{{articleNumber}}</span> -->
+	//             </p>
+	//         </div>
+	//     </section>
+	// </template>
+	//
+	// <script>
 	exports.default = {
+	
 	    name: "ArticleList",
 	
 	    components: {
@@ -10162,27 +10195,42 @@
 	
 	    route: {
 	        data: function data() {
-	            var self = this;
+	            var self = this,
+	                tagArr = [];
 	
+	            console.log(self.items);
 	            $.get(_url2.default.articleUrl, function (data) {
 	
 	                if (typeof data === "string") {
 	                    data = JSON.parse(data);
 	                };
 	
+	                self.getDate(data);
 	                self.items = data;
+	
+	                var tagArr = self.uniqTagArr(data);
+	                self.classTags = tagArr;
 	            });
+	        }
+	    },
 	
-	            $.get(_url2.default.tagUrl, function (data) {
+	    methods: {
+	        uniqTagArr: function uniqTagArr(arr) {
+	            var uniqArr = {};
+	            for (var i = 0, len = arr.length; i < len; i++) {
+	                uniqArr[arr[i].parentTagName] = true;
+	            };
 	
-	                if (typeof data === "string") {
-	                    data = JSON.parse(data);
-	                };
+	            return (0, _keys2.default)(uniqArr);
+	        },
 	
-	                // data.forEach(function(element, index, array){
-	                //     self.classTags.push(element.tagName);
-	                // })
-	                self.classTags = data;
+	        getDate: function getDate(arr) {
+	            arr.forEach(function (element) {
+	                var dateArr = element.date.split('T');
+	                element.date = dateArr[0];
+	
+	                //   let markdown = require("markdown").markdown;
+	                //   $('.article-content').html(markdown.toHTML(element.md));
 	            });
 	        }
 	    }
@@ -10215,39 +10263,20 @@
 	//     padding: 1rem;
 	//     margin: .5rem 0 1.5rem 0;
 	// }
-	// h4{
+	// .class-tags h4{
 	//     padding-bottom: .5rem;
 	//     border-bottom: .1rem dashed #ea7bf7;
 	// }
-	// .class-tags p{
+	// .tag{
 	//     padding: .3rem 0 0 0;
+	//     color: #666;
+	// }
+	// .tag:hover{
+	//     color: rgb(191, 112, 220);
 	// }
 	// </style>
 
 	/* generated by vue-loader */
-	// <template>
-	//     <section class="wrapper clearfix">
-	//         <div class="article-list">
-	//             <item v-for="item in items"
-	//             :item="item"
-	//             :index="$index"
-	//             track-by="_id">
-	//             </item>
-	//         </div>
-	//
-	//         <div class="class-tags">
-	//             <h4>分类</h4>
-	//             <p  v-for="classTag in classTags"
-	//                 :classTag="classTag"
-	//                 :index="$index"
-	//                 track-by="_id">
-	//                 <a :href="'#/article'">{{classTag.tagName}}</a>
-	//             </p>
-	//         </div>
-	//     </section>
-	// </template>
-	//
-	// <script>
 
 /***/ },
 /* 13 */
@@ -10311,14 +10340,14 @@
 	
 	
 	// module
-	exports.push([module.id, "\r\n.container{\r\n    position: relative;\r\n}\r\n.article-item{\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 3rem 0;\r\n    position: relative;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n    word-wrap: break-word;\r\n    overflow: hidden;\r\n}\r\n.article-item:hover{\r\n    box-shadow: 4px 4px 5px #918b8b;\r\n}\r\n.article-title{\r\n    font-size: 1.5rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #ea7bf7;\r\n}\r\n.article-tag{\r\n    position: absolute;\r\n    background-color: whiteSmoke;\r\n    width: 10rem;\r\n    right: .5rem;\r\n    text-align: center;\r\n    -webkit-transform: rotate(40deg) translate(5px, -60px);\r\n    transform: rotate(40deg) translate(5px, -60px);\r\n    z-index: 1;\r\n}\r\n.article-tag p{\r\n    padding: .2rem 0;\r\n    color: #fb8da6;\r\n    font-weight: 700;\r\n    border-top: .1rem dashed #fb8da6;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.article-tag:hover{\r\n    background-color: #ededed;\r\n}\r\n.date{\r\n    display: inline-block;\r\n    color: #fff;\r\n    background-color: #fb8da6;\r\n    padding: .1rem .5rem;\r\n    border-radius: 2rem;\r\n    font-size: .8rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .5rem;\r\n}\r\n\r\n.date:hover{\r\n    background-color: #666666;\r\n}\r\n\r\n.article-content p{\r\n    max-height: 20rem;\r\n    overflow: hidden;\r\n    margin-bottom: 1.2rem;\r\n    padding: 1rem 0;\r\n    line-height: 1.8;\r\n    text-indent: 2rem;\r\n}\r\n\r\n", "", {"version":3,"sources":["/./public/components/Item.vue?136c9a3c"],"names":[],"mappings":";AAgCA;IACA,mBAAA;CACA;AACA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,cAAA;IACA,uBAAA;IACA,mBAAA;IACA,oBAAA;IACA,sBAAA;IACA,sBAAA;IACA,iBAAA;CACA;AACA;IACA,gCAAA;CACA;AACA;IACA,kBAAA;IACA,sBAAA;IACA,oCAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,mBAAA;IACA,6BAAA;IACA,aAAA;IACA,aAAA;IACA,mBAAA;IACA,uDAAA;IAEA,+CAAA;IACA,WAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,iBAAA;IACA,iCAAA;IACA,oCAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,sBAAA;IACA,YAAA;IACA,0BAAA;IACA,qBAAA;IACA,oBAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;IACA,cAAA;CACA;;AAEA;IACA,0BAAA;CACA;;AAEA;IACA,kBAAA;IACA,iBAAA;IACA,sBAAA;IACA,gBAAA;IACA,iBAAA;IACA,kBAAA;CACA","file":"Item.vue","sourcesContent":["<template>\r\n    <article class=\"article-item\">\r\n        <h1 class=\"article-title\"><a :href=\"'#/article'\">{{item.title}}</a></h1>\r\n        <div class=\"article-tag\">\r\n            <p>\r\n                <a :href=\"'#/article'\">{{item.parentTagName}}</a>\r\n            </p>\r\n        </div>\r\n        <div class=\"date\">\r\n            {{item.date}}\r\n        </div>\r\n\r\n        <div class=\"article-content\">\r\n            <p>\r\n                {{item.md}}\r\n            </p>\r\n        </div>\r\n    </article>\r\n\r\n</template>\r\n\r\n<script>\r\nexport default{\r\n    name: \"Item\",\r\n\r\n    props: {\r\n        item: Object\r\n    }\r\n}\r\n</script>\r\n\r\n<style>\r\n.container{\r\n    position: relative;\r\n}\r\n.article-item{\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 3rem 0;\r\n    position: relative;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n    word-wrap: break-word;\r\n    overflow: hidden;\r\n}\r\n.article-item:hover{\r\n    box-shadow: 4px 4px 5px #918b8b;\r\n}\r\n.article-title{\r\n    font-size: 1.5rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #ea7bf7;\r\n}\r\n.article-tag{\r\n    position: absolute;\r\n    background-color: whiteSmoke;\r\n    width: 10rem;\r\n    right: .5rem;\r\n    text-align: center;\r\n    -webkit-transform: rotate(40deg) translate(5px, -60px);\r\n    -moz-transform: rotate(40deg) translate(5px, -60px);\r\n    transform: rotate(40deg) translate(5px, -60px);\r\n    z-index: 1;\r\n}\r\n.article-tag p{\r\n    padding: .2rem 0;\r\n    color: #fb8da6;\r\n    font-weight: 700;\r\n    border-top: .1rem dashed #fb8da6;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.article-tag:hover{\r\n    background-color: #ededed;\r\n}\r\n.date{\r\n    display: inline-block;\r\n    color: #fff;\r\n    background-color: #fb8da6;\r\n    padding: .1rem .5rem;\r\n    border-radius: 2rem;\r\n    font-size: .8rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .5rem;\r\n}\r\n\r\n.date:hover{\r\n    background-color: #666666;\r\n}\r\n\r\n.article-content p{\r\n    max-height: 20rem;\r\n    overflow: hidden;\r\n    margin-bottom: 1.2rem;\r\n    padding: 1rem 0;\r\n    line-height: 1.8;\r\n    text-indent: 2rem;\r\n}\r\n\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\r\n.article-item{\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 3rem 0;\r\n    position: relative;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n    word-wrap: break-word;\r\n    overflow: hidden;\r\n}\r\n.article-item:hover{\r\n    box-shadow: 4px 4px 5px #918b8b;\r\n}\r\n.article-title{\r\n    font-size: 1.5rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #ea7bf7;\r\n}\r\n.article-title:hover{\r\n    color: #fb8da6;\r\n}\r\n.article-tag{\r\n    position: absolute;\r\n    background-color: whiteSmoke;\r\n    width: 10rem;\r\n    right: .5rem;\r\n    text-align: center;\r\n    -webkit-transform: rotate(40deg) translate(5px, -60px);\r\n    transform: rotate(40deg) translate(5px, -60px);\r\n    z-index: 1;\r\n}\r\n.article-tag p{\r\n    padding: .2rem 0;\r\n    color: #fb8da6;\r\n    font-weight: 700;\r\n    border-top: .1rem dashed #fb8da6;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.article-tag:hover{\r\n    background-color: #ededed;\r\n}\r\n.date{\r\n    display: inline-block;\r\n    color: #666;\r\n    border-left: .2rem solid #fb8da6;\r\n    border-right: .2rem solid #fb8da6;\r\n    padding: .1rem .5rem;\r\n    font-size: .8rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .5rem;\r\n}\r\n\r\n.article-content{\r\n    max-height: 20rem;\r\n    overflow: hidden;\r\n    margin-bottom: 1.2rem;\r\n    padding: 1rem 0;\r\n    line-height: 1.8;\r\n    text-indent: 2rem;\r\n}\r\n\r\n", "", {"version":3,"sources":["/./public/components/Item.vue?4c7b271e"],"names":[],"mappings":";AAyCA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,cAAA;IACA,uBAAA;IACA,mBAAA;IACA,oBAAA;IACA,sBAAA;IACA,sBAAA;IACA,iBAAA;CACA;AACA;IACA,gCAAA;CACA;AACA;IACA,kBAAA;IACA,sBAAA;IACA,oCAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,mBAAA;IACA,6BAAA;IACA,aAAA;IACA,aAAA;IACA,mBAAA;IACA,uDAAA;IAEA,+CAAA;IACA,WAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,iBAAA;IACA,iCAAA;IACA,oCAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,sBAAA;IACA,YAAA;IACA,iCAAA;IACA,kCAAA;IACA,qBAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;IACA,cAAA;CACA;;AAEA;IACA,kBAAA;IACA,iBAAA;IACA,sBAAA;IACA,gBAAA;IACA,iBAAA;IACA,kBAAA;CACA","file":"Item.vue","sourcesContent":["<template>\r\n    <article class=\"article-item\">\r\n        <h1 class=\"article-title\"><a :href=\"'#/article/' + item._id\">{{item.title}}</a></h1>\r\n        <div class=\"article-tag\">\r\n            <p>\r\n                <a :href=\"'#/tagArticle'\">{{item.parentTagName}}</a>\r\n            </p>\r\n        </div>\r\n        <div class=\"date\">\r\n            {{item.date}}\r\n        </div>\r\n\r\n        <div class=\"article-content\">\r\n            {{item.md}}\r\n        </div>\r\n    </article>\r\n\r\n</template>\r\n\r\n<script>\r\n// import toHtml from '../my-markdown.js';\r\n\r\n// toHtml($('.article-content'));\r\n\r\nexport default{\r\n    name: \"Item\",\r\n\r\n    props: {\r\n        item: Object\r\n    },\r\n\r\n    ready() {\r\n        let markdown = require(\"markdown\").markdown;\r\n        // console.log(this.item.title);\r\n        // $('.article-content').html(markdown.toHTML(this.item.md));\r\n    }\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n.article-item{\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 3rem 0;\r\n    position: relative;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n    word-wrap: break-word;\r\n    overflow: hidden;\r\n}\r\n.article-item:hover{\r\n    box-shadow: 4px 4px 5px #918b8b;\r\n}\r\n.article-title{\r\n    font-size: 1.5rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #ea7bf7;\r\n}\r\n.article-title:hover{\r\n    color: #fb8da6;\r\n}\r\n.article-tag{\r\n    position: absolute;\r\n    background-color: whiteSmoke;\r\n    width: 10rem;\r\n    right: .5rem;\r\n    text-align: center;\r\n    -webkit-transform: rotate(40deg) translate(5px, -60px);\r\n    -moz-transform: rotate(40deg) translate(5px, -60px);\r\n    transform: rotate(40deg) translate(5px, -60px);\r\n    z-index: 1;\r\n}\r\n.article-tag p{\r\n    padding: .2rem 0;\r\n    color: #fb8da6;\r\n    font-weight: 700;\r\n    border-top: .1rem dashed #fb8da6;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.article-tag:hover{\r\n    background-color: #ededed;\r\n}\r\n.date{\r\n    display: inline-block;\r\n    color: #666;\r\n    border-left: .2rem solid #fb8da6;\r\n    border-right: .2rem solid #fb8da6;\r\n    padding: .1rem .5rem;\r\n    font-size: .8rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .5rem;\r\n}\r\n\r\n.article-content{\r\n    max-height: 20rem;\r\n    overflow: hidden;\r\n    margin-bottom: 1.2rem;\r\n    padding: 1rem 0;\r\n    line-height: 1.8;\r\n    text-indent: 2rem;\r\n}\r\n\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
 /* 16 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
@@ -10327,10 +10356,10 @@
 	});
 	// <template>
 	//     <article class="article-item">
-	//         <h1 class="article-title"><a :href="'#/article'">{{item.title}}</a></h1>
+	//         <h1 class="article-title"><a :href="'#/article/' + item._id">{{item.title}}</a></h1>
 	//         <div class="article-tag">
 	//             <p>
-	//                 <a :href="'#/article'">{{item.parentTagName}}</a>
+	//                 <a :href="'#/tagArticle'">{{item.parentTagName}}</a>
 	//             </p>
 	//         </div>
 	//         <div class="date">
@@ -10338,28 +10367,33 @@
 	//         </div>
 	//
 	//         <div class="article-content">
-	//             <p>
-	//                 {{item.md}}
-	//             </p>
+	//             {{item.md}}
 	//         </div>
 	//     </article>
 	//
 	// </template>
 	//
 	// <script>
+	// import toHtml from '../my-markdown.js';
+	
+	// toHtml($('.article-content'));
+	
 	exports.default = {
 	    name: "Item",
 	
 	    props: {
 	        item: Object
+	    },
+	
+	    ready: function ready() {
+	        var markdown = __webpack_require__(94).markdown;
+	        // console.log(this.item.title);
+	        // $('.article-content').html(markdown.toHTML(this.item.md));
 	    }
 	};
 	// </script>
 	//
 	// <style>
-	// .container{
-	//     position: relative;
-	// }
 	// .article-item{
 	//     background-color: #fff;
 	//     border-radius: .4rem;;
@@ -10381,6 +10415,9 @@
 	//     border-bottom: .1rem dashed #ea7bf7;
 	//     text-shadow: 1px 1px 0 #b0aeb0;
 	//     color: #ea7bf7;
+	// }
+	// .article-title:hover{
+	//     color: #fb8da6;
 	// }
 	// .article-tag{
 	//     position: absolute;
@@ -10405,21 +10442,17 @@
 	// }
 	// .date{
 	//     display: inline-block;
-	//     color: #fff;
-	//     background-color: #fb8da6;
+	//     color: #666;
+	//     border-left: .2rem solid #fb8da6;
+	//     border-right: .2rem solid #fb8da6;
 	//     padding: .1rem .5rem;
-	//     border-radius: 2rem;
 	//     font-size: .8rem;
 	//     position: absolute;
 	//     right: .5rem;
 	//     bottom: .5rem;
 	// }
 	//
-	// .date:hover{
-	//     background-color: #666666;
-	// }
-	//
-	// .article-content p{
+	// .article-content{
 	//     max-height: 20rem;
 	//     overflow: hidden;
 	//     margin-bottom: 1.2rem;
@@ -10436,13 +10469,13 @@
 /* 17 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<article class=\"article-item\">\n    <h1 class=\"article-title\"><a :href=\"'#/article'\">{{item.title}}</a></h1>\n    <div class=\"article-tag\">\n        <p>\n            <a :href=\"'#/article'\">{{item.parentTagName}}</a>\n        </p>\n    </div>\n    <div class=\"date\">\n        {{item.date}}\n    </div>\n\n    <div class=\"article-content\">\n        <p>\n            {{item.md}}\n        </p>\n    </div>\n</article>\n\n";
+	module.exports = "\n<article class=\"article-item\">\n    <h1 class=\"article-title\"><a :href=\"'#/article/' + item._id\">{{item.title}}</a></h1>\n    <div class=\"article-tag\">\n        <p>\n            <a :href=\"'#/tagArticle'\">{{item.parentTagName}}</a>\n        </p>\n    </div>\n    <div class=\"date\">\n        {{item.date}}\n    </div>\n\n    <div class=\"article-content\">\n        {{item.md}}\n    </div>\n</article>\n\n";
 
 /***/ },
 /* 18 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<section class=\"wrapper clearfix\">\n    <div class=\"article-list\">\n        <item v-for=\"item in items\"\n        :item=\"item\"\n        :index=\"$index\"\n        track-by=\"_id\">\n        </item>\n    </div>\n\n    <div class=\"class-tags\">\n        <h4>分类</h4>\n        <p  v-for=\"classTag in classTags\"\n            :classTag=\"classTag\"\n            :index=\"$index\"\n            track-by=\"_id\">\n            <a :href=\"'#/article'\">{{classTag.tagName}}</a>\n        </p>\n    </div>\n</section>\n";
+	module.exports = "\n<section class=\"wrapper clearfix\">\n    <div class=\"article-list\">\n        <item v-for=\"item in items\"\n        :item=\"item\"\n        :index=\"$index\"\n        track-by=\"_id\">\n        </item>\n    </div>\n\n    <div class=\"class-tags\">\n        <h4>分类</h4>\n        <p  v-for=\"classTag in classTags\"\n            class=\"tag\"\n            :classTag=\"classTag\"\n            :index=\"$index\"\n            track-by=\"$index\">\n            <a :href=\"'#/article'\">{{classTag}}</a>\n            <!-- <span>{{articleNumber}}</span> -->\n        </p>\n    </div>\n</section>\n";
 
 /***/ },
 /* 19 */,
@@ -13098,6 +13131,12 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
+	__webpack_require__(91)
+	__vue_script__ = __webpack_require__(42)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] public\\components\\Article.vue: named exports in *.vue files are ignored.")}
 	__vue_template__ = __webpack_require__(26)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
@@ -13118,7 +13157,7 @@
 /* 26 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<article class=\"\">\n    s\n    \n</article>\n";
+	module.exports = "\n<div class=\"article\">\n    <div class=\"a-date\">\n        {{articleInfo.date}}\n    </div>\n    <article>\n        <!-- <h1>{{articleInfo.title}}</a></h1> -->\n        <div class=\"a-content\">\n            {{articleInfo.article}}\n        </div>\n    </article>\n</div>\n\n";
 
 /***/ },
 /* 27 */,
@@ -13138,6 +13177,3821 @@
 	};
 	
 	exports.default = url;
+
+/***/ },
+/* 29 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(30), __esModule: true };
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(31);
+	module.exports = __webpack_require__(37).Object.keys;
+
+/***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.14 Object.keys(O)
+	var toObject = __webpack_require__(32);
+	
+	__webpack_require__(34)('keys', function($keys){
+	  return function keys(it){
+	    return $keys(toObject(it));
+	  };
+	});
+
+/***/ },
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.1.13 ToObject(argument)
+	var defined = __webpack_require__(33);
+	module.exports = function(it){
+	  return Object(defined(it));
+	};
+
+/***/ },
+/* 33 */
+/***/ function(module, exports) {
+
+	// 7.2.1 RequireObjectCoercible(argument)
+	module.exports = function(it){
+	  if(it == undefined)throw TypeError("Can't call method on  " + it);
+	  return it;
+	};
+
+/***/ },
+/* 34 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// most Object methods by ES6 should accept primitives
+	var $export = __webpack_require__(35)
+	  , core    = __webpack_require__(37)
+	  , fails   = __webpack_require__(40);
+	module.exports = function(KEY, exec){
+	  var fn  = (core.Object || {})[KEY] || Object[KEY]
+	    , exp = {};
+	  exp[KEY] = exec(fn);
+	  $export($export.S + $export.F * fails(function(){ fn(1); }), 'Object', exp);
+	};
+
+/***/ },
+/* 35 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global    = __webpack_require__(36)
+	  , core      = __webpack_require__(37)
+	  , ctx       = __webpack_require__(38)
+	  , PROTOTYPE = 'prototype';
+	
+	var $export = function(type, name, source){
+	  var IS_FORCED = type & $export.F
+	    , IS_GLOBAL = type & $export.G
+	    , IS_STATIC = type & $export.S
+	    , IS_PROTO  = type & $export.P
+	    , IS_BIND   = type & $export.B
+	    , IS_WRAP   = type & $export.W
+	    , exports   = IS_GLOBAL ? core : core[name] || (core[name] = {})
+	    , target    = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE]
+	    , key, own, out;
+	  if(IS_GLOBAL)source = name;
+	  for(key in source){
+	    // contains in native
+	    own = !IS_FORCED && target && key in target;
+	    if(own && key in exports)continue;
+	    // export native or passed
+	    out = own ? target[key] : source[key];
+	    // prevent global pollution for namespaces
+	    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
+	    // bind timers to global for call from export context
+	    : IS_BIND && own ? ctx(out, global)
+	    // wrap global constructors for prevent change them in library
+	    : IS_WRAP && target[key] == out ? (function(C){
+	      var F = function(param){
+	        return this instanceof C ? new C(param) : C(param);
+	      };
+	      F[PROTOTYPE] = C[PROTOTYPE];
+	      return F;
+	    // make static versions for prototype methods
+	    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+	    if(IS_PROTO)(exports[PROTOTYPE] || (exports[PROTOTYPE] = {}))[key] = out;
+	  }
+	};
+	// type bitmap
+	$export.F = 1;  // forced
+	$export.G = 2;  // global
+	$export.S = 4;  // static
+	$export.P = 8;  // proto
+	$export.B = 16; // bind
+	$export.W = 32; // wrap
+	module.exports = $export;
+
+/***/ },
+/* 36 */
+/***/ function(module, exports) {
+
+	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+	var global = module.exports = typeof window != 'undefined' && window.Math == Math
+	  ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
+	if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
+
+/***/ },
+/* 37 */
+/***/ function(module, exports) {
+
+	var core = module.exports = {version: '1.2.6'};
+	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
+
+/***/ },
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// optional / simple context binding
+	var aFunction = __webpack_require__(39);
+	module.exports = function(fn, that, length){
+	  aFunction(fn);
+	  if(that === undefined)return fn;
+	  switch(length){
+	    case 1: return function(a){
+	      return fn.call(that, a);
+	    };
+	    case 2: return function(a, b){
+	      return fn.call(that, a, b);
+	    };
+	    case 3: return function(a, b, c){
+	      return fn.call(that, a, b, c);
+	    };
+	  }
+	  return function(/* ...args */){
+	    return fn.apply(that, arguments);
+	  };
+	};
+
+/***/ },
+/* 39 */
+/***/ function(module, exports) {
+
+	module.exports = function(it){
+	  if(typeof it != 'function')throw TypeError(it + ' is not a function!');
+	  return it;
+	};
+
+/***/ },
+/* 40 */
+/***/ function(module, exports) {
+
+	module.exports = function(exec){
+	  try {
+	    return !!exec();
+	  } catch(e){
+	    return true;
+	  }
+	};
+
+/***/ },
+/* 41 */
+/***/ function(module, exports) {
+
+	var __vue_script__, __vue_template__
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) { (typeof module.exports === "function" ? (module.exports.options || {}) : module.exports).template = __vue_template__ }
+
+
+/***/ },
+/* 42 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var _promise = __webpack_require__(43);
+	
+	var _promise2 = _interopRequireDefault(_promise);
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _url = __webpack_require__(28);
+	
+	var _url2 = _interopRequireDefault(_url);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	    name: "Article",
+	
+	    data: function data() {
+	        return {
+	            articleInfo: {}
+	        };
+	    },
+	
+	    route: {
+	        data: function data(transition) {
+	            var self = this;
+	            var articleId = transition.to.params._id,
+	                articleInfo = {};
+	
+	            return new _promise2.default(function (resolve, reject) {
+	                $.get(_url2.default.articleUrl, function (data) {
+	                    if (typeof data === "string") {
+	                        data = JSON.parse(data);
+	                    };
+	                    data.forEach(function (element) {
+	                        if (element._id === articleId) {
+	                            articleInfo.title = element.title;
+	                            articleInfo.article = element.md;
+	                            articleInfo.date = element.date.split('T')[0];
+	                        }
+	                    });
+	                    self.articleInfo = articleInfo;
+	                    var markdown = __webpack_require__(94).markdown;
+	                    $('.a-content').html(markdown.toHTML(self.articleInfo.article));
+	                    resolve(articleInfo);
+	                });
+	            });
+	        }
+	    }
+	};
+	// </script>
+	//
+	// <style>
+	// .article{
+	//     width: 75%;
+	//     margin: 2rem auto;
+	// }
+	// article {
+	//     background-color: #fff;
+	//     border-radius: .4rem;;
+	//     box-shadow: 2px 2px 3px #918b8b;
+	//     padding: 1.5rem 2.5rem;
+	// }
+	// .a-date{
+	//     padding: .5rem .7rem;
+	//     font-weight: bolder;
+	//     color: #666;
+	// }
+	// .article h1{
+	//     text-align: center;
+	//     font-size: 1.6rem;
+	//     letter-spacing: .3rem;
+	//     padding-bottom: .8rem;
+	//     border-bottom: .1rem dashed #000;
+	//     text-shadow: 1px 1px 0 #b0aeb0;
+	//     color: #000;
+	// }
+	//
+	// .a-content{
+	//     padding: 1rem 0;
+	//     line-height: 1.7;
+	// }
+	// .a-content p{
+	//     text-indent: 2rem;
+	// }
+	// .a-content h1,h2,h3,h4{
+	//     margin-top: 1rem;
+	//     margin-bottom: .1rem;
+	// }
+	// h2{
+	//     padding-left: .4rem;
+	//     border-left: .2rem solid purple;
+	// }
+	// </style>
+
+	/* generated by vue-loader */
+	// <template id="text-body">
+	//     <div class="article">
+	//         <div class="a-date">
+	//             {{articleInfo.date}}
+	//         </div>
+	//         <article>
+	//             <!-- <h1>{{articleInfo.title}}</a></h1> -->
+	//             <div class="a-content">
+	//                 {{articleInfo.article}}
+	//             </div>
+	//         </article>
+	//     </div>
+	//
+	// </template>
+	//
+	// <script>
+
+/***/ },
+/* 43 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(44), __esModule: true };
+
+/***/ },
+/* 44 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(45);
+	__webpack_require__(46);
+	__webpack_require__(63);
+	__webpack_require__(70);
+	module.exports = __webpack_require__(37).Promise;
+
+/***/ },
+/* 45 */
+/***/ function(module, exports) {
+
+
+
+/***/ },
+/* 46 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var $at  = __webpack_require__(47)(true);
+	
+	// 21.1.3.27 String.prototype[@@iterator]()
+	__webpack_require__(49)(String, 'String', function(iterated){
+	  this._t = String(iterated); // target
+	  this._i = 0;                // next index
+	// 21.1.5.2.1 %StringIteratorPrototype%.next()
+	}, function(){
+	  var O     = this._t
+	    , index = this._i
+	    , point;
+	  if(index >= O.length)return {value: undefined, done: true};
+	  point = $at(O, index);
+	  this._i += point.length;
+	  return {value: point, done: false};
+	});
+
+/***/ },
+/* 47 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var toInteger = __webpack_require__(48)
+	  , defined   = __webpack_require__(33);
+	// true  -> String#at
+	// false -> String#codePointAt
+	module.exports = function(TO_STRING){
+	  return function(that, pos){
+	    var s = String(defined(that))
+	      , i = toInteger(pos)
+	      , l = s.length
+	      , a, b;
+	    if(i < 0 || i >= l)return TO_STRING ? '' : undefined;
+	    a = s.charCodeAt(i);
+	    return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff
+	      ? TO_STRING ? s.charAt(i) : a
+	      : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
+	  };
+	};
+
+/***/ },
+/* 48 */
+/***/ function(module, exports) {
+
+	// 7.1.4 ToInteger
+	var ceil  = Math.ceil
+	  , floor = Math.floor;
+	module.exports = function(it){
+	  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
+	};
+
+/***/ },
+/* 49 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var LIBRARY        = __webpack_require__(50)
+	  , $export        = __webpack_require__(35)
+	  , redefine       = __webpack_require__(51)
+	  , hide           = __webpack_require__(52)
+	  , has            = __webpack_require__(56)
+	  , Iterators      = __webpack_require__(57)
+	  , $iterCreate    = __webpack_require__(58)
+	  , setToStringTag = __webpack_require__(59)
+	  , getProto       = __webpack_require__(53).getProto
+	  , ITERATOR       = __webpack_require__(60)('iterator')
+	  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
+	  , FF_ITERATOR    = '@@iterator'
+	  , KEYS           = 'keys'
+	  , VALUES         = 'values';
+	
+	var returnThis = function(){ return this; };
+	
+	module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED){
+	  $iterCreate(Constructor, NAME, next);
+	  var getMethod = function(kind){
+	    if(!BUGGY && kind in proto)return proto[kind];
+	    switch(kind){
+	      case KEYS: return function keys(){ return new Constructor(this, kind); };
+	      case VALUES: return function values(){ return new Constructor(this, kind); };
+	    } return function entries(){ return new Constructor(this, kind); };
+	  };
+	  var TAG        = NAME + ' Iterator'
+	    , DEF_VALUES = DEFAULT == VALUES
+	    , VALUES_BUG = false
+	    , proto      = Base.prototype
+	    , $native    = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT]
+	    , $default   = $native || getMethod(DEFAULT)
+	    , methods, key;
+	  // Fix native
+	  if($native){
+	    var IteratorPrototype = getProto($default.call(new Base));
+	    // Set @@toStringTag to native iterators
+	    setToStringTag(IteratorPrototype, TAG, true);
+	    // FF fix
+	    if(!LIBRARY && has(proto, FF_ITERATOR))hide(IteratorPrototype, ITERATOR, returnThis);
+	    // fix Array#{values, @@iterator}.name in V8 / FF
+	    if(DEF_VALUES && $native.name !== VALUES){
+	      VALUES_BUG = true;
+	      $default = function values(){ return $native.call(this); };
+	    }
+	  }
+	  // Define iterator
+	  if((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])){
+	    hide(proto, ITERATOR, $default);
+	  }
+	  // Plug for library
+	  Iterators[NAME] = $default;
+	  Iterators[TAG]  = returnThis;
+	  if(DEFAULT){
+	    methods = {
+	      values:  DEF_VALUES  ? $default : getMethod(VALUES),
+	      keys:    IS_SET      ? $default : getMethod(KEYS),
+	      entries: !DEF_VALUES ? $default : getMethod('entries')
+	    };
+	    if(FORCED)for(key in methods){
+	      if(!(key in proto))redefine(proto, key, methods[key]);
+	    } else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
+	  }
+	  return methods;
+	};
+
+/***/ },
+/* 50 */
+/***/ function(module, exports) {
+
+	module.exports = true;
+
+/***/ },
+/* 51 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(52);
+
+/***/ },
+/* 52 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $          = __webpack_require__(53)
+	  , createDesc = __webpack_require__(54);
+	module.exports = __webpack_require__(55) ? function(object, key, value){
+	  return $.setDesc(object, key, createDesc(1, value));
+	} : function(object, key, value){
+	  object[key] = value;
+	  return object;
+	};
+
+/***/ },
+/* 53 */
+/***/ function(module, exports) {
+
+	var $Object = Object;
+	module.exports = {
+	  create:     $Object.create,
+	  getProto:   $Object.getPrototypeOf,
+	  isEnum:     {}.propertyIsEnumerable,
+	  getDesc:    $Object.getOwnPropertyDescriptor,
+	  setDesc:    $Object.defineProperty,
+	  setDescs:   $Object.defineProperties,
+	  getKeys:    $Object.keys,
+	  getNames:   $Object.getOwnPropertyNames,
+	  getSymbols: $Object.getOwnPropertySymbols,
+	  each:       [].forEach
+	};
+
+/***/ },
+/* 54 */
+/***/ function(module, exports) {
+
+	module.exports = function(bitmap, value){
+	  return {
+	    enumerable  : !(bitmap & 1),
+	    configurable: !(bitmap & 2),
+	    writable    : !(bitmap & 4),
+	    value       : value
+	  };
+	};
+
+/***/ },
+/* 55 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Thank's IE8 for his funny defineProperty
+	module.exports = !__webpack_require__(40)(function(){
+	  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
+	});
+
+/***/ },
+/* 56 */
+/***/ function(module, exports) {
+
+	var hasOwnProperty = {}.hasOwnProperty;
+	module.exports = function(it, key){
+	  return hasOwnProperty.call(it, key);
+	};
+
+/***/ },
+/* 57 */
+/***/ function(module, exports) {
+
+	module.exports = {};
+
+/***/ },
+/* 58 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var $              = __webpack_require__(53)
+	  , descriptor     = __webpack_require__(54)
+	  , setToStringTag = __webpack_require__(59)
+	  , IteratorPrototype = {};
+	
+	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
+	__webpack_require__(52)(IteratorPrototype, __webpack_require__(60)('iterator'), function(){ return this; });
+	
+	module.exports = function(Constructor, NAME, next){
+	  Constructor.prototype = $.create(IteratorPrototype, {next: descriptor(1, next)});
+	  setToStringTag(Constructor, NAME + ' Iterator');
+	};
+
+/***/ },
+/* 59 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var def = __webpack_require__(53).setDesc
+	  , has = __webpack_require__(56)
+	  , TAG = __webpack_require__(60)('toStringTag');
+	
+	module.exports = function(it, tag, stat){
+	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
+	};
+
+/***/ },
+/* 60 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var store  = __webpack_require__(61)('wks')
+	  , uid    = __webpack_require__(62)
+	  , Symbol = __webpack_require__(36).Symbol;
+	module.exports = function(name){
+	  return store[name] || (store[name] =
+	    Symbol && Symbol[name] || (Symbol || uid)('Symbol.' + name));
+	};
+
+/***/ },
+/* 61 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global = __webpack_require__(36)
+	  , SHARED = '__core-js_shared__'
+	  , store  = global[SHARED] || (global[SHARED] = {});
+	module.exports = function(key){
+	  return store[key] || (store[key] = {});
+	};
+
+/***/ },
+/* 62 */
+/***/ function(module, exports) {
+
+	var id = 0
+	  , px = Math.random();
+	module.exports = function(key){
+	  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
+	};
+
+/***/ },
+/* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(64);
+	var Iterators = __webpack_require__(57);
+	Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
+
+/***/ },
+/* 64 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var addToUnscopables = __webpack_require__(65)
+	  , step             = __webpack_require__(66)
+	  , Iterators        = __webpack_require__(57)
+	  , toIObject        = __webpack_require__(67);
+	
+	// 22.1.3.4 Array.prototype.entries()
+	// 22.1.3.13 Array.prototype.keys()
+	// 22.1.3.29 Array.prototype.values()
+	// 22.1.3.30 Array.prototype[@@iterator]()
+	module.exports = __webpack_require__(49)(Array, 'Array', function(iterated, kind){
+	  this._t = toIObject(iterated); // target
+	  this._i = 0;                   // next index
+	  this._k = kind;                // kind
+	// 22.1.5.2.1 %ArrayIteratorPrototype%.next()
+	}, function(){
+	  var O     = this._t
+	    , kind  = this._k
+	    , index = this._i++;
+	  if(!O || index >= O.length){
+	    this._t = undefined;
+	    return step(1);
+	  }
+	  if(kind == 'keys'  )return step(0, index);
+	  if(kind == 'values')return step(0, O[index]);
+	  return step(0, [index, O[index]]);
+	}, 'values');
+	
+	// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
+	Iterators.Arguments = Iterators.Array;
+	
+	addToUnscopables('keys');
+	addToUnscopables('values');
+	addToUnscopables('entries');
+
+/***/ },
+/* 65 */
+/***/ function(module, exports) {
+
+	module.exports = function(){ /* empty */ };
+
+/***/ },
+/* 66 */
+/***/ function(module, exports) {
+
+	module.exports = function(done, value){
+	  return {value: value, done: !!done};
+	};
+
+/***/ },
+/* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// to indexed object, toObject with fallback for non-array-like ES3 strings
+	var IObject = __webpack_require__(68)
+	  , defined = __webpack_require__(33);
+	module.exports = function(it){
+	  return IObject(defined(it));
+	};
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// fallback for non-array-like ES3 and non-enumerable old V8 strings
+	var cof = __webpack_require__(69);
+	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
+	  return cof(it) == 'String' ? it.split('') : Object(it);
+	};
+
+/***/ },
+/* 69 */
+/***/ function(module, exports) {
+
+	var toString = {}.toString;
+	
+	module.exports = function(it){
+	  return toString.call(it).slice(8, -1);
+	};
+
+/***/ },
+/* 70 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var $          = __webpack_require__(53)
+	  , LIBRARY    = __webpack_require__(50)
+	  , global     = __webpack_require__(36)
+	  , ctx        = __webpack_require__(38)
+	  , classof    = __webpack_require__(71)
+	  , $export    = __webpack_require__(35)
+	  , isObject   = __webpack_require__(72)
+	  , anObject   = __webpack_require__(73)
+	  , aFunction  = __webpack_require__(39)
+	  , strictNew  = __webpack_require__(74)
+	  , forOf      = __webpack_require__(75)
+	  , setProto   = __webpack_require__(80).set
+	  , same       = __webpack_require__(81)
+	  , SPECIES    = __webpack_require__(60)('species')
+	  , speciesConstructor = __webpack_require__(82)
+	  , asap       = __webpack_require__(83)
+	  , PROMISE    = 'Promise'
+	  , process    = global.process
+	  , isNode     = classof(process) == 'process'
+	  , P          = global[PROMISE]
+	  , Wrapper;
+	
+	var testResolve = function(sub){
+	  var test = new P(function(){});
+	  if(sub)test.constructor = Object;
+	  return P.resolve(test) === test;
+	};
+	
+	var USE_NATIVE = function(){
+	  var works = false;
+	  function P2(x){
+	    var self = new P(x);
+	    setProto(self, P2.prototype);
+	    return self;
+	  }
+	  try {
+	    works = P && P.resolve && testResolve();
+	    setProto(P2, P);
+	    P2.prototype = $.create(P.prototype, {constructor: {value: P2}});
+	    // actual Firefox has broken subclass support, test that
+	    if(!(P2.resolve(5).then(function(){}) instanceof P2)){
+	      works = false;
+	    }
+	    // actual V8 bug, https://code.google.com/p/v8/issues/detail?id=4162
+	    if(works && __webpack_require__(55)){
+	      var thenableThenGotten = false;
+	      P.resolve($.setDesc({}, 'then', {
+	        get: function(){ thenableThenGotten = true; }
+	      }));
+	      works = thenableThenGotten;
+	    }
+	  } catch(e){ works = false; }
+	  return works;
+	}();
+	
+	// helpers
+	var sameConstructor = function(a, b){
+	  // library wrapper special case
+	  if(LIBRARY && a === P && b === Wrapper)return true;
+	  return same(a, b);
+	};
+	var getConstructor = function(C){
+	  var S = anObject(C)[SPECIES];
+	  return S != undefined ? S : C;
+	};
+	var isThenable = function(it){
+	  var then;
+	  return isObject(it) && typeof (then = it.then) == 'function' ? then : false;
+	};
+	var PromiseCapability = function(C){
+	  var resolve, reject;
+	  this.promise = new C(function($$resolve, $$reject){
+	    if(resolve !== undefined || reject !== undefined)throw TypeError('Bad Promise constructor');
+	    resolve = $$resolve;
+	    reject  = $$reject;
+	  });
+	  this.resolve = aFunction(resolve),
+	  this.reject  = aFunction(reject)
+	};
+	var perform = function(exec){
+	  try {
+	    exec();
+	  } catch(e){
+	    return {error: e};
+	  }
+	};
+	var notify = function(record, isReject){
+	  if(record.n)return;
+	  record.n = true;
+	  var chain = record.c;
+	  asap(function(){
+	    var value = record.v
+	      , ok    = record.s == 1
+	      , i     = 0;
+	    var run = function(reaction){
+	      var handler = ok ? reaction.ok : reaction.fail
+	        , resolve = reaction.resolve
+	        , reject  = reaction.reject
+	        , result, then;
+	      try {
+	        if(handler){
+	          if(!ok)record.h = true;
+	          result = handler === true ? value : handler(value);
+	          if(result === reaction.promise){
+	            reject(TypeError('Promise-chain cycle'));
+	          } else if(then = isThenable(result)){
+	            then.call(result, resolve, reject);
+	          } else resolve(result);
+	        } else reject(value);
+	      } catch(e){
+	        reject(e);
+	      }
+	    };
+	    while(chain.length > i)run(chain[i++]); // variable length - can't use forEach
+	    chain.length = 0;
+	    record.n = false;
+	    if(isReject)setTimeout(function(){
+	      var promise = record.p
+	        , handler, console;
+	      if(isUnhandled(promise)){
+	        if(isNode){
+	          process.emit('unhandledRejection', value, promise);
+	        } else if(handler = global.onunhandledrejection){
+	          handler({promise: promise, reason: value});
+	        } else if((console = global.console) && console.error){
+	          console.error('Unhandled promise rejection', value);
+	        }
+	      } record.a = undefined;
+	    }, 1);
+	  });
+	};
+	var isUnhandled = function(promise){
+	  var record = promise._d
+	    , chain  = record.a || record.c
+	    , i      = 0
+	    , reaction;
+	  if(record.h)return false;
+	  while(chain.length > i){
+	    reaction = chain[i++];
+	    if(reaction.fail || !isUnhandled(reaction.promise))return false;
+	  } return true;
+	};
+	var $reject = function(value){
+	  var record = this;
+	  if(record.d)return;
+	  record.d = true;
+	  record = record.r || record; // unwrap
+	  record.v = value;
+	  record.s = 2;
+	  record.a = record.c.slice();
+	  notify(record, true);
+	};
+	var $resolve = function(value){
+	  var record = this
+	    , then;
+	  if(record.d)return;
+	  record.d = true;
+	  record = record.r || record; // unwrap
+	  try {
+	    if(record.p === value)throw TypeError("Promise can't be resolved itself");
+	    if(then = isThenable(value)){
+	      asap(function(){
+	        var wrapper = {r: record, d: false}; // wrap
+	        try {
+	          then.call(value, ctx($resolve, wrapper, 1), ctx($reject, wrapper, 1));
+	        } catch(e){
+	          $reject.call(wrapper, e);
+	        }
+	      });
+	    } else {
+	      record.v = value;
+	      record.s = 1;
+	      notify(record, false);
+	    }
+	  } catch(e){
+	    $reject.call({r: record, d: false}, e); // wrap
+	  }
+	};
+	
+	// constructor polyfill
+	if(!USE_NATIVE){
+	  // 25.4.3.1 Promise(executor)
+	  P = function Promise(executor){
+	    aFunction(executor);
+	    var record = this._d = {
+	      p: strictNew(this, P, PROMISE),         // <- promise
+	      c: [],                                  // <- awaiting reactions
+	      a: undefined,                           // <- checked in isUnhandled reactions
+	      s: 0,                                   // <- state
+	      d: false,                               // <- done
+	      v: undefined,                           // <- value
+	      h: false,                               // <- handled rejection
+	      n: false                                // <- notify
+	    };
+	    try {
+	      executor(ctx($resolve, record, 1), ctx($reject, record, 1));
+	    } catch(err){
+	      $reject.call(record, err);
+	    }
+	  };
+	  __webpack_require__(88)(P.prototype, {
+	    // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
+	    then: function then(onFulfilled, onRejected){
+	      var reaction = new PromiseCapability(speciesConstructor(this, P))
+	        , promise  = reaction.promise
+	        , record   = this._d;
+	      reaction.ok   = typeof onFulfilled == 'function' ? onFulfilled : true;
+	      reaction.fail = typeof onRejected == 'function' && onRejected;
+	      record.c.push(reaction);
+	      if(record.a)record.a.push(reaction);
+	      if(record.s)notify(record, false);
+	      return promise;
+	    },
+	    // 25.4.5.1 Promise.prototype.catch(onRejected)
+	    'catch': function(onRejected){
+	      return this.then(undefined, onRejected);
+	    }
+	  });
+	}
+	
+	$export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: P});
+	__webpack_require__(59)(P, PROMISE);
+	__webpack_require__(89)(PROMISE);
+	Wrapper = __webpack_require__(37)[PROMISE];
+	
+	// statics
+	$export($export.S + $export.F * !USE_NATIVE, PROMISE, {
+	  // 25.4.4.5 Promise.reject(r)
+	  reject: function reject(r){
+	    var capability = new PromiseCapability(this)
+	      , $$reject   = capability.reject;
+	    $$reject(r);
+	    return capability.promise;
+	  }
+	});
+	$export($export.S + $export.F * (!USE_NATIVE || testResolve(true)), PROMISE, {
+	  // 25.4.4.6 Promise.resolve(x)
+	  resolve: function resolve(x){
+	    // instanceof instead of internal slot check because we should fix it without replacement native Promise core
+	    if(x instanceof P && sameConstructor(x.constructor, this))return x;
+	    var capability = new PromiseCapability(this)
+	      , $$resolve  = capability.resolve;
+	    $$resolve(x);
+	    return capability.promise;
+	  }
+	});
+	$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(90)(function(iter){
+	  P.all(iter)['catch'](function(){});
+	})), PROMISE, {
+	  // 25.4.4.1 Promise.all(iterable)
+	  all: function all(iterable){
+	    var C          = getConstructor(this)
+	      , capability = new PromiseCapability(C)
+	      , resolve    = capability.resolve
+	      , reject     = capability.reject
+	      , values     = [];
+	    var abrupt = perform(function(){
+	      forOf(iterable, false, values.push, values);
+	      var remaining = values.length
+	        , results   = Array(remaining);
+	      if(remaining)$.each.call(values, function(promise, index){
+	        var alreadyCalled = false;
+	        C.resolve(promise).then(function(value){
+	          if(alreadyCalled)return;
+	          alreadyCalled = true;
+	          results[index] = value;
+	          --remaining || resolve(results);
+	        }, reject);
+	      });
+	      else resolve(results);
+	    });
+	    if(abrupt)reject(abrupt.error);
+	    return capability.promise;
+	  },
+	  // 25.4.4.4 Promise.race(iterable)
+	  race: function race(iterable){
+	    var C          = getConstructor(this)
+	      , capability = new PromiseCapability(C)
+	      , reject     = capability.reject;
+	    var abrupt = perform(function(){
+	      forOf(iterable, false, function(promise){
+	        C.resolve(promise).then(capability.resolve, reject);
+	      });
+	    });
+	    if(abrupt)reject(abrupt.error);
+	    return capability.promise;
+	  }
+	});
+
+/***/ },
+/* 71 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// getting tag from 19.1.3.6 Object.prototype.toString()
+	var cof = __webpack_require__(69)
+	  , TAG = __webpack_require__(60)('toStringTag')
+	  // ES3 wrong here
+	  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
+	
+	module.exports = function(it){
+	  var O, T, B;
+	  return it === undefined ? 'Undefined' : it === null ? 'Null'
+	    // @@toStringTag case
+	    : typeof (T = (O = Object(it))[TAG]) == 'string' ? T
+	    // builtinTag case
+	    : ARG ? cof(O)
+	    // ES3 arguments fallback
+	    : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
+	};
+
+/***/ },
+/* 72 */
+/***/ function(module, exports) {
+
+	module.exports = function(it){
+	  return typeof it === 'object' ? it !== null : typeof it === 'function';
+	};
+
+/***/ },
+/* 73 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var isObject = __webpack_require__(72);
+	module.exports = function(it){
+	  if(!isObject(it))throw TypeError(it + ' is not an object!');
+	  return it;
+	};
+
+/***/ },
+/* 74 */
+/***/ function(module, exports) {
+
+	module.exports = function(it, Constructor, name){
+	  if(!(it instanceof Constructor))throw TypeError(name + ": use the 'new' operator!");
+	  return it;
+	};
+
+/***/ },
+/* 75 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var ctx         = __webpack_require__(38)
+	  , call        = __webpack_require__(76)
+	  , isArrayIter = __webpack_require__(77)
+	  , anObject    = __webpack_require__(73)
+	  , toLength    = __webpack_require__(78)
+	  , getIterFn   = __webpack_require__(79);
+	module.exports = function(iterable, entries, fn, that){
+	  var iterFn = getIterFn(iterable)
+	    , f      = ctx(fn, that, entries ? 2 : 1)
+	    , index  = 0
+	    , length, step, iterator;
+	  if(typeof iterFn != 'function')throw TypeError(iterable + ' is not iterable!');
+	  // fast case for arrays with default iterator
+	  if(isArrayIter(iterFn))for(length = toLength(iterable.length); length > index; index++){
+	    entries ? f(anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
+	  } else for(iterator = iterFn.call(iterable); !(step = iterator.next()).done; ){
+	    call(iterator, f, step.value, entries);
+	  }
+	};
+
+/***/ },
+/* 76 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// call something on iterator step with safe closing on error
+	var anObject = __webpack_require__(73);
+	module.exports = function(iterator, fn, value, entries){
+	  try {
+	    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
+	  // 7.4.6 IteratorClose(iterator, completion)
+	  } catch(e){
+	    var ret = iterator['return'];
+	    if(ret !== undefined)anObject(ret.call(iterator));
+	    throw e;
+	  }
+	};
+
+/***/ },
+/* 77 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// check on default Array iterator
+	var Iterators  = __webpack_require__(57)
+	  , ITERATOR   = __webpack_require__(60)('iterator')
+	  , ArrayProto = Array.prototype;
+	
+	module.exports = function(it){
+	  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
+	};
+
+/***/ },
+/* 78 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.1.15 ToLength
+	var toInteger = __webpack_require__(48)
+	  , min       = Math.min;
+	module.exports = function(it){
+	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
+	};
+
+/***/ },
+/* 79 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var classof   = __webpack_require__(71)
+	  , ITERATOR  = __webpack_require__(60)('iterator')
+	  , Iterators = __webpack_require__(57);
+	module.exports = __webpack_require__(37).getIteratorMethod = function(it){
+	  if(it != undefined)return it[ITERATOR]
+	    || it['@@iterator']
+	    || Iterators[classof(it)];
+	};
+
+/***/ },
+/* 80 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Works with __proto__ only. Old v8 can't work with null proto objects.
+	/* eslint-disable no-proto */
+	var getDesc  = __webpack_require__(53).getDesc
+	  , isObject = __webpack_require__(72)
+	  , anObject = __webpack_require__(73);
+	var check = function(O, proto){
+	  anObject(O);
+	  if(!isObject(proto) && proto !== null)throw TypeError(proto + ": can't set as prototype!");
+	};
+	module.exports = {
+	  set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
+	    function(test, buggy, set){
+	      try {
+	        set = __webpack_require__(38)(Function.call, getDesc(Object.prototype, '__proto__').set, 2);
+	        set(test, []);
+	        buggy = !(test instanceof Array);
+	      } catch(e){ buggy = true; }
+	      return function setPrototypeOf(O, proto){
+	        check(O, proto);
+	        if(buggy)O.__proto__ = proto;
+	        else set(O, proto);
+	        return O;
+	      };
+	    }({}, false) : undefined),
+	  check: check
+	};
+
+/***/ },
+/* 81 */
+/***/ function(module, exports) {
+
+	// 7.2.9 SameValue(x, y)
+	module.exports = Object.is || function is(x, y){
+	  return x === y ? x !== 0 || 1 / x === 1 / y : x != x && y != y;
+	};
+
+/***/ },
+/* 82 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
+	var anObject  = __webpack_require__(73)
+	  , aFunction = __webpack_require__(39)
+	  , SPECIES   = __webpack_require__(60)('species');
+	module.exports = function(O, D){
+	  var C = anObject(O).constructor, S;
+	  return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
+	};
+
+/***/ },
+/* 83 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global    = __webpack_require__(36)
+	  , macrotask = __webpack_require__(84).set
+	  , Observer  = global.MutationObserver || global.WebKitMutationObserver
+	  , process   = global.process
+	  , Promise   = global.Promise
+	  , isNode    = __webpack_require__(69)(process) == 'process'
+	  , head, last, notify;
+	
+	var flush = function(){
+	  var parent, domain, fn;
+	  if(isNode && (parent = process.domain)){
+	    process.domain = null;
+	    parent.exit();
+	  }
+	  while(head){
+	    domain = head.domain;
+	    fn     = head.fn;
+	    if(domain)domain.enter();
+	    fn(); // <- currently we use it only for Promise - try / catch not required
+	    if(domain)domain.exit();
+	    head = head.next;
+	  } last = undefined;
+	  if(parent)parent.enter();
+	};
+	
+	// Node.js
+	if(isNode){
+	  notify = function(){
+	    process.nextTick(flush);
+	  };
+	// browsers with MutationObserver
+	} else if(Observer){
+	  var toggle = 1
+	    , node   = document.createTextNode('');
+	  new Observer(flush).observe(node, {characterData: true}); // eslint-disable-line no-new
+	  notify = function(){
+	    node.data = toggle = -toggle;
+	  };
+	// environments with maybe non-completely correct, but existent Promise
+	} else if(Promise && Promise.resolve){
+	  notify = function(){
+	    Promise.resolve().then(flush);
+	  };
+	// for other environments - macrotask based on:
+	// - setImmediate
+	// - MessageChannel
+	// - window.postMessag
+	// - onreadystatechange
+	// - setTimeout
+	} else {
+	  notify = function(){
+	    // strange IE + webpack dev server bug - use .call(global)
+	    macrotask.call(global, flush);
+	  };
+	}
+	
+	module.exports = function asap(fn){
+	  var task = {fn: fn, next: undefined, domain: isNode && process.domain};
+	  if(last)last.next = task;
+	  if(!head){
+	    head = task;
+	    notify();
+	  } last = task;
+	};
+
+/***/ },
+/* 84 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var ctx                = __webpack_require__(38)
+	  , invoke             = __webpack_require__(85)
+	  , html               = __webpack_require__(86)
+	  , cel                = __webpack_require__(87)
+	  , global             = __webpack_require__(36)
+	  , process            = global.process
+	  , setTask            = global.setImmediate
+	  , clearTask          = global.clearImmediate
+	  , MessageChannel     = global.MessageChannel
+	  , counter            = 0
+	  , queue              = {}
+	  , ONREADYSTATECHANGE = 'onreadystatechange'
+	  , defer, channel, port;
+	var run = function(){
+	  var id = +this;
+	  if(queue.hasOwnProperty(id)){
+	    var fn = queue[id];
+	    delete queue[id];
+	    fn();
+	  }
+	};
+	var listner = function(event){
+	  run.call(event.data);
+	};
+	// Node.js 0.9+ & IE10+ has setImmediate, otherwise:
+	if(!setTask || !clearTask){
+	  setTask = function setImmediate(fn){
+	    var args = [], i = 1;
+	    while(arguments.length > i)args.push(arguments[i++]);
+	    queue[++counter] = function(){
+	      invoke(typeof fn == 'function' ? fn : Function(fn), args);
+	    };
+	    defer(counter);
+	    return counter;
+	  };
+	  clearTask = function clearImmediate(id){
+	    delete queue[id];
+	  };
+	  // Node.js 0.8-
+	  if(__webpack_require__(69)(process) == 'process'){
+	    defer = function(id){
+	      process.nextTick(ctx(run, id, 1));
+	    };
+	  // Browsers with MessageChannel, includes WebWorkers
+	  } else if(MessageChannel){
+	    channel = new MessageChannel;
+	    port    = channel.port2;
+	    channel.port1.onmessage = listner;
+	    defer = ctx(port.postMessage, port, 1);
+	  // Browsers with postMessage, skip WebWorkers
+	  // IE8 has postMessage, but it's sync & typeof its postMessage is 'object'
+	  } else if(global.addEventListener && typeof postMessage == 'function' && !global.importScripts){
+	    defer = function(id){
+	      global.postMessage(id + '', '*');
+	    };
+	    global.addEventListener('message', listner, false);
+	  // IE8-
+	  } else if(ONREADYSTATECHANGE in cel('script')){
+	    defer = function(id){
+	      html.appendChild(cel('script'))[ONREADYSTATECHANGE] = function(){
+	        html.removeChild(this);
+	        run.call(id);
+	      };
+	    };
+	  // Rest old browsers
+	  } else {
+	    defer = function(id){
+	      setTimeout(ctx(run, id, 1), 0);
+	    };
+	  }
+	}
+	module.exports = {
+	  set:   setTask,
+	  clear: clearTask
+	};
+
+/***/ },
+/* 85 */
+/***/ function(module, exports) {
+
+	// fast apply, http://jsperf.lnkit.com/fast-apply/5
+	module.exports = function(fn, args, that){
+	  var un = that === undefined;
+	  switch(args.length){
+	    case 0: return un ? fn()
+	                      : fn.call(that);
+	    case 1: return un ? fn(args[0])
+	                      : fn.call(that, args[0]);
+	    case 2: return un ? fn(args[0], args[1])
+	                      : fn.call(that, args[0], args[1]);
+	    case 3: return un ? fn(args[0], args[1], args[2])
+	                      : fn.call(that, args[0], args[1], args[2]);
+	    case 4: return un ? fn(args[0], args[1], args[2], args[3])
+	                      : fn.call(that, args[0], args[1], args[2], args[3]);
+	  } return              fn.apply(that, args);
+	};
+
+/***/ },
+/* 86 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(36).document && document.documentElement;
+
+/***/ },
+/* 87 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var isObject = __webpack_require__(72)
+	  , document = __webpack_require__(36).document
+	  // in old IE typeof document.createElement is 'object'
+	  , is = isObject(document) && isObject(document.createElement);
+	module.exports = function(it){
+	  return is ? document.createElement(it) : {};
+	};
+
+/***/ },
+/* 88 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var redefine = __webpack_require__(51);
+	module.exports = function(target, src){
+	  for(var key in src)redefine(target, key, src[key]);
+	  return target;
+	};
+
+/***/ },
+/* 89 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var core        = __webpack_require__(37)
+	  , $           = __webpack_require__(53)
+	  , DESCRIPTORS = __webpack_require__(55)
+	  , SPECIES     = __webpack_require__(60)('species');
+	
+	module.exports = function(KEY){
+	  var C = core[KEY];
+	  if(DESCRIPTORS && C && !C[SPECIES])$.setDesc(C, SPECIES, {
+	    configurable: true,
+	    get: function(){ return this; }
+	  });
+	};
+
+/***/ },
+/* 90 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var ITERATOR     = __webpack_require__(60)('iterator')
+	  , SAFE_CLOSING = false;
+	
+	try {
+	  var riter = [7][ITERATOR]();
+	  riter['return'] = function(){ SAFE_CLOSING = true; };
+	  Array.from(riter, function(){ throw 2; });
+	} catch(e){ /* empty */ }
+	
+	module.exports = function(exec, skipClosing){
+	  if(!skipClosing && !SAFE_CLOSING)return false;
+	  var safe = false;
+	  try {
+	    var arr  = [7]
+	      , iter = arr[ITERATOR]();
+	    iter.next = function(){ safe = true; };
+	    arr[ITERATOR] = function(){ return iter; };
+	    exec(arr);
+	  } catch(e){ /* empty */ }
+	  return safe;
+	};
+
+/***/ },
+/* 91 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(92);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Article.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Article.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 92 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\r\n.article{\r\n    width: 75%;\r\n    margin: 2rem auto;\r\n}\r\narticle {\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1.5rem 2.5rem;\r\n}\r\n.a-date{\r\n    padding: .5rem .7rem;\r\n    font-weight: bolder;\r\n    color: #666;\r\n}\r\n.article h1{\r\n    text-align: center;\r\n    font-size: 1.6rem;\r\n    letter-spacing: .3rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #000;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #000;\r\n}\r\n\r\n.a-content{\r\n    padding: 1rem 0;\r\n    line-height: 1.7;\r\n}\r\n.a-content p{\r\n    text-indent: 2rem;\r\n}\r\n.a-content h1,h2,h3,h4{\r\n    margin-top: 1rem;\r\n    margin-bottom: .1rem;\r\n}\r\nh2{\r\n    padding-left: .4rem;\r\n    border-left: .2rem solid purple;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/Article.vue?673bc162"],"names":[],"mappings":";AA2DA;IACA,WAAA;IACA,kBAAA;CACA;AACA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,uBAAA;CACA;AACA;IACA,qBAAA;IACA,oBAAA;IACA,YAAA;CACA;AACA;IACA,mBAAA;IACA,kBAAA;IACA,sBAAA;IACA,sBAAA;IACA,iCAAA;IACA,+BAAA;IACA,YAAA;CACA;;AAEA;IACA,gBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;IACA,qBAAA;CACA;AACA;IACA,oBAAA;IACA,gCAAA;CACA","file":"Article.vue","sourcesContent":["<template id=\"text-body\">\r\n    <div class=\"article\">\r\n        <div class=\"a-date\">\r\n            {{articleInfo.date}}\r\n        </div>\r\n        <article>\r\n            <!-- <h1>{{articleInfo.title}}</a></h1> -->\r\n            <div class=\"a-content\">\r\n                {{articleInfo.article}}\r\n            </div>\r\n        </article>\r\n    </div>\r\n\r\n</template>\r\n\r\n<script>\r\nimport url from '../url.js';\r\n\r\nexport default{\r\n    name: \"Article\",\r\n\r\n    data(){\r\n        return {\r\n            articleInfo: {}\r\n        }\r\n    },\r\n\r\n    route: {\r\n        data: function(transition){\r\n            let self = this;\r\n            let articleId = transition.to.params._id,\r\n                articleInfo = {};\r\n\r\n            return new Promise((resolve, reject)=>{\r\n                $.get(url.articleUrl, function(data){\r\n                    if(typeof data === \"string\"){\r\n                        data = JSON.parse(data);\r\n                    };\r\n                    data.forEach(function(element){\r\n                        if(element._id === articleId){\r\n                            articleInfo.title = element.title;\r\n                            articleInfo.article = element.md;\r\n                            articleInfo.date = element.date.split('T')[0];\r\n                        }\r\n                    });\r\n                    self.articleInfo = articleInfo;\r\n                    let markdown = require(\"markdown\").markdown;\r\n                    $('.a-content').html(markdown.toHTML(self.articleInfo.article));\r\n                    resolve(articleInfo);\r\n                });\r\n\r\n            });\r\n\r\n        }\r\n    }\r\n}\r\n</script>\r\n\r\n<style>\r\n.article{\r\n    width: 75%;\r\n    margin: 2rem auto;\r\n}\r\narticle {\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1.5rem 2.5rem;\r\n}\r\n.a-date{\r\n    padding: .5rem .7rem;\r\n    font-weight: bolder;\r\n    color: #666;\r\n}\r\n.article h1{\r\n    text-align: center;\r\n    font-size: 1.6rem;\r\n    letter-spacing: .3rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #000;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #000;\r\n}\r\n\r\n.a-content{\r\n    padding: 1rem 0;\r\n    line-height: 1.7;\r\n}\r\n.a-content p{\r\n    text-indent: 2rem;\r\n}\r\n.a-content h1,h2,h3,h4{\r\n    margin-top: 1rem;\r\n    margin-bottom: .1rem;\r\n}\r\nh2{\r\n    padding-left: .4rem;\r\n    border-left: .2rem solid purple;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
+/* 93 */,
+/* 94 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// super simple module for the most common nodejs use case.
+	exports.markdown = __webpack_require__(95);
+	exports.parse = exports.markdown.toHTML;
+
+
+/***/ },
+/* 95 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Released under MIT license
+	// Copyright (c) 2009-2010 Dominic Baggott
+	// Copyright (c) 2009-2010 Ash Berlin
+	// Copyright (c) 2011 Christoph Dorn <christoph@christophdorn.com> (http://www.christophdorn.com)
+	
+	/*jshint browser:true, devel:true */
+	
+	(function( expose ) {
+	
+	/**
+	 *  class Markdown
+	 *
+	 *  Markdown processing in Javascript done right. We have very particular views
+	 *  on what constitutes 'right' which include:
+	 *
+	 *  - produces well-formed HTML (this means that em and strong nesting is
+	 *    important)
+	 *
+	 *  - has an intermediate representation to allow processing of parsed data (We
+	 *    in fact have two, both as [JsonML]: a markdown tree and an HTML tree).
+	 *
+	 *  - is easily extensible to add new dialects without having to rewrite the
+	 *    entire parsing mechanics
+	 *
+	 *  - has a good test suite
+	 *
+	 *  This implementation fulfills all of these (except that the test suite could
+	 *  do with expanding to automatically run all the fixtures from other Markdown
+	 *  implementations.)
+	 *
+	 *  ##### Intermediate Representation
+	 *
+	 *  *TODO* Talk about this :) Its JsonML, but document the node names we use.
+	 *
+	 *  [JsonML]: http://jsonml.org/ "JSON Markup Language"
+	 **/
+	var Markdown = expose.Markdown = function(dialect) {
+	  switch (typeof dialect) {
+	    case "undefined":
+	      this.dialect = Markdown.dialects.Gruber;
+	      break;
+	    case "object":
+	      this.dialect = dialect;
+	      break;
+	    default:
+	      if ( dialect in Markdown.dialects ) {
+	        this.dialect = Markdown.dialects[dialect];
+	      }
+	      else {
+	        throw new Error("Unknown Markdown dialect '" + String(dialect) + "'");
+	      }
+	      break;
+	  }
+	  this.em_state = [];
+	  this.strong_state = [];
+	  this.debug_indent = "";
+	};
+	
+	/**
+	 *  parse( markdown, [dialect] ) -> JsonML
+	 *  - markdown (String): markdown string to parse
+	 *  - dialect (String | Dialect): the dialect to use, defaults to gruber
+	 *
+	 *  Parse `markdown` and return a markdown document as a Markdown.JsonML tree.
+	 **/
+	expose.parse = function( source, dialect ) {
+	  // dialect will default if undefined
+	  var md = new Markdown( dialect );
+	  return md.toTree( source );
+	};
+	
+	/**
+	 *  toHTML( markdown, [dialect]  ) -> String
+	 *  toHTML( md_tree ) -> String
+	 *  - markdown (String): markdown string to parse
+	 *  - md_tree (Markdown.JsonML): parsed markdown tree
+	 *
+	 *  Take markdown (either as a string or as a JsonML tree) and run it through
+	 *  [[toHTMLTree]] then turn it into a well-formated HTML fragment.
+	 **/
+	expose.toHTML = function toHTML( source , dialect , options ) {
+	  var input = expose.toHTMLTree( source , dialect , options );
+	
+	  return expose.renderJsonML( input );
+	};
+	
+	/**
+	 *  toHTMLTree( markdown, [dialect] ) -> JsonML
+	 *  toHTMLTree( md_tree ) -> JsonML
+	 *  - markdown (String): markdown string to parse
+	 *  - dialect (String | Dialect): the dialect to use, defaults to gruber
+	 *  - md_tree (Markdown.JsonML): parsed markdown tree
+	 *
+	 *  Turn markdown into HTML, represented as a JsonML tree. If a string is given
+	 *  to this function, it is first parsed into a markdown tree by calling
+	 *  [[parse]].
+	 **/
+	expose.toHTMLTree = function toHTMLTree( input, dialect , options ) {
+	  // convert string input to an MD tree
+	  if ( typeof input ==="string" ) input = this.parse( input, dialect );
+	
+	  // Now convert the MD tree to an HTML tree
+	
+	  // remove references from the tree
+	  var attrs = extract_attr( input ),
+	      refs = {};
+	
+	  if ( attrs && attrs.references ) {
+	    refs = attrs.references;
+	  }
+	
+	  var html = convert_tree_to_html( input, refs , options );
+	  merge_text_nodes( html );
+	  return html;
+	};
+	
+	// For Spidermonkey based engines
+	function mk_block_toSource() {
+	  return "Markdown.mk_block( " +
+	          uneval(this.toString()) +
+	          ", " +
+	          uneval(this.trailing) +
+	          ", " +
+	          uneval(this.lineNumber) +
+	          " )";
+	}
+	
+	// node
+	function mk_block_inspect() {
+	  var util = __webpack_require__(96);
+	  return "Markdown.mk_block( " +
+	          util.inspect(this.toString()) +
+	          ", " +
+	          util.inspect(this.trailing) +
+	          ", " +
+	          util.inspect(this.lineNumber) +
+	          " )";
+	
+	}
+	
+	var mk_block = Markdown.mk_block = function(block, trail, line) {
+	  // Be helpful for default case in tests.
+	  if ( arguments.length == 1 ) trail = "\n\n";
+	
+	  var s = new String(block);
+	  s.trailing = trail;
+	  // To make it clear its not just a string
+	  s.inspect = mk_block_inspect;
+	  s.toSource = mk_block_toSource;
+	
+	  if ( line != undefined )
+	    s.lineNumber = line;
+	
+	  return s;
+	};
+	
+	function count_lines( str ) {
+	  var n = 0, i = -1;
+	  while ( ( i = str.indexOf("\n", i + 1) ) !== -1 ) n++;
+	  return n;
+	}
+	
+	// Internal - split source into rough blocks
+	Markdown.prototype.split_blocks = function splitBlocks( input, startLine ) {
+	  input = input.replace(/(\r\n|\n|\r)/g, "\n");
+	  // [\s\S] matches _anything_ (newline or space)
+	  // [^] is equivalent but doesn't work in IEs.
+	  var re = /([\s\S]+?)($|\n#|\n(?:\s*\n|$)+)/g,
+	      blocks = [],
+	      m;
+	
+	  var line_no = 1;
+	
+	  if ( ( m = /^(\s*\n)/.exec(input) ) != null ) {
+	    // skip (but count) leading blank lines
+	    line_no += count_lines( m[0] );
+	    re.lastIndex = m[0].length;
+	  }
+	
+	  while ( ( m = re.exec(input) ) !== null ) {
+	    if (m[2] == "\n#") {
+	      m[2] = "\n";
+	      re.lastIndex--;
+	    }
+	    blocks.push( mk_block( m[1], m[2], line_no ) );
+	    line_no += count_lines( m[0] );
+	  }
+	
+	  return blocks;
+	};
+	
+	/**
+	 *  Markdown#processBlock( block, next ) -> undefined | [ JsonML, ... ]
+	 *  - block (String): the block to process
+	 *  - next (Array): the following blocks
+	 *
+	 * Process `block` and return an array of JsonML nodes representing `block`.
+	 *
+	 * It does this by asking each block level function in the dialect to process
+	 * the block until one can. Succesful handling is indicated by returning an
+	 * array (with zero or more JsonML nodes), failure by a false value.
+	 *
+	 * Blocks handlers are responsible for calling [[Markdown#processInline]]
+	 * themselves as appropriate.
+	 *
+	 * If the blocks were split incorrectly or adjacent blocks need collapsing you
+	 * can adjust `next` in place using shift/splice etc.
+	 *
+	 * If any of this default behaviour is not right for the dialect, you can
+	 * define a `__call__` method on the dialect that will get invoked to handle
+	 * the block processing.
+	 */
+	Markdown.prototype.processBlock = function processBlock( block, next ) {
+	  var cbs = this.dialect.block,
+	      ord = cbs.__order__;
+	
+	  if ( "__call__" in cbs ) {
+	    return cbs.__call__.call(this, block, next);
+	  }
+	
+	  for ( var i = 0; i < ord.length; i++ ) {
+	    //D:this.debug( "Testing", ord[i] );
+	    var res = cbs[ ord[i] ].call( this, block, next );
+	    if ( res ) {
+	      //D:this.debug("  matched");
+	      if ( !isArray(res) || ( res.length > 0 && !( isArray(res[0]) ) ) )
+	        this.debug(ord[i], "didn't return a proper array");
+	      //D:this.debug( "" );
+	      return res;
+	    }
+	  }
+	
+	  // Uhoh! no match! Should we throw an error?
+	  return [];
+	};
+	
+	Markdown.prototype.processInline = function processInline( block ) {
+	  return this.dialect.inline.__call__.call( this, String( block ) );
+	};
+	
+	/**
+	 *  Markdown#toTree( source ) -> JsonML
+	 *  - source (String): markdown source to parse
+	 *
+	 *  Parse `source` into a JsonML tree representing the markdown document.
+	 **/
+	// custom_tree means set this.tree to `custom_tree` and restore old value on return
+	Markdown.prototype.toTree = function toTree( source, custom_root ) {
+	  var blocks = source instanceof Array ? source : this.split_blocks( source );
+	
+	  // Make tree a member variable so its easier to mess with in extensions
+	  var old_tree = this.tree;
+	  try {
+	    this.tree = custom_root || this.tree || [ "markdown" ];
+	
+	    blocks:
+	    while ( blocks.length ) {
+	      var b = this.processBlock( blocks.shift(), blocks );
+	
+	      // Reference blocks and the like won't return any content
+	      if ( !b.length ) continue blocks;
+	
+	      this.tree.push.apply( this.tree, b );
+	    }
+	    return this.tree;
+	  }
+	  finally {
+	    if ( custom_root ) {
+	      this.tree = old_tree;
+	    }
+	  }
+	};
+	
+	// Noop by default
+	Markdown.prototype.debug = function () {
+	  var args = Array.prototype.slice.call( arguments);
+	  args.unshift(this.debug_indent);
+	  if ( typeof print !== "undefined" )
+	      print.apply( print, args );
+	  if ( typeof console !== "undefined" && typeof console.log !== "undefined" )
+	      console.log.apply( null, args );
+	}
+	
+	Markdown.prototype.loop_re_over_block = function( re, block, cb ) {
+	  // Dont use /g regexps with this
+	  var m,
+	      b = block.valueOf();
+	
+	  while ( b.length && (m = re.exec(b) ) != null ) {
+	    b = b.substr( m[0].length );
+	    cb.call(this, m);
+	  }
+	  return b;
+	};
+	
+	/**
+	 * Markdown.dialects
+	 *
+	 * Namespace of built-in dialects.
+	 **/
+	Markdown.dialects = {};
+	
+	/**
+	 * Markdown.dialects.Gruber
+	 *
+	 * The default dialect that follows the rules set out by John Gruber's
+	 * markdown.pl as closely as possible. Well actually we follow the behaviour of
+	 * that script which in some places is not exactly what the syntax web page
+	 * says.
+	 **/
+	Markdown.dialects.Gruber = {
+	  block: {
+	    atxHeader: function atxHeader( block, next ) {
+	      var m = block.match( /^(#{1,6})\s*(.*?)\s*#*\s*(?:\n|$)/ );
+	
+	      if ( !m ) return undefined;
+	
+	      var header = [ "header", { level: m[ 1 ].length } ];
+	      Array.prototype.push.apply(header, this.processInline(m[ 2 ]));
+	
+	      if ( m[0].length < block.length )
+	        next.unshift( mk_block( block.substr( m[0].length ), block.trailing, block.lineNumber + 2 ) );
+	
+	      return [ header ];
+	    },
+	
+	    setextHeader: function setextHeader( block, next ) {
+	      var m = block.match( /^(.*)\n([-=])\2\2+(?:\n|$)/ );
+	
+	      if ( !m ) return undefined;
+	
+	      var level = ( m[ 2 ] === "=" ) ? 1 : 2;
+	      var header = [ "header", { level : level }, m[ 1 ] ];
+	
+	      if ( m[0].length < block.length )
+	        next.unshift( mk_block( block.substr( m[0].length ), block.trailing, block.lineNumber + 2 ) );
+	
+	      return [ header ];
+	    },
+	
+	    code: function code( block, next ) {
+	      // |    Foo
+	      // |bar
+	      // should be a code block followed by a paragraph. Fun
+	      //
+	      // There might also be adjacent code block to merge.
+	
+	      var ret = [],
+	          re = /^(?: {0,3}\t| {4})(.*)\n?/,
+	          lines;
+	
+	      // 4 spaces + content
+	      if ( !block.match( re ) ) return undefined;
+	
+	      block_search:
+	      do {
+	        // Now pull out the rest of the lines
+	        var b = this.loop_re_over_block(
+	                  re, block.valueOf(), function( m ) { ret.push( m[1] ); } );
+	
+	        if ( b.length ) {
+	          // Case alluded to in first comment. push it back on as a new block
+	          next.unshift( mk_block(b, block.trailing) );
+	          break block_search;
+	        }
+	        else if ( next.length ) {
+	          // Check the next block - it might be code too
+	          if ( !next[0].match( re ) ) break block_search;
+	
+	          // Pull how how many blanks lines follow - minus two to account for .join
+	          ret.push ( block.trailing.replace(/[^\n]/g, "").substring(2) );
+	
+	          block = next.shift();
+	        }
+	        else {
+	          break block_search;
+	        }
+	      } while ( true );
+	
+	      return [ [ "code_block", ret.join("\n") ] ];
+	    },
+	
+	    horizRule: function horizRule( block, next ) {
+	      // this needs to find any hr in the block to handle abutting blocks
+	      var m = block.match( /^(?:([\s\S]*?)\n)?[ \t]*([-_*])(?:[ \t]*\2){2,}[ \t]*(?:\n([\s\S]*))?$/ );
+	
+	      if ( !m ) {
+	        return undefined;
+	      }
+	
+	      var jsonml = [ [ "hr" ] ];
+	
+	      // if there's a leading abutting block, process it
+	      if ( m[ 1 ] ) {
+	        jsonml.unshift.apply( jsonml, this.processBlock( m[ 1 ], [] ) );
+	      }
+	
+	      // if there's a trailing abutting block, stick it into next
+	      if ( m[ 3 ] ) {
+	        next.unshift( mk_block( m[ 3 ] ) );
+	      }
+	
+	      return jsonml;
+	    },
+	
+	    // There are two types of lists. Tight and loose. Tight lists have no whitespace
+	    // between the items (and result in text just in the <li>) and loose lists,
+	    // which have an empty line between list items, resulting in (one or more)
+	    // paragraphs inside the <li>.
+	    //
+	    // There are all sorts weird edge cases about the original markdown.pl's
+	    // handling of lists:
+	    //
+	    // * Nested lists are supposed to be indented by four chars per level. But
+	    //   if they aren't, you can get a nested list by indenting by less than
+	    //   four so long as the indent doesn't match an indent of an existing list
+	    //   item in the 'nest stack'.
+	    //
+	    // * The type of the list (bullet or number) is controlled just by the
+	    //    first item at the indent. Subsequent changes are ignored unless they
+	    //    are for nested lists
+	    //
+	    lists: (function( ) {
+	      // Use a closure to hide a few variables.
+	      var any_list = "[*+-]|\\d+\\.",
+	          bullet_list = /[*+-]/,
+	          number_list = /\d+\./,
+	          // Capture leading indent as it matters for determining nested lists.
+	          is_list_re = new RegExp( "^( {0,3})(" + any_list + ")[ \t]+" ),
+	          indent_re = "(?: {0,3}\\t| {4})";
+	
+	      // TODO: Cache this regexp for certain depths.
+	      // Create a regexp suitable for matching an li for a given stack depth
+	      function regex_for_depth( depth ) {
+	
+	        return new RegExp(
+	          // m[1] = indent, m[2] = list_type
+	          "(?:^(" + indent_re + "{0," + depth + "} {0,3})(" + any_list + ")\\s+)|" +
+	          // m[3] = cont
+	          "(^" + indent_re + "{0," + (depth-1) + "}[ ]{0,4})"
+	        );
+	      }
+	      function expand_tab( input ) {
+	        return input.replace( / {0,3}\t/g, "    " );
+	      }
+	
+	      // Add inline content `inline` to `li`. inline comes from processInline
+	      // so is an array of content
+	      function add(li, loose, inline, nl) {
+	        if ( loose ) {
+	          li.push( [ "para" ].concat(inline) );
+	          return;
+	        }
+	        // Hmmm, should this be any block level element or just paras?
+	        var add_to = li[li.length -1] instanceof Array && li[li.length - 1][0] == "para"
+	                   ? li[li.length -1]
+	                   : li;
+	
+	        // If there is already some content in this list, add the new line in
+	        if ( nl && li.length > 1 ) inline.unshift(nl);
+	
+	        for ( var i = 0; i < inline.length; i++ ) {
+	          var what = inline[i],
+	              is_str = typeof what == "string";
+	          if ( is_str && add_to.length > 1 && typeof add_to[add_to.length-1] == "string" ) {
+	            add_to[ add_to.length-1 ] += what;
+	          }
+	          else {
+	            add_to.push( what );
+	          }
+	        }
+	      }
+	
+	      // contained means have an indent greater than the current one. On
+	      // *every* line in the block
+	      function get_contained_blocks( depth, blocks ) {
+	
+	        var re = new RegExp( "^(" + indent_re + "{" + depth + "}.*?\\n?)*$" ),
+	            replace = new RegExp("^" + indent_re + "{" + depth + "}", "gm"),
+	            ret = [];
+	
+	        while ( blocks.length > 0 ) {
+	          if ( re.exec( blocks[0] ) ) {
+	            var b = blocks.shift(),
+	                // Now remove that indent
+	                x = b.replace( replace, "");
+	
+	            ret.push( mk_block( x, b.trailing, b.lineNumber ) );
+	          }
+	          else {
+	            break;
+	          }
+	        }
+	        return ret;
+	      }
+	
+	      // passed to stack.forEach to turn list items up the stack into paras
+	      function paragraphify(s, i, stack) {
+	        var list = s.list;
+	        var last_li = list[list.length-1];
+	
+	        if ( last_li[1] instanceof Array && last_li[1][0] == "para" ) {
+	          return;
+	        }
+	        if ( i + 1 == stack.length ) {
+	          // Last stack frame
+	          // Keep the same array, but replace the contents
+	          last_li.push( ["para"].concat( last_li.splice(1, last_li.length - 1) ) );
+	        }
+	        else {
+	          var sublist = last_li.pop();
+	          last_li.push( ["para"].concat( last_li.splice(1, last_li.length - 1) ), sublist );
+	        }
+	      }
+	
+	      // The matcher function
+	      return function( block, next ) {
+	        var m = block.match( is_list_re );
+	        if ( !m ) return undefined;
+	
+	        function make_list( m ) {
+	          var list = bullet_list.exec( m[2] )
+	                   ? ["bulletlist"]
+	                   : ["numberlist"];
+	
+	          stack.push( { list: list, indent: m[1] } );
+	          return list;
+	        }
+	
+	
+	        var stack = [], // Stack of lists for nesting.
+	            list = make_list( m ),
+	            last_li,
+	            loose = false,
+	            ret = [ stack[0].list ],
+	            i;
+	
+	        // Loop to search over block looking for inner block elements and loose lists
+	        loose_search:
+	        while ( true ) {
+	          // Split into lines preserving new lines at end of line
+	          var lines = block.split( /(?=\n)/ );
+	
+	          // We have to grab all lines for a li and call processInline on them
+	          // once as there are some inline things that can span lines.
+	          var li_accumulate = "";
+	
+	          // Loop over the lines in this block looking for tight lists.
+	          tight_search:
+	          for ( var line_no = 0; line_no < lines.length; line_no++ ) {
+	            var nl = "",
+	                l = lines[line_no].replace(/^\n/, function(n) { nl = n; return ""; });
+	
+	            // TODO: really should cache this
+	            var line_re = regex_for_depth( stack.length );
+	
+	            m = l.match( line_re );
+	            //print( "line:", uneval(l), "\nline match:", uneval(m) );
+	
+	            // We have a list item
+	            if ( m[1] !== undefined ) {
+	              // Process the previous list item, if any
+	              if ( li_accumulate.length ) {
+	                add( last_li, loose, this.processInline( li_accumulate ), nl );
+	                // Loose mode will have been dealt with. Reset it
+	                loose = false;
+	                li_accumulate = "";
+	              }
+	
+	              m[1] = expand_tab( m[1] );
+	              var wanted_depth = Math.floor(m[1].length/4)+1;
+	              //print( "want:", wanted_depth, "stack:", stack.length);
+	              if ( wanted_depth > stack.length ) {
+	                // Deep enough for a nested list outright
+	                //print ( "new nested list" );
+	                list = make_list( m );
+	                last_li.push( list );
+	                last_li = list[1] = [ "listitem" ];
+	              }
+	              else {
+	                // We aren't deep enough to be strictly a new level. This is
+	                // where Md.pl goes nuts. If the indent matches a level in the
+	                // stack, put it there, else put it one deeper then the
+	                // wanted_depth deserves.
+	                var found = false;
+	                for ( i = 0; i < stack.length; i++ ) {
+	                  if ( stack[ i ].indent != m[1] ) continue;
+	                  list = stack[ i ].list;
+	                  stack.splice( i+1, stack.length - (i+1) );
+	                  found = true;
+	                  break;
+	                }
+	
+	                if (!found) {
+	                  //print("not found. l:", uneval(l));
+	                  wanted_depth++;
+	                  if ( wanted_depth <= stack.length ) {
+	                    stack.splice(wanted_depth, stack.length - wanted_depth);
+	                    //print("Desired depth now", wanted_depth, "stack:", stack.length);
+	                    list = stack[wanted_depth-1].list;
+	                    //print("list:", uneval(list) );
+	                  }
+	                  else {
+	                    //print ("made new stack for messy indent");
+	                    list = make_list(m);
+	                    last_li.push(list);
+	                  }
+	                }
+	
+	                //print( uneval(list), "last", list === stack[stack.length-1].list );
+	                last_li = [ "listitem" ];
+	                list.push(last_li);
+	              } // end depth of shenegains
+	              nl = "";
+	            }
+	
+	            // Add content
+	            if ( l.length > m[0].length ) {
+	              li_accumulate += nl + l.substr( m[0].length );
+	            }
+	          } // tight_search
+	
+	          if ( li_accumulate.length ) {
+	            add( last_li, loose, this.processInline( li_accumulate ), nl );
+	            // Loose mode will have been dealt with. Reset it
+	            loose = false;
+	            li_accumulate = "";
+	          }
+	
+	          // Look at the next block - we might have a loose list. Or an extra
+	          // paragraph for the current li
+	          var contained = get_contained_blocks( stack.length, next );
+	
+	          // Deal with code blocks or properly nested lists
+	          if ( contained.length > 0 ) {
+	            // Make sure all listitems up the stack are paragraphs
+	            forEach( stack, paragraphify, this);
+	
+	            last_li.push.apply( last_li, this.toTree( contained, [] ) );
+	          }
+	
+	          var next_block = next[0] && next[0].valueOf() || "";
+	
+	          if ( next_block.match(is_list_re) || next_block.match( /^ / ) ) {
+	            block = next.shift();
+	
+	            // Check for an HR following a list: features/lists/hr_abutting
+	            var hr = this.dialect.block.horizRule( block, next );
+	
+	            if ( hr ) {
+	              ret.push.apply(ret, hr);
+	              break;
+	            }
+	
+	            // Make sure all listitems up the stack are paragraphs
+	            forEach( stack, paragraphify, this);
+	
+	            loose = true;
+	            continue loose_search;
+	          }
+	          break;
+	        } // loose_search
+	
+	        return ret;
+	      };
+	    })(),
+	
+	    blockquote: function blockquote( block, next ) {
+	      if ( !block.match( /^>/m ) )
+	        return undefined;
+	
+	      var jsonml = [];
+	
+	      // separate out the leading abutting block, if any. I.e. in this case:
+	      //
+	      //  a
+	      //  > b
+	      //
+	      if ( block[ 0 ] != ">" ) {
+	        var lines = block.split( /\n/ ),
+	            prev = [],
+	            line_no = block.lineNumber;
+	
+	        // keep shifting lines until you find a crotchet
+	        while ( lines.length && lines[ 0 ][ 0 ] != ">" ) {
+	            prev.push( lines.shift() );
+	            line_no++;
+	        }
+	
+	        var abutting = mk_block( prev.join( "\n" ), "\n", block.lineNumber );
+	        jsonml.push.apply( jsonml, this.processBlock( abutting, [] ) );
+	        // reassemble new block of just block quotes!
+	        block = mk_block( lines.join( "\n" ), block.trailing, line_no );
+	      }
+	
+	
+	      // if the next block is also a blockquote merge it in
+	      while ( next.length && next[ 0 ][ 0 ] == ">" ) {
+	        var b = next.shift();
+	        block = mk_block( block + block.trailing + b, b.trailing, block.lineNumber );
+	      }
+	
+	      // Strip off the leading "> " and re-process as a block.
+	      var input = block.replace( /^> ?/gm, "" ),
+	          old_tree = this.tree,
+	          processedBlock = this.toTree( input, [ "blockquote" ] ),
+	          attr = extract_attr( processedBlock );
+	
+	      // If any link references were found get rid of them
+	      if ( attr && attr.references ) {
+	        delete attr.references;
+	        // And then remove the attribute object if it's empty
+	        if ( isEmpty( attr ) ) {
+	          processedBlock.splice( 1, 1 );
+	        }
+	      }
+	
+	      jsonml.push( processedBlock );
+	      return jsonml;
+	    },
+	
+	    referenceDefn: function referenceDefn( block, next) {
+	      var re = /^\s*\[(.*?)\]:\s*(\S+)(?:\s+(?:(['"])(.*?)\3|\((.*?)\)))?\n?/;
+	      // interesting matches are [ , ref_id, url, , title, title ]
+	
+	      if ( !block.match(re) )
+	        return undefined;
+	
+	      // make an attribute node if it doesn't exist
+	      if ( !extract_attr( this.tree ) ) {
+	        this.tree.splice( 1, 0, {} );
+	      }
+	
+	      var attrs = extract_attr( this.tree );
+	
+	      // make a references hash if it doesn't exist
+	      if ( attrs.references === undefined ) {
+	        attrs.references = {};
+	      }
+	
+	      var b = this.loop_re_over_block(re, block, function( m ) {
+	
+	        if ( m[2] && m[2][0] == "<" && m[2][m[2].length-1] == ">" )
+	          m[2] = m[2].substring( 1, m[2].length - 1 );
+	
+	        var ref = attrs.references[ m[1].toLowerCase() ] = {
+	          href: m[2]
+	        };
+	
+	        if ( m[4] !== undefined )
+	          ref.title = m[4];
+	        else if ( m[5] !== undefined )
+	          ref.title = m[5];
+	
+	      } );
+	
+	      if ( b.length )
+	        next.unshift( mk_block( b, block.trailing ) );
+	
+	      return [];
+	    },
+	
+	    para: function para( block, next ) {
+	      // everything's a para!
+	      return [ ["para"].concat( this.processInline( block ) ) ];
+	    }
+	  }
+	};
+	
+	Markdown.dialects.Gruber.inline = {
+	
+	    __oneElement__: function oneElement( text, patterns_or_re, previous_nodes ) {
+	      var m,
+	          res,
+	          lastIndex = 0;
+	
+	      patterns_or_re = patterns_or_re || this.dialect.inline.__patterns__;
+	      var re = new RegExp( "([\\s\\S]*?)(" + (patterns_or_re.source || patterns_or_re) + ")" );
+	
+	      m = re.exec( text );
+	      if (!m) {
+	        // Just boring text
+	        return [ text.length, text ];
+	      }
+	      else if ( m[1] ) {
+	        // Some un-interesting text matched. Return that first
+	        return [ m[1].length, m[1] ];
+	      }
+	
+	      var res;
+	      if ( m[2] in this.dialect.inline ) {
+	        res = this.dialect.inline[ m[2] ].call(
+	                  this,
+	                  text.substr( m.index ), m, previous_nodes || [] );
+	      }
+	      // Default for now to make dev easier. just slurp special and output it.
+	      res = res || [ m[2].length, m[2] ];
+	      return res;
+	    },
+	
+	    __call__: function inline( text, patterns ) {
+	
+	      var out = [],
+	          res;
+	
+	      function add(x) {
+	        //D:self.debug("  adding output", uneval(x));
+	        if ( typeof x == "string" && typeof out[out.length-1] == "string" )
+	          out[ out.length-1 ] += x;
+	        else
+	          out.push(x);
+	      }
+	
+	      while ( text.length > 0 ) {
+	        res = this.dialect.inline.__oneElement__.call(this, text, patterns, out );
+	        text = text.substr( res.shift() );
+	        forEach(res, add )
+	      }
+	
+	      return out;
+	    },
+	
+	    // These characters are intersting elsewhere, so have rules for them so that
+	    // chunks of plain text blocks don't include them
+	    "]": function () {},
+	    "}": function () {},
+	
+	    __escape__ : /^\\[\\`\*_{}\[\]()#\+.!\-]/,
+	
+	    "\\": function escaped( text ) {
+	      // [ length of input processed, node/children to add... ]
+	      // Only esacape: \ ` * _ { } [ ] ( ) # * + - . !
+	      if ( this.dialect.inline.__escape__.exec( text ) )
+	        return [ 2, text.charAt( 1 ) ];
+	      else
+	        // Not an esacpe
+	        return [ 1, "\\" ];
+	    },
+	
+	    "![": function image( text ) {
+	
+	      // Unlike images, alt text is plain text only. no other elements are
+	      // allowed in there
+	
+	      // ![Alt text](/path/to/img.jpg "Optional title")
+	      //      1          2            3       4         <--- captures
+	      var m = text.match( /^!\[(.*?)\][ \t]*\([ \t]*([^")]*?)(?:[ \t]+(["'])(.*?)\3)?[ \t]*\)/ );
+	
+	      if ( m ) {
+	        if ( m[2] && m[2][0] == "<" && m[2][m[2].length-1] == ">" )
+	          m[2] = m[2].substring( 1, m[2].length - 1 );
+	
+	        m[2] = this.dialect.inline.__call__.call( this, m[2], /\\/ )[0];
+	
+	        var attrs = { alt: m[1], href: m[2] || "" };
+	        if ( m[4] !== undefined)
+	          attrs.title = m[4];
+	
+	        return [ m[0].length, [ "img", attrs ] ];
+	      }
+	
+	      // ![Alt text][id]
+	      m = text.match( /^!\[(.*?)\][ \t]*\[(.*?)\]/ );
+	
+	      if ( m ) {
+	        // We can't check if the reference is known here as it likely wont be
+	        // found till after. Check it in md tree->hmtl tree conversion
+	        return [ m[0].length, [ "img_ref", { alt: m[1], ref: m[2].toLowerCase(), original: m[0] } ] ];
+	      }
+	
+	      // Just consume the '!['
+	      return [ 2, "![" ];
+	    },
+	
+	    "[": function link( text ) {
+	
+	      var orig = String(text);
+	      // Inline content is possible inside `link text`
+	      var res = Markdown.DialectHelpers.inline_until_char.call( this, text.substr(1), "]" );
+	
+	      // No closing ']' found. Just consume the [
+	      if ( !res ) return [ 1, "[" ];
+	
+	      var consumed = 1 + res[ 0 ],
+	          children = res[ 1 ],
+	          link,
+	          attrs;
+	
+	      // At this point the first [...] has been parsed. See what follows to find
+	      // out which kind of link we are (reference or direct url)
+	      text = text.substr( consumed );
+	
+	      // [link text](/path/to/img.jpg "Optional title")
+	      //                 1            2       3         <--- captures
+	      // This will capture up to the last paren in the block. We then pull
+	      // back based on if there a matching ones in the url
+	      //    ([here](/url/(test))
+	      // The parens have to be balanced
+	      var m = text.match( /^\s*\([ \t]*([^"']*)(?:[ \t]+(["'])(.*?)\2)?[ \t]*\)/ );
+	      if ( m ) {
+	        var url = m[1];
+	        consumed += m[0].length;
+	
+	        if ( url && url[0] == "<" && url[url.length-1] == ">" )
+	          url = url.substring( 1, url.length - 1 );
+	
+	        // If there is a title we don't have to worry about parens in the url
+	        if ( !m[3] ) {
+	          var open_parens = 1; // One open that isn't in the capture
+	          for ( var len = 0; len < url.length; len++ ) {
+	            switch ( url[len] ) {
+	            case "(":
+	              open_parens++;
+	              break;
+	            case ")":
+	              if ( --open_parens == 0) {
+	                consumed -= url.length - len;
+	                url = url.substring(0, len);
+	              }
+	              break;
+	            }
+	          }
+	        }
+	
+	        // Process escapes only
+	        url = this.dialect.inline.__call__.call( this, url, /\\/ )[0];
+	
+	        attrs = { href: url || "" };
+	        if ( m[3] !== undefined)
+	          attrs.title = m[3];
+	
+	        link = [ "link", attrs ].concat( children );
+	        return [ consumed, link ];
+	      }
+	
+	      // [Alt text][id]
+	      // [Alt text] [id]
+	      m = text.match( /^\s*\[(.*?)\]/ );
+	
+	      if ( m ) {
+	
+	        consumed += m[ 0 ].length;
+	
+	        // [links][] uses links as its reference
+	        attrs = { ref: ( m[ 1 ] || String(children) ).toLowerCase(),  original: orig.substr( 0, consumed ) };
+	
+	        link = [ "link_ref", attrs ].concat( children );
+	
+	        // We can't check if the reference is known here as it likely wont be
+	        // found till after. Check it in md tree->hmtl tree conversion.
+	        // Store the original so that conversion can revert if the ref isn't found.
+	        return [ consumed, link ];
+	      }
+	
+	      // [id]
+	      // Only if id is plain (no formatting.)
+	      if ( children.length == 1 && typeof children[0] == "string" ) {
+	
+	        attrs = { ref: children[0].toLowerCase(),  original: orig.substr( 0, consumed ) };
+	        link = [ "link_ref", attrs, children[0] ];
+	        return [ consumed, link ];
+	      }
+	
+	      // Just consume the "["
+	      return [ 1, "[" ];
+	    },
+	
+	
+	    "<": function autoLink( text ) {
+	      var m;
+	
+	      if ( ( m = text.match( /^<(?:((https?|ftp|mailto):[^>]+)|(.*?@.*?\.[a-zA-Z]+))>/ ) ) != null ) {
+	        if ( m[3] ) {
+	          return [ m[0].length, [ "link", { href: "mailto:" + m[3] }, m[3] ] ];
+	
+	        }
+	        else if ( m[2] == "mailto" ) {
+	          return [ m[0].length, [ "link", { href: m[1] }, m[1].substr("mailto:".length ) ] ];
+	        }
+	        else
+	          return [ m[0].length, [ "link", { href: m[1] }, m[1] ] ];
+	      }
+	
+	      return [ 1, "<" ];
+	    },
+	
+	    "`": function inlineCode( text ) {
+	      // Inline code block. as many backticks as you like to start it
+	      // Always skip over the opening ticks.
+	      var m = text.match( /(`+)(([\s\S]*?)\1)/ );
+	
+	      if ( m && m[2] )
+	        return [ m[1].length + m[2].length, [ "inlinecode", m[3] ] ];
+	      else {
+	        // TODO: No matching end code found - warn!
+	        return [ 1, "`" ];
+	      }
+	    },
+	
+	    "  \n": function lineBreak( text ) {
+	      return [ 3, [ "linebreak" ] ];
+	    }
+	
+	};
+	
+	// Meta Helper/generator method for em and strong handling
+	function strong_em( tag, md ) {
+	
+	  var state_slot = tag + "_state",
+	      other_slot = tag == "strong" ? "em_state" : "strong_state";
+	
+	  function CloseTag(len) {
+	    this.len_after = len;
+	    this.name = "close_" + md;
+	  }
+	
+	  return function ( text, orig_match ) {
+	
+	    if ( this[state_slot][0] == md ) {
+	      // Most recent em is of this type
+	      //D:this.debug("closing", md);
+	      this[state_slot].shift();
+	
+	      // "Consume" everything to go back to the recrusion in the else-block below
+	      return[ text.length, new CloseTag(text.length-md.length) ];
+	    }
+	    else {
+	      // Store a clone of the em/strong states
+	      var other = this[other_slot].slice(),
+	          state = this[state_slot].slice();
+	
+	      this[state_slot].unshift(md);
+	
+	      //D:this.debug_indent += "  ";
+	
+	      // Recurse
+	      var res = this.processInline( text.substr( md.length ) );
+	      //D:this.debug_indent = this.debug_indent.substr(2);
+	
+	      var last = res[res.length - 1];
+	
+	      //D:this.debug("processInline from", tag + ": ", uneval( res ) );
+	
+	      var check = this[state_slot].shift();
+	      if ( last instanceof CloseTag ) {
+	        res.pop();
+	        // We matched! Huzzah.
+	        var consumed = text.length - last.len_after;
+	        return [ consumed, [ tag ].concat(res) ];
+	      }
+	      else {
+	        // Restore the state of the other kind. We might have mistakenly closed it.
+	        this[other_slot] = other;
+	        this[state_slot] = state;
+	
+	        // We can't reuse the processed result as it could have wrong parsing contexts in it.
+	        return [ md.length, md ];
+	      }
+	    }
+	  }; // End returned function
+	}
+	
+	Markdown.dialects.Gruber.inline["**"] = strong_em("strong", "**");
+	Markdown.dialects.Gruber.inline["__"] = strong_em("strong", "__");
+	Markdown.dialects.Gruber.inline["*"]  = strong_em("em", "*");
+	Markdown.dialects.Gruber.inline["_"]  = strong_em("em", "_");
+	
+	
+	// Build default order from insertion order.
+	Markdown.buildBlockOrder = function(d) {
+	  var ord = [];
+	  for ( var i in d ) {
+	    if ( i == "__order__" || i == "__call__" ) continue;
+	    ord.push( i );
+	  }
+	  d.__order__ = ord;
+	};
+	
+	// Build patterns for inline matcher
+	Markdown.buildInlinePatterns = function(d) {
+	  var patterns = [];
+	
+	  for ( var i in d ) {
+	    // __foo__ is reserved and not a pattern
+	    if ( i.match( /^__.*__$/) ) continue;
+	    var l = i.replace( /([\\.*+?|()\[\]{}])/g, "\\$1" )
+	             .replace( /\n/, "\\n" );
+	    patterns.push( i.length == 1 ? l : "(?:" + l + ")" );
+	  }
+	
+	  patterns = patterns.join("|");
+	  d.__patterns__ = patterns;
+	  //print("patterns:", uneval( patterns ) );
+	
+	  var fn = d.__call__;
+	  d.__call__ = function(text, pattern) {
+	    if ( pattern != undefined ) {
+	      return fn.call(this, text, pattern);
+	    }
+	    else
+	    {
+	      return fn.call(this, text, patterns);
+	    }
+	  };
+	};
+	
+	Markdown.DialectHelpers = {};
+	Markdown.DialectHelpers.inline_until_char = function( text, want ) {
+	  var consumed = 0,
+	      nodes = [];
+	
+	  while ( true ) {
+	    if ( text.charAt( consumed ) == want ) {
+	      // Found the character we were looking for
+	      consumed++;
+	      return [ consumed, nodes ];
+	    }
+	
+	    if ( consumed >= text.length ) {
+	      // No closing char found. Abort.
+	      return null;
+	    }
+	
+	    var res = this.dialect.inline.__oneElement__.call(this, text.substr( consumed ) );
+	    consumed += res[ 0 ];
+	    // Add any returned nodes.
+	    nodes.push.apply( nodes, res.slice( 1 ) );
+	  }
+	}
+	
+	// Helper function to make sub-classing a dialect easier
+	Markdown.subclassDialect = function( d ) {
+	  function Block() {}
+	  Block.prototype = d.block;
+	  function Inline() {}
+	  Inline.prototype = d.inline;
+	
+	  return { block: new Block(), inline: new Inline() };
+	};
+	
+	Markdown.buildBlockOrder ( Markdown.dialects.Gruber.block );
+	Markdown.buildInlinePatterns( Markdown.dialects.Gruber.inline );
+	
+	Markdown.dialects.Maruku = Markdown.subclassDialect( Markdown.dialects.Gruber );
+	
+	Markdown.dialects.Maruku.processMetaHash = function processMetaHash( meta_string ) {
+	  var meta = split_meta_hash( meta_string ),
+	      attr = {};
+	
+	  for ( var i = 0; i < meta.length; ++i ) {
+	    // id: #foo
+	    if ( /^#/.test( meta[ i ] ) ) {
+	      attr.id = meta[ i ].substring( 1 );
+	    }
+	    // class: .foo
+	    else if ( /^\./.test( meta[ i ] ) ) {
+	      // if class already exists, append the new one
+	      if ( attr["class"] ) {
+	        attr["class"] = attr["class"] + meta[ i ].replace( /./, " " );
+	      }
+	      else {
+	        attr["class"] = meta[ i ].substring( 1 );
+	      }
+	    }
+	    // attribute: foo=bar
+	    else if ( /\=/.test( meta[ i ] ) ) {
+	      var s = meta[ i ].split( /\=/ );
+	      attr[ s[ 0 ] ] = s[ 1 ];
+	    }
+	  }
+	
+	  return attr;
+	}
+	
+	function split_meta_hash( meta_string ) {
+	  var meta = meta_string.split( "" ),
+	      parts = [ "" ],
+	      in_quotes = false;
+	
+	  while ( meta.length ) {
+	    var letter = meta.shift();
+	    switch ( letter ) {
+	      case " " :
+	        // if we're in a quoted section, keep it
+	        if ( in_quotes ) {
+	          parts[ parts.length - 1 ] += letter;
+	        }
+	        // otherwise make a new part
+	        else {
+	          parts.push( "" );
+	        }
+	        break;
+	      case "'" :
+	      case '"' :
+	        // reverse the quotes and move straight on
+	        in_quotes = !in_quotes;
+	        break;
+	      case "\\" :
+	        // shift off the next letter to be used straight away.
+	        // it was escaped so we'll keep it whatever it is
+	        letter = meta.shift();
+	      default :
+	        parts[ parts.length - 1 ] += letter;
+	        break;
+	    }
+	  }
+	
+	  return parts;
+	}
+	
+	Markdown.dialects.Maruku.block.document_meta = function document_meta( block, next ) {
+	  // we're only interested in the first block
+	  if ( block.lineNumber > 1 ) return undefined;
+	
+	  // document_meta blocks consist of one or more lines of `Key: Value\n`
+	  if ( ! block.match( /^(?:\w+:.*\n)*\w+:.*$/ ) ) return undefined;
+	
+	  // make an attribute node if it doesn't exist
+	  if ( !extract_attr( this.tree ) ) {
+	    this.tree.splice( 1, 0, {} );
+	  }
+	
+	  var pairs = block.split( /\n/ );
+	  for ( p in pairs ) {
+	    var m = pairs[ p ].match( /(\w+):\s*(.*)$/ ),
+	        key = m[ 1 ].toLowerCase(),
+	        value = m[ 2 ];
+	
+	    this.tree[ 1 ][ key ] = value;
+	  }
+	
+	  // document_meta produces no content!
+	  return [];
+	};
+	
+	Markdown.dialects.Maruku.block.block_meta = function block_meta( block, next ) {
+	  // check if the last line of the block is an meta hash
+	  var m = block.match( /(^|\n) {0,3}\{:\s*((?:\\\}|[^\}])*)\s*\}$/ );
+	  if ( !m ) return undefined;
+	
+	  // process the meta hash
+	  var attr = this.dialect.processMetaHash( m[ 2 ] );
+	
+	  var hash;
+	
+	  // if we matched ^ then we need to apply meta to the previous block
+	  if ( m[ 1 ] === "" ) {
+	    var node = this.tree[ this.tree.length - 1 ];
+	    hash = extract_attr( node );
+	
+	    // if the node is a string (rather than JsonML), bail
+	    if ( typeof node === "string" ) return undefined;
+	
+	    // create the attribute hash if it doesn't exist
+	    if ( !hash ) {
+	      hash = {};
+	      node.splice( 1, 0, hash );
+	    }
+	
+	    // add the attributes in
+	    for ( a in attr ) {
+	      hash[ a ] = attr[ a ];
+	    }
+	
+	    // return nothing so the meta hash is removed
+	    return [];
+	  }
+	
+	  // pull the meta hash off the block and process what's left
+	  var b = block.replace( /\n.*$/, "" ),
+	      result = this.processBlock( b, [] );
+	
+	  // get or make the attributes hash
+	  hash = extract_attr( result[ 0 ] );
+	  if ( !hash ) {
+	    hash = {};
+	    result[ 0 ].splice( 1, 0, hash );
+	  }
+	
+	  // attach the attributes to the block
+	  for ( a in attr ) {
+	    hash[ a ] = attr[ a ];
+	  }
+	
+	  return result;
+	};
+	
+	Markdown.dialects.Maruku.block.definition_list = function definition_list( block, next ) {
+	  // one or more terms followed by one or more definitions, in a single block
+	  var tight = /^((?:[^\s:].*\n)+):\s+([\s\S]+)$/,
+	      list = [ "dl" ],
+	      i, m;
+	
+	  // see if we're dealing with a tight or loose block
+	  if ( ( m = block.match( tight ) ) ) {
+	    // pull subsequent tight DL blocks out of `next`
+	    var blocks = [ block ];
+	    while ( next.length && tight.exec( next[ 0 ] ) ) {
+	      blocks.push( next.shift() );
+	    }
+	
+	    for ( var b = 0; b < blocks.length; ++b ) {
+	      var m = blocks[ b ].match( tight ),
+	          terms = m[ 1 ].replace( /\n$/, "" ).split( /\n/ ),
+	          defns = m[ 2 ].split( /\n:\s+/ );
+	
+	      // print( uneval( m ) );
+	
+	      for ( i = 0; i < terms.length; ++i ) {
+	        list.push( [ "dt", terms[ i ] ] );
+	      }
+	
+	      for ( i = 0; i < defns.length; ++i ) {
+	        // run inline processing over the definition
+	        list.push( [ "dd" ].concat( this.processInline( defns[ i ].replace( /(\n)\s+/, "$1" ) ) ) );
+	      }
+	    }
+	  }
+	  else {
+	    return undefined;
+	  }
+	
+	  return [ list ];
+	};
+	
+	// splits on unescaped instances of @ch. If @ch is not a character the result
+	// can be unpredictable
+	
+	Markdown.dialects.Maruku.block.table = function table (block, next) {
+	
+	    var _split_on_unescaped = function(s, ch) {
+	        ch = ch || '\\s';
+	        if (ch.match(/^[\\|\[\]{}?*.+^$]$/)) { ch = '\\' + ch; }
+	        var res = [ ],
+	            r = new RegExp('^((?:\\\\.|[^\\\\' + ch + '])*)' + ch + '(.*)'),
+	            m;
+	        while(m = s.match(r)) {
+	            res.push(m[1]);
+	            s = m[2];
+	        }
+	        res.push(s);
+	        return res;
+	    }
+	
+	    var leading_pipe = /^ {0,3}\|(.+)\n {0,3}\|\s*([\-:]+[\-| :]*)\n((?:\s*\|.*(?:\n|$))*)(?=\n|$)/,
+	        // find at least an unescaped pipe in each line
+	        no_leading_pipe = /^ {0,3}(\S(?:\\.|[^\\|])*\|.*)\n {0,3}([\-:]+\s*\|[\-| :]*)\n((?:(?:\\.|[^\\|])*\|.*(?:\n|$))*)(?=\n|$)/,
+	        i, m;
+	    if (m = block.match(leading_pipe)) {
+	        // remove leading pipes in contents
+	        // (header and horizontal rule already have the leading pipe left out)
+	        m[3] = m[3].replace(/^\s*\|/gm, '');
+	    } else if (! ( m = block.match(no_leading_pipe))) {
+	        return undefined;
+	    }
+	
+	    var table = [ "table", [ "thead", [ "tr" ] ], [ "tbody" ] ];
+	
+	    // remove trailing pipes, then split on pipes
+	    // (no escaped pipes are allowed in horizontal rule)
+	    m[2] = m[2].replace(/\|\s*$/, '').split('|');
+	
+	    // process alignment
+	    var html_attrs = [ ];
+	    forEach (m[2], function (s) {
+	        if (s.match(/^\s*-+:\s*$/))       html_attrs.push({align: "right"});
+	        else if (s.match(/^\s*:-+\s*$/))  html_attrs.push({align: "left"});
+	        else if (s.match(/^\s*:-+:\s*$/)) html_attrs.push({align: "center"});
+	        else                              html_attrs.push({});
+	    });
+	
+	    // now for the header, avoid escaped pipes
+	    m[1] = _split_on_unescaped(m[1].replace(/\|\s*$/, ''), '|');
+	    for (i = 0; i < m[1].length; i++) {
+	        table[1][1].push(['th', html_attrs[i] || {}].concat(
+	            this.processInline(m[1][i].trim())));
+	    }
+	
+	    // now for body contents
+	    forEach (m[3].replace(/\|\s*$/mg, '').split('\n'), function (row) {
+	        var html_row = ['tr'];
+	        row = _split_on_unescaped(row, '|');
+	        for (i = 0; i < row.length; i++) {
+	            html_row.push(['td', html_attrs[i] || {}].concat(this.processInline(row[i].trim())));
+	        }
+	        table[2].push(html_row);
+	    }, this);
+	
+	    return [table];
+	}
+	
+	Markdown.dialects.Maruku.inline[ "{:" ] = function inline_meta( text, matches, out ) {
+	  if ( !out.length ) {
+	    return [ 2, "{:" ];
+	  }
+	
+	  // get the preceeding element
+	  var before = out[ out.length - 1 ];
+	
+	  if ( typeof before === "string" ) {
+	    return [ 2, "{:" ];
+	  }
+	
+	  // match a meta hash
+	  var m = text.match( /^\{:\s*((?:\\\}|[^\}])*)\s*\}/ );
+	
+	  // no match, false alarm
+	  if ( !m ) {
+	    return [ 2, "{:" ];
+	  }
+	
+	  // attach the attributes to the preceeding element
+	  var meta = this.dialect.processMetaHash( m[ 1 ] ),
+	      attr = extract_attr( before );
+	
+	  if ( !attr ) {
+	    attr = {};
+	    before.splice( 1, 0, attr );
+	  }
+	
+	  for ( var k in meta ) {
+	    attr[ k ] = meta[ k ];
+	  }
+	
+	  // cut out the string and replace it with nothing
+	  return [ m[ 0 ].length, "" ];
+	};
+	
+	Markdown.dialects.Maruku.inline.__escape__ = /^\\[\\`\*_{}\[\]()#\+.!\-|:]/;
+	
+	Markdown.buildBlockOrder ( Markdown.dialects.Maruku.block );
+	Markdown.buildInlinePatterns( Markdown.dialects.Maruku.inline );
+	
+	var isArray = Array.isArray || function(obj) {
+	  return Object.prototype.toString.call(obj) == "[object Array]";
+	};
+	
+	var forEach;
+	// Don't mess with Array.prototype. Its not friendly
+	if ( Array.prototype.forEach ) {
+	  forEach = function( arr, cb, thisp ) {
+	    return arr.forEach( cb, thisp );
+	  };
+	}
+	else {
+	  forEach = function(arr, cb, thisp) {
+	    for (var i = 0; i < arr.length; i++) {
+	      cb.call(thisp || arr, arr[i], i, arr);
+	    }
+	  }
+	}
+	
+	var isEmpty = function( obj ) {
+	  for ( var key in obj ) {
+	    if ( hasOwnProperty.call( obj, key ) ) {
+	      return false;
+	    }
+	  }
+	
+	  return true;
+	}
+	
+	function extract_attr( jsonml ) {
+	  return isArray(jsonml)
+	      && jsonml.length > 1
+	      && typeof jsonml[ 1 ] === "object"
+	      && !( isArray(jsonml[ 1 ]) )
+	      ? jsonml[ 1 ]
+	      : undefined;
+	}
+	
+	
+	
+	/**
+	 *  renderJsonML( jsonml[, options] ) -> String
+	 *  - jsonml (Array): JsonML array to render to XML
+	 *  - options (Object): options
+	 *
+	 *  Converts the given JsonML into well-formed XML.
+	 *
+	 *  The options currently understood are:
+	 *
+	 *  - root (Boolean): wether or not the root node should be included in the
+	 *    output, or just its children. The default `false` is to not include the
+	 *    root itself.
+	 */
+	expose.renderJsonML = function( jsonml, options ) {
+	  options = options || {};
+	  // include the root element in the rendered output?
+	  options.root = options.root || false;
+	
+	  var content = [];
+	
+	  if ( options.root ) {
+	    content.push( render_tree( jsonml ) );
+	  }
+	  else {
+	    jsonml.shift(); // get rid of the tag
+	    if ( jsonml.length && typeof jsonml[ 0 ] === "object" && !( jsonml[ 0 ] instanceof Array ) ) {
+	      jsonml.shift(); // get rid of the attributes
+	    }
+	
+	    while ( jsonml.length ) {
+	      content.push( render_tree( jsonml.shift() ) );
+	    }
+	  }
+	
+	  return content.join( "\n\n" );
+	};
+	
+	function escapeHTML( text ) {
+	  return text.replace( /&/g, "&amp;" )
+	             .replace( /</g, "&lt;" )
+	             .replace( />/g, "&gt;" )
+	             .replace( /"/g, "&quot;" )
+	             .replace( /'/g, "&#39;" );
+	}
+	
+	function render_tree( jsonml ) {
+	  // basic case
+	  if ( typeof jsonml === "string" ) {
+	    return escapeHTML( jsonml );
+	  }
+	
+	  var tag = jsonml.shift(),
+	      attributes = {},
+	      content = [];
+	
+	  if ( jsonml.length && typeof jsonml[ 0 ] === "object" && !( jsonml[ 0 ] instanceof Array ) ) {
+	    attributes = jsonml.shift();
+	  }
+	
+	  while ( jsonml.length ) {
+	    content.push( render_tree( jsonml.shift() ) );
+	  }
+	
+	  var tag_attrs = "";
+	  for ( var a in attributes ) {
+	    tag_attrs += " " + a + '="' + escapeHTML( attributes[ a ] ) + '"';
+	  }
+	
+	  // be careful about adding whitespace here for inline elements
+	  if ( tag == "img" || tag == "br" || tag == "hr" ) {
+	    return "<"+ tag + tag_attrs + "/>";
+	  }
+	  else {
+	    return "<"+ tag + tag_attrs + ">" + content.join( "" ) + "</" + tag + ">";
+	  }
+	}
+	
+	function convert_tree_to_html( tree, references, options ) {
+	  var i;
+	  options = options || {};
+	
+	  // shallow clone
+	  var jsonml = tree.slice( 0 );
+	
+	  if ( typeof options.preprocessTreeNode === "function" ) {
+	      jsonml = options.preprocessTreeNode(jsonml, references);
+	  }
+	
+	  // Clone attributes if they exist
+	  var attrs = extract_attr( jsonml );
+	  if ( attrs ) {
+	    jsonml[ 1 ] = {};
+	    for ( i in attrs ) {
+	      jsonml[ 1 ][ i ] = attrs[ i ];
+	    }
+	    attrs = jsonml[ 1 ];
+	  }
+	
+	  // basic case
+	  if ( typeof jsonml === "string" ) {
+	    return jsonml;
+	  }
+	
+	  // convert this node
+	  switch ( jsonml[ 0 ] ) {
+	    case "header":
+	      jsonml[ 0 ] = "h" + jsonml[ 1 ].level;
+	      delete jsonml[ 1 ].level;
+	      break;
+	    case "bulletlist":
+	      jsonml[ 0 ] = "ul";
+	      break;
+	    case "numberlist":
+	      jsonml[ 0 ] = "ol";
+	      break;
+	    case "listitem":
+	      jsonml[ 0 ] = "li";
+	      break;
+	    case "para":
+	      jsonml[ 0 ] = "p";
+	      break;
+	    case "markdown":
+	      jsonml[ 0 ] = "html";
+	      if ( attrs ) delete attrs.references;
+	      break;
+	    case "code_block":
+	      jsonml[ 0 ] = "pre";
+	      i = attrs ? 2 : 1;
+	      var code = [ "code" ];
+	      code.push.apply( code, jsonml.splice( i, jsonml.length - i ) );
+	      jsonml[ i ] = code;
+	      break;
+	    case "inlinecode":
+	      jsonml[ 0 ] = "code";
+	      break;
+	    case "img":
+	      jsonml[ 1 ].src = jsonml[ 1 ].href;
+	      delete jsonml[ 1 ].href;
+	      break;
+	    case "linebreak":
+	      jsonml[ 0 ] = "br";
+	    break;
+	    case "link":
+	      jsonml[ 0 ] = "a";
+	      break;
+	    case "link_ref":
+	      jsonml[ 0 ] = "a";
+	
+	      // grab this ref and clean up the attribute node
+	      var ref = references[ attrs.ref ];
+	
+	      // if the reference exists, make the link
+	      if ( ref ) {
+	        delete attrs.ref;
+	
+	        // add in the href and title, if present
+	        attrs.href = ref.href;
+	        if ( ref.title ) {
+	          attrs.title = ref.title;
+	        }
+	
+	        // get rid of the unneeded original text
+	        delete attrs.original;
+	      }
+	      // the reference doesn't exist, so revert to plain text
+	      else {
+	        return attrs.original;
+	      }
+	      break;
+	    case "img_ref":
+	      jsonml[ 0 ] = "img";
+	
+	      // grab this ref and clean up the attribute node
+	      var ref = references[ attrs.ref ];
+	
+	      // if the reference exists, make the link
+	      if ( ref ) {
+	        delete attrs.ref;
+	
+	        // add in the href and title, if present
+	        attrs.src = ref.href;
+	        if ( ref.title ) {
+	          attrs.title = ref.title;
+	        }
+	
+	        // get rid of the unneeded original text
+	        delete attrs.original;
+	      }
+	      // the reference doesn't exist, so revert to plain text
+	      else {
+	        return attrs.original;
+	      }
+	      break;
+	  }
+	
+	  // convert all the children
+	  i = 1;
+	
+	  // deal with the attribute node, if it exists
+	  if ( attrs ) {
+	    // if there are keys, skip over it
+	    for ( var key in jsonml[ 1 ] ) {
+	        i = 2;
+	        break;
+	    }
+	    // if there aren't, remove it
+	    if ( i === 1 ) {
+	      jsonml.splice( i, 1 );
+	    }
+	  }
+	
+	  for ( ; i < jsonml.length; ++i ) {
+	    jsonml[ i ] = convert_tree_to_html( jsonml[ i ], references, options );
+	  }
+	
+	  return jsonml;
+	}
+	
+	
+	// merges adjacent text nodes into a single node
+	function merge_text_nodes( jsonml ) {
+	  // skip the tag name and attribute hash
+	  var i = extract_attr( jsonml ) ? 2 : 1;
+	
+	  while ( i < jsonml.length ) {
+	    // if it's a string check the next item too
+	    if ( typeof jsonml[ i ] === "string" ) {
+	      if ( i + 1 < jsonml.length && typeof jsonml[ i + 1 ] === "string" ) {
+	        // merge the second string into the first and remove it
+	        jsonml[ i ] += jsonml.splice( i + 1, 1 )[ 0 ];
+	      }
+	      else {
+	        ++i;
+	      }
+	    }
+	    // if it's not a string recurse
+	    else {
+	      merge_text_nodes( jsonml[ i ] );
+	      ++i;
+	    }
+	  }
+	}
+	
+	} )( (function() {
+	  if ( false ) {
+	    window.markdown = {};
+	    return window.markdown;
+	  }
+	  else {
+	    return exports;
+	  }
+	} )() );
+
+
+/***/ },
+/* 96 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a
+	// copy of this software and associated documentation files (the
+	// "Software"), to deal in the Software without restriction, including
+	// without limitation the rights to use, copy, modify, merge, publish,
+	// distribute, sublicense, and/or sell copies of the Software, and to permit
+	// persons to whom the Software is furnished to do so, subject to the
+	// following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included
+	// in all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+	// USE OR OTHER DEALINGS IN THE SOFTWARE.
+	
+	var formatRegExp = /%[sdj%]/g;
+	exports.format = function(f) {
+	  if (!isString(f)) {
+	    var objects = [];
+	    for (var i = 0; i < arguments.length; i++) {
+	      objects.push(inspect(arguments[i]));
+	    }
+	    return objects.join(' ');
+	  }
+	
+	  var i = 1;
+	  var args = arguments;
+	  var len = args.length;
+	  var str = String(f).replace(formatRegExp, function(x) {
+	    if (x === '%%') return '%';
+	    if (i >= len) return x;
+	    switch (x) {
+	      case '%s': return String(args[i++]);
+	      case '%d': return Number(args[i++]);
+	      case '%j':
+	        try {
+	          return JSON.stringify(args[i++]);
+	        } catch (_) {
+	          return '[Circular]';
+	        }
+	      default:
+	        return x;
+	    }
+	  });
+	  for (var x = args[i]; i < len; x = args[++i]) {
+	    if (isNull(x) || !isObject(x)) {
+	      str += ' ' + x;
+	    } else {
+	      str += ' ' + inspect(x);
+	    }
+	  }
+	  return str;
+	};
+	
+	
+	// Mark that a method should not be used.
+	// Returns a modified function which warns once by default.
+	// If --no-deprecation is set, then it is a no-op.
+	exports.deprecate = function(fn, msg) {
+	  // Allow for deprecating things in the process of starting up.
+	  if (isUndefined(global.process)) {
+	    return function() {
+	      return exports.deprecate(fn, msg).apply(this, arguments);
+	    };
+	  }
+	
+	  if (process.noDeprecation === true) {
+	    return fn;
+	  }
+	
+	  var warned = false;
+	  function deprecated() {
+	    if (!warned) {
+	      if (process.throwDeprecation) {
+	        throw new Error(msg);
+	      } else if (process.traceDeprecation) {
+	        console.trace(msg);
+	      } else {
+	        console.error(msg);
+	      }
+	      warned = true;
+	    }
+	    return fn.apply(this, arguments);
+	  }
+	
+	  return deprecated;
+	};
+	
+	
+	var debugs = {};
+	var debugEnviron;
+	exports.debuglog = function(set) {
+	  if (isUndefined(debugEnviron))
+	    debugEnviron = process.env.NODE_DEBUG || '';
+	  set = set.toUpperCase();
+	  if (!debugs[set]) {
+	    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
+	      var pid = process.pid;
+	      debugs[set] = function() {
+	        var msg = exports.format.apply(exports, arguments);
+	        console.error('%s %d: %s', set, pid, msg);
+	      };
+	    } else {
+	      debugs[set] = function() {};
+	    }
+	  }
+	  return debugs[set];
+	};
+	
+	
+	/**
+	 * Echos the value of a value. Trys to print the value out
+	 * in the best way possible given the different types.
+	 *
+	 * @param {Object} obj The object to print out.
+	 * @param {Object} opts Optional options object that alters the output.
+	 */
+	/* legacy: obj, showHidden, depth, colors*/
+	function inspect(obj, opts) {
+	  // default options
+	  var ctx = {
+	    seen: [],
+	    stylize: stylizeNoColor
+	  };
+	  // legacy...
+	  if (arguments.length >= 3) ctx.depth = arguments[2];
+	  if (arguments.length >= 4) ctx.colors = arguments[3];
+	  if (isBoolean(opts)) {
+	    // legacy...
+	    ctx.showHidden = opts;
+	  } else if (opts) {
+	    // got an "options" object
+	    exports._extend(ctx, opts);
+	  }
+	  // set default options
+	  if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
+	  if (isUndefined(ctx.depth)) ctx.depth = 2;
+	  if (isUndefined(ctx.colors)) ctx.colors = false;
+	  if (isUndefined(ctx.customInspect)) ctx.customInspect = true;
+	  if (ctx.colors) ctx.stylize = stylizeWithColor;
+	  return formatValue(ctx, obj, ctx.depth);
+	}
+	exports.inspect = inspect;
+	
+	
+	// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
+	inspect.colors = {
+	  'bold' : [1, 22],
+	  'italic' : [3, 23],
+	  'underline' : [4, 24],
+	  'inverse' : [7, 27],
+	  'white' : [37, 39],
+	  'grey' : [90, 39],
+	  'black' : [30, 39],
+	  'blue' : [34, 39],
+	  'cyan' : [36, 39],
+	  'green' : [32, 39],
+	  'magenta' : [35, 39],
+	  'red' : [31, 39],
+	  'yellow' : [33, 39]
+	};
+	
+	// Don't use 'blue' not visible on cmd.exe
+	inspect.styles = {
+	  'special': 'cyan',
+	  'number': 'yellow',
+	  'boolean': 'yellow',
+	  'undefined': 'grey',
+	  'null': 'bold',
+	  'string': 'green',
+	  'date': 'magenta',
+	  // "name": intentionally not styling
+	  'regexp': 'red'
+	};
+	
+	
+	function stylizeWithColor(str, styleType) {
+	  var style = inspect.styles[styleType];
+	
+	  if (style) {
+	    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
+	           '\u001b[' + inspect.colors[style][1] + 'm';
+	  } else {
+	    return str;
+	  }
+	}
+	
+	
+	function stylizeNoColor(str, styleType) {
+	  return str;
+	}
+	
+	
+	function arrayToHash(array) {
+	  var hash = {};
+	
+	  array.forEach(function(val, idx) {
+	    hash[val] = true;
+	  });
+	
+	  return hash;
+	}
+	
+	
+	function formatValue(ctx, value, recurseTimes) {
+	  // Provide a hook for user-specified inspect functions.
+	  // Check that value is an object with an inspect function on it
+	  if (ctx.customInspect &&
+	      value &&
+	      isFunction(value.inspect) &&
+	      // Filter out the util module, it's inspect function is special
+	      value.inspect !== exports.inspect &&
+	      // Also filter out any prototype objects using the circular check.
+	      !(value.constructor && value.constructor.prototype === value)) {
+	    var ret = value.inspect(recurseTimes, ctx);
+	    if (!isString(ret)) {
+	      ret = formatValue(ctx, ret, recurseTimes);
+	    }
+	    return ret;
+	  }
+	
+	  // Primitive types cannot have properties
+	  var primitive = formatPrimitive(ctx, value);
+	  if (primitive) {
+	    return primitive;
+	  }
+	
+	  // Look up the keys of the object.
+	  var keys = Object.keys(value);
+	  var visibleKeys = arrayToHash(keys);
+	
+	  if (ctx.showHidden) {
+	    keys = Object.getOwnPropertyNames(value);
+	  }
+	
+	  // IE doesn't make error fields non-enumerable
+	  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
+	  if (isError(value)
+	      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
+	    return formatError(value);
+	  }
+	
+	  // Some type of object without properties can be shortcutted.
+	  if (keys.length === 0) {
+	    if (isFunction(value)) {
+	      var name = value.name ? ': ' + value.name : '';
+	      return ctx.stylize('[Function' + name + ']', 'special');
+	    }
+	    if (isRegExp(value)) {
+	      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+	    }
+	    if (isDate(value)) {
+	      return ctx.stylize(Date.prototype.toString.call(value), 'date');
+	    }
+	    if (isError(value)) {
+	      return formatError(value);
+	    }
+	  }
+	
+	  var base = '', array = false, braces = ['{', '}'];
+	
+	  // Make Array say that they are Array
+	  if (isArray(value)) {
+	    array = true;
+	    braces = ['[', ']'];
+	  }
+	
+	  // Make functions say that they are functions
+	  if (isFunction(value)) {
+	    var n = value.name ? ': ' + value.name : '';
+	    base = ' [Function' + n + ']';
+	  }
+	
+	  // Make RegExps say that they are RegExps
+	  if (isRegExp(value)) {
+	    base = ' ' + RegExp.prototype.toString.call(value);
+	  }
+	
+	  // Make dates with properties first say the date
+	  if (isDate(value)) {
+	    base = ' ' + Date.prototype.toUTCString.call(value);
+	  }
+	
+	  // Make error with message first say the error
+	  if (isError(value)) {
+	    base = ' ' + formatError(value);
+	  }
+	
+	  if (keys.length === 0 && (!array || value.length == 0)) {
+	    return braces[0] + base + braces[1];
+	  }
+	
+	  if (recurseTimes < 0) {
+	    if (isRegExp(value)) {
+	      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
+	    } else {
+	      return ctx.stylize('[Object]', 'special');
+	    }
+	  }
+	
+	  ctx.seen.push(value);
+	
+	  var output;
+	  if (array) {
+	    output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
+	  } else {
+	    output = keys.map(function(key) {
+	      return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
+	    });
+	  }
+	
+	  ctx.seen.pop();
+	
+	  return reduceToSingleString(output, base, braces);
+	}
+	
+	
+	function formatPrimitive(ctx, value) {
+	  if (isUndefined(value))
+	    return ctx.stylize('undefined', 'undefined');
+	  if (isString(value)) {
+	    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
+	                                             .replace(/'/g, "\\'")
+	                                             .replace(/\\"/g, '"') + '\'';
+	    return ctx.stylize(simple, 'string');
+	  }
+	  if (isNumber(value))
+	    return ctx.stylize('' + value, 'number');
+	  if (isBoolean(value))
+	    return ctx.stylize('' + value, 'boolean');
+	  // For some reason typeof null is "object", so special case here.
+	  if (isNull(value))
+	    return ctx.stylize('null', 'null');
+	}
+	
+	
+	function formatError(value) {
+	  return '[' + Error.prototype.toString.call(value) + ']';
+	}
+	
+	
+	function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
+	  var output = [];
+	  for (var i = 0, l = value.length; i < l; ++i) {
+	    if (hasOwnProperty(value, String(i))) {
+	      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+	          String(i), true));
+	    } else {
+	      output.push('');
+	    }
+	  }
+	  keys.forEach(function(key) {
+	    if (!key.match(/^\d+$/)) {
+	      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
+	          key, true));
+	    }
+	  });
+	  return output;
+	}
+	
+	
+	function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
+	  var name, str, desc;
+	  desc = Object.getOwnPropertyDescriptor(value, key) || { value: value[key] };
+	  if (desc.get) {
+	    if (desc.set) {
+	      str = ctx.stylize('[Getter/Setter]', 'special');
+	    } else {
+	      str = ctx.stylize('[Getter]', 'special');
+	    }
+	  } else {
+	    if (desc.set) {
+	      str = ctx.stylize('[Setter]', 'special');
+	    }
+	  }
+	  if (!hasOwnProperty(visibleKeys, key)) {
+	    name = '[' + key + ']';
+	  }
+	  if (!str) {
+	    if (ctx.seen.indexOf(desc.value) < 0) {
+	      if (isNull(recurseTimes)) {
+	        str = formatValue(ctx, desc.value, null);
+	      } else {
+	        str = formatValue(ctx, desc.value, recurseTimes - 1);
+	      }
+	      if (str.indexOf('\n') > -1) {
+	        if (array) {
+	          str = str.split('\n').map(function(line) {
+	            return '  ' + line;
+	          }).join('\n').substr(2);
+	        } else {
+	          str = '\n' + str.split('\n').map(function(line) {
+	            return '   ' + line;
+	          }).join('\n');
+	        }
+	      }
+	    } else {
+	      str = ctx.stylize('[Circular]', 'special');
+	    }
+	  }
+	  if (isUndefined(name)) {
+	    if (array && key.match(/^\d+$/)) {
+	      return str;
+	    }
+	    name = JSON.stringify('' + key);
+	    if (name.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"$/)) {
+	      name = name.substr(1, name.length - 2);
+	      name = ctx.stylize(name, 'name');
+	    } else {
+	      name = name.replace(/'/g, "\\'")
+	                 .replace(/\\"/g, '"')
+	                 .replace(/(^"|"$)/g, "'");
+	      name = ctx.stylize(name, 'string');
+	    }
+	  }
+	
+	  return name + ': ' + str;
+	}
+	
+	
+	function reduceToSingleString(output, base, braces) {
+	  var numLinesEst = 0;
+	  var length = output.reduce(function(prev, cur) {
+	    numLinesEst++;
+	    if (cur.indexOf('\n') >= 0) numLinesEst++;
+	    return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
+	  }, 0);
+	
+	  if (length > 60) {
+	    return braces[0] +
+	           (base === '' ? '' : base + '\n ') +
+	           ' ' +
+	           output.join(',\n  ') +
+	           ' ' +
+	           braces[1];
+	  }
+	
+	  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
+	}
+	
+	
+	// NOTE: These type checking functions intentionally don't use `instanceof`
+	// because it is fragile and can be easily faked with `Object.create()`.
+	function isArray(ar) {
+	  return Array.isArray(ar);
+	}
+	exports.isArray = isArray;
+	
+	function isBoolean(arg) {
+	  return typeof arg === 'boolean';
+	}
+	exports.isBoolean = isBoolean;
+	
+	function isNull(arg) {
+	  return arg === null;
+	}
+	exports.isNull = isNull;
+	
+	function isNullOrUndefined(arg) {
+	  return arg == null;
+	}
+	exports.isNullOrUndefined = isNullOrUndefined;
+	
+	function isNumber(arg) {
+	  return typeof arg === 'number';
+	}
+	exports.isNumber = isNumber;
+	
+	function isString(arg) {
+	  return typeof arg === 'string';
+	}
+	exports.isString = isString;
+	
+	function isSymbol(arg) {
+	  return typeof arg === 'symbol';
+	}
+	exports.isSymbol = isSymbol;
+	
+	function isUndefined(arg) {
+	  return arg === void 0;
+	}
+	exports.isUndefined = isUndefined;
+	
+	function isRegExp(re) {
+	  return isObject(re) && objectToString(re) === '[object RegExp]';
+	}
+	exports.isRegExp = isRegExp;
+	
+	function isObject(arg) {
+	  return typeof arg === 'object' && arg !== null;
+	}
+	exports.isObject = isObject;
+	
+	function isDate(d) {
+	  return isObject(d) && objectToString(d) === '[object Date]';
+	}
+	exports.isDate = isDate;
+	
+	function isError(e) {
+	  return isObject(e) &&
+	      (objectToString(e) === '[object Error]' || e instanceof Error);
+	}
+	exports.isError = isError;
+	
+	function isFunction(arg) {
+	  return typeof arg === 'function';
+	}
+	exports.isFunction = isFunction;
+	
+	function isPrimitive(arg) {
+	  return arg === null ||
+	         typeof arg === 'boolean' ||
+	         typeof arg === 'number' ||
+	         typeof arg === 'string' ||
+	         typeof arg === 'symbol' ||  // ES6 symbol
+	         typeof arg === 'undefined';
+	}
+	exports.isPrimitive = isPrimitive;
+	
+	exports.isBuffer = __webpack_require__(97);
+	
+	function objectToString(o) {
+	  return Object.prototype.toString.call(o);
+	}
+	
+	
+	function pad(n) {
+	  return n < 10 ? '0' + n.toString(10) : n.toString(10);
+	}
+	
+	
+	var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
+	              'Oct', 'Nov', 'Dec'];
+	
+	// 26 Feb 16:19:34
+	function timestamp() {
+	  var d = new Date();
+	  var time = [pad(d.getHours()),
+	              pad(d.getMinutes()),
+	              pad(d.getSeconds())].join(':');
+	  return [d.getDate(), months[d.getMonth()], time].join(' ');
+	}
+	
+	
+	// log is just a thin wrapper to console.log that prepends a timestamp
+	exports.log = function() {
+	  console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
+	};
+	
+	
+	/**
+	 * Inherit the prototype methods from one constructor into another.
+	 *
+	 * The Function.prototype.inherits from lang.js rewritten as a standalone
+	 * function (not on Function.prototype). NOTE: If this file is to be loaded
+	 * during bootstrapping this function needs to be rewritten using some native
+	 * functions as prototype setup using normal JavaScript does not work as
+	 * expected during bootstrapping (see mirror.js in r114903).
+	 *
+	 * @param {function} ctor Constructor function which needs to inherit the
+	 *     prototype.
+	 * @param {function} superCtor Constructor function to inherit prototype from.
+	 */
+	exports.inherits = __webpack_require__(98);
+	
+	exports._extend = function(origin, add) {
+	  // Don't do anything if add isn't an object
+	  if (!add || !isObject(add)) return origin;
+	
+	  var keys = Object.keys(add);
+	  var i = keys.length;
+	  while (i--) {
+	    origin[keys[i]] = add[keys[i]];
+	  }
+	  return origin;
+	};
+	
+	function hasOwnProperty(obj, prop) {
+	  return Object.prototype.hasOwnProperty.call(obj, prop);
+	}
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(2)))
+
+/***/ },
+/* 97 */
+/***/ function(module, exports) {
+
+	module.exports = function isBuffer(arg) {
+	  return arg && typeof arg === 'object'
+	    && typeof arg.copy === 'function'
+	    && typeof arg.fill === 'function'
+	    && typeof arg.readUInt8 === 'function';
+	}
+
+/***/ },
+/* 98 */
+/***/ function(module, exports) {
+
+	if (typeof Object.create === 'function') {
+	  // implementation from standard node.js 'util' module
+	  module.exports = function inherits(ctor, superCtor) {
+	    ctor.super_ = superCtor
+	    ctor.prototype = Object.create(superCtor.prototype, {
+	      constructor: {
+	        value: ctor,
+	        enumerable: false,
+	        writable: true,
+	        configurable: true
+	      }
+	    });
+	  };
+	} else {
+	  // old school shim for old browsers
+	  module.exports = function inherits(ctor, superCtor) {
+	    ctor.super_ = superCtor
+	    var TempCtor = function () {}
+	    TempCtor.prototype = superCtor.prototype
+	    ctor.prototype = new TempCtor()
+	    ctor.prototype.constructor = ctor
+	  }
+	}
+
 
 /***/ }
 /******/ ]);

@@ -1,9 +1,9 @@
 <template>
     <article class="article-item">
-        <h1 class="article-title"><a :href="'#/article'">{{item.title}}</a></h1>
+        <h1 class="article-title"><a :href="'#/article/' + item._id">{{item.title}}</a></h1>
         <div class="article-tag">
             <p>
-                <a :href="'#/article'">{{item.parentTagName}}</a>
+                <a :href="'#/tagArticle'">{{item.parentTagName}}</a>
             </p>
         </div>
         <div class="date">
@@ -11,28 +11,34 @@
         </div>
 
         <div class="article-content">
-            <p>
-                {{item.md}}
-            </p>
+            {{item.md}}
         </div>
     </article>
 
 </template>
 
 <script>
+// import toHtml from '../my-markdown.js';
+
+// toHtml($('.article-content'));
+
 export default{
     name: "Item",
 
     props: {
         item: Object
+    },
+
+    ready() {
+        let markdown = require("markdown").markdown;
+        // console.log(this.item.title);
+        // $('.article-content').html(markdown.toHTML(this.item.md));
     }
+
 }
 </script>
 
 <style>
-.container{
-    position: relative;
-}
 .article-item{
     background-color: #fff;
     border-radius: .4rem;;
@@ -54,6 +60,9 @@ export default{
     border-bottom: .1rem dashed #ea7bf7;
     text-shadow: 1px 1px 0 #b0aeb0;
     color: #ea7bf7;
+}
+.article-title:hover{
+    color: #fb8da6;
 }
 .article-tag{
     position: absolute;
@@ -78,21 +87,17 @@ export default{
 }
 .date{
     display: inline-block;
-    color: #fff;
-    background-color: #fb8da6;
+    color: #666;
+    border-left: .2rem solid #fb8da6;
+    border-right: .2rem solid #fb8da6;
     padding: .1rem .5rem;
-    border-radius: 2rem;
     font-size: .8rem;
     position: absolute;
     right: .5rem;
     bottom: .5rem;
 }
 
-.date:hover{
-    background-color: #666666;
-}
-
-.article-content p{
+.article-content{
     max-height: 20rem;
     overflow: hidden;
     margin-bottom: 1.2rem;
