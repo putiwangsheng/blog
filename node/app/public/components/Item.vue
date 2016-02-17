@@ -2,37 +2,26 @@
     <article class="article-item">
         <h1 class="article-title"><a :href="'#/article/' + item._id">{{item.title}}</a></h1>
         <div class="article-tag">
-            <p>
-                <a :href="'#/tagArticle'">{{item.parentTagName}}</a>
-            </p>
+            <a :href="'#/tagArticle/' + item.parentTagName"><p>{{item.parentTagName}}</p></a>
+
         </div>
         <div class="date">
             {{item.date}}
         </div>
 
         <div class="article-content">
-            {{item.md}}
+            {{{item.md}}}
         </div>
     </article>
 
 </template>
 
 <script>
-// import toHtml from '../my-markdown.js';
-
-// toHtml($('.article-content'));
-
 export default{
     name: "Item",
 
     props: {
         item: Object
-    },
-
-    ready() {
-        let markdown = require("markdown").markdown;
-        // console.log(this.item.title);
-        // $('.article-content').html(markdown.toHTML(this.item.md));
     }
 
 }
@@ -103,6 +92,10 @@ export default{
     margin-bottom: 1.2rem;
     padding: 1rem 0;
     line-height: 1.8;
+    color: #444955;
+}
+
+.article-content p{
     text-indent: 2rem;
 }
 

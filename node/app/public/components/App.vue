@@ -1,7 +1,6 @@
 <template>
     <div>
-
-        <section id="header">
+        <!-- <section id="header">
             <img class="b-title" src="https://ooo.0o0.ooo/2016/01/27/56a88272da80e.png" alt="SEEKFNL" />
             <p class="s-title">
                 <span style="color: #3369e8">Blog</span>
@@ -17,7 +16,7 @@
                 </p>
             </div>
         </section>
-        <hr id="divider"></hr>
+        <hr id="divider"></hr> -->
 
         <router-view
             keep-alive
@@ -88,5 +87,9 @@
     background-color: rgb(191, 112, 220);
     width: 100%;
     height: 2rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
 }
 </style>

@@ -1,12 +1,12 @@
-<template id="text-body">
+<template>
     <div class="article">
         <div class="a-date">
             {{articleInfo.date}}
         </div>
         <article>
-            <!-- <h1>{{articleInfo.title}}</a></h1> -->
+            <h1>{{articleInfo.title}}</a></h1>
             <div class="a-content">
-                {{articleInfo.article}}
+                {{{articleInfo.article}}}
             </div>
         </article>
     </div>
@@ -15,6 +15,7 @@
 
 <script>
 import url from '../url.js';
+import model from '../model/model.js';
 
 export default{
     name: "Article",
@@ -27,30 +28,19 @@ export default{
 
     route: {
         data: function(transition){
-            let self = this;
-            let articleId = transition.to.params._id,
-                articleInfo = {};
+            var articleId = transition.to.params._id;
+            var articleUrl = url.articleUrl + '?_id=' + articleId;
+            var markdown = require("markdown").markdown;
+            var articleInfo = {};
 
-            return new Promise((resolve, reject)=>{
-                $.get(url.articleUrl, function(data){
-                    if(typeof data === "string"){
-                        data = JSON.parse(data);
-                    };
-                    data.forEach(function(element){
-                        if(element._id === articleId){
-                            articleInfo.title = element.title;
-                            articleInfo.article = element.md;
-                            articleInfo.date = element.date.split('T')[0];
-                        }
-                    });
-                    self.articleInfo = articleInfo;
-                    let markdown = require("markdown").markdown;
-                    $('.a-content').html(markdown.toHTML(self.articleInfo.article));
-                    resolve(articleInfo);
-                });
+            model.getArticleList(articleUrl).then(data => {
+                data = data[0];
 
+                articleInfo.title = data.title;
+                articleInfo.article = markdown.toHTML(data.md);
+                articleInfo.date = data.date.split('T')[0];
+                this.articleInfo = articleInfo;
             });
-
         }
     }
 }
@@ -62,7 +52,7 @@ export default{
     margin: 2rem auto;
 }
 article {
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     border-radius: .4rem;;
     box-shadow: 2px 2px 3px #918b8b;
     padding: 1.5rem 2.5rem;
@@ -75,7 +65,7 @@ article {
 .article h1{
     text-align: center;
     font-size: 1.6rem;
-    letter-spacing: .3rem;
+    letter-spacing: .2rem;
     padding-bottom: .8rem;
     border-bottom: .1rem dashed #000;
     text-shadow: 1px 1px 0 #b0aeb0;
@@ -92,9 +82,10 @@ article {
 .a-content h1,h2,h3,h4{
     margin-top: 1rem;
     margin-bottom: .1rem;
+    color: #444955;
 }
 h2{
     padding-left: .4rem;
-    border-left: .2rem solid purple;
+    border-left: .2rem solid #c969ef;
 }
 </style>

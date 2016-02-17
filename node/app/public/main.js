@@ -16,7 +16,7 @@ router.map({
     '/article/:_id': {
         component: Article
     },
-    '/tagArticle': {
+    '/tagArticle/:tagName': {
         component: TagArticleList
     }
 });

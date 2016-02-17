@@ -83,7 +83,7 @@
 	    '/article/:_id': {
 	        component: _Article2.default
 	    },
-	    '/tagArticle': {
+	    '/tagArticle/:tagName': {
 	        component: _TagArticleList2.default
 	    }
 	});
@@ -9778,7 +9778,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\r\n#header{\r\n    background-image: url(\"https://ooo.0o0.ooo/2016/01/26/56a76938f09fb.jpg\");\r\n    height: 40rem;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    opacity: 0.8;\r\n}\r\n.b-title{\r\n    position: relative;\r\n    top: 1rem;\r\n    left: 1rem;\r\n}\r\n.s-title{\r\n    position: absolute;\r\n    color: #fff;\r\n    font-weight: 700;\r\n    font-size: 2rem;\r\n    -webkit-transform: rotate(-12deg) translate(255px, -10px);\r\n    transform: rotate(-12deg) translate(255px, -10px);\r\n}\r\n.signature{\r\n    display: inline-block;\r\n    border: .3rem solid #ea7bf7;\r\n    position: absolute;;\r\n    top: 3rem;\r\n    right: 8%;\r\n    padding: .3rem;\r\n}\r\n.signature p{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    width: 1rem;\r\n    color: #fff;\r\n}\r\n\r\n#divider{\r\n    margin: 4.5rem 0 0 0;\r\n    border: none;\r\n    border-top: .1rem solid #fff;\r\n    text-align: center;\r\n}\r\n#divider:after{\r\n    content: url(\"https://ooo.0o0.ooo/2016/01/27/56a99d661f678.png\");\r\n    background-color: #e2e2e2;\r\n    position: relative;\r\n    top: -.8rem;\r\n    display: inline-block;\r\n}\r\n\r\n#footer{\r\n    background-color: rgb(191, 112, 220);\r\n    width: 100%;\r\n    height: 2rem;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/App.vue?33ee0a3a"],"names":[],"mappings":";AAoCA;IACA,0EAAA;IACA,cAAA;IACA,6BAAA;IACA,uBAAA;IACA,aAAA;CACA;AACA;IACA,mBAAA;IACA,UAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;IACA,YAAA;IACA,iBAAA;IACA,gBAAA;IACA,0DAAA;IAEA,kDAAA;CACA;AACA;IACA,sBAAA;IACA,4BAAA;IACA,mBAAA;IACA,UAAA;IACA,UAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,oBAAA;IACA,YAAA;IACA,YAAA;CACA;;AAEA;IACA,qBAAA;IACA,aAAA;IACA,6BAAA;IACA,mBAAA;CACA;AACA;IACA,iEAAA;IACA,0BAAA;IACA,mBAAA;IACA,YAAA;IACA,sBAAA;CACA;;AAEA;IACA,qCAAA;IACA,YAAA;IACA,aAAA;CACA","file":"App.vue","sourcesContent":["<template>\r\n    <div>\r\n\r\n        <section id=\"header\">\r\n            <img class=\"b-title\" src=\"https://ooo.0o0.ooo/2016/01/27/56a88272da80e.png\" alt=\"SEEKFNL\" />\r\n            <p class=\"s-title\">\r\n                <span style=\"color: #3369e8\">Blog</span>\r\n                <span style=\"color: #eeb211\">of</span>\r\n                <span style=\"color: #d50f25\">ChangQi</span>\r\n            </p>\r\n            <div class=\"signature\">\r\n                <p>\r\n                    情不知所起\r\n                </p>\r\n                <p>\r\n                    一往而深\r\n                </p>\r\n            </div>\r\n        </section>\r\n        <hr id=\"divider\"></hr>\r\n\r\n        <router-view\r\n            keep-alive\r\n            keep-alive\r\n            transition\r\n            transition-mode=\"out-in\">\r\n        </router-view>\r\n\r\n        <section id=\"footer\">\r\n\r\n        </section>\r\n    </div>\r\n\r\n</template>\r\n\r\n<style>\r\n#header{\r\n    background-image: url(\"https://ooo.0o0.ooo/2016/01/26/56a76938f09fb.jpg\");\r\n    height: 40rem;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    opacity: 0.8;\r\n}\r\n.b-title{\r\n    position: relative;\r\n    top: 1rem;\r\n    left: 1rem;\r\n}\r\n.s-title{\r\n    position: absolute;\r\n    color: #fff;\r\n    font-weight: 700;\r\n    font-size: 2rem;\r\n    -webkit-transform: rotate(-12deg) translate(255px, -10px);\r\n    -moz-transform: rotate(-12deg) translate(255px, -10px);\r\n    transform: rotate(-12deg) translate(255px, -10px);\r\n}\r\n.signature{\r\n    display: inline-block;\r\n    border: .3rem solid #ea7bf7;\r\n    position: absolute;;\r\n    top: 3rem;\r\n    right: 8%;\r\n    padding: .3rem;\r\n}\r\n.signature p{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    width: 1rem;\r\n    color: #fff;\r\n}\r\n\r\n#divider{\r\n    margin: 4.5rem 0 0 0;\r\n    border: none;\r\n    border-top: .1rem solid #fff;\r\n    text-align: center;\r\n}\r\n#divider:after{\r\n    content: url(\"https://ooo.0o0.ooo/2016/01/27/56a99d661f678.png\");\r\n    background-color: #e2e2e2;\r\n    position: relative;\r\n    top: -.8rem;\r\n    display: inline-block;\r\n}\r\n\r\n#footer{\r\n    background-color: rgb(191, 112, 220);\r\n    width: 100%;\r\n    height: 2rem;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\r\n#header{\r\n    background-image: url(\"https://ooo.0o0.ooo/2016/01/26/56a76938f09fb.jpg\");\r\n    height: 40rem;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    opacity: 0.8;\r\n}\r\n.b-title{\r\n    position: relative;\r\n    top: 1rem;\r\n    left: 1rem;\r\n}\r\n.s-title{\r\n    position: absolute;\r\n    color: #fff;\r\n    font-weight: 700;\r\n    font-size: 2rem;\r\n    -webkit-transform: rotate(-12deg) translate(255px, -10px);\r\n    transform: rotate(-12deg) translate(255px, -10px);\r\n}\r\n.signature{\r\n    display: inline-block;\r\n    border: .3rem solid #ea7bf7;\r\n    position: absolute;;\r\n    top: 3rem;\r\n    right: 8%;\r\n    padding: .3rem;\r\n}\r\n.signature p{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    width: 1rem;\r\n    color: #fff;\r\n}\r\n\r\n#divider{\r\n    margin: 4.5rem 0 0 0;\r\n    border: none;\r\n    border-top: .1rem solid #fff;\r\n    text-align: center;\r\n}\r\n#divider:after{\r\n    content: url(\"https://ooo.0o0.ooo/2016/01/27/56a99d661f678.png\");\r\n    background-color: #e2e2e2;\r\n    position: relative;\r\n    top: -.8rem;\r\n    display: inline-block;\r\n}\r\n\r\n#footer{\r\n    background-color: rgb(191, 112, 220);\r\n    width: 100%;\r\n    height: 2rem;\r\n    position: fixed;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 10;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/App.vue?6dec5852"],"names":[],"mappings":";AAmCA;IACA,0EAAA;IACA,cAAA;IACA,6BAAA;IACA,uBAAA;IACA,aAAA;CACA;AACA;IACA,mBAAA;IACA,UAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;IACA,YAAA;IACA,iBAAA;IACA,gBAAA;IACA,0DAAA;IAEA,kDAAA;CACA;AACA;IACA,sBAAA;IACA,4BAAA;IACA,mBAAA;IACA,UAAA;IACA,UAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,oBAAA;IACA,YAAA;IACA,YAAA;CACA;;AAEA;IACA,qBAAA;IACA,aAAA;IACA,6BAAA;IACA,mBAAA;CACA;AACA;IACA,iEAAA;IACA,0BAAA;IACA,mBAAA;IACA,YAAA;IACA,sBAAA;CACA;;AAEA;IACA,qCAAA;IACA,YAAA;IACA,aAAA;IACA,gBAAA;IACA,UAAA;IACA,QAAA;IACA,YAAA;CACA","file":"App.vue","sourcesContent":["<template>\r\n    <div>\r\n        <!-- <section id=\"header\">\r\n            <img class=\"b-title\" src=\"https://ooo.0o0.ooo/2016/01/27/56a88272da80e.png\" alt=\"SEEKFNL\" />\r\n            <p class=\"s-title\">\r\n                <span style=\"color: #3369e8\">Blog</span>\r\n                <span style=\"color: #eeb211\">of</span>\r\n                <span style=\"color: #d50f25\">ChangQi</span>\r\n            </p>\r\n            <div class=\"signature\">\r\n                <p>\r\n                    情不知所起\r\n                </p>\r\n                <p>\r\n                    一往而深\r\n                </p>\r\n            </div>\r\n        </section>\r\n        <hr id=\"divider\"></hr> -->\r\n\r\n        <router-view\r\n            keep-alive\r\n            keep-alive\r\n            transition\r\n            transition-mode=\"out-in\">\r\n        </router-view>\r\n\r\n        <section id=\"footer\">\r\n\r\n        </section>\r\n    </div>\r\n\r\n</template>\r\n\r\n<style>\r\n#header{\r\n    background-image: url(\"https://ooo.0o0.ooo/2016/01/26/56a76938f09fb.jpg\");\r\n    height: 40rem;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    opacity: 0.8;\r\n}\r\n.b-title{\r\n    position: relative;\r\n    top: 1rem;\r\n    left: 1rem;\r\n}\r\n.s-title{\r\n    position: absolute;\r\n    color: #fff;\r\n    font-weight: 700;\r\n    font-size: 2rem;\r\n    -webkit-transform: rotate(-12deg) translate(255px, -10px);\r\n    -moz-transform: rotate(-12deg) translate(255px, -10px);\r\n    transform: rotate(-12deg) translate(255px, -10px);\r\n}\r\n.signature{\r\n    display: inline-block;\r\n    border: .3rem solid #ea7bf7;\r\n    position: absolute;;\r\n    top: 3rem;\r\n    right: 8%;\r\n    padding: .3rem;\r\n}\r\n.signature p{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    width: 1rem;\r\n    color: #fff;\r\n}\r\n\r\n#divider{\r\n    margin: 4.5rem 0 0 0;\r\n    border: none;\r\n    border-top: .1rem solid #fff;\r\n    text-align: center;\r\n}\r\n#divider:after{\r\n    content: url(\"https://ooo.0o0.ooo/2016/01/27/56a99d661f678.png\");\r\n    background-color: #e2e2e2;\r\n    position: relative;\r\n    top: -.8rem;\r\n    display: inline-block;\r\n}\r\n\r\n#footer{\r\n    background-color: rgb(191, 112, 220);\r\n    width: 100%;\r\n    height: 2rem;\r\n    position: fixed;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 10;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -10124,7 +10124,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\r\n.wrapper{\r\n    padding: 3rem 8%;\r\n}\r\n.clearfix:after {\r\n    content: '.';\r\n    display: block;\r\n    height: 0;\r\n    visibility: hidden;\r\n    clear: both;\r\n}\r\n.article-list{\r\n    width: 70%;\r\n    margin: 0 7% 0 0;\r\n    float: left;\r\n}\r\n.class-tags{\r\n    width: 20%;\r\n    float: left;\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 1.5rem 0;\r\n}\r\n.class-tags h4{\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n}\r\n.tag{\r\n    padding: .3rem 0 0 0;\r\n    color: #666;\r\n}\r\n.tag:hover{\r\n    color: rgb(191, 112, 220);\r\n}\r\n", "", {"version":3,"sources":["/./public/components/ArticleList.vue?57a602bb"],"names":[],"mappings":";AAyFA;IACA,iBAAA;CACA;AACA;IACA,aAAA;IACA,eAAA;IACA,UAAA;IACA,mBAAA;IACA,YAAA;CACA;AACA;IACA,WAAA;IACA,iBAAA;IACA,YAAA;CACA;AACA;IACA,WAAA;IACA,YAAA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,cAAA;IACA,yBAAA;CACA;AACA;IACA,sBAAA;IACA,oCAAA;CACA;AACA;IACA,qBAAA;IACA,YAAA;CACA;AACA;IACA,0BAAA;CACA","file":"ArticleList.vue","sourcesContent":["<template>\r\n    <section class=\"wrapper clearfix\">\r\n        <div class=\"article-list\">\r\n            <item v-for=\"item in items\"\r\n            :item=\"item\"\r\n            :index=\"$index\"\r\n            track-by=\"_id\">\r\n            </item>\r\n        </div>\r\n\r\n        <div class=\"class-tags\">\r\n            <h4>分类</h4>\r\n            <p  v-for=\"classTag in classTags\"\r\n                class=\"tag\"\r\n                :classTag=\"classTag\"\r\n                :index=\"$index\"\r\n                track-by=\"$index\">\r\n                <a :href=\"'#/article'\">{{classTag}}</a>\r\n                <!-- <span>{{articleNumber}}</span> -->\r\n            </p>\r\n        </div>\r\n    </section>\r\n</template>\r\n\r\n<script>\r\nimport Item from './Item.vue';\r\nimport url from '../url.js';\r\n\r\nexport default{\r\n\r\n    name: \"ArticleList\",\r\n\r\n    components: {\r\n        Item\r\n    },\r\n\r\n    data () {\r\n      return {\r\n          items: [],\r\n          classTags: []\r\n      };\r\n    },\r\n\r\n    route: {\r\n        data: function(){\r\n            let self = this,\r\n              tagArr = [];\r\n\r\n            console.log(self.items);\r\n            $.get(url.articleUrl, function(data){\r\n\r\n              if(typeof data === \"string\"){\r\n                  data = JSON.parse(data);\r\n              };\r\n\r\n              self.getDate(data);\r\n              self.items = data;\r\n\r\n              let tagArr = self.uniqTagArr(data);\r\n              self.classTags = tagArr;\r\n            });\r\n        }\r\n    },\r\n\r\n    methods: {\r\n      uniqTagArr: function(arr){\r\n          let uniqArr = {};\r\n          for(let i = 0, len = arr.length; i < len; i++){\r\n              uniqArr[arr[i].parentTagName] = true;\r\n          };\r\n\r\n          return Object.keys(uniqArr);\r\n      },\r\n\r\n      getDate: function(arr){\r\n          arr.forEach(function(element){\r\n              let dateArr = element.date.split('T');\r\n              element.date = dateArr[0];\r\n\r\n            //   let markdown = require(\"markdown\").markdown;\r\n            //   $('.article-content').html(markdown.toHTML(element.md));\r\n          });\r\n      }\r\n    }\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n.wrapper{\r\n    padding: 3rem 8%;\r\n}\r\n.clearfix:after {\r\n    content: '.';\r\n    display: block;\r\n    height: 0;\r\n    visibility: hidden;\r\n    clear: both;\r\n}\r\n.article-list{\r\n    width: 70%;\r\n    margin: 0 7% 0 0;\r\n    float: left;\r\n}\r\n.class-tags{\r\n    width: 20%;\r\n    float: left;\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 1.5rem 0;\r\n}\r\n.class-tags h4{\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n}\r\n.tag{\r\n    padding: .3rem 0 0 0;\r\n    color: #666;\r\n}\r\n.tag:hover{\r\n    color: rgb(191, 112, 220);\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\r\n.loading::before{\r\n    content: 'Loading...';\r\n    position: absolute;\r\n    left: 45%;\r\n    top: 40%;\r\n}\r\n.wrapper{\r\n    padding: 3rem 8%;\r\n}\r\n.clearfix:after {\r\n    content: '.';\r\n    display: block;\r\n    height: 0;\r\n    visibility: hidden;\r\n    clear: both;\r\n}\r\n.article-list{\r\n    width: 70%;\r\n    margin: 0 7% 0 0;\r\n    float: left;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/ArticleList.vue?1de455d2"],"names":[],"mappings":";AAmGA;IACA,sBAAA;IACA,mBAAA;IACA,UAAA;IACA,SAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,aAAA;IACA,eAAA;IACA,UAAA;IACA,mBAAA;IACA,YAAA;CACA;AACA;IACA,WAAA;IACA,iBAAA;IACA,YAAA;CACA","file":"ArticleList.vue","sourcesContent":["<template>\r\n    <section class=\"wrapper clearfix\" :class=\"{ loading: !items.length }\">\r\n        <div class=\"article-list\">\r\n            <item v-for=\"item in items\"\r\n            :item=\"item\"\r\n            :index=\"$index\"\r\n            track-by=\"_id\">\r\n            </item>\r\n        </div>\r\n        <div>\r\n            <classification :class-tags=\"classTags\"></classification>\r\n        </div>\r\n    </section>\r\n</template>\r\n\r\n<script>\r\nimport Item from './Item.vue';\r\nimport Classification from './Classification.vue';\r\nimport model from '../model/model.js';\r\nimport url from '../url.js';\r\n\r\nexport default{\r\n\r\n    name: \"ArticleList\",\r\n\r\n    components: {\r\n        Item,\r\n        Classification\r\n    },\r\n\r\n    data () {\r\n      return {\r\n          items: [],\r\n          classTags: []\r\n      };\r\n    },\r\n\r\n    route: {\r\n        data: function(){\r\n            var tagArr = [];\r\n            var articleUrl = url.articleUrl;\r\n            var tagUrl = url.tagUrl;\r\n\r\n            model.getAll(articleUrl, tagUrl).then(data => {\r\n                var articleData = data[0];\r\n                var tagData = data[1];\r\n\r\n                this.getDate(articleData);\r\n                this.items = articleData;\r\n\r\n                this.classTags = this.getNumber(articleData, tagData);\r\n            });\r\n        }\r\n    },\r\n\r\n    methods: {\r\n      uniqTagArr: function(arr){\r\n          var uniqArr = {};\r\n          for(let i = 0, len = arr.length; i < len; i++){\r\n              uniqArr[arr[i].parentTagName] = true;\r\n          };\r\n\r\n          return Object.keys(uniqArr);\r\n      },\r\n\r\n      getDate: function(arr){\r\n          arr.forEach(function(element){\r\n              let dateArr = element.date.split('T');\r\n              element.date = dateArr[0];\r\n\r\n              var markdown = require(\"markdown\").markdown;\r\n              element.md = markdown.toHTML(element.md);\r\n          });\r\n      },\r\n\r\n      getNumber: function(articleData, tagData){\r\n          var tagArr = this.uniqTagArr(articleData);\r\n          var classTags = [];\r\n\r\n          for(let i = 0, len1 = tagArr.length;i < len1;i++){\r\n              for(let j = 0, len2 = tagData.length;j < len2; j++){\r\n                  if(tagArr[i] === tagData[j].tagName){\r\n                      var classTag = {};\r\n\r\n                      classTag.name = tagArr[i];\r\n                      classTag.number = tagData[j].aritcleTitleList.length;\r\n                      classTags[i] = classTag;\r\n                  }\r\n              }\r\n          }\r\n\r\n          return classTags;\r\n      }\r\n    }\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n.loading::before{\r\n    content: 'Loading...';\r\n    position: absolute;\r\n    left: 45%;\r\n    top: 40%;\r\n}\r\n.wrapper{\r\n    padding: 3rem 8%;\r\n}\r\n.clearfix:after {\r\n    content: '.';\r\n    display: block;\r\n    height: 0;\r\n    visibility: hidden;\r\n    clear: both;\r\n}\r\n.article-list{\r\n    width: 70%;\r\n    margin: 0 7% 0 0;\r\n    float: left;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -10147,6 +10147,14 @@
 	
 	var _Item2 = _interopRequireDefault(_Item);
 	
+	var _Classification = __webpack_require__(19);
+	
+	var _Classification2 = _interopRequireDefault(_Classification);
+	
+	var _model = __webpack_require__(116);
+	
+	var _model2 = _interopRequireDefault(_model);
+	
 	var _url = __webpack_require__(28);
 	
 	var _url2 = _interopRequireDefault(_url);
@@ -10154,7 +10162,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//     <section class="wrapper clearfix">
+	//     <section class="wrapper clearfix" :class="{ loading: !items.length }">
 	//         <div class="article-list">
 	//             <item v-for="item in items"
 	//             :item="item"
@@ -10162,17 +10170,8 @@
 	//             track-by="_id">
 	//             </item>
 	//         </div>
-	//
-	//         <div class="class-tags">
-	//             <h4>分类</h4>
-	//             <p  v-for="classTag in classTags"
-	//                 class="tag"
-	//                 :classTag="classTag"
-	//                 :index="$index"
-	//                 track-by="$index">
-	//                 <a :href="'#/article'">{{classTag}}</a>
-	//                 <!-- <span>{{articleNumber}}</span> -->
-	//             </p>
+	//         <div>
+	//             <classification :class-tags="classTags"></classification>
 	//         </div>
 	//     </section>
 	// </template>
@@ -10183,7 +10182,8 @@
 	    name: "ArticleList",
 	
 	    components: {
-	        Item: _Item2.default
+	        Item: _Item2.default,
+	        Classification: _Classification2.default
 	    },
 	
 	    data: function data() {
@@ -10195,21 +10195,20 @@
 	
 	    route: {
 	        data: function data() {
-	            var self = this,
-	                tagArr = [];
+	            var _this = this;
 	
-	            console.log(self.items);
-	            $.get(_url2.default.articleUrl, function (data) {
+	            var tagArr = [];
+	            var articleUrl = _url2.default.articleUrl;
+	            var tagUrl = _url2.default.tagUrl;
 	
-	                if (typeof data === "string") {
-	                    data = JSON.parse(data);
-	                };
+	            _model2.default.getAll(articleUrl, tagUrl).then(function (data) {
+	                var articleData = data[0];
+	                var tagData = data[1];
 	
-	                self.getDate(data);
-	                self.items = data;
+	                _this.getDate(articleData);
+	                _this.items = articleData;
 	
-	                var tagArr = self.uniqTagArr(data);
-	                self.classTags = tagArr;
+	                _this.classTags = _this.getNumber(articleData, tagData);
 	            });
 	        }
 	    },
@@ -10229,9 +10228,28 @@
 	                var dateArr = element.date.split('T');
 	                element.date = dateArr[0];
 	
-	                //   let markdown = require("markdown").markdown;
-	                //   $('.article-content').html(markdown.toHTML(element.md));
+	                var markdown = __webpack_require__(94).markdown;
+	                element.md = markdown.toHTML(element.md);
 	            });
+	        },
+	
+	        getNumber: function getNumber(articleData, tagData) {
+	            var tagArr = this.uniqTagArr(articleData);
+	            var classTags = [];
+	
+	            for (var i = 0, len1 = tagArr.length; i < len1; i++) {
+	                for (var j = 0, len2 = tagData.length; j < len2; j++) {
+	                    if (tagArr[i] === tagData[j].tagName) {
+	                        var classTag = {};
+	
+	                        classTag.name = tagArr[i];
+	                        classTag.number = tagData[j].aritcleTitleList.length;
+	                        classTags[i] = classTag;
+	                    }
+	                }
+	            }
+	
+	            return classTags;
 	        }
 	    }
 
@@ -10239,6 +10257,12 @@
 	// </script>
 	//
 	// <style>
+	// .loading::before{
+	//     content: 'Loading...';
+	//     position: absolute;
+	//     left: 45%;
+	//     top: 40%;
+	// }
 	// .wrapper{
 	//     padding: 3rem 8%;
 	// }
@@ -10253,26 +10277,6 @@
 	//     width: 70%;
 	//     margin: 0 7% 0 0;
 	//     float: left;
-	// }
-	// .class-tags{
-	//     width: 20%;
-	//     float: left;
-	//     background-color: #fff;
-	//     border-radius: .4rem;;
-	//     box-shadow: 2px 2px 3px #918b8b;
-	//     padding: 1rem;
-	//     margin: .5rem 0 1.5rem 0;
-	// }
-	// .class-tags h4{
-	//     padding-bottom: .5rem;
-	//     border-bottom: .1rem dashed #ea7bf7;
-	// }
-	// .tag{
-	//     padding: .3rem 0 0 0;
-	//     color: #666;
-	// }
-	// .tag:hover{
-	//     color: rgb(191, 112, 220);
 	// }
 	// </style>
 
@@ -10340,14 +10344,14 @@
 	
 	
 	// module
-	exports.push([module.id, "\r\n.article-item{\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 3rem 0;\r\n    position: relative;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n    word-wrap: break-word;\r\n    overflow: hidden;\r\n}\r\n.article-item:hover{\r\n    box-shadow: 4px 4px 5px #918b8b;\r\n}\r\n.article-title{\r\n    font-size: 1.5rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #ea7bf7;\r\n}\r\n.article-title:hover{\r\n    color: #fb8da6;\r\n}\r\n.article-tag{\r\n    position: absolute;\r\n    background-color: whiteSmoke;\r\n    width: 10rem;\r\n    right: .5rem;\r\n    text-align: center;\r\n    -webkit-transform: rotate(40deg) translate(5px, -60px);\r\n    transform: rotate(40deg) translate(5px, -60px);\r\n    z-index: 1;\r\n}\r\n.article-tag p{\r\n    padding: .2rem 0;\r\n    color: #fb8da6;\r\n    font-weight: 700;\r\n    border-top: .1rem dashed #fb8da6;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.article-tag:hover{\r\n    background-color: #ededed;\r\n}\r\n.date{\r\n    display: inline-block;\r\n    color: #666;\r\n    border-left: .2rem solid #fb8da6;\r\n    border-right: .2rem solid #fb8da6;\r\n    padding: .1rem .5rem;\r\n    font-size: .8rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .5rem;\r\n}\r\n\r\n.article-content{\r\n    max-height: 20rem;\r\n    overflow: hidden;\r\n    margin-bottom: 1.2rem;\r\n    padding: 1rem 0;\r\n    line-height: 1.8;\r\n    text-indent: 2rem;\r\n}\r\n\r\n", "", {"version":3,"sources":["/./public/components/Item.vue?4c7b271e"],"names":[],"mappings":";AAyCA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,cAAA;IACA,uBAAA;IACA,mBAAA;IACA,oBAAA;IACA,sBAAA;IACA,sBAAA;IACA,iBAAA;CACA;AACA;IACA,gCAAA;CACA;AACA;IACA,kBAAA;IACA,sBAAA;IACA,oCAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,mBAAA;IACA,6BAAA;IACA,aAAA;IACA,aAAA;IACA,mBAAA;IACA,uDAAA;IAEA,+CAAA;IACA,WAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,iBAAA;IACA,iCAAA;IACA,oCAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,sBAAA;IACA,YAAA;IACA,iCAAA;IACA,kCAAA;IACA,qBAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;IACA,cAAA;CACA;;AAEA;IACA,kBAAA;IACA,iBAAA;IACA,sBAAA;IACA,gBAAA;IACA,iBAAA;IACA,kBAAA;CACA","file":"Item.vue","sourcesContent":["<template>\r\n    <article class=\"article-item\">\r\n        <h1 class=\"article-title\"><a :href=\"'#/article/' + item._id\">{{item.title}}</a></h1>\r\n        <div class=\"article-tag\">\r\n            <p>\r\n                <a :href=\"'#/tagArticle'\">{{item.parentTagName}}</a>\r\n            </p>\r\n        </div>\r\n        <div class=\"date\">\r\n            {{item.date}}\r\n        </div>\r\n\r\n        <div class=\"article-content\">\r\n            {{item.md}}\r\n        </div>\r\n    </article>\r\n\r\n</template>\r\n\r\n<script>\r\n// import toHtml from '../my-markdown.js';\r\n\r\n// toHtml($('.article-content'));\r\n\r\nexport default{\r\n    name: \"Item\",\r\n\r\n    props: {\r\n        item: Object\r\n    },\r\n\r\n    ready() {\r\n        let markdown = require(\"markdown\").markdown;\r\n        // console.log(this.item.title);\r\n        // $('.article-content').html(markdown.toHTML(this.item.md));\r\n    }\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n.article-item{\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 3rem 0;\r\n    position: relative;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n    word-wrap: break-word;\r\n    overflow: hidden;\r\n}\r\n.article-item:hover{\r\n    box-shadow: 4px 4px 5px #918b8b;\r\n}\r\n.article-title{\r\n    font-size: 1.5rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #ea7bf7;\r\n}\r\n.article-title:hover{\r\n    color: #fb8da6;\r\n}\r\n.article-tag{\r\n    position: absolute;\r\n    background-color: whiteSmoke;\r\n    width: 10rem;\r\n    right: .5rem;\r\n    text-align: center;\r\n    -webkit-transform: rotate(40deg) translate(5px, -60px);\r\n    -moz-transform: rotate(40deg) translate(5px, -60px);\r\n    transform: rotate(40deg) translate(5px, -60px);\r\n    z-index: 1;\r\n}\r\n.article-tag p{\r\n    padding: .2rem 0;\r\n    color: #fb8da6;\r\n    font-weight: 700;\r\n    border-top: .1rem dashed #fb8da6;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.article-tag:hover{\r\n    background-color: #ededed;\r\n}\r\n.date{\r\n    display: inline-block;\r\n    color: #666;\r\n    border-left: .2rem solid #fb8da6;\r\n    border-right: .2rem solid #fb8da6;\r\n    padding: .1rem .5rem;\r\n    font-size: .8rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .5rem;\r\n}\r\n\r\n.article-content{\r\n    max-height: 20rem;\r\n    overflow: hidden;\r\n    margin-bottom: 1.2rem;\r\n    padding: 1rem 0;\r\n    line-height: 1.8;\r\n    text-indent: 2rem;\r\n}\r\n\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\r\n.article-item{\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 3rem 0;\r\n    position: relative;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n    word-wrap: break-word;\r\n    overflow: hidden;\r\n}\r\n.article-item:hover{\r\n    box-shadow: 4px 4px 5px #918b8b;\r\n}\r\n.article-title{\r\n    font-size: 1.5rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #ea7bf7;\r\n}\r\n.article-title:hover{\r\n    color: #fb8da6;\r\n}\r\n.article-tag{\r\n    position: absolute;\r\n    background-color: whiteSmoke;\r\n    width: 10rem;\r\n    right: .5rem;\r\n    text-align: center;\r\n    -webkit-transform: rotate(40deg) translate(5px, -60px);\r\n    transform: rotate(40deg) translate(5px, -60px);\r\n    z-index: 1;\r\n}\r\n.article-tag p{\r\n    padding: .2rem 0;\r\n    color: #fb8da6;\r\n    font-weight: 700;\r\n    border-top: .1rem dashed #fb8da6;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.article-tag:hover{\r\n    background-color: #ededed;\r\n}\r\n.date{\r\n    display: inline-block;\r\n    color: #666;\r\n    border-left: .2rem solid #fb8da6;\r\n    border-right: .2rem solid #fb8da6;\r\n    padding: .1rem .5rem;\r\n    font-size: .8rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .5rem;\r\n}\r\n\r\n.article-content{\r\n    max-height: 20rem;\r\n    overflow: hidden;\r\n    margin-bottom: 1.2rem;\r\n    padding: 1rem 0;\r\n    line-height: 1.8;\r\n    color: #444955;\r\n}\r\n\r\n.article-content p{\r\n    text-indent: 2rem;\r\n}\r\n\r\n", "", {"version":3,"sources":["/./public/components/Item.vue?6e8f5464"],"names":[],"mappings":";AA8BA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,cAAA;IACA,uBAAA;IACA,mBAAA;IACA,oBAAA;IACA,sBAAA;IACA,sBAAA;IACA,iBAAA;CACA;AACA;IACA,gCAAA;CACA;AACA;IACA,kBAAA;IACA,sBAAA;IACA,oCAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,mBAAA;IACA,6BAAA;IACA,aAAA;IACA,aAAA;IACA,mBAAA;IACA,uDAAA;IAEA,+CAAA;IACA,WAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,iBAAA;IACA,iCAAA;IACA,oCAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,sBAAA;IACA,YAAA;IACA,iCAAA;IACA,kCAAA;IACA,qBAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;IACA,cAAA;CACA;;AAEA;IACA,kBAAA;IACA,iBAAA;IACA,sBAAA;IACA,gBAAA;IACA,iBAAA;IACA,eAAA;CACA;;AAEA;IACA,kBAAA;CACA","file":"Item.vue","sourcesContent":["<template>\r\n    <article class=\"article-item\">\r\n        <h1 class=\"article-title\"><a :href=\"'#/article/' + item._id\">{{item.title}}</a></h1>\r\n        <div class=\"article-tag\">\r\n            <a :href=\"'#/tagArticle/' + item.parentTagName\"><p>{{item.parentTagName}}</p></a>\r\n\r\n        </div>\r\n        <div class=\"date\">\r\n            {{item.date}}\r\n        </div>\r\n\r\n        <div class=\"article-content\">\r\n            {{{item.md}}}\r\n        </div>\r\n    </article>\r\n\r\n</template>\r\n\r\n<script>\r\nexport default{\r\n    name: \"Item\",\r\n\r\n    props: {\r\n        item: Object\r\n    }\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n.article-item{\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 3rem 0;\r\n    position: relative;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n    word-wrap: break-word;\r\n    overflow: hidden;\r\n}\r\n.article-item:hover{\r\n    box-shadow: 4px 4px 5px #918b8b;\r\n}\r\n.article-title{\r\n    font-size: 1.5rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #ea7bf7;\r\n}\r\n.article-title:hover{\r\n    color: #fb8da6;\r\n}\r\n.article-tag{\r\n    position: absolute;\r\n    background-color: whiteSmoke;\r\n    width: 10rem;\r\n    right: .5rem;\r\n    text-align: center;\r\n    -webkit-transform: rotate(40deg) translate(5px, -60px);\r\n    -moz-transform: rotate(40deg) translate(5px, -60px);\r\n    transform: rotate(40deg) translate(5px, -60px);\r\n    z-index: 1;\r\n}\r\n.article-tag p{\r\n    padding: .2rem 0;\r\n    color: #fb8da6;\r\n    font-weight: 700;\r\n    border-top: .1rem dashed #fb8da6;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.article-tag:hover{\r\n    background-color: #ededed;\r\n}\r\n.date{\r\n    display: inline-block;\r\n    color: #666;\r\n    border-left: .2rem solid #fb8da6;\r\n    border-right: .2rem solid #fb8da6;\r\n    padding: .1rem .5rem;\r\n    font-size: .8rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .5rem;\r\n}\r\n\r\n.article-content{\r\n    max-height: 20rem;\r\n    overflow: hidden;\r\n    margin-bottom: 1.2rem;\r\n    padding: 1rem 0;\r\n    line-height: 1.8;\r\n    color: #444955;\r\n}\r\n\r\n.article-content p{\r\n    text-indent: 2rem;\r\n}\r\n\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
 /* 16 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	"use strict";
 	
@@ -10358,38 +10362,28 @@
 	//     <article class="article-item">
 	//         <h1 class="article-title"><a :href="'#/article/' + item._id">{{item.title}}</a></h1>
 	//         <div class="article-tag">
-	//             <p>
-	//                 <a :href="'#/tagArticle'">{{item.parentTagName}}</a>
-	//             </p>
+	//             <a :href="'#/tagArticle/' + item.parentTagName"><p>{{item.parentTagName}}</p></a>
+	//
 	//         </div>
 	//         <div class="date">
 	//             {{item.date}}
 	//         </div>
 	//
 	//         <div class="article-content">
-	//             {{item.md}}
+	//             {{{item.md}}}
 	//         </div>
 	//     </article>
 	//
 	// </template>
 	//
 	// <script>
-	// import toHtml from '../my-markdown.js';
-	
-	// toHtml($('.article-content'));
-	
 	exports.default = {
 	    name: "Item",
 	
 	    props: {
 	        item: Object
-	    },
-	
-	    ready: function ready() {
-	        var markdown = __webpack_require__(94).markdown;
-	        // console.log(this.item.title);
-	        // $('.article-content').html(markdown.toHTML(this.item.md));
 	    }
+
 	};
 	// </script>
 	//
@@ -10458,6 +10452,10 @@
 	//     margin-bottom: 1.2rem;
 	//     padding: 1rem 0;
 	//     line-height: 1.8;
+	//     color: #444955;
+	// }
+	//
+	// .article-content p{
 	//     text-indent: 2rem;
 	// }
 	//
@@ -10469,23 +10467,92 @@
 /* 17 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<article class=\"article-item\">\n    <h1 class=\"article-title\"><a :href=\"'#/article/' + item._id\">{{item.title}}</a></h1>\n    <div class=\"article-tag\">\n        <p>\n            <a :href=\"'#/tagArticle'\">{{item.parentTagName}}</a>\n        </p>\n    </div>\n    <div class=\"date\">\n        {{item.date}}\n    </div>\n\n    <div class=\"article-content\">\n        {{item.md}}\n    </div>\n</article>\n\n";
+	module.exports = "\n<article class=\"article-item\">\n    <h1 class=\"article-title\"><a :href=\"'#/article/' + item._id\">{{item.title}}</a></h1>\n    <div class=\"article-tag\">\n        <a :href=\"'#/tagArticle/' + item.parentTagName\"><p>{{item.parentTagName}}</p></a>\n\n    </div>\n    <div class=\"date\">\n        {{item.date}}\n    </div>\n\n    <div class=\"article-content\">\n        {{{item.md}}}\n    </div>\n</article>\n\n";
 
 /***/ },
 /* 18 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<section class=\"wrapper clearfix\">\n    <div class=\"article-list\">\n        <item v-for=\"item in items\"\n        :item=\"item\"\n        :index=\"$index\"\n        track-by=\"_id\">\n        </item>\n    </div>\n\n    <div class=\"class-tags\">\n        <h4>分类</h4>\n        <p  v-for=\"classTag in classTags\"\n            class=\"tag\"\n            :classTag=\"classTag\"\n            :index=\"$index\"\n            track-by=\"$index\">\n            <a :href=\"'#/article'\">{{classTag}}</a>\n            <!-- <span>{{articleNumber}}</span> -->\n        </p>\n    </div>\n</section>\n";
+	module.exports = "\n<section class=\"wrapper clearfix\" :class=\"{ loading: !items.length }\">\n    <div class=\"article-list\">\n        <item v-for=\"item in items\"\n        :item=\"item\"\n        :index=\"$index\"\n        track-by=\"_id\">\n        </item>\n    </div>\n    <div>\n        <classification :class-tags=\"classTags\"></classification>\n    </div>\n</section>\n";
 
 /***/ },
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */,
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(20)
+	__vue_script__ = __webpack_require__(27)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] public\\components\\Classification.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(22)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) { (typeof module.exports === "function" ? (module.exports.options || {}) : module.exports).template = __vue_template__ }
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "F:\\github\\blog\\node\\app\\public\\components\\Classification.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(21);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Classification.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Classification.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\r\n.class-tags{\r\n    width: 20%;\r\n    float: left;\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 1.5rem 0;\r\n}\r\n.class-tags h4{\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n}\r\n.tag{\r\n    padding: .3rem 0 0 0;\r\n    color: #666;\r\n    position: relative;\r\n}\r\n.tag:hover{\r\n    color: rgb(191, 112, 220);\r\n}\r\n.number{\r\n    display: inline-block;\r\n    text-align: center;\r\n    width: 1rem;\r\n    height: 1rem;\r\n    line-height: 1rem;\r\n    border-radius: 50%;\r\n    background-color: #fb8da6;\r\n    color: #fff;\r\n    font-size: .5rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .1rem;\r\n}\r\n.number:hover{\r\n    background-color: #666;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/Classification.vue?e5781040"],"names":[],"mappings":";AAkCA;IACA,WAAA;IACA,YAAA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,cAAA;IACA,yBAAA;CACA;AACA;IACA,sBAAA;IACA,oCAAA;CACA;AACA;IACA,qBAAA;IACA,YAAA;IACA,mBAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,sBAAA;IACA,mBAAA;IACA,YAAA;IACA,aAAA;IACA,kBAAA;IACA,mBAAA;IACA,0BAAA;IACA,YAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;IACA,cAAA;CACA;AACA;IACA,uBAAA;CACA","file":"Classification.vue","sourcesContent":["<template>\r\n    <div class=\"class-tags\" v-if=\"hasloaded\">\r\n        <h4>分类</h4>\r\n        <p  v-for=\"classTag in classTags\"\r\n            class=\"tag\"\r\n            :classTag=\"classTag\"\r\n            :index=\"$index\"\r\n            track-by=\"$index\">\r\n            <a :href=\"'#/tagArticle/' + classTag.name\">{{classTag.name}}</a>\r\n            <span class=\"number\">{{classTag.number}}</span>\r\n        </p>\r\n</div>\r\n\r\n</template>\r\n\r\n<script>\r\nexport default{\r\n    name: \"Classification\",\r\n\r\n    props:{\r\n        classTags: Array\r\n    },\r\n\r\n    computed:{\r\n        hasloaded(){\r\n            if(this.classTags.length !== 0){\r\n                return true;\r\n            }\r\n        }\r\n    },\r\n}\r\n</script>\r\n\r\n<style>\r\n.class-tags{\r\n    width: 20%;\r\n    float: left;\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 1.5rem 0;\r\n}\r\n.class-tags h4{\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n}\r\n.tag{\r\n    padding: .3rem 0 0 0;\r\n    color: #666;\r\n    position: relative;\r\n}\r\n.tag:hover{\r\n    color: rgb(191, 112, 220);\r\n}\r\n.number{\r\n    display: inline-block;\r\n    text-align: center;\r\n    width: 1rem;\r\n    height: 1rem;\r\n    line-height: 1rem;\r\n    border-radius: 50%;\r\n    background-color: #fb8da6;\r\n    color: #fff;\r\n    font-size: .5rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .1rem;\r\n}\r\n.number:hover{\r\n    background-color: #666;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	module.exports = "\n    <div class=\"class-tags\" v-if=\"hasloaded\">\n        <h4>分类</h4>\n        <p  v-for=\"classTag in classTags\"\n            class=\"tag\"\n            :classTag=\"classTag\"\n            :index=\"$index\"\n            track-by=\"$index\">\n            <a :href=\"'#/tagArticle/' + classTag.name\">{{classTag.name}}</a>\n            <span class=\"number\">{{classTag.number}}</span>\n        </p>\n</div>\n\n";
+
+/***/ },
 /* 23 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div>\n\n    <section id=\"header\">\n        <img class=\"b-title\" src=\"https://ooo.0o0.ooo/2016/01/27/56a88272da80e.png\" alt=\"SEEKFNL\" />\n        <p class=\"s-title\">\n            <span style=\"color: #3369e8\">Blog</span>\n            <span style=\"color: #eeb211\">of</span>\n            <span style=\"color: #d50f25\">ChangQi</span>\n        </p>\n        <div class=\"signature\">\n            <p>\n                情不知所起\n            </p>\n            <p>\n                一往而深\n            </p>\n        </div>\n    </section>\n    <hr id=\"divider\"></hr>\n\n    <router-view\n        keep-alive\n        keep-alive\n        transition\n        transition-mode=\"out-in\">\n    </router-view>\n\n    <section id=\"footer\">\n\n    </section>\n</div>\n\n";
+	module.exports = "\n<div>\n    <!-- <section id=\"header\">\n        <img class=\"b-title\" src=\"https://ooo.0o0.ooo/2016/01/27/56a88272da80e.png\" alt=\"SEEKFNL\" />\n        <p class=\"s-title\">\n            <span style=\"color: #3369e8\">Blog</span>\n            <span style=\"color: #eeb211\">of</span>\n            <span style=\"color: #d50f25\">ChangQi</span>\n        </p>\n        <div class=\"signature\">\n            <p>\n                情不知所起\n            </p>\n            <p>\n                一往而深\n            </p>\n        </div>\n    </section>\n    <hr id=\"divider\"></hr> -->\n\n    <router-view\n        keep-alive\n        keep-alive\n        transition\n        transition-mode=\"out-in\">\n    </router-view>\n\n    <section id=\"footer\">\n\n    </section>\n</div>\n\n";
 
 /***/ },
 /* 24 */
@@ -13157,10 +13224,94 @@
 /* 26 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"article\">\n    <div class=\"a-date\">\n        {{articleInfo.date}}\n    </div>\n    <article>\n        <!-- <h1>{{articleInfo.title}}</a></h1> -->\n        <div class=\"a-content\">\n            {{articleInfo.article}}\n        </div>\n    </article>\n</div>\n\n";
+	module.exports = "\n<div class=\"article\">\n    <div class=\"a-date\">\n        {{articleInfo.date}}\n    </div>\n    <article>\n        <h1>{{articleInfo.title}}</a></h1>\n        <div class=\"a-content\">\n            {{{articleInfo.article}}}\n        </div>\n    </article>\n</div>\n\n";
 
 /***/ },
-/* 27 */,
+/* 27 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//     <div class="class-tags" v-if="hasloaded">
+	//         <h4>分类</h4>
+	//         <p  v-for="classTag in classTags"
+	//             class="tag"
+	//             :classTag="classTag"
+	//             :index="$index"
+	//             track-by="$index">
+	//             <a :href="'#/tagArticle/' + classTag.name">{{classTag.name}}</a>
+	//             <span class="number">{{classTag.number}}</span>
+	//         </p>
+	// </div>
+	//
+	// </template>
+	//
+	// <script>
+	exports.default = {
+	    name: "Classification",
+	
+	    props: {
+	        classTags: Array
+	    },
+	
+	    computed: {
+	        hasloaded: function hasloaded() {
+	            if (this.classTags.length !== 0) {
+	                return true;
+	            }
+	        }
+	    }
+	};
+	// </script>
+	//
+	// <style>
+	// .class-tags{
+	//     width: 20%;
+	//     float: left;
+	//     background-color: #fff;
+	//     border-radius: .4rem;;
+	//     box-shadow: 2px 2px 3px #918b8b;
+	//     padding: 1rem;
+	//     margin: .5rem 0 1.5rem 0;
+	// }
+	// .class-tags h4{
+	//     padding-bottom: .5rem;
+	//     border-bottom: .1rem dashed #ea7bf7;
+	// }
+	// .tag{
+	//     padding: .3rem 0 0 0;
+	//     color: #666;
+	//     position: relative;
+	// }
+	// .tag:hover{
+	//     color: rgb(191, 112, 220);
+	// }
+	// .number{
+	//     display: inline-block;
+	//     text-align: center;
+	//     width: 1rem;
+	//     height: 1rem;
+	//     line-height: 1rem;
+	//     border-radius: 50%;
+	//     background-color: #fb8da6;
+	//     color: #fff;
+	//     font-size: .5rem;
+	//     position: absolute;
+	//     right: .5rem;
+	//     bottom: .1rem;
+	// }
+	// .number:hover{
+	//     background-color: #666;
+	// }
+	// </style>
+
+	/* generated by vue-loader */
+
+/***/ },
 /* 28 */
 /***/ function(module, exports) {
 
@@ -13172,8 +13323,8 @@
 	var apiUrl = 'http://localhost:5000/api';
 	
 	var url = {
-	    articleUrl: apiUrl + '/articles',
-	    tagUrl: apiUrl + '/tags'
+	    articleUrl: apiUrl + '/articles/',
+	    tagUrl: apiUrl + '/tags/'
 	};
 	
 	exports.default = url;
@@ -13354,23 +13505,36 @@
 
 /***/ },
 /* 41 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
+	__webpack_require__(101)
+	__vue_script__ = __webpack_require__(103)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] public\\components\\TagArticleList.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(100)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? (module.exports.options || {}) : module.exports).template = __vue_template__ }
-
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "F:\\github\\blog\\node\\app\\public\\components\\TagArticleList.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
 
 /***/ },
 /* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
-	
-	var _promise = __webpack_require__(43);
-	
-	var _promise2 = _interopRequireDefault(_promise);
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -13380,8 +13544,28 @@
 	
 	var _url2 = _interopRequireDefault(_url);
 	
+	var _model = __webpack_require__(116);
+	
+	var _model2 = _interopRequireDefault(_model);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// <template>
+	//     <div class="article">
+	//         <div class="a-date">
+	//             {{articleInfo.date}}
+	//         </div>
+	//         <article>
+	//             <h1>{{articleInfo.title}}</a></h1>
+	//             <div class="a-content">
+	//                 {{{articleInfo.article}}}
+	//             </div>
+	//         </article>
+	//     </div>
+	//
+	// </template>
+	//
+	// <script>
 	exports.default = {
 	    name: "Article",
 	
@@ -13393,27 +13577,20 @@
 	
 	    route: {
 	        data: function data(transition) {
-	            var self = this;
-	            var articleId = transition.to.params._id,
-	                articleInfo = {};
+	            var _this = this;
 	
-	            return new _promise2.default(function (resolve, reject) {
-	                $.get(_url2.default.articleUrl, function (data) {
-	                    if (typeof data === "string") {
-	                        data = JSON.parse(data);
-	                    };
-	                    data.forEach(function (element) {
-	                        if (element._id === articleId) {
-	                            articleInfo.title = element.title;
-	                            articleInfo.article = element.md;
-	                            articleInfo.date = element.date.split('T')[0];
-	                        }
-	                    });
-	                    self.articleInfo = articleInfo;
-	                    var markdown = __webpack_require__(94).markdown;
-	                    $('.a-content').html(markdown.toHTML(self.articleInfo.article));
-	                    resolve(articleInfo);
-	                });
+	            var articleId = transition.to.params._id;
+	            var articleUrl = _url2.default.articleUrl + '?_id=' + articleId;
+	            var markdown = __webpack_require__(94).markdown;
+	            var articleInfo = {};
+	
+	            _model2.default.getArticleList(articleUrl).then(function (data) {
+	                data = data[0];
+	
+	                articleInfo.title = data.title;
+	                articleInfo.article = markdown.toHTML(data.md);
+	                articleInfo.date = data.date.split('T')[0];
+	                _this.articleInfo = articleInfo;
 	            });
 	        }
 	    }
@@ -13426,7 +13603,7 @@
 	//     margin: 2rem auto;
 	// }
 	// article {
-	//     background-color: #fff;
+	//     background-color: rgb(255, 255, 255);
 	//     border-radius: .4rem;;
 	//     box-shadow: 2px 2px 3px #918b8b;
 	//     padding: 1.5rem 2.5rem;
@@ -13439,7 +13616,7 @@
 	// .article h1{
 	//     text-align: center;
 	//     font-size: 1.6rem;
-	//     letter-spacing: .3rem;
+	//     letter-spacing: .2rem;
 	//     padding-bottom: .8rem;
 	//     border-bottom: .1rem dashed #000;
 	//     text-shadow: 1px 1px 0 #b0aeb0;
@@ -13456,1130 +13633,65 @@
 	// .a-content h1,h2,h3,h4{
 	//     margin-top: 1rem;
 	//     margin-bottom: .1rem;
+	//     color: #444955;
 	// }
 	// h2{
 	//     padding-left: .4rem;
-	//     border-left: .2rem solid purple;
+	//     border-left: .2rem solid #c969ef;
 	// }
 	// </style>
 
 	/* generated by vue-loader */
-	// <template id="text-body">
-	//     <div class="article">
-	//         <div class="a-date">
-	//             {{articleInfo.date}}
-	//         </div>
-	//         <article>
-	//             <!-- <h1>{{articleInfo.title}}</a></h1> -->
-	//             <div class="a-content">
-	//                 {{articleInfo.article}}
-	//             </div>
-	//         </article>
-	//     </div>
-	//
-	// </template>
-	//
-	// <script>
 
 /***/ },
-/* 43 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(44), __esModule: true };
-
-/***/ },
-/* 44 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(45);
-	__webpack_require__(46);
-	__webpack_require__(63);
-	__webpack_require__(70);
-	module.exports = __webpack_require__(37).Promise;
-
-/***/ },
-/* 45 */
-/***/ function(module, exports) {
-
-
-
-/***/ },
-/* 46 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var $at  = __webpack_require__(47)(true);
-	
-	// 21.1.3.27 String.prototype[@@iterator]()
-	__webpack_require__(49)(String, 'String', function(iterated){
-	  this._t = String(iterated); // target
-	  this._i = 0;                // next index
-	// 21.1.5.2.1 %StringIteratorPrototype%.next()
-	}, function(){
-	  var O     = this._t
-	    , index = this._i
-	    , point;
-	  if(index >= O.length)return {value: undefined, done: true};
-	  point = $at(O, index);
-	  this._i += point.length;
-	  return {value: point, done: false};
-	});
-
-/***/ },
-/* 47 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var toInteger = __webpack_require__(48)
-	  , defined   = __webpack_require__(33);
-	// true  -> String#at
-	// false -> String#codePointAt
-	module.exports = function(TO_STRING){
-	  return function(that, pos){
-	    var s = String(defined(that))
-	      , i = toInteger(pos)
-	      , l = s.length
-	      , a, b;
-	    if(i < 0 || i >= l)return TO_STRING ? '' : undefined;
-	    a = s.charCodeAt(i);
-	    return a < 0xd800 || a > 0xdbff || i + 1 === l || (b = s.charCodeAt(i + 1)) < 0xdc00 || b > 0xdfff
-	      ? TO_STRING ? s.charAt(i) : a
-	      : TO_STRING ? s.slice(i, i + 2) : (a - 0xd800 << 10) + (b - 0xdc00) + 0x10000;
-	  };
-	};
-
-/***/ },
-/* 48 */
-/***/ function(module, exports) {
-
-	// 7.1.4 ToInteger
-	var ceil  = Math.ceil
-	  , floor = Math.floor;
-	module.exports = function(it){
-	  return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
-	};
-
-/***/ },
-/* 49 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var LIBRARY        = __webpack_require__(50)
-	  , $export        = __webpack_require__(35)
-	  , redefine       = __webpack_require__(51)
-	  , hide           = __webpack_require__(52)
-	  , has            = __webpack_require__(56)
-	  , Iterators      = __webpack_require__(57)
-	  , $iterCreate    = __webpack_require__(58)
-	  , setToStringTag = __webpack_require__(59)
-	  , getProto       = __webpack_require__(53).getProto
-	  , ITERATOR       = __webpack_require__(60)('iterator')
-	  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
-	  , FF_ITERATOR    = '@@iterator'
-	  , KEYS           = 'keys'
-	  , VALUES         = 'values';
-	
-	var returnThis = function(){ return this; };
-	
-	module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED){
-	  $iterCreate(Constructor, NAME, next);
-	  var getMethod = function(kind){
-	    if(!BUGGY && kind in proto)return proto[kind];
-	    switch(kind){
-	      case KEYS: return function keys(){ return new Constructor(this, kind); };
-	      case VALUES: return function values(){ return new Constructor(this, kind); };
-	    } return function entries(){ return new Constructor(this, kind); };
-	  };
-	  var TAG        = NAME + ' Iterator'
-	    , DEF_VALUES = DEFAULT == VALUES
-	    , VALUES_BUG = false
-	    , proto      = Base.prototype
-	    , $native    = proto[ITERATOR] || proto[FF_ITERATOR] || DEFAULT && proto[DEFAULT]
-	    , $default   = $native || getMethod(DEFAULT)
-	    , methods, key;
-	  // Fix native
-	  if($native){
-	    var IteratorPrototype = getProto($default.call(new Base));
-	    // Set @@toStringTag to native iterators
-	    setToStringTag(IteratorPrototype, TAG, true);
-	    // FF fix
-	    if(!LIBRARY && has(proto, FF_ITERATOR))hide(IteratorPrototype, ITERATOR, returnThis);
-	    // fix Array#{values, @@iterator}.name in V8 / FF
-	    if(DEF_VALUES && $native.name !== VALUES){
-	      VALUES_BUG = true;
-	      $default = function values(){ return $native.call(this); };
-	    }
-	  }
-	  // Define iterator
-	  if((!LIBRARY || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])){
-	    hide(proto, ITERATOR, $default);
-	  }
-	  // Plug for library
-	  Iterators[NAME] = $default;
-	  Iterators[TAG]  = returnThis;
-	  if(DEFAULT){
-	    methods = {
-	      values:  DEF_VALUES  ? $default : getMethod(VALUES),
-	      keys:    IS_SET      ? $default : getMethod(KEYS),
-	      entries: !DEF_VALUES ? $default : getMethod('entries')
-	    };
-	    if(FORCED)for(key in methods){
-	      if(!(key in proto))redefine(proto, key, methods[key]);
-	    } else $export($export.P + $export.F * (BUGGY || VALUES_BUG), NAME, methods);
-	  }
-	  return methods;
-	};
-
-/***/ },
-/* 50 */
-/***/ function(module, exports) {
-
-	module.exports = true;
-
-/***/ },
-/* 51 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(52);
-
-/***/ },
-/* 52 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var $          = __webpack_require__(53)
-	  , createDesc = __webpack_require__(54);
-	module.exports = __webpack_require__(55) ? function(object, key, value){
-	  return $.setDesc(object, key, createDesc(1, value));
-	} : function(object, key, value){
-	  object[key] = value;
-	  return object;
-	};
-
-/***/ },
-/* 53 */
-/***/ function(module, exports) {
-
-	var $Object = Object;
-	module.exports = {
-	  create:     $Object.create,
-	  getProto:   $Object.getPrototypeOf,
-	  isEnum:     {}.propertyIsEnumerable,
-	  getDesc:    $Object.getOwnPropertyDescriptor,
-	  setDesc:    $Object.defineProperty,
-	  setDescs:   $Object.defineProperties,
-	  getKeys:    $Object.keys,
-	  getNames:   $Object.getOwnPropertyNames,
-	  getSymbols: $Object.getOwnPropertySymbols,
-	  each:       [].forEach
-	};
-
-/***/ },
-/* 54 */
-/***/ function(module, exports) {
-
-	module.exports = function(bitmap, value){
-	  return {
-	    enumerable  : !(bitmap & 1),
-	    configurable: !(bitmap & 2),
-	    writable    : !(bitmap & 4),
-	    value       : value
-	  };
-	};
-
-/***/ },
-/* 55 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// Thank's IE8 for his funny defineProperty
-	module.exports = !__webpack_require__(40)(function(){
-	  return Object.defineProperty({}, 'a', {get: function(){ return 7; }}).a != 7;
-	});
-
-/***/ },
-/* 56 */
-/***/ function(module, exports) {
-
-	var hasOwnProperty = {}.hasOwnProperty;
-	module.exports = function(it, key){
-	  return hasOwnProperty.call(it, key);
-	};
-
-/***/ },
-/* 57 */
-/***/ function(module, exports) {
-
-	module.exports = {};
-
-/***/ },
-/* 58 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var $              = __webpack_require__(53)
-	  , descriptor     = __webpack_require__(54)
-	  , setToStringTag = __webpack_require__(59)
-	  , IteratorPrototype = {};
-	
-	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-	__webpack_require__(52)(IteratorPrototype, __webpack_require__(60)('iterator'), function(){ return this; });
-	
-	module.exports = function(Constructor, NAME, next){
-	  Constructor.prototype = $.create(IteratorPrototype, {next: descriptor(1, next)});
-	  setToStringTag(Constructor, NAME + ' Iterator');
-	};
-
-/***/ },
-/* 59 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var def = __webpack_require__(53).setDesc
-	  , has = __webpack_require__(56)
-	  , TAG = __webpack_require__(60)('toStringTag');
-	
-	module.exports = function(it, tag, stat){
-	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
-	};
-
-/***/ },
-/* 60 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var store  = __webpack_require__(61)('wks')
-	  , uid    = __webpack_require__(62)
-	  , Symbol = __webpack_require__(36).Symbol;
-	module.exports = function(name){
-	  return store[name] || (store[name] =
-	    Symbol && Symbol[name] || (Symbol || uid)('Symbol.' + name));
-	};
-
-/***/ },
-/* 61 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var global = __webpack_require__(36)
-	  , SHARED = '__core-js_shared__'
-	  , store  = global[SHARED] || (global[SHARED] = {});
-	module.exports = function(key){
-	  return store[key] || (store[key] = {});
-	};
-
-/***/ },
-/* 62 */
-/***/ function(module, exports) {
-
-	var id = 0
-	  , px = Math.random();
-	module.exports = function(key){
-	  return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
-	};
-
-/***/ },
-/* 63 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(64);
-	var Iterators = __webpack_require__(57);
-	Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
-
-/***/ },
-/* 64 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var addToUnscopables = __webpack_require__(65)
-	  , step             = __webpack_require__(66)
-	  , Iterators        = __webpack_require__(57)
-	  , toIObject        = __webpack_require__(67);
-	
-	// 22.1.3.4 Array.prototype.entries()
-	// 22.1.3.13 Array.prototype.keys()
-	// 22.1.3.29 Array.prototype.values()
-	// 22.1.3.30 Array.prototype[@@iterator]()
-	module.exports = __webpack_require__(49)(Array, 'Array', function(iterated, kind){
-	  this._t = toIObject(iterated); // target
-	  this._i = 0;                   // next index
-	  this._k = kind;                // kind
-	// 22.1.5.2.1 %ArrayIteratorPrototype%.next()
-	}, function(){
-	  var O     = this._t
-	    , kind  = this._k
-	    , index = this._i++;
-	  if(!O || index >= O.length){
-	    this._t = undefined;
-	    return step(1);
-	  }
-	  if(kind == 'keys'  )return step(0, index);
-	  if(kind == 'values')return step(0, O[index]);
-	  return step(0, [index, O[index]]);
-	}, 'values');
-	
-	// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
-	Iterators.Arguments = Iterators.Array;
-	
-	addToUnscopables('keys');
-	addToUnscopables('values');
-	addToUnscopables('entries');
-
-/***/ },
-/* 65 */
-/***/ function(module, exports) {
-
-	module.exports = function(){ /* empty */ };
-
-/***/ },
-/* 66 */
-/***/ function(module, exports) {
-
-	module.exports = function(done, value){
-	  return {value: value, done: !!done};
-	};
-
-/***/ },
-/* 67 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// to indexed object, toObject with fallback for non-array-like ES3 strings
-	var IObject = __webpack_require__(68)
-	  , defined = __webpack_require__(33);
-	module.exports = function(it){
-	  return IObject(defined(it));
-	};
-
-/***/ },
-/* 68 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// fallback for non-array-like ES3 and non-enumerable old V8 strings
-	var cof = __webpack_require__(69);
-	module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
-	  return cof(it) == 'String' ? it.split('') : Object(it);
-	};
-
-/***/ },
-/* 69 */
-/***/ function(module, exports) {
-
-	var toString = {}.toString;
-	
-	module.exports = function(it){
-	  return toString.call(it).slice(8, -1);
-	};
-
-/***/ },
-/* 70 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var $          = __webpack_require__(53)
-	  , LIBRARY    = __webpack_require__(50)
-	  , global     = __webpack_require__(36)
-	  , ctx        = __webpack_require__(38)
-	  , classof    = __webpack_require__(71)
-	  , $export    = __webpack_require__(35)
-	  , isObject   = __webpack_require__(72)
-	  , anObject   = __webpack_require__(73)
-	  , aFunction  = __webpack_require__(39)
-	  , strictNew  = __webpack_require__(74)
-	  , forOf      = __webpack_require__(75)
-	  , setProto   = __webpack_require__(80).set
-	  , same       = __webpack_require__(81)
-	  , SPECIES    = __webpack_require__(60)('species')
-	  , speciesConstructor = __webpack_require__(82)
-	  , asap       = __webpack_require__(83)
-	  , PROMISE    = 'Promise'
-	  , process    = global.process
-	  , isNode     = classof(process) == 'process'
-	  , P          = global[PROMISE]
-	  , Wrapper;
-	
-	var testResolve = function(sub){
-	  var test = new P(function(){});
-	  if(sub)test.constructor = Object;
-	  return P.resolve(test) === test;
-	};
-	
-	var USE_NATIVE = function(){
-	  var works = false;
-	  function P2(x){
-	    var self = new P(x);
-	    setProto(self, P2.prototype);
-	    return self;
-	  }
-	  try {
-	    works = P && P.resolve && testResolve();
-	    setProto(P2, P);
-	    P2.prototype = $.create(P.prototype, {constructor: {value: P2}});
-	    // actual Firefox has broken subclass support, test that
-	    if(!(P2.resolve(5).then(function(){}) instanceof P2)){
-	      works = false;
-	    }
-	    // actual V8 bug, https://code.google.com/p/v8/issues/detail?id=4162
-	    if(works && __webpack_require__(55)){
-	      var thenableThenGotten = false;
-	      P.resolve($.setDesc({}, 'then', {
-	        get: function(){ thenableThenGotten = true; }
-	      }));
-	      works = thenableThenGotten;
-	    }
-	  } catch(e){ works = false; }
-	  return works;
-	}();
-	
-	// helpers
-	var sameConstructor = function(a, b){
-	  // library wrapper special case
-	  if(LIBRARY && a === P && b === Wrapper)return true;
-	  return same(a, b);
-	};
-	var getConstructor = function(C){
-	  var S = anObject(C)[SPECIES];
-	  return S != undefined ? S : C;
-	};
-	var isThenable = function(it){
-	  var then;
-	  return isObject(it) && typeof (then = it.then) == 'function' ? then : false;
-	};
-	var PromiseCapability = function(C){
-	  var resolve, reject;
-	  this.promise = new C(function($$resolve, $$reject){
-	    if(resolve !== undefined || reject !== undefined)throw TypeError('Bad Promise constructor');
-	    resolve = $$resolve;
-	    reject  = $$reject;
-	  });
-	  this.resolve = aFunction(resolve),
-	  this.reject  = aFunction(reject)
-	};
-	var perform = function(exec){
-	  try {
-	    exec();
-	  } catch(e){
-	    return {error: e};
-	  }
-	};
-	var notify = function(record, isReject){
-	  if(record.n)return;
-	  record.n = true;
-	  var chain = record.c;
-	  asap(function(){
-	    var value = record.v
-	      , ok    = record.s == 1
-	      , i     = 0;
-	    var run = function(reaction){
-	      var handler = ok ? reaction.ok : reaction.fail
-	        , resolve = reaction.resolve
-	        , reject  = reaction.reject
-	        , result, then;
-	      try {
-	        if(handler){
-	          if(!ok)record.h = true;
-	          result = handler === true ? value : handler(value);
-	          if(result === reaction.promise){
-	            reject(TypeError('Promise-chain cycle'));
-	          } else if(then = isThenable(result)){
-	            then.call(result, resolve, reject);
-	          } else resolve(result);
-	        } else reject(value);
-	      } catch(e){
-	        reject(e);
-	      }
-	    };
-	    while(chain.length > i)run(chain[i++]); // variable length - can't use forEach
-	    chain.length = 0;
-	    record.n = false;
-	    if(isReject)setTimeout(function(){
-	      var promise = record.p
-	        , handler, console;
-	      if(isUnhandled(promise)){
-	        if(isNode){
-	          process.emit('unhandledRejection', value, promise);
-	        } else if(handler = global.onunhandledrejection){
-	          handler({promise: promise, reason: value});
-	        } else if((console = global.console) && console.error){
-	          console.error('Unhandled promise rejection', value);
-	        }
-	      } record.a = undefined;
-	    }, 1);
-	  });
-	};
-	var isUnhandled = function(promise){
-	  var record = promise._d
-	    , chain  = record.a || record.c
-	    , i      = 0
-	    , reaction;
-	  if(record.h)return false;
-	  while(chain.length > i){
-	    reaction = chain[i++];
-	    if(reaction.fail || !isUnhandled(reaction.promise))return false;
-	  } return true;
-	};
-	var $reject = function(value){
-	  var record = this;
-	  if(record.d)return;
-	  record.d = true;
-	  record = record.r || record; // unwrap
-	  record.v = value;
-	  record.s = 2;
-	  record.a = record.c.slice();
-	  notify(record, true);
-	};
-	var $resolve = function(value){
-	  var record = this
-	    , then;
-	  if(record.d)return;
-	  record.d = true;
-	  record = record.r || record; // unwrap
-	  try {
-	    if(record.p === value)throw TypeError("Promise can't be resolved itself");
-	    if(then = isThenable(value)){
-	      asap(function(){
-	        var wrapper = {r: record, d: false}; // wrap
-	        try {
-	          then.call(value, ctx($resolve, wrapper, 1), ctx($reject, wrapper, 1));
-	        } catch(e){
-	          $reject.call(wrapper, e);
-	        }
-	      });
-	    } else {
-	      record.v = value;
-	      record.s = 1;
-	      notify(record, false);
-	    }
-	  } catch(e){
-	    $reject.call({r: record, d: false}, e); // wrap
-	  }
-	};
-	
-	// constructor polyfill
-	if(!USE_NATIVE){
-	  // 25.4.3.1 Promise(executor)
-	  P = function Promise(executor){
-	    aFunction(executor);
-	    var record = this._d = {
-	      p: strictNew(this, P, PROMISE),         // <- promise
-	      c: [],                                  // <- awaiting reactions
-	      a: undefined,                           // <- checked in isUnhandled reactions
-	      s: 0,                                   // <- state
-	      d: false,                               // <- done
-	      v: undefined,                           // <- value
-	      h: false,                               // <- handled rejection
-	      n: false                                // <- notify
-	    };
-	    try {
-	      executor(ctx($resolve, record, 1), ctx($reject, record, 1));
-	    } catch(err){
-	      $reject.call(record, err);
-	    }
-	  };
-	  __webpack_require__(88)(P.prototype, {
-	    // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
-	    then: function then(onFulfilled, onRejected){
-	      var reaction = new PromiseCapability(speciesConstructor(this, P))
-	        , promise  = reaction.promise
-	        , record   = this._d;
-	      reaction.ok   = typeof onFulfilled == 'function' ? onFulfilled : true;
-	      reaction.fail = typeof onRejected == 'function' && onRejected;
-	      record.c.push(reaction);
-	      if(record.a)record.a.push(reaction);
-	      if(record.s)notify(record, false);
-	      return promise;
-	    },
-	    // 25.4.5.1 Promise.prototype.catch(onRejected)
-	    'catch': function(onRejected){
-	      return this.then(undefined, onRejected);
-	    }
-	  });
-	}
-	
-	$export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: P});
-	__webpack_require__(59)(P, PROMISE);
-	__webpack_require__(89)(PROMISE);
-	Wrapper = __webpack_require__(37)[PROMISE];
-	
-	// statics
-	$export($export.S + $export.F * !USE_NATIVE, PROMISE, {
-	  // 25.4.4.5 Promise.reject(r)
-	  reject: function reject(r){
-	    var capability = new PromiseCapability(this)
-	      , $$reject   = capability.reject;
-	    $$reject(r);
-	    return capability.promise;
-	  }
-	});
-	$export($export.S + $export.F * (!USE_NATIVE || testResolve(true)), PROMISE, {
-	  // 25.4.4.6 Promise.resolve(x)
-	  resolve: function resolve(x){
-	    // instanceof instead of internal slot check because we should fix it without replacement native Promise core
-	    if(x instanceof P && sameConstructor(x.constructor, this))return x;
-	    var capability = new PromiseCapability(this)
-	      , $$resolve  = capability.resolve;
-	    $$resolve(x);
-	    return capability.promise;
-	  }
-	});
-	$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(90)(function(iter){
-	  P.all(iter)['catch'](function(){});
-	})), PROMISE, {
-	  // 25.4.4.1 Promise.all(iterable)
-	  all: function all(iterable){
-	    var C          = getConstructor(this)
-	      , capability = new PromiseCapability(C)
-	      , resolve    = capability.resolve
-	      , reject     = capability.reject
-	      , values     = [];
-	    var abrupt = perform(function(){
-	      forOf(iterable, false, values.push, values);
-	      var remaining = values.length
-	        , results   = Array(remaining);
-	      if(remaining)$.each.call(values, function(promise, index){
-	        var alreadyCalled = false;
-	        C.resolve(promise).then(function(value){
-	          if(alreadyCalled)return;
-	          alreadyCalled = true;
-	          results[index] = value;
-	          --remaining || resolve(results);
-	        }, reject);
-	      });
-	      else resolve(results);
-	    });
-	    if(abrupt)reject(abrupt.error);
-	    return capability.promise;
-	  },
-	  // 25.4.4.4 Promise.race(iterable)
-	  race: function race(iterable){
-	    var C          = getConstructor(this)
-	      , capability = new PromiseCapability(C)
-	      , reject     = capability.reject;
-	    var abrupt = perform(function(){
-	      forOf(iterable, false, function(promise){
-	        C.resolve(promise).then(capability.resolve, reject);
-	      });
-	    });
-	    if(abrupt)reject(abrupt.error);
-	    return capability.promise;
-	  }
-	});
-
-/***/ },
-/* 71 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// getting tag from 19.1.3.6 Object.prototype.toString()
-	var cof = __webpack_require__(69)
-	  , TAG = __webpack_require__(60)('toStringTag')
-	  // ES3 wrong here
-	  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
-	
-	module.exports = function(it){
-	  var O, T, B;
-	  return it === undefined ? 'Undefined' : it === null ? 'Null'
-	    // @@toStringTag case
-	    : typeof (T = (O = Object(it))[TAG]) == 'string' ? T
-	    // builtinTag case
-	    : ARG ? cof(O)
-	    // ES3 arguments fallback
-	    : (B = cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
-	};
-
-/***/ },
-/* 72 */
-/***/ function(module, exports) {
-
-	module.exports = function(it){
-	  return typeof it === 'object' ? it !== null : typeof it === 'function';
-	};
-
-/***/ },
-/* 73 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isObject = __webpack_require__(72);
-	module.exports = function(it){
-	  if(!isObject(it))throw TypeError(it + ' is not an object!');
-	  return it;
-	};
-
-/***/ },
-/* 74 */
-/***/ function(module, exports) {
-
-	module.exports = function(it, Constructor, name){
-	  if(!(it instanceof Constructor))throw TypeError(name + ": use the 'new' operator!");
-	  return it;
-	};
-
-/***/ },
-/* 75 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var ctx         = __webpack_require__(38)
-	  , call        = __webpack_require__(76)
-	  , isArrayIter = __webpack_require__(77)
-	  , anObject    = __webpack_require__(73)
-	  , toLength    = __webpack_require__(78)
-	  , getIterFn   = __webpack_require__(79);
-	module.exports = function(iterable, entries, fn, that){
-	  var iterFn = getIterFn(iterable)
-	    , f      = ctx(fn, that, entries ? 2 : 1)
-	    , index  = 0
-	    , length, step, iterator;
-	  if(typeof iterFn != 'function')throw TypeError(iterable + ' is not iterable!');
-	  // fast case for arrays with default iterator
-	  if(isArrayIter(iterFn))for(length = toLength(iterable.length); length > index; index++){
-	    entries ? f(anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
-	  } else for(iterator = iterFn.call(iterable); !(step = iterator.next()).done; ){
-	    call(iterator, f, step.value, entries);
-	  }
-	};
-
-/***/ },
-/* 76 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// call something on iterator step with safe closing on error
-	var anObject = __webpack_require__(73);
-	module.exports = function(iterator, fn, value, entries){
-	  try {
-	    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
-	  // 7.4.6 IteratorClose(iterator, completion)
-	  } catch(e){
-	    var ret = iterator['return'];
-	    if(ret !== undefined)anObject(ret.call(iterator));
-	    throw e;
-	  }
-	};
-
-/***/ },
-/* 77 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// check on default Array iterator
-	var Iterators  = __webpack_require__(57)
-	  , ITERATOR   = __webpack_require__(60)('iterator')
-	  , ArrayProto = Array.prototype;
-	
-	module.exports = function(it){
-	  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
-	};
-
-/***/ },
-/* 78 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 7.1.15 ToLength
-	var toInteger = __webpack_require__(48)
-	  , min       = Math.min;
-	module.exports = function(it){
-	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
-	};
-
-/***/ },
-/* 79 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var classof   = __webpack_require__(71)
-	  , ITERATOR  = __webpack_require__(60)('iterator')
-	  , Iterators = __webpack_require__(57);
-	module.exports = __webpack_require__(37).getIteratorMethod = function(it){
-	  if(it != undefined)return it[ITERATOR]
-	    || it['@@iterator']
-	    || Iterators[classof(it)];
-	};
-
-/***/ },
-/* 80 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// Works with __proto__ only. Old v8 can't work with null proto objects.
-	/* eslint-disable no-proto */
-	var getDesc  = __webpack_require__(53).getDesc
-	  , isObject = __webpack_require__(72)
-	  , anObject = __webpack_require__(73);
-	var check = function(O, proto){
-	  anObject(O);
-	  if(!isObject(proto) && proto !== null)throw TypeError(proto + ": can't set as prototype!");
-	};
-	module.exports = {
-	  set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
-	    function(test, buggy, set){
-	      try {
-	        set = __webpack_require__(38)(Function.call, getDesc(Object.prototype, '__proto__').set, 2);
-	        set(test, []);
-	        buggy = !(test instanceof Array);
-	      } catch(e){ buggy = true; }
-	      return function setPrototypeOf(O, proto){
-	        check(O, proto);
-	        if(buggy)O.__proto__ = proto;
-	        else set(O, proto);
-	        return O;
-	      };
-	    }({}, false) : undefined),
-	  check: check
-	};
-
-/***/ },
-/* 81 */
-/***/ function(module, exports) {
-
-	// 7.2.9 SameValue(x, y)
-	module.exports = Object.is || function is(x, y){
-	  return x === y ? x !== 0 || 1 / x === 1 / y : x != x && y != y;
-	};
-
-/***/ },
-/* 82 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
-	var anObject  = __webpack_require__(73)
-	  , aFunction = __webpack_require__(39)
-	  , SPECIES   = __webpack_require__(60)('species');
-	module.exports = function(O, D){
-	  var C = anObject(O).constructor, S;
-	  return C === undefined || (S = anObject(C)[SPECIES]) == undefined ? D : aFunction(S);
-	};
-
-/***/ },
-/* 83 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var global    = __webpack_require__(36)
-	  , macrotask = __webpack_require__(84).set
-	  , Observer  = global.MutationObserver || global.WebKitMutationObserver
-	  , process   = global.process
-	  , Promise   = global.Promise
-	  , isNode    = __webpack_require__(69)(process) == 'process'
-	  , head, last, notify;
-	
-	var flush = function(){
-	  var parent, domain, fn;
-	  if(isNode && (parent = process.domain)){
-	    process.domain = null;
-	    parent.exit();
-	  }
-	  while(head){
-	    domain = head.domain;
-	    fn     = head.fn;
-	    if(domain)domain.enter();
-	    fn(); // <- currently we use it only for Promise - try / catch not required
-	    if(domain)domain.exit();
-	    head = head.next;
-	  } last = undefined;
-	  if(parent)parent.enter();
-	};
-	
-	// Node.js
-	if(isNode){
-	  notify = function(){
-	    process.nextTick(flush);
-	  };
-	// browsers with MutationObserver
-	} else if(Observer){
-	  var toggle = 1
-	    , node   = document.createTextNode('');
-	  new Observer(flush).observe(node, {characterData: true}); // eslint-disable-line no-new
-	  notify = function(){
-	    node.data = toggle = -toggle;
-	  };
-	// environments with maybe non-completely correct, but existent Promise
-	} else if(Promise && Promise.resolve){
-	  notify = function(){
-	    Promise.resolve().then(flush);
-	  };
-	// for other environments - macrotask based on:
-	// - setImmediate
-	// - MessageChannel
-	// - window.postMessag
-	// - onreadystatechange
-	// - setTimeout
-	} else {
-	  notify = function(){
-	    // strange IE + webpack dev server bug - use .call(global)
-	    macrotask.call(global, flush);
-	  };
-	}
-	
-	module.exports = function asap(fn){
-	  var task = {fn: fn, next: undefined, domain: isNode && process.domain};
-	  if(last)last.next = task;
-	  if(!head){
-	    head = task;
-	    notify();
-	  } last = task;
-	};
-
-/***/ },
-/* 84 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var ctx                = __webpack_require__(38)
-	  , invoke             = __webpack_require__(85)
-	  , html               = __webpack_require__(86)
-	  , cel                = __webpack_require__(87)
-	  , global             = __webpack_require__(36)
-	  , process            = global.process
-	  , setTask            = global.setImmediate
-	  , clearTask          = global.clearImmediate
-	  , MessageChannel     = global.MessageChannel
-	  , counter            = 0
-	  , queue              = {}
-	  , ONREADYSTATECHANGE = 'onreadystatechange'
-	  , defer, channel, port;
-	var run = function(){
-	  var id = +this;
-	  if(queue.hasOwnProperty(id)){
-	    var fn = queue[id];
-	    delete queue[id];
-	    fn();
-	  }
-	};
-	var listner = function(event){
-	  run.call(event.data);
-	};
-	// Node.js 0.9+ & IE10+ has setImmediate, otherwise:
-	if(!setTask || !clearTask){
-	  setTask = function setImmediate(fn){
-	    var args = [], i = 1;
-	    while(arguments.length > i)args.push(arguments[i++]);
-	    queue[++counter] = function(){
-	      invoke(typeof fn == 'function' ? fn : Function(fn), args);
-	    };
-	    defer(counter);
-	    return counter;
-	  };
-	  clearTask = function clearImmediate(id){
-	    delete queue[id];
-	  };
-	  // Node.js 0.8-
-	  if(__webpack_require__(69)(process) == 'process'){
-	    defer = function(id){
-	      process.nextTick(ctx(run, id, 1));
-	    };
-	  // Browsers with MessageChannel, includes WebWorkers
-	  } else if(MessageChannel){
-	    channel = new MessageChannel;
-	    port    = channel.port2;
-	    channel.port1.onmessage = listner;
-	    defer = ctx(port.postMessage, port, 1);
-	  // Browsers with postMessage, skip WebWorkers
-	  // IE8 has postMessage, but it's sync & typeof its postMessage is 'object'
-	  } else if(global.addEventListener && typeof postMessage == 'function' && !global.importScripts){
-	    defer = function(id){
-	      global.postMessage(id + '', '*');
-	    };
-	    global.addEventListener('message', listner, false);
-	  // IE8-
-	  } else if(ONREADYSTATECHANGE in cel('script')){
-	    defer = function(id){
-	      html.appendChild(cel('script'))[ONREADYSTATECHANGE] = function(){
-	        html.removeChild(this);
-	        run.call(id);
-	      };
-	    };
-	  // Rest old browsers
-	  } else {
-	    defer = function(id){
-	      setTimeout(ctx(run, id, 1), 0);
-	    };
-	  }
-	}
-	module.exports = {
-	  set:   setTask,
-	  clear: clearTask
-	};
-
-/***/ },
-/* 85 */
-/***/ function(module, exports) {
-
-	// fast apply, http://jsperf.lnkit.com/fast-apply/5
-	module.exports = function(fn, args, that){
-	  var un = that === undefined;
-	  switch(args.length){
-	    case 0: return un ? fn()
-	                      : fn.call(that);
-	    case 1: return un ? fn(args[0])
-	                      : fn.call(that, args[0]);
-	    case 2: return un ? fn(args[0], args[1])
-	                      : fn.call(that, args[0], args[1]);
-	    case 3: return un ? fn(args[0], args[1], args[2])
-	                      : fn.call(that, args[0], args[1], args[2]);
-	    case 4: return un ? fn(args[0], args[1], args[2], args[3])
-	                      : fn.call(that, args[0], args[1], args[2], args[3]);
-	  } return              fn.apply(that, args);
-	};
-
-/***/ },
-/* 86 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(36).document && document.documentElement;
-
-/***/ },
-/* 87 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var isObject = __webpack_require__(72)
-	  , document = __webpack_require__(36).document
-	  // in old IE typeof document.createElement is 'object'
-	  , is = isObject(document) && isObject(document.createElement);
-	module.exports = function(it){
-	  return is ? document.createElement(it) : {};
-	};
-
-/***/ },
-/* 88 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var redefine = __webpack_require__(51);
-	module.exports = function(target, src){
-	  for(var key in src)redefine(target, key, src[key]);
-	  return target;
-	};
-
-/***/ },
-/* 89 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var core        = __webpack_require__(37)
-	  , $           = __webpack_require__(53)
-	  , DESCRIPTORS = __webpack_require__(55)
-	  , SPECIES     = __webpack_require__(60)('species');
-	
-	module.exports = function(KEY){
-	  var C = core[KEY];
-	  if(DESCRIPTORS && C && !C[SPECIES])$.setDesc(C, SPECIES, {
-	    configurable: true,
-	    get: function(){ return this; }
-	  });
-	};
-
-/***/ },
-/* 90 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var ITERATOR     = __webpack_require__(60)('iterator')
-	  , SAFE_CLOSING = false;
-	
-	try {
-	  var riter = [7][ITERATOR]();
-	  riter['return'] = function(){ SAFE_CLOSING = true; };
-	  Array.from(riter, function(){ throw 2; });
-	} catch(e){ /* empty */ }
-	
-	module.exports = function(exec, skipClosing){
-	  if(!skipClosing && !SAFE_CLOSING)return false;
-	  var safe = false;
-	  try {
-	    var arr  = [7]
-	      , iter = arr[ITERATOR]();
-	    iter.next = function(){ safe = true; };
-	    arr[ITERATOR] = function(){ return iter; };
-	    exec(arr);
-	  } catch(e){ /* empty */ }
-	  return safe;
-	};
-
-/***/ },
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
 /* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -14614,7 +13726,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\r\n.article{\r\n    width: 75%;\r\n    margin: 2rem auto;\r\n}\r\narticle {\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1.5rem 2.5rem;\r\n}\r\n.a-date{\r\n    padding: .5rem .7rem;\r\n    font-weight: bolder;\r\n    color: #666;\r\n}\r\n.article h1{\r\n    text-align: center;\r\n    font-size: 1.6rem;\r\n    letter-spacing: .3rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #000;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #000;\r\n}\r\n\r\n.a-content{\r\n    padding: 1rem 0;\r\n    line-height: 1.7;\r\n}\r\n.a-content p{\r\n    text-indent: 2rem;\r\n}\r\n.a-content h1,h2,h3,h4{\r\n    margin-top: 1rem;\r\n    margin-bottom: .1rem;\r\n}\r\nh2{\r\n    padding-left: .4rem;\r\n    border-left: .2rem solid purple;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/Article.vue?673bc162"],"names":[],"mappings":";AA2DA;IACA,WAAA;IACA,kBAAA;CACA;AACA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,uBAAA;CACA;AACA;IACA,qBAAA;IACA,oBAAA;IACA,YAAA;CACA;AACA;IACA,mBAAA;IACA,kBAAA;IACA,sBAAA;IACA,sBAAA;IACA,iCAAA;IACA,+BAAA;IACA,YAAA;CACA;;AAEA;IACA,gBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;IACA,qBAAA;CACA;AACA;IACA,oBAAA;IACA,gCAAA;CACA","file":"Article.vue","sourcesContent":["<template id=\"text-body\">\r\n    <div class=\"article\">\r\n        <div class=\"a-date\">\r\n            {{articleInfo.date}}\r\n        </div>\r\n        <article>\r\n            <!-- <h1>{{articleInfo.title}}</a></h1> -->\r\n            <div class=\"a-content\">\r\n                {{articleInfo.article}}\r\n            </div>\r\n        </article>\r\n    </div>\r\n\r\n</template>\r\n\r\n<script>\r\nimport url from '../url.js';\r\n\r\nexport default{\r\n    name: \"Article\",\r\n\r\n    data(){\r\n        return {\r\n            articleInfo: {}\r\n        }\r\n    },\r\n\r\n    route: {\r\n        data: function(transition){\r\n            let self = this;\r\n            let articleId = transition.to.params._id,\r\n                articleInfo = {};\r\n\r\n            return new Promise((resolve, reject)=>{\r\n                $.get(url.articleUrl, function(data){\r\n                    if(typeof data === \"string\"){\r\n                        data = JSON.parse(data);\r\n                    };\r\n                    data.forEach(function(element){\r\n                        if(element._id === articleId){\r\n                            articleInfo.title = element.title;\r\n                            articleInfo.article = element.md;\r\n                            articleInfo.date = element.date.split('T')[0];\r\n                        }\r\n                    });\r\n                    self.articleInfo = articleInfo;\r\n                    let markdown = require(\"markdown\").markdown;\r\n                    $('.a-content').html(markdown.toHTML(self.articleInfo.article));\r\n                    resolve(articleInfo);\r\n                });\r\n\r\n            });\r\n\r\n        }\r\n    }\r\n}\r\n</script>\r\n\r\n<style>\r\n.article{\r\n    width: 75%;\r\n    margin: 2rem auto;\r\n}\r\narticle {\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1.5rem 2.5rem;\r\n}\r\n.a-date{\r\n    padding: .5rem .7rem;\r\n    font-weight: bolder;\r\n    color: #666;\r\n}\r\n.article h1{\r\n    text-align: center;\r\n    font-size: 1.6rem;\r\n    letter-spacing: .3rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #000;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #000;\r\n}\r\n\r\n.a-content{\r\n    padding: 1rem 0;\r\n    line-height: 1.7;\r\n}\r\n.a-content p{\r\n    text-indent: 2rem;\r\n}\r\n.a-content h1,h2,h3,h4{\r\n    margin-top: 1rem;\r\n    margin-bottom: .1rem;\r\n}\r\nh2{\r\n    padding-left: .4rem;\r\n    border-left: .2rem solid purple;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\r\n.article{\r\n    width: 75%;\r\n    margin: 2rem auto;\r\n}\r\narticle {\r\n    background-color: rgb(255, 255, 255);\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1.5rem 2.5rem;\r\n}\r\n.a-date{\r\n    padding: .5rem .7rem;\r\n    font-weight: bolder;\r\n    color: #666;\r\n}\r\n.article h1{\r\n    text-align: center;\r\n    font-size: 1.6rem;\r\n    letter-spacing: .2rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #000;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #000;\r\n}\r\n\r\n.a-content{\r\n    padding: 1rem 0;\r\n    line-height: 1.7;\r\n}\r\n.a-content p{\r\n    text-indent: 2rem;\r\n}\r\n.a-content h1,h2,h3,h4{\r\n    margin-top: 1rem;\r\n    margin-bottom: .1rem;\r\n    color: #444955;\r\n}\r\nh2{\r\n    padding-left: .4rem;\r\n    border-left: .2rem solid #c969ef;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/Article.vue?23e7b334"],"names":[],"mappings":";AAiDA;IACA,WAAA;IACA,kBAAA;CACA;AACA;IACA,qCAAA;IACA,qBAAA;IACA,gCAAA;IACA,uBAAA;CACA;AACA;IACA,qBAAA;IACA,oBAAA;IACA,YAAA;CACA;AACA;IACA,mBAAA;IACA,kBAAA;IACA,sBAAA;IACA,sBAAA;IACA,iCAAA;IACA,+BAAA;IACA,YAAA;CACA;;AAEA;IACA,gBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;IACA,qBAAA;IACA,eAAA;CACA;AACA;IACA,oBAAA;IACA,iCAAA;CACA","file":"Article.vue","sourcesContent":["<template>\r\n    <div class=\"article\">\r\n        <div class=\"a-date\">\r\n            {{articleInfo.date}}\r\n        </div>\r\n        <article>\r\n            <h1>{{articleInfo.title}}</a></h1>\r\n            <div class=\"a-content\">\r\n                {{{articleInfo.article}}}\r\n            </div>\r\n        </article>\r\n    </div>\r\n\r\n</template>\r\n\r\n<script>\r\nimport url from '../url.js';\r\nimport model from '../model/model.js';\r\n\r\nexport default{\r\n    name: \"Article\",\r\n\r\n    data(){\r\n        return {\r\n            articleInfo: {}\r\n        }\r\n    },\r\n\r\n    route: {\r\n        data: function(transition){\r\n            var articleId = transition.to.params._id;\r\n            var articleUrl = url.articleUrl + '?_id=' + articleId;\r\n            var markdown = require(\"markdown\").markdown;\r\n            var articleInfo = {};\r\n\r\n            model.getArticleList(articleUrl).then(data => {\r\n                data = data[0];\r\n\r\n                articleInfo.title = data.title;\r\n                articleInfo.article = markdown.toHTML(data.md);\r\n                articleInfo.date = data.date.split('T')[0];\r\n                this.articleInfo = articleInfo;\r\n            });\r\n        }\r\n    }\r\n}\r\n</script>\r\n\r\n<style>\r\n.article{\r\n    width: 75%;\r\n    margin: 2rem auto;\r\n}\r\narticle {\r\n    background-color: rgb(255, 255, 255);\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1.5rem 2.5rem;\r\n}\r\n.a-date{\r\n    padding: .5rem .7rem;\r\n    font-weight: bolder;\r\n    color: #666;\r\n}\r\n.article h1{\r\n    text-align: center;\r\n    font-size: 1.6rem;\r\n    letter-spacing: .2rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #000;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #000;\r\n}\r\n\r\n.a-content{\r\n    padding: 1rem 0;\r\n    line-height: 1.7;\r\n}\r\n.a-content p{\r\n    text-indent: 2rem;\r\n}\r\n.a-content h1,h2,h3,h4{\r\n    margin-top: 1rem;\r\n    margin-bottom: .1rem;\r\n    color: #444955;\r\n}\r\nh2{\r\n    padding-left: .4rem;\r\n    border-left: .2rem solid #c969ef;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -16991,6 +16103,1234 @@
 	    ctor.prototype.constructor = ctor
 	  }
 	}
+
+
+/***/ },
+/* 99 */,
+/* 100 */
+/***/ function(module, exports) {
+
+	module.exports = "\n    <div class=\"tagArticleList\">\n        <div class=\"\">\n\n        </div>\n        <div class=\"list\">\n            <div class=\"border\">\n                <h4>\n                    {{tagName}}\n                </h4>\n                <div\n                 v-for=\"item in items\"\n                 class=\"item\"\n                :item=\"item\"\n                :index=\"$index\"\n                track-by=\"$index\">\n                    <p>\n                        <a :href=\"'#/article/'\">{{item}}</a>\n                    </p>\n                    <!-- <span>{{item.date}}</span> -->\n                </div>\n        </div>\n    </div>\n\n</template>";
+
+/***/ },
+/* 101 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(102);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(7)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./TagArticleList.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./TagArticleList.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 102 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(6)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\r\n.tagArticleList{\r\n    width: 90%;\r\n    margin: 2rem auto;\r\n}\r\n.list{\r\n    width: 60%;\r\n    float: left;\r\n    background: -webkit-linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.7) 5%, rgba(255,255,255,.8) 10%, #fff 25%, #fff 75%, rgba(255,255,255,.7) 95%,rgba(255,255,255,.6));\r\n    background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.7) 5%, rgba(255,255,255,.8) 10%, #fff 25%, #fff 75%, rgba(255,255,255,.7) 95%,rgba(255,255,255,.6));\r\n    border-radius: .5rem;\r\n    padding: 1rem;\r\n    margin: 1rem;\r\n}\r\n.border{\r\n    border: .2rem solid #fb8da6;\r\n    padding: 2rem;\r\n    border-radius: .5rem;\r\n    position: relative;\r\n}\r\n.item p{\r\n    padding-top: 1rem;\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.item:hover{\r\n    color: #666;\r\n}\r\n.list h4{\r\n    width: 100%;\r\n    position: absolute;\r\n    top: 0;\r\n    text-align: center;\r\n    margin: 0;\r\n    padding: .1rem 0;\r\n}\r\n\r\n", "", {"version":3,"sources":["/./public/components/TagArticleList.vue?211e77d2"],"names":[],"mappings":";AA2DA;IACA,WAAA;IACA,kBAAA;CACA;AACA;IACA,WAAA;IACA,YAAA;IACA,gLAAA;IAAA,wKAAA;IACA,qBAAA;IACA,cAAA;IACA,aAAA;CACA;AACA;IACA,4BAAA;IACA,cAAA;IACA,qBAAA;IACA,mBAAA;CACA;AACA;IACA,kBAAA;IACA,sBAAA;IACA,oCAAA;CACA;AACA;IACA,YAAA;CACA;AACA;IACA,YAAA;IACA,mBAAA;IACA,OAAA;IACA,mBAAA;IACA,UAAA;IACA,iBAAA;CACA","file":"TagArticleList.vue","sourcesContent":["<template>\r\n    <div class=\"tagArticleList\">\r\n        <div class=\"\">\r\n\r\n        </div>\r\n        <div class=\"list\">\r\n            <div class=\"border\">\r\n                <h4>\r\n                    {{tagName}}\r\n                </h4>\r\n                <div\r\n                 v-for=\"item in items\"\r\n                 class=\"item\"\r\n                :item=\"item\"\r\n                :index=\"$index\"\r\n                track-by=\"$index\">\r\n                    <p>\r\n                        <a :href=\"'#/article/'\">{{item}}</a>\r\n                    </p>\r\n                    <!-- <span>{{item.date}}</span> -->\r\n                </div>\r\n        </div>\r\n    </div>\r\n\r\n</template>\r\n\r\n<script>\r\nimport url from '../url.js';\r\nimport model from '../model/model.js';\r\n\r\nexport default{\r\n    name: \"tagArticleList\",\r\n\r\n    data(){\r\n        return {\r\n            tagName: '',\r\n            items: []\r\n        }\r\n    },\r\n\r\n    route: {\r\n        data: function(transition){\r\n            var articleTagName = transition.to.params.tagName;\r\n            var tagUrl = url.tagUrl + '?tagName=' + articleTagName;\r\n            var items = [];\r\n\r\n            model.getTagInfo(tagUrl).then(data => {\r\n                data = data[0];\r\n\r\n                items = data.aritcleTitleList;\r\n                this.tagName = articleTagName;\r\n                this.items = items;\r\n            });\r\n        }\r\n    }\r\n}\r\n</script>\r\n\r\n<style>\r\n.tagArticleList{\r\n    width: 90%;\r\n    margin: 2rem auto;\r\n}\r\n.list{\r\n    width: 60%;\r\n    float: left;\r\n    background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.7) 5%, rgba(255,255,255,.8) 10%, #fff 25%, #fff 75%, rgba(255,255,255,.7) 95%,rgba(255,255,255,.6));\r\n    border-radius: .5rem;\r\n    padding: 1rem;\r\n    margin: 1rem;\r\n}\r\n.border{\r\n    border: .2rem solid #fb8da6;\r\n    padding: 2rem;\r\n    border-radius: .5rem;\r\n    position: relative;\r\n}\r\n.item p{\r\n    padding-top: 1rem;\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.item:hover{\r\n    color: #666;\r\n}\r\n.list h4{\r\n    width: 100%;\r\n    position: absolute;\r\n    top: 0;\r\n    text-align: center;\r\n    margin: 0;\r\n    padding: .1rem 0;\r\n}\r\n\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
+/* 103 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _url = __webpack_require__(28);
+	
+	var _url2 = _interopRequireDefault(_url);
+	
+	var _model = __webpack_require__(116);
+	
+	var _model2 = _interopRequireDefault(_model);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//     <div class="tagArticleList">
+	//         <div class="">
+	//
+	//         </div>
+	//         <div class="list">
+	//             <div class="border">
+	//                 <h4>
+	//                     {{tagName}}
+	//                 </h4>
+	//                 <div
+	//                  v-for="item in items"
+	//                  class="item"
+	//                 :item="item"
+	//                 :index="$index"
+	//                 track-by="$index">
+	//                     <p>
+	//                         <a :href="'#/article/'">{{item}}</a>
+	//                     </p>
+	//                     <!-- <span>{{item.date}}</span> -->
+	//                 </div>
+	//         </div>
+	//     </div>
+	//
+	// </template>
+	//
+	// <script>
+	exports.default = {
+	    name: "tagArticleList",
+	
+	    data: function data() {
+	        return {
+	            tagName: '',
+	            items: []
+	        };
+	    },
+	
+	    route: {
+	        data: function data(transition) {
+	            var _this = this;
+	
+	            var articleTagName = transition.to.params.tagName;
+	            var tagUrl = _url2.default.tagUrl + '?tagName=' + articleTagName;
+	            var items = [];
+	
+	            _model2.default.getTagInfo(tagUrl).then(function (data) {
+	                data = data[0];
+	
+	                items = data.aritcleTitleList;
+	                _this.tagName = articleTagName;
+	                _this.items = items;
+	            });
+	        }
+	    }
+	};
+	// </script>
+	//
+	// <style>
+	// .tagArticleList{
+	//     width: 90%;
+	//     margin: 2rem auto;
+	// }
+	// .list{
+	//     width: 60%;
+	//     float: left;
+	//     background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.7) 5%, rgba(255,255,255,.8) 10%, #fff 25%, #fff 75%, rgba(255,255,255,.7) 95%,rgba(255,255,255,.6));
+	//     border-radius: .5rem;
+	//     padding: 1rem;
+	//     margin: 1rem;
+	// }
+	// .border{
+	//     border: .2rem solid #fb8da6;
+	//     padding: 2rem;
+	//     border-radius: .5rem;
+	//     position: relative;
+	// }
+	// .item p{
+	//     padding-top: 1rem;
+	//     padding-bottom: .5rem;
+	//     border-bottom: .1rem dashed #fb8da6;
+	// }
+	// .item:hover{
+	//     color: #666;
+	// }
+	// .list h4{
+	//     width: 100%;
+	//     position: absolute;
+	//     top: 0;
+	//     text-align: center;
+	//     margin: 0;
+	//     padding: .1rem 0;
+	// }
+	//
+	// </style>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _es6Promise = __webpack_require__(122);
+	
+	var model = {};
+	
+	model.getArticleList = function (url) {
+	    return new _es6Promise.Promise(function (resolve, reject) {
+	        $.get(url, function (data) {
+	
+	            if (typeof data === "string") {
+	                data = JSON.parse(data);
+	            }
+	            resolve(data);
+	        });
+	    });
+	};
+	
+	model.getTagInfo = function (url) {
+	    return new _es6Promise.Promise(function (resolve, reject) {
+	        $.get(url, function (data) {
+	
+	            if (typeof data === "string") {
+	                data = JSON.parse(data);
+	            }
+	            resolve(data);
+	        });
+	    });
+	};
+	
+	model.getAll = function (aurl, turl) {
+	    return _es6Promise.Promise.all([model.getArticleList(aurl), model.getTagInfo(turl)]);
+	};
+	
+	exports.default = model;
+
+/***/ },
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
+	 * @overview es6-promise - a tiny implementation of Promises/A+.
+	 * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
+	 * @license   Licensed under MIT license
+	 *            See https://raw.githubusercontent.com/jakearchibald/es6-promise/master/LICENSE
+	 * @version   3.0.2
+	 */
+	
+	(function() {
+	    "use strict";
+	    function lib$es6$promise$utils$$objectOrFunction(x) {
+	      return typeof x === 'function' || (typeof x === 'object' && x !== null);
+	    }
+	
+	    function lib$es6$promise$utils$$isFunction(x) {
+	      return typeof x === 'function';
+	    }
+	
+	    function lib$es6$promise$utils$$isMaybeThenable(x) {
+	      return typeof x === 'object' && x !== null;
+	    }
+	
+	    var lib$es6$promise$utils$$_isArray;
+	    if (!Array.isArray) {
+	      lib$es6$promise$utils$$_isArray = function (x) {
+	        return Object.prototype.toString.call(x) === '[object Array]';
+	      };
+	    } else {
+	      lib$es6$promise$utils$$_isArray = Array.isArray;
+	    }
+	
+	    var lib$es6$promise$utils$$isArray = lib$es6$promise$utils$$_isArray;
+	    var lib$es6$promise$asap$$len = 0;
+	    var lib$es6$promise$asap$$toString = {}.toString;
+	    var lib$es6$promise$asap$$vertxNext;
+	    var lib$es6$promise$asap$$customSchedulerFn;
+	
+	    var lib$es6$promise$asap$$asap = function asap(callback, arg) {
+	      lib$es6$promise$asap$$queue[lib$es6$promise$asap$$len] = callback;
+	      lib$es6$promise$asap$$queue[lib$es6$promise$asap$$len + 1] = arg;
+	      lib$es6$promise$asap$$len += 2;
+	      if (lib$es6$promise$asap$$len === 2) {
+	        // If len is 2, that means that we need to schedule an async flush.
+	        // If additional callbacks are queued before the queue is flushed, they
+	        // will be processed by this flush that we are scheduling.
+	        if (lib$es6$promise$asap$$customSchedulerFn) {
+	          lib$es6$promise$asap$$customSchedulerFn(lib$es6$promise$asap$$flush);
+	        } else {
+	          lib$es6$promise$asap$$scheduleFlush();
+	        }
+	      }
+	    }
+	
+	    function lib$es6$promise$asap$$setScheduler(scheduleFn) {
+	      lib$es6$promise$asap$$customSchedulerFn = scheduleFn;
+	    }
+	
+	    function lib$es6$promise$asap$$setAsap(asapFn) {
+	      lib$es6$promise$asap$$asap = asapFn;
+	    }
+	
+	    var lib$es6$promise$asap$$browserWindow = (typeof window !== 'undefined') ? window : undefined;
+	    var lib$es6$promise$asap$$browserGlobal = lib$es6$promise$asap$$browserWindow || {};
+	    var lib$es6$promise$asap$$BrowserMutationObserver = lib$es6$promise$asap$$browserGlobal.MutationObserver || lib$es6$promise$asap$$browserGlobal.WebKitMutationObserver;
+	    var lib$es6$promise$asap$$isNode = typeof process !== 'undefined' && {}.toString.call(process) === '[object process]';
+	
+	    // test for web worker but not in IE10
+	    var lib$es6$promise$asap$$isWorker = typeof Uint8ClampedArray !== 'undefined' &&
+	      typeof importScripts !== 'undefined' &&
+	      typeof MessageChannel !== 'undefined';
+	
+	    // node
+	    function lib$es6$promise$asap$$useNextTick() {
+	      // node version 0.10.x displays a deprecation warning when nextTick is used recursively
+	      // see https://github.com/cujojs/when/issues/410 for details
+	      return function() {
+	        process.nextTick(lib$es6$promise$asap$$flush);
+	      };
+	    }
+	
+	    // vertx
+	    function lib$es6$promise$asap$$useVertxTimer() {
+	      return function() {
+	        lib$es6$promise$asap$$vertxNext(lib$es6$promise$asap$$flush);
+	      };
+	    }
+	
+	    function lib$es6$promise$asap$$useMutationObserver() {
+	      var iterations = 0;
+	      var observer = new lib$es6$promise$asap$$BrowserMutationObserver(lib$es6$promise$asap$$flush);
+	      var node = document.createTextNode('');
+	      observer.observe(node, { characterData: true });
+	
+	      return function() {
+	        node.data = (iterations = ++iterations % 2);
+	      };
+	    }
+	
+	    // web worker
+	    function lib$es6$promise$asap$$useMessageChannel() {
+	      var channel = new MessageChannel();
+	      channel.port1.onmessage = lib$es6$promise$asap$$flush;
+	      return function () {
+	        channel.port2.postMessage(0);
+	      };
+	    }
+	
+	    function lib$es6$promise$asap$$useSetTimeout() {
+	      return function() {
+	        setTimeout(lib$es6$promise$asap$$flush, 1);
+	      };
+	    }
+	
+	    var lib$es6$promise$asap$$queue = new Array(1000);
+	    function lib$es6$promise$asap$$flush() {
+	      for (var i = 0; i < lib$es6$promise$asap$$len; i+=2) {
+	        var callback = lib$es6$promise$asap$$queue[i];
+	        var arg = lib$es6$promise$asap$$queue[i+1];
+	
+	        callback(arg);
+	
+	        lib$es6$promise$asap$$queue[i] = undefined;
+	        lib$es6$promise$asap$$queue[i+1] = undefined;
+	      }
+	
+	      lib$es6$promise$asap$$len = 0;
+	    }
+	
+	    function lib$es6$promise$asap$$attemptVertx() {
+	      try {
+	        var r = require;
+	        var vertx = __webpack_require__(124);
+	        lib$es6$promise$asap$$vertxNext = vertx.runOnLoop || vertx.runOnContext;
+	        return lib$es6$promise$asap$$useVertxTimer();
+	      } catch(e) {
+	        return lib$es6$promise$asap$$useSetTimeout();
+	      }
+	    }
+	
+	    var lib$es6$promise$asap$$scheduleFlush;
+	    // Decide what async method to use to triggering processing of queued callbacks:
+	    if (lib$es6$promise$asap$$isNode) {
+	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useNextTick();
+	    } else if (lib$es6$promise$asap$$BrowserMutationObserver) {
+	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useMutationObserver();
+	    } else if (lib$es6$promise$asap$$isWorker) {
+	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useMessageChannel();
+	    } else if (lib$es6$promise$asap$$browserWindow === undefined && "function" === 'function') {
+	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$attemptVertx();
+	    } else {
+	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useSetTimeout();
+	    }
+	
+	    function lib$es6$promise$$internal$$noop() {}
+	
+	    var lib$es6$promise$$internal$$PENDING   = void 0;
+	    var lib$es6$promise$$internal$$FULFILLED = 1;
+	    var lib$es6$promise$$internal$$REJECTED  = 2;
+	
+	    var lib$es6$promise$$internal$$GET_THEN_ERROR = new lib$es6$promise$$internal$$ErrorObject();
+	
+	    function lib$es6$promise$$internal$$selfFulfillment() {
+	      return new TypeError("You cannot resolve a promise with itself");
+	    }
+	
+	    function lib$es6$promise$$internal$$cannotReturnOwn() {
+	      return new TypeError('A promises callback cannot return that same promise.');
+	    }
+	
+	    function lib$es6$promise$$internal$$getThen(promise) {
+	      try {
+	        return promise.then;
+	      } catch(error) {
+	        lib$es6$promise$$internal$$GET_THEN_ERROR.error = error;
+	        return lib$es6$promise$$internal$$GET_THEN_ERROR;
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$tryThen(then, value, fulfillmentHandler, rejectionHandler) {
+	      try {
+	        then.call(value, fulfillmentHandler, rejectionHandler);
+	      } catch(e) {
+	        return e;
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$handleForeignThenable(promise, thenable, then) {
+	       lib$es6$promise$asap$$asap(function(promise) {
+	        var sealed = false;
+	        var error = lib$es6$promise$$internal$$tryThen(then, thenable, function(value) {
+	          if (sealed) { return; }
+	          sealed = true;
+	          if (thenable !== value) {
+	            lib$es6$promise$$internal$$resolve(promise, value);
+	          } else {
+	            lib$es6$promise$$internal$$fulfill(promise, value);
+	          }
+	        }, function(reason) {
+	          if (sealed) { return; }
+	          sealed = true;
+	
+	          lib$es6$promise$$internal$$reject(promise, reason);
+	        }, 'Settle: ' + (promise._label || ' unknown promise'));
+	
+	        if (!sealed && error) {
+	          sealed = true;
+	          lib$es6$promise$$internal$$reject(promise, error);
+	        }
+	      }, promise);
+	    }
+	
+	    function lib$es6$promise$$internal$$handleOwnThenable(promise, thenable) {
+	      if (thenable._state === lib$es6$promise$$internal$$FULFILLED) {
+	        lib$es6$promise$$internal$$fulfill(promise, thenable._result);
+	      } else if (thenable._state === lib$es6$promise$$internal$$REJECTED) {
+	        lib$es6$promise$$internal$$reject(promise, thenable._result);
+	      } else {
+	        lib$es6$promise$$internal$$subscribe(thenable, undefined, function(value) {
+	          lib$es6$promise$$internal$$resolve(promise, value);
+	        }, function(reason) {
+	          lib$es6$promise$$internal$$reject(promise, reason);
+	        });
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$handleMaybeThenable(promise, maybeThenable) {
+	      if (maybeThenable.constructor === promise.constructor) {
+	        lib$es6$promise$$internal$$handleOwnThenable(promise, maybeThenable);
+	      } else {
+	        var then = lib$es6$promise$$internal$$getThen(maybeThenable);
+	
+	        if (then === lib$es6$promise$$internal$$GET_THEN_ERROR) {
+	          lib$es6$promise$$internal$$reject(promise, lib$es6$promise$$internal$$GET_THEN_ERROR.error);
+	        } else if (then === undefined) {
+	          lib$es6$promise$$internal$$fulfill(promise, maybeThenable);
+	        } else if (lib$es6$promise$utils$$isFunction(then)) {
+	          lib$es6$promise$$internal$$handleForeignThenable(promise, maybeThenable, then);
+	        } else {
+	          lib$es6$promise$$internal$$fulfill(promise, maybeThenable);
+	        }
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$resolve(promise, value) {
+	      if (promise === value) {
+	        lib$es6$promise$$internal$$reject(promise, lib$es6$promise$$internal$$selfFulfillment());
+	      } else if (lib$es6$promise$utils$$objectOrFunction(value)) {
+	        lib$es6$promise$$internal$$handleMaybeThenable(promise, value);
+	      } else {
+	        lib$es6$promise$$internal$$fulfill(promise, value);
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$publishRejection(promise) {
+	      if (promise._onerror) {
+	        promise._onerror(promise._result);
+	      }
+	
+	      lib$es6$promise$$internal$$publish(promise);
+	    }
+	
+	    function lib$es6$promise$$internal$$fulfill(promise, value) {
+	      if (promise._state !== lib$es6$promise$$internal$$PENDING) { return; }
+	
+	      promise._result = value;
+	      promise._state = lib$es6$promise$$internal$$FULFILLED;
+	
+	      if (promise._subscribers.length !== 0) {
+	        lib$es6$promise$asap$$asap(lib$es6$promise$$internal$$publish, promise);
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$reject(promise, reason) {
+	      if (promise._state !== lib$es6$promise$$internal$$PENDING) { return; }
+	      promise._state = lib$es6$promise$$internal$$REJECTED;
+	      promise._result = reason;
+	
+	      lib$es6$promise$asap$$asap(lib$es6$promise$$internal$$publishRejection, promise);
+	    }
+	
+	    function lib$es6$promise$$internal$$subscribe(parent, child, onFulfillment, onRejection) {
+	      var subscribers = parent._subscribers;
+	      var length = subscribers.length;
+	
+	      parent._onerror = null;
+	
+	      subscribers[length] = child;
+	      subscribers[length + lib$es6$promise$$internal$$FULFILLED] = onFulfillment;
+	      subscribers[length + lib$es6$promise$$internal$$REJECTED]  = onRejection;
+	
+	      if (length === 0 && parent._state) {
+	        lib$es6$promise$asap$$asap(lib$es6$promise$$internal$$publish, parent);
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$publish(promise) {
+	      var subscribers = promise._subscribers;
+	      var settled = promise._state;
+	
+	      if (subscribers.length === 0) { return; }
+	
+	      var child, callback, detail = promise._result;
+	
+	      for (var i = 0; i < subscribers.length; i += 3) {
+	        child = subscribers[i];
+	        callback = subscribers[i + settled];
+	
+	        if (child) {
+	          lib$es6$promise$$internal$$invokeCallback(settled, child, callback, detail);
+	        } else {
+	          callback(detail);
+	        }
+	      }
+	
+	      promise._subscribers.length = 0;
+	    }
+	
+	    function lib$es6$promise$$internal$$ErrorObject() {
+	      this.error = null;
+	    }
+	
+	    var lib$es6$promise$$internal$$TRY_CATCH_ERROR = new lib$es6$promise$$internal$$ErrorObject();
+	
+	    function lib$es6$promise$$internal$$tryCatch(callback, detail) {
+	      try {
+	        return callback(detail);
+	      } catch(e) {
+	        lib$es6$promise$$internal$$TRY_CATCH_ERROR.error = e;
+	        return lib$es6$promise$$internal$$TRY_CATCH_ERROR;
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$invokeCallback(settled, promise, callback, detail) {
+	      var hasCallback = lib$es6$promise$utils$$isFunction(callback),
+	          value, error, succeeded, failed;
+	
+	      if (hasCallback) {
+	        value = lib$es6$promise$$internal$$tryCatch(callback, detail);
+	
+	        if (value === lib$es6$promise$$internal$$TRY_CATCH_ERROR) {
+	          failed = true;
+	          error = value.error;
+	          value = null;
+	        } else {
+	          succeeded = true;
+	        }
+	
+	        if (promise === value) {
+	          lib$es6$promise$$internal$$reject(promise, lib$es6$promise$$internal$$cannotReturnOwn());
+	          return;
+	        }
+	
+	      } else {
+	        value = detail;
+	        succeeded = true;
+	      }
+	
+	      if (promise._state !== lib$es6$promise$$internal$$PENDING) {
+	        // noop
+	      } else if (hasCallback && succeeded) {
+	        lib$es6$promise$$internal$$resolve(promise, value);
+	      } else if (failed) {
+	        lib$es6$promise$$internal$$reject(promise, error);
+	      } else if (settled === lib$es6$promise$$internal$$FULFILLED) {
+	        lib$es6$promise$$internal$$fulfill(promise, value);
+	      } else if (settled === lib$es6$promise$$internal$$REJECTED) {
+	        lib$es6$promise$$internal$$reject(promise, value);
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$initializePromise(promise, resolver) {
+	      try {
+	        resolver(function resolvePromise(value){
+	          lib$es6$promise$$internal$$resolve(promise, value);
+	        }, function rejectPromise(reason) {
+	          lib$es6$promise$$internal$$reject(promise, reason);
+	        });
+	      } catch(e) {
+	        lib$es6$promise$$internal$$reject(promise, e);
+	      }
+	    }
+	
+	    function lib$es6$promise$enumerator$$Enumerator(Constructor, input) {
+	      var enumerator = this;
+	
+	      enumerator._instanceConstructor = Constructor;
+	      enumerator.promise = new Constructor(lib$es6$promise$$internal$$noop);
+	
+	      if (enumerator._validateInput(input)) {
+	        enumerator._input     = input;
+	        enumerator.length     = input.length;
+	        enumerator._remaining = input.length;
+	
+	        enumerator._init();
+	
+	        if (enumerator.length === 0) {
+	          lib$es6$promise$$internal$$fulfill(enumerator.promise, enumerator._result);
+	        } else {
+	          enumerator.length = enumerator.length || 0;
+	          enumerator._enumerate();
+	          if (enumerator._remaining === 0) {
+	            lib$es6$promise$$internal$$fulfill(enumerator.promise, enumerator._result);
+	          }
+	        }
+	      } else {
+	        lib$es6$promise$$internal$$reject(enumerator.promise, enumerator._validationError());
+	      }
+	    }
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._validateInput = function(input) {
+	      return lib$es6$promise$utils$$isArray(input);
+	    };
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._validationError = function() {
+	      return new Error('Array Methods must be provided an Array');
+	    };
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._init = function() {
+	      this._result = new Array(this.length);
+	    };
+	
+	    var lib$es6$promise$enumerator$$default = lib$es6$promise$enumerator$$Enumerator;
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._enumerate = function() {
+	      var enumerator = this;
+	
+	      var length  = enumerator.length;
+	      var promise = enumerator.promise;
+	      var input   = enumerator._input;
+	
+	      for (var i = 0; promise._state === lib$es6$promise$$internal$$PENDING && i < length; i++) {
+	        enumerator._eachEntry(input[i], i);
+	      }
+	    };
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._eachEntry = function(entry, i) {
+	      var enumerator = this;
+	      var c = enumerator._instanceConstructor;
+	
+	      if (lib$es6$promise$utils$$isMaybeThenable(entry)) {
+	        if (entry.constructor === c && entry._state !== lib$es6$promise$$internal$$PENDING) {
+	          entry._onerror = null;
+	          enumerator._settledAt(entry._state, i, entry._result);
+	        } else {
+	          enumerator._willSettleAt(c.resolve(entry), i);
+	        }
+	      } else {
+	        enumerator._remaining--;
+	        enumerator._result[i] = entry;
+	      }
+	    };
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._settledAt = function(state, i, value) {
+	      var enumerator = this;
+	      var promise = enumerator.promise;
+	
+	      if (promise._state === lib$es6$promise$$internal$$PENDING) {
+	        enumerator._remaining--;
+	
+	        if (state === lib$es6$promise$$internal$$REJECTED) {
+	          lib$es6$promise$$internal$$reject(promise, value);
+	        } else {
+	          enumerator._result[i] = value;
+	        }
+	      }
+	
+	      if (enumerator._remaining === 0) {
+	        lib$es6$promise$$internal$$fulfill(promise, enumerator._result);
+	      }
+	    };
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._willSettleAt = function(promise, i) {
+	      var enumerator = this;
+	
+	      lib$es6$promise$$internal$$subscribe(promise, undefined, function(value) {
+	        enumerator._settledAt(lib$es6$promise$$internal$$FULFILLED, i, value);
+	      }, function(reason) {
+	        enumerator._settledAt(lib$es6$promise$$internal$$REJECTED, i, reason);
+	      });
+	    };
+	    function lib$es6$promise$promise$all$$all(entries) {
+	      return new lib$es6$promise$enumerator$$default(this, entries).promise;
+	    }
+	    var lib$es6$promise$promise$all$$default = lib$es6$promise$promise$all$$all;
+	    function lib$es6$promise$promise$race$$race(entries) {
+	      /*jshint validthis:true */
+	      var Constructor = this;
+	
+	      var promise = new Constructor(lib$es6$promise$$internal$$noop);
+	
+	      if (!lib$es6$promise$utils$$isArray(entries)) {
+	        lib$es6$promise$$internal$$reject(promise, new TypeError('You must pass an array to race.'));
+	        return promise;
+	      }
+	
+	      var length = entries.length;
+	
+	      function onFulfillment(value) {
+	        lib$es6$promise$$internal$$resolve(promise, value);
+	      }
+	
+	      function onRejection(reason) {
+	        lib$es6$promise$$internal$$reject(promise, reason);
+	      }
+	
+	      for (var i = 0; promise._state === lib$es6$promise$$internal$$PENDING && i < length; i++) {
+	        lib$es6$promise$$internal$$subscribe(Constructor.resolve(entries[i]), undefined, onFulfillment, onRejection);
+	      }
+	
+	      return promise;
+	    }
+	    var lib$es6$promise$promise$race$$default = lib$es6$promise$promise$race$$race;
+	    function lib$es6$promise$promise$resolve$$resolve(object) {
+	      /*jshint validthis:true */
+	      var Constructor = this;
+	
+	      if (object && typeof object === 'object' && object.constructor === Constructor) {
+	        return object;
+	      }
+	
+	      var promise = new Constructor(lib$es6$promise$$internal$$noop);
+	      lib$es6$promise$$internal$$resolve(promise, object);
+	      return promise;
+	    }
+	    var lib$es6$promise$promise$resolve$$default = lib$es6$promise$promise$resolve$$resolve;
+	    function lib$es6$promise$promise$reject$$reject(reason) {
+	      /*jshint validthis:true */
+	      var Constructor = this;
+	      var promise = new Constructor(lib$es6$promise$$internal$$noop);
+	      lib$es6$promise$$internal$$reject(promise, reason);
+	      return promise;
+	    }
+	    var lib$es6$promise$promise$reject$$default = lib$es6$promise$promise$reject$$reject;
+	
+	    var lib$es6$promise$promise$$counter = 0;
+	
+	    function lib$es6$promise$promise$$needsResolver() {
+	      throw new TypeError('You must pass a resolver function as the first argument to the promise constructor');
+	    }
+	
+	    function lib$es6$promise$promise$$needsNew() {
+	      throw new TypeError("Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function.");
+	    }
+	
+	    var lib$es6$promise$promise$$default = lib$es6$promise$promise$$Promise;
+	    /**
+	      Promise objects represent the eventual result of an asynchronous operation. The
+	      primary way of interacting with a promise is through its `then` method, which
+	      registers callbacks to receive either a promise's eventual value or the reason
+	      why the promise cannot be fulfilled.
+	
+	      Terminology
+	      -----------
+	
+	      - `promise` is an object or function with a `then` method whose behavior conforms to this specification.
+	      - `thenable` is an object or function that defines a `then` method.
+	      - `value` is any legal JavaScript value (including undefined, a thenable, or a promise).
+	      - `exception` is a value that is thrown using the throw statement.
+	      - `reason` is a value that indicates why a promise was rejected.
+	      - `settled` the final resting state of a promise, fulfilled or rejected.
+	
+	      A promise can be in one of three states: pending, fulfilled, or rejected.
+	
+	      Promises that are fulfilled have a fulfillment value and are in the fulfilled
+	      state.  Promises that are rejected have a rejection reason and are in the
+	      rejected state.  A fulfillment value is never a thenable.
+	
+	      Promises can also be said to *resolve* a value.  If this value is also a
+	      promise, then the original promise's settled state will match the value's
+	      settled state.  So a promise that *resolves* a promise that rejects will
+	      itself reject, and a promise that *resolves* a promise that fulfills will
+	      itself fulfill.
+	
+	
+	      Basic Usage:
+	      ------------
+	
+	      ```js
+	      var promise = new Promise(function(resolve, reject) {
+	        // on success
+	        resolve(value);
+	
+	        // on failure
+	        reject(reason);
+	      });
+	
+	      promise.then(function(value) {
+	        // on fulfillment
+	      }, function(reason) {
+	        // on rejection
+	      });
+	      ```
+	
+	      Advanced Usage:
+	      ---------------
+	
+	      Promises shine when abstracting away asynchronous interactions such as
+	      `XMLHttpRequest`s.
+	
+	      ```js
+	      function getJSON(url) {
+	        return new Promise(function(resolve, reject){
+	          var xhr = new XMLHttpRequest();
+	
+	          xhr.open('GET', url);
+	          xhr.onreadystatechange = handler;
+	          xhr.responseType = 'json';
+	          xhr.setRequestHeader('Accept', 'application/json');
+	          xhr.send();
+	
+	          function handler() {
+	            if (this.readyState === this.DONE) {
+	              if (this.status === 200) {
+	                resolve(this.response);
+	              } else {
+	                reject(new Error('getJSON: `' + url + '` failed with status: [' + this.status + ']'));
+	              }
+	            }
+	          };
+	        });
+	      }
+	
+	      getJSON('/posts.json').then(function(json) {
+	        // on fulfillment
+	      }, function(reason) {
+	        // on rejection
+	      });
+	      ```
+	
+	      Unlike callbacks, promises are great composable primitives.
+	
+	      ```js
+	      Promise.all([
+	        getJSON('/posts'),
+	        getJSON('/comments')
+	      ]).then(function(values){
+	        values[0] // => postsJSON
+	        values[1] // => commentsJSON
+	
+	        return values;
+	      });
+	      ```
+	
+	      @class Promise
+	      @param {function} resolver
+	      Useful for tooling.
+	      @constructor
+	    */
+	    function lib$es6$promise$promise$$Promise(resolver) {
+	      this._id = lib$es6$promise$promise$$counter++;
+	      this._state = undefined;
+	      this._result = undefined;
+	      this._subscribers = [];
+	
+	      if (lib$es6$promise$$internal$$noop !== resolver) {
+	        if (!lib$es6$promise$utils$$isFunction(resolver)) {
+	          lib$es6$promise$promise$$needsResolver();
+	        }
+	
+	        if (!(this instanceof lib$es6$promise$promise$$Promise)) {
+	          lib$es6$promise$promise$$needsNew();
+	        }
+	
+	        lib$es6$promise$$internal$$initializePromise(this, resolver);
+	      }
+	    }
+	
+	    lib$es6$promise$promise$$Promise.all = lib$es6$promise$promise$all$$default;
+	    lib$es6$promise$promise$$Promise.race = lib$es6$promise$promise$race$$default;
+	    lib$es6$promise$promise$$Promise.resolve = lib$es6$promise$promise$resolve$$default;
+	    lib$es6$promise$promise$$Promise.reject = lib$es6$promise$promise$reject$$default;
+	    lib$es6$promise$promise$$Promise._setScheduler = lib$es6$promise$asap$$setScheduler;
+	    lib$es6$promise$promise$$Promise._setAsap = lib$es6$promise$asap$$setAsap;
+	    lib$es6$promise$promise$$Promise._asap = lib$es6$promise$asap$$asap;
+	
+	    lib$es6$promise$promise$$Promise.prototype = {
+	      constructor: lib$es6$promise$promise$$Promise,
+	
+	    /**
+	      The primary way of interacting with a promise is through its `then` method,
+	      which registers callbacks to receive either a promise's eventual value or the
+	      reason why the promise cannot be fulfilled.
+	
+	      ```js
+	      findUser().then(function(user){
+	        // user is available
+	      }, function(reason){
+	        // user is unavailable, and you are given the reason why
+	      });
+	      ```
+	
+	      Chaining
+	      --------
+	
+	      The return value of `then` is itself a promise.  This second, 'downstream'
+	      promise is resolved with the return value of the first promise's fulfillment
+	      or rejection handler, or rejected if the handler throws an exception.
+	
+	      ```js
+	      findUser().then(function (user) {
+	        return user.name;
+	      }, function (reason) {
+	        return 'default name';
+	      }).then(function (userName) {
+	        // If `findUser` fulfilled, `userName` will be the user's name, otherwise it
+	        // will be `'default name'`
+	      });
+	
+	      findUser().then(function (user) {
+	        throw new Error('Found user, but still unhappy');
+	      }, function (reason) {
+	        throw new Error('`findUser` rejected and we're unhappy');
+	      }).then(function (value) {
+	        // never reached
+	      }, function (reason) {
+	        // if `findUser` fulfilled, `reason` will be 'Found user, but still unhappy'.
+	        // If `findUser` rejected, `reason` will be '`findUser` rejected and we're unhappy'.
+	      });
+	      ```
+	      If the downstream promise does not specify a rejection handler, rejection reasons will be propagated further downstream.
+	
+	      ```js
+	      findUser().then(function (user) {
+	        throw new PedagogicalException('Upstream error');
+	      }).then(function (value) {
+	        // never reached
+	      }).then(function (value) {
+	        // never reached
+	      }, function (reason) {
+	        // The `PedgagocialException` is propagated all the way down to here
+	      });
+	      ```
+	
+	      Assimilation
+	      ------------
+	
+	      Sometimes the value you want to propagate to a downstream promise can only be
+	      retrieved asynchronously. This can be achieved by returning a promise in the
+	      fulfillment or rejection handler. The downstream promise will then be pending
+	      until the returned promise is settled. This is called *assimilation*.
+	
+	      ```js
+	      findUser().then(function (user) {
+	        return findCommentsByAuthor(user);
+	      }).then(function (comments) {
+	        // The user's comments are now available
+	      });
+	      ```
+	
+	      If the assimliated promise rejects, then the downstream promise will also reject.
+	
+	      ```js
+	      findUser().then(function (user) {
+	        return findCommentsByAuthor(user);
+	      }).then(function (comments) {
+	        // If `findCommentsByAuthor` fulfills, we'll have the value here
+	      }, function (reason) {
+	        // If `findCommentsByAuthor` rejects, we'll have the reason here
+	      });
+	      ```
+	
+	      Simple Example
+	      --------------
+	
+	      Synchronous Example
+	
+	      ```javascript
+	      var result;
+	
+	      try {
+	        result = findResult();
+	        // success
+	      } catch(reason) {
+	        // failure
+	      }
+	      ```
+	
+	      Errback Example
+	
+	      ```js
+	      findResult(function(result, err){
+	        if (err) {
+	          // failure
+	        } else {
+	          // success
+	        }
+	      });
+	      ```
+	
+	      Promise Example;
+	
+	      ```javascript
+	      findResult().then(function(result){
+	        // success
+	      }, function(reason){
+	        // failure
+	      });
+	      ```
+	
+	      Advanced Example
+	      --------------
+	
+	      Synchronous Example
+	
+	      ```javascript
+	      var author, books;
+	
+	      try {
+	        author = findAuthor();
+	        books  = findBooksByAuthor(author);
+	        // success
+	      } catch(reason) {
+	        // failure
+	      }
+	      ```
+	
+	      Errback Example
+	
+	      ```js
+	
+	      function foundBooks(books) {
+	
+	      }
+	
+	      function failure(reason) {
+	
+	      }
+	
+	      findAuthor(function(author, err){
+	        if (err) {
+	          failure(err);
+	          // failure
+	        } else {
+	          try {
+	            findBoooksByAuthor(author, function(books, err) {
+	              if (err) {
+	                failure(err);
+	              } else {
+	                try {
+	                  foundBooks(books);
+	                } catch(reason) {
+	                  failure(reason);
+	                }
+	              }
+	            });
+	          } catch(error) {
+	            failure(err);
+	          }
+	          // success
+	        }
+	      });
+	      ```
+	
+	      Promise Example;
+	
+	      ```javascript
+	      findAuthor().
+	        then(findBooksByAuthor).
+	        then(function(books){
+	          // found books
+	      }).catch(function(reason){
+	        // something went wrong
+	      });
+	      ```
+	
+	      @method then
+	      @param {Function} onFulfilled
+	      @param {Function} onRejected
+	      Useful for tooling.
+	      @return {Promise}
+	    */
+	      then: function(onFulfillment, onRejection) {
+	        var parent = this;
+	        var state = parent._state;
+	
+	        if (state === lib$es6$promise$$internal$$FULFILLED && !onFulfillment || state === lib$es6$promise$$internal$$REJECTED && !onRejection) {
+	          return this;
+	        }
+	
+	        var child = new this.constructor(lib$es6$promise$$internal$$noop);
+	        var result = parent._result;
+	
+	        if (state) {
+	          var callback = arguments[state - 1];
+	          lib$es6$promise$asap$$asap(function(){
+	            lib$es6$promise$$internal$$invokeCallback(state, child, callback, result);
+	          });
+	        } else {
+	          lib$es6$promise$$internal$$subscribe(parent, child, onFulfillment, onRejection);
+	        }
+	
+	        return child;
+	      },
+	
+	    /**
+	      `catch` is simply sugar for `then(undefined, onRejection)` which makes it the same
+	      as the catch block of a try/catch statement.
+	
+	      ```js
+	      function findAuthor(){
+	        throw new Error('couldn't find that author');
+	      }
+	
+	      // synchronous
+	      try {
+	        findAuthor();
+	      } catch(reason) {
+	        // something went wrong
+	      }
+	
+	      // async with promises
+	      findAuthor().catch(function(reason){
+	        // something went wrong
+	      });
+	      ```
+	
+	      @method catch
+	      @param {Function} onRejection
+	      Useful for tooling.
+	      @return {Promise}
+	    */
+	      'catch': function(onRejection) {
+	        return this.then(null, onRejection);
+	      }
+	    };
+	    function lib$es6$promise$polyfill$$polyfill() {
+	      var local;
+	
+	      if (typeof global !== 'undefined') {
+	          local = global;
+	      } else if (typeof self !== 'undefined') {
+	          local = self;
+	      } else {
+	          try {
+	              local = Function('return this')();
+	          } catch (e) {
+	              throw new Error('polyfill failed because global object is unavailable in this environment');
+	          }
+	      }
+	
+	      var P = local.Promise;
+	
+	      if (P && Object.prototype.toString.call(P.resolve()) === '[object Promise]' && !P.cast) {
+	        return;
+	      }
+	
+	      local.Promise = lib$es6$promise$promise$$default;
+	    }
+	    var lib$es6$promise$polyfill$$default = lib$es6$promise$polyfill$$polyfill;
+	
+	    var lib$es6$promise$umd$$ES6Promise = {
+	      'Promise': lib$es6$promise$promise$$default,
+	      'polyfill': lib$es6$promise$polyfill$$default
+	    };
+	
+	    /* global define:true module:true window: true */
+	    if ("function" === 'function' && __webpack_require__(125)['amd']) {
+	      !(__WEBPACK_AMD_DEFINE_RESULT__ = function() { return lib$es6$promise$umd$$ES6Promise; }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    } else if (typeof module !== 'undefined' && module['exports']) {
+	      module['exports'] = lib$es6$promise$umd$$ES6Promise;
+	    } else if (typeof this !== 'undefined') {
+	      this['ES6Promise'] = lib$es6$promise$umd$$ES6Promise;
+	    }
+	
+	    lib$es6$promise$polyfill$$default();
+	}).call(this);
+	
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), (function() { return this; }()), __webpack_require__(123)(module)))
+
+/***/ },
+/* 123 */
+/***/ function(module, exports) {
+
+	module.exports = function(module) {
+		if(!module.webpackPolyfill) {
+			module.deprecate = function() {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	}
+
+
+/***/ },
+/* 124 */
+/***/ function(module, exports) {
+
+	/* (ignored) */
+
+/***/ },
+/* 125 */
+/***/ function(module, exports) {
+
+	module.exports = function() { throw new Error("define cannot be used indirect"); };
 
 
 /***/ }
