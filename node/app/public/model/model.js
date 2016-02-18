@@ -26,8 +26,18 @@ model.getTagInfo = url => {
   });
 };
 
-model.getAll = (aurl, turl) => {
-    return Promise.all([model.getArticleList(aurl), model.getTagInfo(turl)]);
+model.getAll = (articleUrl, tagUrl) => {
+    return Promise.all([model.getArticleList(articleUrl), model.getTagInfo(tagUrl)]);
+};
+
+model.handleDate = date => {
+        var dateArr = date.split('T');
+        return dateArr[0];
+};
+
+model.toMarkdown = text => {
+    var markdown = require("markdown").markdown;
+    return markdown.toHTML(text);
 };
 
 export default model;

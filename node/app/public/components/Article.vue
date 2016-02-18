@@ -30,14 +30,13 @@ export default{
         data: function(transition){
             var articleId = transition.to.params._id;
             var articleUrl = url.articleUrl + '?_id=' + articleId;
-            var markdown = require("markdown").markdown;
             var articleInfo = {};
 
             model.getArticleList(articleUrl).then(data => {
                 data = data[0];
 
                 articleInfo.title = data.title;
-                articleInfo.article = markdown.toHTML(data.md);
+                articleInfo.article = model.toMarkdown(data.md);
                 articleInfo.date = data.date.split('T')[0];
                 this.articleInfo = articleInfo;
             });
@@ -50,6 +49,7 @@ export default{
 .article{
     width: 75%;
     margin: 2rem auto;
+    height: 100%;
 }
 article {
     background-color: rgb(255, 255, 255);
@@ -83,6 +83,9 @@ article {
     margin-top: 1rem;
     margin-bottom: .1rem;
     color: #444955;
+}
+.a-content h1{
+    display: none;
 }
 h2{
     padding-left: .4rem;

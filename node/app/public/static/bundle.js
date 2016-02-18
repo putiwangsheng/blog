@@ -50,23 +50,23 @@
 	
 	var _vue2 = _interopRequireDefault(_vue);
 	
-	var _vueRouter = __webpack_require__(24);
+	var _vueRouter = __webpack_require__(3);
 	
 	var _vueRouter2 = _interopRequireDefault(_vueRouter);
 	
-	var _App = __webpack_require__(3);
+	var _App = __webpack_require__(4);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _ArticleList = __webpack_require__(9);
+	var _ArticleList = __webpack_require__(10);
 	
 	var _ArticleList2 = _interopRequireDefault(_ArticleList);
 	
-	var _Article = __webpack_require__(25);
+	var _Article = __webpack_require__(48);
 	
 	var _Article2 = _interopRequireDefault(_Article);
 	
-	var _TagArticleList = __webpack_require__(41);
+	var _TagArticleList = __webpack_require__(53);
 	
 	var _TagArticleList2 = _interopRequireDefault(_TagArticleList);
 	
@@ -9725,839 +9725,6 @@
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
-	__webpack_require__(4)
-	__vue_template__ = __webpack_require__(23)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) { (typeof module.exports === "function" ? (module.exports.options || {}) : module.exports).template = __vue_template__ }
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
-	  if (!hotAPI.compatible) return
-	  var id = "F:\\github\\blog\\node\\app\\public\\components\\App.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(5);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./App.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./App.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\r\n#header{\r\n    background-image: url(\"https://ooo.0o0.ooo/2016/01/26/56a76938f09fb.jpg\");\r\n    height: 40rem;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    opacity: 0.8;\r\n}\r\n.b-title{\r\n    position: relative;\r\n    top: 1rem;\r\n    left: 1rem;\r\n}\r\n.s-title{\r\n    position: absolute;\r\n    color: #fff;\r\n    font-weight: 700;\r\n    font-size: 2rem;\r\n    -webkit-transform: rotate(-12deg) translate(255px, -10px);\r\n    transform: rotate(-12deg) translate(255px, -10px);\r\n}\r\n.signature{\r\n    display: inline-block;\r\n    border: .3rem solid #ea7bf7;\r\n    position: absolute;;\r\n    top: 3rem;\r\n    right: 8%;\r\n    padding: .3rem;\r\n}\r\n.signature p{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    width: 1rem;\r\n    color: #fff;\r\n}\r\n\r\n#divider{\r\n    margin: 4.5rem 0 0 0;\r\n    border: none;\r\n    border-top: .1rem solid #fff;\r\n    text-align: center;\r\n}\r\n#divider:after{\r\n    content: url(\"https://ooo.0o0.ooo/2016/01/27/56a99d661f678.png\");\r\n    background-color: #e2e2e2;\r\n    position: relative;\r\n    top: -.8rem;\r\n    display: inline-block;\r\n}\r\n\r\n#footer{\r\n    background-color: rgb(191, 112, 220);\r\n    width: 100%;\r\n    height: 2rem;\r\n    position: fixed;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 10;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/App.vue?6dec5852"],"names":[],"mappings":";AAmCA;IACA,0EAAA;IACA,cAAA;IACA,6BAAA;IACA,uBAAA;IACA,aAAA;CACA;AACA;IACA,mBAAA;IACA,UAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;IACA,YAAA;IACA,iBAAA;IACA,gBAAA;IACA,0DAAA;IAEA,kDAAA;CACA;AACA;IACA,sBAAA;IACA,4BAAA;IACA,mBAAA;IACA,UAAA;IACA,UAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,oBAAA;IACA,YAAA;IACA,YAAA;CACA;;AAEA;IACA,qBAAA;IACA,aAAA;IACA,6BAAA;IACA,mBAAA;CACA;AACA;IACA,iEAAA;IACA,0BAAA;IACA,mBAAA;IACA,YAAA;IACA,sBAAA;CACA;;AAEA;IACA,qCAAA;IACA,YAAA;IACA,aAAA;IACA,gBAAA;IACA,UAAA;IACA,QAAA;IACA,YAAA;CACA","file":"App.vue","sourcesContent":["<template>\r\n    <div>\r\n        <!-- <section id=\"header\">\r\n            <img class=\"b-title\" src=\"https://ooo.0o0.ooo/2016/01/27/56a88272da80e.png\" alt=\"SEEKFNL\" />\r\n            <p class=\"s-title\">\r\n                <span style=\"color: #3369e8\">Blog</span>\r\n                <span style=\"color: #eeb211\">of</span>\r\n                <span style=\"color: #d50f25\">ChangQi</span>\r\n            </p>\r\n            <div class=\"signature\">\r\n                <p>\r\n                    情不知所起\r\n                </p>\r\n                <p>\r\n                    一往而深\r\n                </p>\r\n            </div>\r\n        </section>\r\n        <hr id=\"divider\"></hr> -->\r\n\r\n        <router-view\r\n            keep-alive\r\n            keep-alive\r\n            transition\r\n            transition-mode=\"out-in\">\r\n        </router-view>\r\n\r\n        <section id=\"footer\">\r\n\r\n        </section>\r\n    </div>\r\n\r\n</template>\r\n\r\n<style>\r\n#header{\r\n    background-image: url(\"https://ooo.0o0.ooo/2016/01/26/56a76938f09fb.jpg\");\r\n    height: 40rem;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    opacity: 0.8;\r\n}\r\n.b-title{\r\n    position: relative;\r\n    top: 1rem;\r\n    left: 1rem;\r\n}\r\n.s-title{\r\n    position: absolute;\r\n    color: #fff;\r\n    font-weight: 700;\r\n    font-size: 2rem;\r\n    -webkit-transform: rotate(-12deg) translate(255px, -10px);\r\n    -moz-transform: rotate(-12deg) translate(255px, -10px);\r\n    transform: rotate(-12deg) translate(255px, -10px);\r\n}\r\n.signature{\r\n    display: inline-block;\r\n    border: .3rem solid #ea7bf7;\r\n    position: absolute;;\r\n    top: 3rem;\r\n    right: 8%;\r\n    padding: .3rem;\r\n}\r\n.signature p{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    width: 1rem;\r\n    color: #fff;\r\n}\r\n\r\n#divider{\r\n    margin: 4.5rem 0 0 0;\r\n    border: none;\r\n    border-top: .1rem solid #fff;\r\n    text-align: center;\r\n}\r\n#divider:after{\r\n    content: url(\"https://ooo.0o0.ooo/2016/01/27/56a99d661f678.png\");\r\n    background-color: #e2e2e2;\r\n    position: relative;\r\n    top: -.8rem;\r\n    display: inline-block;\r\n}\r\n\r\n#footer{\r\n    background-color: rgb(191, 112, 220);\r\n    width: 100%;\r\n    height: 2rem;\r\n    position: fixed;\r\n    bottom: 0;\r\n    left: 0;\r\n    z-index: 10;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 6 */
-/***/ function(module, exports) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-	
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-	
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	var stylesInDom = {},
-		memoize = function(fn) {
-			var memo;
-			return function () {
-				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-				return memo;
-			};
-		},
-		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-		}),
-		getHeadElement = memoize(function () {
-			return document.head || document.getElementsByTagName("head")[0];
-		}),
-		singletonElement = null,
-		singletonCounter = 0,
-		styleElementsInsertedAtTop = [];
-	
-	module.exports = function(list, options) {
-		if(false) {
-			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-		}
-	
-		options = options || {};
-		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-		// tags it will allow on a page
-		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-	
-		// By default, add <style> tags to the bottom of <head>.
-		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-	
-		var styles = listToStyles(list);
-		addStylesToDom(styles, options);
-	
-		return function update(newList) {
-			var mayRemove = [];
-			for(var i = 0; i < styles.length; i++) {
-				var item = styles[i];
-				var domStyle = stylesInDom[item.id];
-				domStyle.refs--;
-				mayRemove.push(domStyle);
-			}
-			if(newList) {
-				var newStyles = listToStyles(newList);
-				addStylesToDom(newStyles, options);
-			}
-			for(var i = 0; i < mayRemove.length; i++) {
-				var domStyle = mayRemove[i];
-				if(domStyle.refs === 0) {
-					for(var j = 0; j < domStyle.parts.length; j++)
-						domStyle.parts[j]();
-					delete stylesInDom[domStyle.id];
-				}
-			}
-		};
-	}
-	
-	function addStylesToDom(styles, options) {
-		for(var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-			if(domStyle) {
-				domStyle.refs++;
-				for(var j = 0; j < domStyle.parts.length; j++) {
-					domStyle.parts[j](item.parts[j]);
-				}
-				for(; j < item.parts.length; j++) {
-					domStyle.parts.push(addStyle(item.parts[j], options));
-				}
-			} else {
-				var parts = [];
-				for(var j = 0; j < item.parts.length; j++) {
-					parts.push(addStyle(item.parts[j], options));
-				}
-				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-			}
-		}
-	}
-	
-	function listToStyles(list) {
-		var styles = [];
-		var newStyles = {};
-		for(var i = 0; i < list.length; i++) {
-			var item = list[i];
-			var id = item[0];
-			var css = item[1];
-			var media = item[2];
-			var sourceMap = item[3];
-			var part = {css: css, media: media, sourceMap: sourceMap};
-			if(!newStyles[id])
-				styles.push(newStyles[id] = {id: id, parts: [part]});
-			else
-				newStyles[id].parts.push(part);
-		}
-		return styles;
-	}
-	
-	function insertStyleElement(options, styleElement) {
-		var head = getHeadElement();
-		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
-		if (options.insertAt === "top") {
-			if(!lastStyleElementInsertedAtTop) {
-				head.insertBefore(styleElement, head.firstChild);
-			} else if(lastStyleElementInsertedAtTop.nextSibling) {
-				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
-			} else {
-				head.appendChild(styleElement);
-			}
-			styleElementsInsertedAtTop.push(styleElement);
-		} else if (options.insertAt === "bottom") {
-			head.appendChild(styleElement);
-		} else {
-			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
-		}
-	}
-	
-	function removeStyleElement(styleElement) {
-		styleElement.parentNode.removeChild(styleElement);
-		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
-		if(idx >= 0) {
-			styleElementsInsertedAtTop.splice(idx, 1);
-		}
-	}
-	
-	function createStyleElement(options) {
-		var styleElement = document.createElement("style");
-		styleElement.type = "text/css";
-		insertStyleElement(options, styleElement);
-		return styleElement;
-	}
-	
-	function addStyle(obj, options) {
-		var styleElement, update, remove;
-	
-		if (options.singleton) {
-			var styleIndex = singletonCounter++;
-			styleElement = singletonElement || (singletonElement = createStyleElement(options));
-			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
-		} else {
-			styleElement = createStyleElement(options);
-			update = applyToTag.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-			};
-		}
-	
-		update(obj);
-	
-		return function updateStyle(newObj) {
-			if(newObj) {
-				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
-					return;
-				update(obj = newObj);
-			} else {
-				remove();
-			}
-		};
-	}
-	
-	var replaceText = (function () {
-		var textStore = [];
-	
-		return function (index, replacement) {
-			textStore[index] = replacement;
-			return textStore.filter(Boolean).join('\n');
-		};
-	})();
-	
-	function applyToSingletonTag(styleElement, index, remove, obj) {
-		var css = remove ? "" : obj.css;
-	
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = replaceText(index, css);
-		} else {
-			var cssNode = document.createTextNode(css);
-			var childNodes = styleElement.childNodes;
-			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
-			if (childNodes.length) {
-				styleElement.insertBefore(cssNode, childNodes[index]);
-			} else {
-				styleElement.appendChild(cssNode);
-			}
-		}
-	}
-	
-	function applyToTag(styleElement, obj) {
-		var css = obj.css;
-		var media = obj.media;
-		var sourceMap = obj.sourceMap;
-	
-		if (media) {
-			styleElement.setAttribute("media", media);
-		}
-	
-		if (sourceMap) {
-			// https://developer.chrome.com/devtools/docs/javascript-debugging
-			// this makes source maps inside style tags work properly in Chrome
-			css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */';
-			// http://stackoverflow.com/a/26603875
-			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-		}
-	
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = css;
-		} else {
-			while(styleElement.firstChild) {
-				styleElement.removeChild(styleElement.firstChild);
-			}
-			styleElement.appendChild(document.createTextNode(css));
-		}
-	}
-
-
-/***/ },
-/* 8 */,
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__webpack_require__(10)
-	__vue_script__ = __webpack_require__(12)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] public\\components\\ArticleList.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(18)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) { (typeof module.exports === "function" ? (module.exports.options || {}) : module.exports).template = __vue_template__ }
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
-	  if (!hotAPI.compatible) return
-	  var id = "F:\\github\\blog\\node\\app\\public\\components\\ArticleList.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(11);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ArticleList.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ArticleList.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\r\n.loading::before{\r\n    content: 'Loading...';\r\n    position: absolute;\r\n    left: 45%;\r\n    top: 40%;\r\n}\r\n.wrapper{\r\n    padding: 3rem 8%;\r\n}\r\n.clearfix:after {\r\n    content: '.';\r\n    display: block;\r\n    height: 0;\r\n    visibility: hidden;\r\n    clear: both;\r\n}\r\n.article-list{\r\n    width: 70%;\r\n    margin: 0 7% 0 0;\r\n    float: left;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/ArticleList.vue?1de455d2"],"names":[],"mappings":";AAmGA;IACA,sBAAA;IACA,mBAAA;IACA,UAAA;IACA,SAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,aAAA;IACA,eAAA;IACA,UAAA;IACA,mBAAA;IACA,YAAA;CACA;AACA;IACA,WAAA;IACA,iBAAA;IACA,YAAA;CACA","file":"ArticleList.vue","sourcesContent":["<template>\r\n    <section class=\"wrapper clearfix\" :class=\"{ loading: !items.length }\">\r\n        <div class=\"article-list\">\r\n            <item v-for=\"item in items\"\r\n            :item=\"item\"\r\n            :index=\"$index\"\r\n            track-by=\"_id\">\r\n            </item>\r\n        </div>\r\n        <div>\r\n            <classification :class-tags=\"classTags\"></classification>\r\n        </div>\r\n    </section>\r\n</template>\r\n\r\n<script>\r\nimport Item from './Item.vue';\r\nimport Classification from './Classification.vue';\r\nimport model from '../model/model.js';\r\nimport url from '../url.js';\r\n\r\nexport default{\r\n\r\n    name: \"ArticleList\",\r\n\r\n    components: {\r\n        Item,\r\n        Classification\r\n    },\r\n\r\n    data () {\r\n      return {\r\n          items: [],\r\n          classTags: []\r\n      };\r\n    },\r\n\r\n    route: {\r\n        data: function(){\r\n            var tagArr = [];\r\n            var articleUrl = url.articleUrl;\r\n            var tagUrl = url.tagUrl;\r\n\r\n            model.getAll(articleUrl, tagUrl).then(data => {\r\n                var articleData = data[0];\r\n                var tagData = data[1];\r\n\r\n                this.getDate(articleData);\r\n                this.items = articleData;\r\n\r\n                this.classTags = this.getNumber(articleData, tagData);\r\n            });\r\n        }\r\n    },\r\n\r\n    methods: {\r\n      uniqTagArr: function(arr){\r\n          var uniqArr = {};\r\n          for(let i = 0, len = arr.length; i < len; i++){\r\n              uniqArr[arr[i].parentTagName] = true;\r\n          };\r\n\r\n          return Object.keys(uniqArr);\r\n      },\r\n\r\n      getDate: function(arr){\r\n          arr.forEach(function(element){\r\n              let dateArr = element.date.split('T');\r\n              element.date = dateArr[0];\r\n\r\n              var markdown = require(\"markdown\").markdown;\r\n              element.md = markdown.toHTML(element.md);\r\n          });\r\n      },\r\n\r\n      getNumber: function(articleData, tagData){\r\n          var tagArr = this.uniqTagArr(articleData);\r\n          var classTags = [];\r\n\r\n          for(let i = 0, len1 = tagArr.length;i < len1;i++){\r\n              for(let j = 0, len2 = tagData.length;j < len2; j++){\r\n                  if(tagArr[i] === tagData[j].tagName){\r\n                      var classTag = {};\r\n\r\n                      classTag.name = tagArr[i];\r\n                      classTag.number = tagData[j].aritcleTitleList.length;\r\n                      classTags[i] = classTag;\r\n                  }\r\n              }\r\n          }\r\n\r\n          return classTags;\r\n      }\r\n    }\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n.loading::before{\r\n    content: 'Loading...';\r\n    position: absolute;\r\n    left: 45%;\r\n    top: 40%;\r\n}\r\n.wrapper{\r\n    padding: 3rem 8%;\r\n}\r\n.clearfix:after {\r\n    content: '.';\r\n    display: block;\r\n    height: 0;\r\n    visibility: hidden;\r\n    clear: both;\r\n}\r\n.article-list{\r\n    width: 70%;\r\n    margin: 0 7% 0 0;\r\n    float: left;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var _keys = __webpack_require__(29);
-	
-	var _keys2 = _interopRequireDefault(_keys);
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _Item = __webpack_require__(13);
-	
-	var _Item2 = _interopRequireDefault(_Item);
-	
-	var _Classification = __webpack_require__(19);
-	
-	var _Classification2 = _interopRequireDefault(_Classification);
-	
-	var _model = __webpack_require__(116);
-	
-	var _model2 = _interopRequireDefault(_model);
-	
-	var _url = __webpack_require__(28);
-	
-	var _url2 = _interopRequireDefault(_url);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <template>
-	//     <section class="wrapper clearfix" :class="{ loading: !items.length }">
-	//         <div class="article-list">
-	//             <item v-for="item in items"
-	//             :item="item"
-	//             :index="$index"
-	//             track-by="_id">
-	//             </item>
-	//         </div>
-	//         <div>
-	//             <classification :class-tags="classTags"></classification>
-	//         </div>
-	//     </section>
-	// </template>
-	//
-	// <script>
-	exports.default = {
-	
-	    name: "ArticleList",
-	
-	    components: {
-	        Item: _Item2.default,
-	        Classification: _Classification2.default
-	    },
-	
-	    data: function data() {
-	        return {
-	            items: [],
-	            classTags: []
-	        };
-	    },
-	
-	    route: {
-	        data: function data() {
-	            var _this = this;
-	
-	            var tagArr = [];
-	            var articleUrl = _url2.default.articleUrl;
-	            var tagUrl = _url2.default.tagUrl;
-	
-	            _model2.default.getAll(articleUrl, tagUrl).then(function (data) {
-	                var articleData = data[0];
-	                var tagData = data[1];
-	
-	                _this.getDate(articleData);
-	                _this.items = articleData;
-	
-	                _this.classTags = _this.getNumber(articleData, tagData);
-	            });
-	        }
-	    },
-	
-	    methods: {
-	        uniqTagArr: function uniqTagArr(arr) {
-	            var uniqArr = {};
-	            for (var i = 0, len = arr.length; i < len; i++) {
-	                uniqArr[arr[i].parentTagName] = true;
-	            };
-	
-	            return (0, _keys2.default)(uniqArr);
-	        },
-	
-	        getDate: function getDate(arr) {
-	            arr.forEach(function (element) {
-	                var dateArr = element.date.split('T');
-	                element.date = dateArr[0];
-	
-	                var markdown = __webpack_require__(94).markdown;
-	                element.md = markdown.toHTML(element.md);
-	            });
-	        },
-	
-	        getNumber: function getNumber(articleData, tagData) {
-	            var tagArr = this.uniqTagArr(articleData);
-	            var classTags = [];
-	
-	            for (var i = 0, len1 = tagArr.length; i < len1; i++) {
-	                for (var j = 0, len2 = tagData.length; j < len2; j++) {
-	                    if (tagArr[i] === tagData[j].tagName) {
-	                        var classTag = {};
-	
-	                        classTag.name = tagArr[i];
-	                        classTag.number = tagData[j].aritcleTitleList.length;
-	                        classTags[i] = classTag;
-	                    }
-	                }
-	            }
-	
-	            return classTags;
-	        }
-	    }
-
-	};
-	// </script>
-	//
-	// <style>
-	// .loading::before{
-	//     content: 'Loading...';
-	//     position: absolute;
-	//     left: 45%;
-	//     top: 40%;
-	// }
-	// .wrapper{
-	//     padding: 3rem 8%;
-	// }
-	// .clearfix:after {
-	//     content: '.';
-	//     display: block;
-	//     height: 0;
-	//     visibility: hidden;
-	//     clear: both;
-	// }
-	// .article-list{
-	//     width: 70%;
-	//     margin: 0 7% 0 0;
-	//     float: left;
-	// }
-	// </style>
-
-	/* generated by vue-loader */
-
-/***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__webpack_require__(14)
-	__vue_script__ = __webpack_require__(16)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] public\\components\\Item.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(17)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) { (typeof module.exports === "function" ? (module.exports.options || {}) : module.exports).template = __vue_template__ }
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
-	  if (!hotAPI.compatible) return
-	  var id = "F:\\github\\blog\\node\\app\\public\\components\\Item.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(15);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Item.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Item.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\r\n.article-item{\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 3rem 0;\r\n    position: relative;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n    word-wrap: break-word;\r\n    overflow: hidden;\r\n}\r\n.article-item:hover{\r\n    box-shadow: 4px 4px 5px #918b8b;\r\n}\r\n.article-title{\r\n    font-size: 1.5rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #ea7bf7;\r\n}\r\n.article-title:hover{\r\n    color: #fb8da6;\r\n}\r\n.article-tag{\r\n    position: absolute;\r\n    background-color: whiteSmoke;\r\n    width: 10rem;\r\n    right: .5rem;\r\n    text-align: center;\r\n    -webkit-transform: rotate(40deg) translate(5px, -60px);\r\n    transform: rotate(40deg) translate(5px, -60px);\r\n    z-index: 1;\r\n}\r\n.article-tag p{\r\n    padding: .2rem 0;\r\n    color: #fb8da6;\r\n    font-weight: 700;\r\n    border-top: .1rem dashed #fb8da6;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.article-tag:hover{\r\n    background-color: #ededed;\r\n}\r\n.date{\r\n    display: inline-block;\r\n    color: #666;\r\n    border-left: .2rem solid #fb8da6;\r\n    border-right: .2rem solid #fb8da6;\r\n    padding: .1rem .5rem;\r\n    font-size: .8rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .5rem;\r\n}\r\n\r\n.article-content{\r\n    max-height: 20rem;\r\n    overflow: hidden;\r\n    margin-bottom: 1.2rem;\r\n    padding: 1rem 0;\r\n    line-height: 1.8;\r\n    color: #444955;\r\n}\r\n\r\n.article-content p{\r\n    text-indent: 2rem;\r\n}\r\n\r\n", "", {"version":3,"sources":["/./public/components/Item.vue?6e8f5464"],"names":[],"mappings":";AA8BA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,cAAA;IACA,uBAAA;IACA,mBAAA;IACA,oBAAA;IACA,sBAAA;IACA,sBAAA;IACA,iBAAA;CACA;AACA;IACA,gCAAA;CACA;AACA;IACA,kBAAA;IACA,sBAAA;IACA,oCAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,mBAAA;IACA,6BAAA;IACA,aAAA;IACA,aAAA;IACA,mBAAA;IACA,uDAAA;IAEA,+CAAA;IACA,WAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,iBAAA;IACA,iCAAA;IACA,oCAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,sBAAA;IACA,YAAA;IACA,iCAAA;IACA,kCAAA;IACA,qBAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;IACA,cAAA;CACA;;AAEA;IACA,kBAAA;IACA,iBAAA;IACA,sBAAA;IACA,gBAAA;IACA,iBAAA;IACA,eAAA;CACA;;AAEA;IACA,kBAAA;CACA","file":"Item.vue","sourcesContent":["<template>\r\n    <article class=\"article-item\">\r\n        <h1 class=\"article-title\"><a :href=\"'#/article/' + item._id\">{{item.title}}</a></h1>\r\n        <div class=\"article-tag\">\r\n            <a :href=\"'#/tagArticle/' + item.parentTagName\"><p>{{item.parentTagName}}</p></a>\r\n\r\n        </div>\r\n        <div class=\"date\">\r\n            {{item.date}}\r\n        </div>\r\n\r\n        <div class=\"article-content\">\r\n            {{{item.md}}}\r\n        </div>\r\n    </article>\r\n\r\n</template>\r\n\r\n<script>\r\nexport default{\r\n    name: \"Item\",\r\n\r\n    props: {\r\n        item: Object\r\n    }\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n.article-item{\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 3rem 0;\r\n    position: relative;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n    word-wrap: break-word;\r\n    overflow: hidden;\r\n}\r\n.article-item:hover{\r\n    box-shadow: 4px 4px 5px #918b8b;\r\n}\r\n.article-title{\r\n    font-size: 1.5rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #ea7bf7;\r\n}\r\n.article-title:hover{\r\n    color: #fb8da6;\r\n}\r\n.article-tag{\r\n    position: absolute;\r\n    background-color: whiteSmoke;\r\n    width: 10rem;\r\n    right: .5rem;\r\n    text-align: center;\r\n    -webkit-transform: rotate(40deg) translate(5px, -60px);\r\n    -moz-transform: rotate(40deg) translate(5px, -60px);\r\n    transform: rotate(40deg) translate(5px, -60px);\r\n    z-index: 1;\r\n}\r\n.article-tag p{\r\n    padding: .2rem 0;\r\n    color: #fb8da6;\r\n    font-weight: 700;\r\n    border-top: .1rem dashed #fb8da6;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.article-tag:hover{\r\n    background-color: #ededed;\r\n}\r\n.date{\r\n    display: inline-block;\r\n    color: #666;\r\n    border-left: .2rem solid #fb8da6;\r\n    border-right: .2rem solid #fb8da6;\r\n    padding: .1rem .5rem;\r\n    font-size: .8rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .5rem;\r\n}\r\n\r\n.article-content{\r\n    max-height: 20rem;\r\n    overflow: hidden;\r\n    margin-bottom: 1.2rem;\r\n    padding: 1rem 0;\r\n    line-height: 1.8;\r\n    color: #444955;\r\n}\r\n\r\n.article-content p{\r\n    text-indent: 2rem;\r\n}\r\n\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 16 */
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	// <template>
-	//     <article class="article-item">
-	//         <h1 class="article-title"><a :href="'#/article/' + item._id">{{item.title}}</a></h1>
-	//         <div class="article-tag">
-	//             <a :href="'#/tagArticle/' + item.parentTagName"><p>{{item.parentTagName}}</p></a>
-	//
-	//         </div>
-	//         <div class="date">
-	//             {{item.date}}
-	//         </div>
-	//
-	//         <div class="article-content">
-	//             {{{item.md}}}
-	//         </div>
-	//     </article>
-	//
-	// </template>
-	//
-	// <script>
-	exports.default = {
-	    name: "Item",
-	
-	    props: {
-	        item: Object
-	    }
-
-	};
-	// </script>
-	//
-	// <style>
-	// .article-item{
-	//     background-color: #fff;
-	//     border-radius: .4rem;;
-	//     box-shadow: 2px 2px 3px #918b8b;
-	//     padding: 1rem;
-	//     margin: .5rem 0 3rem 0;
-	//     position: relative;
-	//     white-space: normal;
-	//     word-break: break-all;
-	//     word-wrap: break-word;
-	//     overflow: hidden;
-	// }
-	// .article-item:hover{
-	//     box-shadow: 4px 4px 5px #918b8b;
-	// }
-	// .article-title{
-	//     font-size: 1.5rem;
-	//     padding-bottom: .8rem;
-	//     border-bottom: .1rem dashed #ea7bf7;
-	//     text-shadow: 1px 1px 0 #b0aeb0;
-	//     color: #ea7bf7;
-	// }
-	// .article-title:hover{
-	//     color: #fb8da6;
-	// }
-	// .article-tag{
-	//     position: absolute;
-	//     background-color: whiteSmoke;
-	//     width: 10rem;
-	//     right: .5rem;
-	//     text-align: center;
-	//     -webkit-transform: rotate(40deg) translate(5px, -60px);
-	//     -moz-transform: rotate(40deg) translate(5px, -60px);
-	//     transform: rotate(40deg) translate(5px, -60px);
-	//     z-index: 1;
-	// }
-	// .article-tag p{
-	//     padding: .2rem 0;
-	//     color: #fb8da6;
-	//     font-weight: 700;
-	//     border-top: .1rem dashed #fb8da6;
-	//     border-bottom: .1rem dashed #fb8da6;
-	// }
-	// .article-tag:hover{
-	//     background-color: #ededed;
-	// }
-	// .date{
-	//     display: inline-block;
-	//     color: #666;
-	//     border-left: .2rem solid #fb8da6;
-	//     border-right: .2rem solid #fb8da6;
-	//     padding: .1rem .5rem;
-	//     font-size: .8rem;
-	//     position: absolute;
-	//     right: .5rem;
-	//     bottom: .5rem;
-	// }
-	//
-	// .article-content{
-	//     max-height: 20rem;
-	//     overflow: hidden;
-	//     margin-bottom: 1.2rem;
-	//     padding: 1rem 0;
-	//     line-height: 1.8;
-	//     color: #444955;
-	// }
-	//
-	// .article-content p{
-	//     text-indent: 2rem;
-	// }
-	//
-	// </style>
-
-	/* generated by vue-loader */
-
-/***/ },
-/* 17 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<article class=\"article-item\">\n    <h1 class=\"article-title\"><a :href=\"'#/article/' + item._id\">{{item.title}}</a></h1>\n    <div class=\"article-tag\">\n        <a :href=\"'#/tagArticle/' + item.parentTagName\"><p>{{item.parentTagName}}</p></a>\n\n    </div>\n    <div class=\"date\">\n        {{item.date}}\n    </div>\n\n    <div class=\"article-content\">\n        {{{item.md}}}\n    </div>\n</article>\n\n";
-
-/***/ },
-/* 18 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<section class=\"wrapper clearfix\" :class=\"{ loading: !items.length }\">\n    <div class=\"article-list\">\n        <item v-for=\"item in items\"\n        :item=\"item\"\n        :index=\"$index\"\n        track-by=\"_id\">\n        </item>\n    </div>\n    <div>\n        <classification :class-tags=\"classTags\"></classification>\n    </div>\n</section>\n";
-
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__webpack_require__(20)
-	__vue_script__ = __webpack_require__(27)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] public\\components\\Classification.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(22)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) { (typeof module.exports === "function" ? (module.exports.options || {}) : module.exports).template = __vue_template__ }
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), true)
-	  if (!hotAPI.compatible) return
-	  var id = "F:\\github\\blog\\node\\app\\public\\components\\Classification.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(21);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Classification.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Classification.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\r\n.class-tags{\r\n    width: 20%;\r\n    float: left;\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 1.5rem 0;\r\n}\r\n.class-tags h4{\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n}\r\n.tag{\r\n    padding: .3rem 0 0 0;\r\n    color: #666;\r\n    position: relative;\r\n}\r\n.tag:hover{\r\n    color: rgb(191, 112, 220);\r\n}\r\n.number{\r\n    display: inline-block;\r\n    text-align: center;\r\n    width: 1rem;\r\n    height: 1rem;\r\n    line-height: 1rem;\r\n    border-radius: 50%;\r\n    background-color: #fb8da6;\r\n    color: #fff;\r\n    font-size: .5rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .1rem;\r\n}\r\n.number:hover{\r\n    background-color: #666;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/Classification.vue?e5781040"],"names":[],"mappings":";AAkCA;IACA,WAAA;IACA,YAAA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,cAAA;IACA,yBAAA;CACA;AACA;IACA,sBAAA;IACA,oCAAA;CACA;AACA;IACA,qBAAA;IACA,YAAA;IACA,mBAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,sBAAA;IACA,mBAAA;IACA,YAAA;IACA,aAAA;IACA,kBAAA;IACA,mBAAA;IACA,0BAAA;IACA,YAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;IACA,cAAA;CACA;AACA;IACA,uBAAA;CACA","file":"Classification.vue","sourcesContent":["<template>\r\n    <div class=\"class-tags\" v-if=\"hasloaded\">\r\n        <h4>分类</h4>\r\n        <p  v-for=\"classTag in classTags\"\r\n            class=\"tag\"\r\n            :classTag=\"classTag\"\r\n            :index=\"$index\"\r\n            track-by=\"$index\">\r\n            <a :href=\"'#/tagArticle/' + classTag.name\">{{classTag.name}}</a>\r\n            <span class=\"number\">{{classTag.number}}</span>\r\n        </p>\r\n</div>\r\n\r\n</template>\r\n\r\n<script>\r\nexport default{\r\n    name: \"Classification\",\r\n\r\n    props:{\r\n        classTags: Array\r\n    },\r\n\r\n    computed:{\r\n        hasloaded(){\r\n            if(this.classTags.length !== 0){\r\n                return true;\r\n            }\r\n        }\r\n    },\r\n}\r\n</script>\r\n\r\n<style>\r\n.class-tags{\r\n    width: 20%;\r\n    float: left;\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 1.5rem 0;\r\n}\r\n.class-tags h4{\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n}\r\n.tag{\r\n    padding: .3rem 0 0 0;\r\n    color: #666;\r\n    position: relative;\r\n}\r\n.tag:hover{\r\n    color: rgb(191, 112, 220);\r\n}\r\n.number{\r\n    display: inline-block;\r\n    text-align: center;\r\n    width: 1rem;\r\n    height: 1rem;\r\n    line-height: 1rem;\r\n    border-radius: 50%;\r\n    background-color: #fb8da6;\r\n    color: #fff;\r\n    font-size: .5rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .1rem;\r\n}\r\n.number:hover{\r\n    background-color: #666;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ },
-/* 22 */
-/***/ function(module, exports) {
-
-	module.exports = "\n    <div class=\"class-tags\" v-if=\"hasloaded\">\n        <h4>分类</h4>\n        <p  v-for=\"classTag in classTags\"\n            class=\"tag\"\n            :classTag=\"classTag\"\n            :index=\"$index\"\n            track-by=\"$index\">\n            <a :href=\"'#/tagArticle/' + classTag.name\">{{classTag.name}}</a>\n            <span class=\"number\">{{classTag.number}}</span>\n        </p>\n</div>\n\n";
-
-/***/ },
-/* 23 */
-/***/ function(module, exports) {
-
-	module.exports = "\n<div>\n    <!-- <section id=\"header\">\n        <img class=\"b-title\" src=\"https://ooo.0o0.ooo/2016/01/27/56a88272da80e.png\" alt=\"SEEKFNL\" />\n        <p class=\"s-title\">\n            <span style=\"color: #3369e8\">Blog</span>\n            <span style=\"color: #eeb211\">of</span>\n            <span style=\"color: #d50f25\">ChangQi</span>\n        </p>\n        <div class=\"signature\">\n            <p>\n                情不知所起\n            </p>\n            <p>\n                一往而深\n            </p>\n        </div>\n    </section>\n    <hr id=\"divider\"></hr> -->\n\n    <router-view\n        keep-alive\n        keep-alive\n        transition\n        transition-mode=\"out-in\">\n    </router-view>\n\n    <section id=\"footer\">\n\n    </section>\n</div>\n\n";
-
-/***/ },
-/* 24 */
-/***/ function(module, exports, __webpack_require__) {
-
 	/*!
 	 * vue-router v0.7.10
 	 * (c) 2016 Evan You
@@ -13194,17 +12361,12 @@
 	}));
 
 /***/ },
-/* 25 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(91)
-	__vue_script__ = __webpack_require__(42)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] public\\components\\Article.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(26)
+	__webpack_require__(5)
+	__vue_template__ = __webpack_require__(9)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? (module.exports.options || {}) : module.exports).template = __vue_template__ }
@@ -13212,7 +12374,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "F:\\github\\blog\\node\\app\\public\\components\\Article.vue"
+	  var id = "F:\\github\\blog\\node\\app\\public\\components\\App.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13221,152 +12383,651 @@
 	})()}
 
 /***/ },
-/* 26 */
-/***/ function(module, exports) {
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "\n<div class=\"article\">\n    <div class=\"a-date\">\n        {{articleInfo.date}}\n    </div>\n    <article>\n        <h1>{{articleInfo.title}}</a></h1>\n        <div class=\"a-content\">\n            {{{articleInfo.article}}}\n        </div>\n    </article>\n</div>\n\n";
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(6);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(8)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./App.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./App.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
 /***/ },
-/* 27 */
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\r\n#footer{\r\n    width: 100%;\r\n    height: 4rem;\r\n    text-align: center;\r\n    z-index: 10;\r\n    clear: both;\r\n}\r\n\r\n#footer p{\r\n    font-size: .5rem;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/App.vue?2498f8e8"],"names":[],"mappings":";AAiBA;IACA,YAAA;IACA,aAAA;IACA,mBAAA;IACA,YAAA;IACA,YAAA;CACA;;AAEA;IACA,iBAAA;CACA","file":"App.vue","sourcesContent":["<template>\r\n    <div id=\"app\">\r\n        <router-view\r\n            keep-alive\r\n            transition\r\n            transition-mode=\"out-in\">\r\n        </router-view>\r\n\r\n        <section id=\"footer\">\r\n            <p>\r\n    \t\t    © 2016 changqi\r\n            </p>\r\n        </section>\r\n    </div>\r\n</template>\r\n\r\n<style>\r\n#footer{\r\n    width: 100%;\r\n    height: 4rem;\r\n    text-align: center;\r\n    z-index: 10;\r\n    clear: both;\r\n}\r\n\r\n#footer p{\r\n    font-size: .5rem;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
+/* 7 */
 /***/ function(module, exports) {
 
-	"use strict";
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+	
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+	
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+	
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+	
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+	
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+	
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+	
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+	
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+	
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+	
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+	
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+	
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+	
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+	
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+	
+		update(obj);
+	
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+	
+	var replaceText = (function () {
+		var textStore = [];
+	
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+	
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+	
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+	
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+	
+		if (media) {
+			styleElement.setAttribute("media", media);
+		}
+	
+		if (sourceMap) {
+			// https://developer.chrome.com/devtools/docs/javascript-debugging
+			// this makes source maps inside style tags work properly in Chrome
+			css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */';
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+	
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div id=\"app\">\n    <router-view\n        keep-alive\n        transition\n        transition-mode=\"out-in\">\n    </router-view>\n\n    <section id=\"footer\">\n        <p>\n\t\t    © 2016 changqi\n        </p>\n    </section>\n</div>\n";
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(11)
+	__vue_script__ = __webpack_require__(13)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] public\\components\\ArticleList.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(47)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) { (typeof module.exports === "function" ? (module.exports.options || {}) : module.exports).template = __vue_template__ }
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "F:\\github\\blog\\node\\app\\public\\components\\ArticleList.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(12);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(8)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ArticleList.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./ArticleList.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\r\n#header{\r\n    background-image: url(\"https://ooo.0o0.ooo/2016/01/26/56a76938f09fb.jpg\");\r\n    height: 40rem;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    opacity: 0.8;\r\n}\r\n.b-title{\r\n    position: relative;\r\n    top: 1rem;\r\n    left: 1rem;\r\n}\r\n.s-title{\r\n    position: absolute;\r\n    color: #fff;\r\n    font-weight: 700;\r\n    font-size: 2rem;\r\n    -webkit-transform: rotate(-12deg) translate(255px, -10px);\r\n    transform: rotate(-12deg) translate(255px, -10px);\r\n}\r\n.signature{\r\n    display: inline-block;\r\n    border: .3rem solid #ea7bf7;\r\n    position: absolute;;\r\n    top: 3rem;\r\n    right: 8%;\r\n    padding: .3rem;\r\n}\r\n.signature p{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    width: 1rem;\r\n    color: #fff;\r\n}\r\n\r\n#divider{\r\n    margin: 4.5rem 0 0 0;\r\n    border: none;\r\n    border-top: .1rem solid #fff;\r\n    text-align: center;\r\n}\r\n#divider:after{\r\n    content: url(\"https://ooo.0o0.ooo/2016/01/27/56a99d661f678.png\");\r\n    background-color: #e2e2e2;\r\n    position: relative;\r\n    top: -.8rem;\r\n    display: inline-block;\r\n}\r\n\r\n.loading::before{\r\n    content: 'Loading...';\r\n    position: absolute;\r\n    left: 45%;\r\n    top: 40%;\r\n}\r\n.wrapper{\r\n    padding: 3rem 8%;\r\n}\r\n.clearfix:after {\r\n    content: '.';\r\n    display: block;\r\n    height: 0;\r\n    visibility: hidden;\r\n    clear: both;\r\n}\r\n.article-list{\r\n    width: 70%;\r\n    margin: 0 7% 0 0;\r\n    float: left;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/ArticleList.vue?97270076"],"names":[],"mappings":";AAiHA;IACA,0EAAA;IACA,cAAA;IACA,6BAAA;IACA,uBAAA;IACA,aAAA;CACA;AACA;IACA,mBAAA;IACA,UAAA;IACA,WAAA;CACA;AACA;IACA,mBAAA;IACA,YAAA;IACA,iBAAA;IACA,gBAAA;IACA,0DAAA;IAEA,kDAAA;CACA;AACA;IACA,sBAAA;IACA,4BAAA;IACA,mBAAA;IACA,UAAA;IACA,UAAA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,oBAAA;IACA,YAAA;IACA,YAAA;CACA;;AAEA;IACA,qBAAA;IACA,aAAA;IACA,6BAAA;IACA,mBAAA;CACA;AACA;IACA,iEAAA;IACA,0BAAA;IACA,mBAAA;IACA,YAAA;IACA,sBAAA;CACA;;AAEA;IACA,sBAAA;IACA,mBAAA;IACA,UAAA;IACA,SAAA;CACA;AACA;IACA,iBAAA;CACA;AACA;IACA,aAAA;IACA,eAAA;IACA,UAAA;IACA,mBAAA;IACA,YAAA;CACA;AACA;IACA,WAAA;IACA,iBAAA;IACA,YAAA;CACA","file":"ArticleList.vue","sourcesContent":["<template>\r\n    <div>\r\n\r\n    <section id=\"header\">\r\n        <img class=\"b-title\" src=\"https://ooo.0o0.ooo/2016/01/27/56a88272da80e.png\" alt=\"SEEKFNL\" />\r\n        <p class=\"s-title\">\r\n            <span style=\"color: #3369e8\">Blog</span>\r\n            <span style=\"color: #eeb211\">of</span>\r\n            <span style=\"color: #d50f25\">ChangQi</span>\r\n        </p>\r\n        <div class=\"signature\">\r\n            <p>\r\n                情不知所起\r\n            </p>\r\n            <p>\r\n                一往而深\r\n            </p>\r\n        </div>\r\n    </section>\r\n    <hr id=\"divider\"></hr>\r\n\r\n    <section class=\"wrapper clearfix\" :class=\"{ loading: !items.length }\">\r\n        <div class=\"article-list\">\r\n            <item v-for=\"item in items\"\r\n            :item=\"item\"\r\n            :index=\"$index\"\r\n            track-by=\"_id\">\r\n            </item>\r\n        </div>\r\n        <classification :class-tags=\"classTags\"></classification>\r\n    </section>\r\n</div>\r\n\r\n</template>\r\n\r\n<script>\r\nimport Item from './Item.vue';\r\nimport Classification from './Classification.vue';\r\nimport model from '../model/model.js';\r\nimport url from '../url.js';\r\n\r\nexport default{\r\n\r\n    name: \"ArticleList\",\r\n\r\n    components: {\r\n        Item,\r\n        Classification\r\n    },\r\n\r\n    data () {\r\n      return {\r\n          items: [],\r\n          classTags: []\r\n      };\r\n    },\r\n\r\n    route: {\r\n        data: function(){\r\n            var articleUrl = url.articleUrl;\r\n            var tagUrl = url.tagUrl;\r\n\r\n            model.getAll(articleUrl, tagUrl).then(data => {\r\n                var articleData = data[0];\r\n                var tagData = data[1];\r\n\r\n                this.handleData(articleData);\r\n                this.items = articleData;\r\n\r\n                this.classTags = this.getNumber(articleData, tagData);\r\n            });\r\n        }\r\n    },\r\n\r\n    methods: {\r\n      uniqTagArr: function(arr){\r\n          var uniqArr = {};\r\n          for(let i = 0, len = arr.length; i < len; i++){\r\n              uniqArr[arr[i].parentTagName] = true;\r\n          };\r\n\r\n          return Object.keys(uniqArr);\r\n      },\r\n\r\n      handleData: function(arr){\r\n          arr.forEach(function(element){\r\n              element.date = model.handleDate(element.date);\r\n              element.md = model.toMarkdown(element.md);\r\n          });\r\n      },\r\n\r\n      getNumber: function(articleData, tagData){\r\n          var tagArr = this.uniqTagArr(articleData);\r\n          var classTags = [];\r\n\r\n          for(let i = 0, len1 = tagArr.length;i < len1;i++){\r\n              for(let j = 0, len2 = tagData.length;j < len2; j++){\r\n                  if(tagArr[i] === tagData[j].tagName){\r\n                      var classTag = {};\r\n\r\n                      classTag.name = tagArr[i];\r\n                      classTag.number = tagData[j].aritcleTitleList.length;\r\n                      classTags[i] = classTag;\r\n                  }\r\n              }\r\n          }\r\n          return classTags;\r\n      }\r\n    }\r\n}\r\n</script>\r\n\r\n<style>\r\n#header{\r\n    background-image: url(\"https://ooo.0o0.ooo/2016/01/26/56a76938f09fb.jpg\");\r\n    height: 40rem;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    opacity: 0.8;\r\n}\r\n.b-title{\r\n    position: relative;\r\n    top: 1rem;\r\n    left: 1rem;\r\n}\r\n.s-title{\r\n    position: absolute;\r\n    color: #fff;\r\n    font-weight: 700;\r\n    font-size: 2rem;\r\n    -webkit-transform: rotate(-12deg) translate(255px, -10px);\r\n    -moz-transform: rotate(-12deg) translate(255px, -10px);\r\n    transform: rotate(-12deg) translate(255px, -10px);\r\n}\r\n.signature{\r\n    display: inline-block;\r\n    border: .3rem solid #ea7bf7;\r\n    position: absolute;;\r\n    top: 3rem;\r\n    right: 8%;\r\n    padding: .3rem;\r\n}\r\n.signature p{\r\n    display: inline-block;\r\n    vertical-align: top;\r\n    width: 1rem;\r\n    color: #fff;\r\n}\r\n\r\n#divider{\r\n    margin: 4.5rem 0 0 0;\r\n    border: none;\r\n    border-top: .1rem solid #fff;\r\n    text-align: center;\r\n}\r\n#divider:after{\r\n    content: url(\"https://ooo.0o0.ooo/2016/01/27/56a99d661f678.png\");\r\n    background-color: #e2e2e2;\r\n    position: relative;\r\n    top: -.8rem;\r\n    display: inline-block;\r\n}\r\n\r\n.loading::before{\r\n    content: 'Loading...';\r\n    position: absolute;\r\n    left: 45%;\r\n    top: 40%;\r\n}\r\n.wrapper{\r\n    padding: 3rem 8%;\r\n}\r\n.clearfix:after {\r\n    content: '.';\r\n    display: block;\r\n    height: 0;\r\n    visibility: hidden;\r\n    clear: both;\r\n}\r\n.article-list{\r\n    width: 70%;\r\n    margin: 0 7% 0 0;\r\n    float: left;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _keys = __webpack_require__(14);
+	
+	var _keys2 = _interopRequireDefault(_keys);
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	
+	var _Item = __webpack_require__(26);
+	
+	var _Item2 = _interopRequireDefault(_Item);
+	
+	var _Classification = __webpack_require__(31);
+	
+	var _Classification2 = _interopRequireDefault(_Classification);
+	
+	var _model = __webpack_require__(36);
+	
+	var _model2 = _interopRequireDefault(_model);
+	
+	var _url = __webpack_require__(41);
+	
+	var _url2 = _interopRequireDefault(_url);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	// <template>
-	//     <div class="class-tags" v-if="hasloaded">
-	//         <h4>分类</h4>
-	//         <p  v-for="classTag in classTags"
-	//             class="tag"
-	//             :classTag="classTag"
-	//             :index="$index"
-	//             track-by="$index">
-	//             <a :href="'#/tagArticle/' + classTag.name">{{classTag.name}}</a>
-	//             <span class="number">{{classTag.number}}</span>
+	//     <div>
+	//
+	//     <section id="header">
+	//         <img class="b-title" src="https://ooo.0o0.ooo/2016/01/27/56a88272da80e.png" alt="SEEKFNL" />
+	//         <p class="s-title">
+	//             <span style="color: #3369e8">Blog</span>
+	//             <span style="color: #eeb211">of</span>
+	//             <span style="color: #d50f25">ChangQi</span>
 	//         </p>
+	//         <div class="signature">
+	//             <p>
+	//                 情不知所起
+	//             </p>
+	//             <p>
+	//                 一往而深
+	//             </p>
+	//         </div>
+	//     </section>
+	//     <hr id="divider"></hr>
+	//
+	//     <section class="wrapper clearfix" :class="{ loading: !items.length }">
+	//         <div class="article-list">
+	//             <item v-for="item in items"
+	//             :item="item"
+	//             :index="$index"
+	//             track-by="_id">
+	//             </item>
+	//         </div>
+	//         <classification :class-tags="classTags"></classification>
+	//     </section>
 	// </div>
 	//
 	// </template>
 	//
 	// <script>
 	exports.default = {
-	    name: "Classification",
 	
-	    props: {
-	        classTags: Array
+	    name: "ArticleList",
+	
+	    components: {
+	        Item: _Item2.default,
+	        Classification: _Classification2.default
 	    },
 	
-	    computed: {
-	        hasloaded: function hasloaded() {
-	            if (this.classTags.length !== 0) {
-	                return true;
+	    data: function data() {
+	        return {
+	            items: [],
+	            classTags: []
+	        };
+	    },
+	
+	    route: {
+	        data: function data() {
+	            var _this = this;
+	
+	            var articleUrl = _url2.default.articleUrl;
+	            var tagUrl = _url2.default.tagUrl;
+	
+	            _model2.default.getAll(articleUrl, tagUrl).then(function (data) {
+	                var articleData = data[0];
+	                var tagData = data[1];
+	
+	                _this.handleData(articleData);
+	                _this.items = articleData;
+	
+	                _this.classTags = _this.getNumber(articleData, tagData);
+	            });
+	        }
+	    },
+	
+	    methods: {
+	        uniqTagArr: function uniqTagArr(arr) {
+	            var uniqArr = {};
+	            for (var i = 0, len = arr.length; i < len; i++) {
+	                uniqArr[arr[i].parentTagName] = true;
+	            };
+	
+	            return (0, _keys2.default)(uniqArr);
+	        },
+	
+	        handleData: function handleData(arr) {
+	            arr.forEach(function (element) {
+	                element.date = _model2.default.handleDate(element.date);
+	                element.md = _model2.default.toMarkdown(element.md);
+	            });
+	        },
+	
+	        getNumber: function getNumber(articleData, tagData) {
+	            var tagArr = this.uniqTagArr(articleData);
+	            var classTags = [];
+	
+	            for (var i = 0, len1 = tagArr.length; i < len1; i++) {
+	                for (var j = 0, len2 = tagData.length; j < len2; j++) {
+	                    if (tagArr[i] === tagData[j].tagName) {
+	                        var classTag = {};
+	
+	                        classTag.name = tagArr[i];
+	                        classTag.number = tagData[j].aritcleTitleList.length;
+	                        classTags[i] = classTag;
+	                    }
+	                }
 	            }
+	            return classTags;
 	        }
 	    }
 	};
 	// </script>
 	//
 	// <style>
-	// .class-tags{
-	//     width: 20%;
-	//     float: left;
-	//     background-color: #fff;
-	//     border-radius: .4rem;;
-	//     box-shadow: 2px 2px 3px #918b8b;
-	//     padding: 1rem;
-	//     margin: .5rem 0 1.5rem 0;
+	// #header{
+	//     background-image: url("https://ooo.0o0.ooo/2016/01/26/56a76938f09fb.jpg");
+	//     height: 40rem;
+	//     background-repeat: no-repeat;
+	//     background-size: cover;
+	//     opacity: 0.8;
 	// }
-	// .class-tags h4{
-	//     padding-bottom: .5rem;
-	//     border-bottom: .1rem dashed #ea7bf7;
-	// }
-	// .tag{
-	//     padding: .3rem 0 0 0;
-	//     color: #666;
+	// .b-title{
 	//     position: relative;
+	//     top: 1rem;
+	//     left: 1rem;
 	// }
-	// .tag:hover{
-	//     color: rgb(191, 112, 220);
-	// }
-	// .number{
-	//     display: inline-block;
-	//     text-align: center;
-	//     width: 1rem;
-	//     height: 1rem;
-	//     line-height: 1rem;
-	//     border-radius: 50%;
-	//     background-color: #fb8da6;
-	//     color: #fff;
-	//     font-size: .5rem;
+	// .s-title{
 	//     position: absolute;
-	//     right: .5rem;
-	//     bottom: .1rem;
+	//     color: #fff;
+	//     font-weight: 700;
+	//     font-size: 2rem;
+	//     -webkit-transform: rotate(-12deg) translate(255px, -10px);
+	//     -moz-transform: rotate(-12deg) translate(255px, -10px);
+	//     transform: rotate(-12deg) translate(255px, -10px);
 	// }
-	// .number:hover{
-	//     background-color: #666;
+	// .signature{
+	//     display: inline-block;
+	//     border: .3rem solid #ea7bf7;
+	//     position: absolute;;
+	//     top: 3rem;
+	//     right: 8%;
+	//     padding: .3rem;
+	// }
+	// .signature p{
+	//     display: inline-block;
+	//     vertical-align: top;
+	//     width: 1rem;
+	//     color: #fff;
+	// }
+	//
+	// #divider{
+	//     margin: 4.5rem 0 0 0;
+	//     border: none;
+	//     border-top: .1rem solid #fff;
+	//     text-align: center;
+	// }
+	// #divider:after{
+	//     content: url("https://ooo.0o0.ooo/2016/01/27/56a99d661f678.png");
+	//     background-color: #e2e2e2;
+	//     position: relative;
+	//     top: -.8rem;
+	//     display: inline-block;
+	// }
+	//
+	// .loading::before{
+	//     content: 'Loading...';
+	//     position: absolute;
+	//     left: 45%;
+	//     top: 40%;
+	// }
+	// .wrapper{
+	//     padding: 3rem 8%;
+	// }
+	// .clearfix:after {
+	//     content: '.';
+	//     display: block;
+	//     height: 0;
+	//     visibility: hidden;
+	//     clear: both;
+	// }
+	// .article-list{
+	//     width: 70%;
+	//     margin: 0 7% 0 0;
+	//     float: left;
 	// }
 	// </style>
 
 	/* generated by vue-loader */
 
 /***/ },
-/* 28 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	var apiUrl = 'http://localhost:5000/api';
-	
-	var url = {
-	    articleUrl: apiUrl + '/articles/',
-	    tagUrl: apiUrl + '/tags/'
-	};
-	
-	exports.default = url;
-
-/***/ },
-/* 29 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(30), __esModule: true };
+	module.exports = { "default": __webpack_require__(15), __esModule: true };
 
 /***/ },
-/* 30 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(31);
-	module.exports = __webpack_require__(37).Object.keys;
+	__webpack_require__(16);
+	module.exports = __webpack_require__(22).Object.keys;
 
 /***/ },
-/* 31 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.14 Object.keys(O)
-	var toObject = __webpack_require__(32);
+	var toObject = __webpack_require__(17);
 	
-	__webpack_require__(34)('keys', function($keys){
+	__webpack_require__(19)('keys', function($keys){
 	  return function keys(it){
 	    return $keys(toObject(it));
 	  };
 	});
 
 /***/ },
-/* 32 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.13 ToObject(argument)
-	var defined = __webpack_require__(33);
+	var defined = __webpack_require__(18);
 	module.exports = function(it){
 	  return Object(defined(it));
 	};
 
 /***/ },
-/* 33 */
+/* 18 */
 /***/ function(module, exports) {
 
 	// 7.2.1 RequireObjectCoercible(argument)
@@ -13376,13 +13037,13 @@
 	};
 
 /***/ },
-/* 34 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// most Object methods by ES6 should accept primitives
-	var $export = __webpack_require__(35)
-	  , core    = __webpack_require__(37)
-	  , fails   = __webpack_require__(40);
+	var $export = __webpack_require__(20)
+	  , core    = __webpack_require__(22)
+	  , fails   = __webpack_require__(25);
 	module.exports = function(KEY, exec){
 	  var fn  = (core.Object || {})[KEY] || Object[KEY]
 	    , exp = {};
@@ -13391,12 +13052,12 @@
 	};
 
 /***/ },
-/* 35 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var global    = __webpack_require__(36)
-	  , core      = __webpack_require__(37)
-	  , ctx       = __webpack_require__(38)
+	var global    = __webpack_require__(21)
+	  , core      = __webpack_require__(22)
+	  , ctx       = __webpack_require__(23)
 	  , PROTOTYPE = 'prototype';
 	
 	var $export = function(type, name, source){
@@ -13442,7 +13103,7 @@
 	module.exports = $export;
 
 /***/ },
-/* 36 */
+/* 21 */
 /***/ function(module, exports) {
 
 	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -13451,18 +13112,18 @@
 	if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
 
 /***/ },
-/* 37 */
+/* 22 */
 /***/ function(module, exports) {
 
 	var core = module.exports = {version: '1.2.6'};
 	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 
 /***/ },
-/* 38 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// optional / simple context binding
-	var aFunction = __webpack_require__(39);
+	var aFunction = __webpack_require__(24);
 	module.exports = function(fn, that, length){
 	  aFunction(fn);
 	  if(that === undefined)return fn;
@@ -13483,7 +13144,7 @@
 	};
 
 /***/ },
-/* 39 */
+/* 24 */
 /***/ function(module, exports) {
 
 	module.exports = function(it){
@@ -13492,7 +13153,7 @@
 	};
 
 /***/ },
-/* 40 */
+/* 25 */
 /***/ function(module, exports) {
 
 	module.exports = function(exec){
@@ -13504,17 +13165,17 @@
 	};
 
 /***/ },
-/* 41 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(101)
-	__vue_script__ = __webpack_require__(103)
+	__webpack_require__(27)
+	__vue_script__ = __webpack_require__(29)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] public\\components\\TagArticleList.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(100)
+	  console.warn("[vue-loader] public\\components\\Item.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(30)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) { (typeof module.exports === "function" ? (module.exports.options || {}) : module.exports).template = __vue_template__ }
@@ -13522,7 +13183,7 @@
 	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), true)
 	  if (!hotAPI.compatible) return
-	  var id = "F:\\github\\blog\\node\\app\\public\\components\\TagArticleList.vue"
+	  var id = "F:\\github\\blog\\node\\app\\public\\components\\Item.vue"
 	  if (!module.hot.data) {
 	    hotAPI.createRecord(id, module.exports)
 	  } else {
@@ -13531,184 +13192,23 @@
 	})()}
 
 /***/ },
-/* 42 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _url = __webpack_require__(28);
-	
-	var _url2 = _interopRequireDefault(_url);
-	
-	var _model = __webpack_require__(116);
-	
-	var _model2 = _interopRequireDefault(_model);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <template>
-	//     <div class="article">
-	//         <div class="a-date">
-	//             {{articleInfo.date}}
-	//         </div>
-	//         <article>
-	//             <h1>{{articleInfo.title}}</a></h1>
-	//             <div class="a-content">
-	//                 {{{articleInfo.article}}}
-	//             </div>
-	//         </article>
-	//     </div>
-	//
-	// </template>
-	//
-	// <script>
-	exports.default = {
-	    name: "Article",
-	
-	    data: function data() {
-	        return {
-	            articleInfo: {}
-	        };
-	    },
-	
-	    route: {
-	        data: function data(transition) {
-	            var _this = this;
-	
-	            var articleId = transition.to.params._id;
-	            var articleUrl = _url2.default.articleUrl + '?_id=' + articleId;
-	            var markdown = __webpack_require__(94).markdown;
-	            var articleInfo = {};
-	
-	            _model2.default.getArticleList(articleUrl).then(function (data) {
-	                data = data[0];
-	
-	                articleInfo.title = data.title;
-	                articleInfo.article = markdown.toHTML(data.md);
-	                articleInfo.date = data.date.split('T')[0];
-	                _this.articleInfo = articleInfo;
-	            });
-	        }
-	    }
-	};
-	// </script>
-	//
-	// <style>
-	// .article{
-	//     width: 75%;
-	//     margin: 2rem auto;
-	// }
-	// article {
-	//     background-color: rgb(255, 255, 255);
-	//     border-radius: .4rem;;
-	//     box-shadow: 2px 2px 3px #918b8b;
-	//     padding: 1.5rem 2.5rem;
-	// }
-	// .a-date{
-	//     padding: .5rem .7rem;
-	//     font-weight: bolder;
-	//     color: #666;
-	// }
-	// .article h1{
-	//     text-align: center;
-	//     font-size: 1.6rem;
-	//     letter-spacing: .2rem;
-	//     padding-bottom: .8rem;
-	//     border-bottom: .1rem dashed #000;
-	//     text-shadow: 1px 1px 0 #b0aeb0;
-	//     color: #000;
-	// }
-	//
-	// .a-content{
-	//     padding: 1rem 0;
-	//     line-height: 1.7;
-	// }
-	// .a-content p{
-	//     text-indent: 2rem;
-	// }
-	// .a-content h1,h2,h3,h4{
-	//     margin-top: 1rem;
-	//     margin-bottom: .1rem;
-	//     color: #444955;
-	// }
-	// h2{
-	//     padding-left: .4rem;
-	//     border-left: .2rem solid #c969ef;
-	// }
-	// </style>
-
-	/* generated by vue-loader */
-
-/***/ },
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(92);
+	var content = __webpack_require__(28);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(8)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Article.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Article.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Item.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Item.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -13718,31 +13218,1398 @@
 	}
 
 /***/ },
-/* 92 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(7)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\r\n.article{\r\n    width: 75%;\r\n    margin: 2rem auto;\r\n}\r\narticle {\r\n    background-color: rgb(255, 255, 255);\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1.5rem 2.5rem;\r\n}\r\n.a-date{\r\n    padding: .5rem .7rem;\r\n    font-weight: bolder;\r\n    color: #666;\r\n}\r\n.article h1{\r\n    text-align: center;\r\n    font-size: 1.6rem;\r\n    letter-spacing: .2rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #000;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #000;\r\n}\r\n\r\n.a-content{\r\n    padding: 1rem 0;\r\n    line-height: 1.7;\r\n}\r\n.a-content p{\r\n    text-indent: 2rem;\r\n}\r\n.a-content h1,h2,h3,h4{\r\n    margin-top: 1rem;\r\n    margin-bottom: .1rem;\r\n    color: #444955;\r\n}\r\nh2{\r\n    padding-left: .4rem;\r\n    border-left: .2rem solid #c969ef;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/Article.vue?23e7b334"],"names":[],"mappings":";AAiDA;IACA,WAAA;IACA,kBAAA;CACA;AACA;IACA,qCAAA;IACA,qBAAA;IACA,gCAAA;IACA,uBAAA;CACA;AACA;IACA,qBAAA;IACA,oBAAA;IACA,YAAA;CACA;AACA;IACA,mBAAA;IACA,kBAAA;IACA,sBAAA;IACA,sBAAA;IACA,iCAAA;IACA,+BAAA;IACA,YAAA;CACA;;AAEA;IACA,gBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;IACA,qBAAA;IACA,eAAA;CACA;AACA;IACA,oBAAA;IACA,iCAAA;CACA","file":"Article.vue","sourcesContent":["<template>\r\n    <div class=\"article\">\r\n        <div class=\"a-date\">\r\n            {{articleInfo.date}}\r\n        </div>\r\n        <article>\r\n            <h1>{{articleInfo.title}}</a></h1>\r\n            <div class=\"a-content\">\r\n                {{{articleInfo.article}}}\r\n            </div>\r\n        </article>\r\n    </div>\r\n\r\n</template>\r\n\r\n<script>\r\nimport url from '../url.js';\r\nimport model from '../model/model.js';\r\n\r\nexport default{\r\n    name: \"Article\",\r\n\r\n    data(){\r\n        return {\r\n            articleInfo: {}\r\n        }\r\n    },\r\n\r\n    route: {\r\n        data: function(transition){\r\n            var articleId = transition.to.params._id;\r\n            var articleUrl = url.articleUrl + '?_id=' + articleId;\r\n            var markdown = require(\"markdown\").markdown;\r\n            var articleInfo = {};\r\n\r\n            model.getArticleList(articleUrl).then(data => {\r\n                data = data[0];\r\n\r\n                articleInfo.title = data.title;\r\n                articleInfo.article = markdown.toHTML(data.md);\r\n                articleInfo.date = data.date.split('T')[0];\r\n                this.articleInfo = articleInfo;\r\n            });\r\n        }\r\n    }\r\n}\r\n</script>\r\n\r\n<style>\r\n.article{\r\n    width: 75%;\r\n    margin: 2rem auto;\r\n}\r\narticle {\r\n    background-color: rgb(255, 255, 255);\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1.5rem 2.5rem;\r\n}\r\n.a-date{\r\n    padding: .5rem .7rem;\r\n    font-weight: bolder;\r\n    color: #666;\r\n}\r\n.article h1{\r\n    text-align: center;\r\n    font-size: 1.6rem;\r\n    letter-spacing: .2rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #000;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #000;\r\n}\r\n\r\n.a-content{\r\n    padding: 1rem 0;\r\n    line-height: 1.7;\r\n}\r\n.a-content p{\r\n    text-indent: 2rem;\r\n}\r\n.a-content h1,h2,h3,h4{\r\n    margin-top: 1rem;\r\n    margin-bottom: .1rem;\r\n    color: #444955;\r\n}\r\nh2{\r\n    padding-left: .4rem;\r\n    border-left: .2rem solid #c969ef;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\r\n.article-item{\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 3rem 0;\r\n    position: relative;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n    word-wrap: break-word;\r\n    overflow: hidden;\r\n}\r\n.article-item:hover{\r\n    box-shadow: 4px 4px 5px #918b8b;\r\n}\r\n.article-title{\r\n    font-size: 1.5rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #ea7bf7;\r\n}\r\n.article-title:hover{\r\n    color: #fb8da6;\r\n}\r\n.article-tag{\r\n    position: absolute;\r\n    background-color: whiteSmoke;\r\n    width: 10rem;\r\n    right: .5rem;\r\n    text-align: center;\r\n    -webkit-transform: rotate(40deg) translate(5px, -60px);\r\n    transform: rotate(40deg) translate(5px, -60px);\r\n    z-index: 1;\r\n}\r\n.article-tag p{\r\n    padding: .2rem 0;\r\n    color: #fb8da6;\r\n    font-weight: 700;\r\n    border-top: .1rem dashed #fb8da6;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.article-tag:hover{\r\n    background-color: #ededed;\r\n}\r\n.date{\r\n    display: inline-block;\r\n    color: #666;\r\n    border-left: .2rem solid #fb8da6;\r\n    border-right: .2rem solid #fb8da6;\r\n    padding: .1rem .5rem;\r\n    font-size: .8rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .5rem;\r\n}\r\n\r\n.article-content{\r\n    max-height: 20rem;\r\n    overflow: hidden;\r\n    margin-bottom: 1.2rem;\r\n    padding: 1rem 0;\r\n    line-height: 1.8;\r\n    color: #444955;\r\n}\r\n\r\n.article-content h1{\r\n    display: none;\r\n}\r\n\r\n.article-content p{\r\n    text-indent: 2rem;\r\n}\r\n\r\n", "", {"version":3,"sources":["/./public/components/Item.vue?747cff08"],"names":[],"mappings":";AA8BA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,cAAA;IACA,uBAAA;IACA,mBAAA;IACA,oBAAA;IACA,sBAAA;IACA,sBAAA;IACA,iBAAA;CACA;AACA;IACA,gCAAA;CACA;AACA;IACA,kBAAA;IACA,sBAAA;IACA,oCAAA;IACA,+BAAA;IACA,eAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,mBAAA;IACA,6BAAA;IACA,aAAA;IACA,aAAA;IACA,mBAAA;IACA,uDAAA;IAEA,+CAAA;IACA,WAAA;CACA;AACA;IACA,iBAAA;IACA,eAAA;IACA,iBAAA;IACA,iCAAA;IACA,oCAAA;CACA;AACA;IACA,0BAAA;CACA;AACA;IACA,sBAAA;IACA,YAAA;IACA,iCAAA;IACA,kCAAA;IACA,qBAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;IACA,cAAA;CACA;;AAEA;IACA,kBAAA;IACA,iBAAA;IACA,sBAAA;IACA,gBAAA;IACA,iBAAA;IACA,eAAA;CACA;;AAEA;IACA,cAAA;CACA;;AAEA;IACA,kBAAA;CACA","file":"Item.vue","sourcesContent":["<template>\r\n    <article class=\"article-item\">\r\n        <h1 class=\"article-title\"><a :href=\"'#/article/' + item._id\">{{item.title}}</a></h1>\r\n        <div class=\"article-tag\">\r\n            <a :href=\"'#/tagArticle/' + item.parentTagName\"><p>{{item.parentTagName}}</p></a>\r\n\r\n        </div>\r\n        <div class=\"date\">\r\n            {{item.date}}\r\n        </div>\r\n\r\n        <div class=\"article-content\">\r\n            {{{item.md}}}\r\n        </div>\r\n    </article>\r\n\r\n</template>\r\n\r\n<script>\r\nexport default{\r\n    name: \"Item\",\r\n\r\n    props: {\r\n        item: Object\r\n    }\r\n\r\n}\r\n</script>\r\n\r\n<style>\r\n.article-item{\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 3rem 0;\r\n    position: relative;\r\n    white-space: normal;\r\n    word-break: break-all;\r\n    word-wrap: break-word;\r\n    overflow: hidden;\r\n}\r\n.article-item:hover{\r\n    box-shadow: 4px 4px 5px #918b8b;\r\n}\r\n.article-title{\r\n    font-size: 1.5rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #ea7bf7;\r\n}\r\n.article-title:hover{\r\n    color: #fb8da6;\r\n}\r\n.article-tag{\r\n    position: absolute;\r\n    background-color: whiteSmoke;\r\n    width: 10rem;\r\n    right: .5rem;\r\n    text-align: center;\r\n    -webkit-transform: rotate(40deg) translate(5px, -60px);\r\n    -moz-transform: rotate(40deg) translate(5px, -60px);\r\n    transform: rotate(40deg) translate(5px, -60px);\r\n    z-index: 1;\r\n}\r\n.article-tag p{\r\n    padding: .2rem 0;\r\n    color: #fb8da6;\r\n    font-weight: 700;\r\n    border-top: .1rem dashed #fb8da6;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.article-tag:hover{\r\n    background-color: #ededed;\r\n}\r\n.date{\r\n    display: inline-block;\r\n    color: #666;\r\n    border-left: .2rem solid #fb8da6;\r\n    border-right: .2rem solid #fb8da6;\r\n    padding: .1rem .5rem;\r\n    font-size: .8rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .5rem;\r\n}\r\n\r\n.article-content{\r\n    max-height: 20rem;\r\n    overflow: hidden;\r\n    margin-bottom: 1.2rem;\r\n    padding: 1rem 0;\r\n    line-height: 1.8;\r\n    color: #444955;\r\n}\r\n\r\n.article-content h1{\r\n    display: none;\r\n}\r\n\r\n.article-content p{\r\n    text-indent: 2rem;\r\n}\r\n\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
-/* 93 */,
-/* 94 */
+/* 29 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//     <article class="article-item">
+	//         <h1 class="article-title"><a :href="'#/article/' + item._id">{{item.title}}</a></h1>
+	//         <div class="article-tag">
+	//             <a :href="'#/tagArticle/' + item.parentTagName"><p>{{item.parentTagName}}</p></a>
+	//
+	//         </div>
+	//         <div class="date">
+	//             {{item.date}}
+	//         </div>
+	//
+	//         <div class="article-content">
+	//             {{{item.md}}}
+	//         </div>
+	//     </article>
+	//
+	// </template>
+	//
+	// <script>
+	exports.default = {
+	    name: "Item",
+	
+	    props: {
+	        item: Object
+	    }
+
+	};
+	// </script>
+	//
+	// <style>
+	// .article-item{
+	//     background-color: #fff;
+	//     border-radius: .4rem;;
+	//     box-shadow: 2px 2px 3px #918b8b;
+	//     padding: 1rem;
+	//     margin: .5rem 0 3rem 0;
+	//     position: relative;
+	//     white-space: normal;
+	//     word-break: break-all;
+	//     word-wrap: break-word;
+	//     overflow: hidden;
+	// }
+	// .article-item:hover{
+	//     box-shadow: 4px 4px 5px #918b8b;
+	// }
+	// .article-title{
+	//     font-size: 1.5rem;
+	//     padding-bottom: .8rem;
+	//     border-bottom: .1rem dashed #ea7bf7;
+	//     text-shadow: 1px 1px 0 #b0aeb0;
+	//     color: #ea7bf7;
+	// }
+	// .article-title:hover{
+	//     color: #fb8da6;
+	// }
+	// .article-tag{
+	//     position: absolute;
+	//     background-color: whiteSmoke;
+	//     width: 10rem;
+	//     right: .5rem;
+	//     text-align: center;
+	//     -webkit-transform: rotate(40deg) translate(5px, -60px);
+	//     -moz-transform: rotate(40deg) translate(5px, -60px);
+	//     transform: rotate(40deg) translate(5px, -60px);
+	//     z-index: 1;
+	// }
+	// .article-tag p{
+	//     padding: .2rem 0;
+	//     color: #fb8da6;
+	//     font-weight: 700;
+	//     border-top: .1rem dashed #fb8da6;
+	//     border-bottom: .1rem dashed #fb8da6;
+	// }
+	// .article-tag:hover{
+	//     background-color: #ededed;
+	// }
+	// .date{
+	//     display: inline-block;
+	//     color: #666;
+	//     border-left: .2rem solid #fb8da6;
+	//     border-right: .2rem solid #fb8da6;
+	//     padding: .1rem .5rem;
+	//     font-size: .8rem;
+	//     position: absolute;
+	//     right: .5rem;
+	//     bottom: .5rem;
+	// }
+	//
+	// .article-content{
+	//     max-height: 20rem;
+	//     overflow: hidden;
+	//     margin-bottom: 1.2rem;
+	//     padding: 1rem 0;
+	//     line-height: 1.8;
+	//     color: #444955;
+	// }
+	//
+	// .article-content h1{
+	//     display: none;
+	// }
+	//
+	// .article-content p{
+	//     text-indent: 2rem;
+	// }
+	//
+	// </style>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 30 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<article class=\"article-item\">\n    <h1 class=\"article-title\"><a :href=\"'#/article/' + item._id\">{{item.title}}</a></h1>\n    <div class=\"article-tag\">\n        <a :href=\"'#/tagArticle/' + item.parentTagName\"><p>{{item.parentTagName}}</p></a>\n\n    </div>\n    <div class=\"date\">\n        {{item.date}}\n    </div>\n\n    <div class=\"article-content\">\n        {{{item.md}}}\n    </div>\n</article>\n\n";
+
+/***/ },
+/* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(32)
+	__vue_script__ = __webpack_require__(34)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] public\\components\\Classification.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(35)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) { (typeof module.exports === "function" ? (module.exports.options || {}) : module.exports).template = __vue_template__ }
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "F:\\github\\blog\\node\\app\\public\\components\\Classification.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(33);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(8)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Classification.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Classification.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 33 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\r\n.class-tags{\r\n    width: 20%;\r\n    float: left;\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 1.5rem 0;\r\n}\r\n.class-tags h4{\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n}\r\n.tag{\r\n    padding: .3rem 0 0 0;\r\n    color: #666;\r\n    position: relative;\r\n}\r\n.tag:hover{\r\n    color: #d514fc;\r\n}\r\n.number{\r\n    display: inline-block;\r\n    text-align: center;\r\n    width: 1rem;\r\n    height: 1rem;\r\n    line-height: 1rem;\r\n    border-radius: 50%;\r\n    background-color: #fb8da6;\r\n    color: #fff;\r\n    font-size: .5rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .1rem;\r\n}\r\n.number:hover{\r\n    background-color: #666;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/Classification.vue?4647a8eb"],"names":[],"mappings":";AA6CA;IACA,WAAA;IACA,YAAA;IACA,uBAAA;IACA,qBAAA;IACA,gCAAA;IACA,cAAA;IACA,yBAAA;CACA;AACA;IACA,sBAAA;IACA,oCAAA;CACA;AACA;IACA,qBAAA;IACA,YAAA;IACA,mBAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,sBAAA;IACA,mBAAA;IACA,YAAA;IACA,aAAA;IACA,kBAAA;IACA,mBAAA;IACA,0BAAA;IACA,YAAA;IACA,iBAAA;IACA,mBAAA;IACA,aAAA;IACA,cAAA;CACA;AACA;IACA,uBAAA;CACA","file":"Classification.vue","sourcesContent":["<template>\r\n    <div class=\"class-tags\" v-if=\"hasloaded\">\r\n        <h4>分类</h4>\r\n        <p  v-for=\"classTag in classTags\"\r\n            class=\"tag\"\r\n            :index=\"$index\"\r\n            track-by=\"$index\">\r\n            <a :href=\"'#/tagArticle/' + classTag.name\">{{classTag.name}}</a>\r\n            <span class=\"number\">{{classTag.number}}</span>\r\n        </p>\r\n    </div>\r\n\r\n</template>\r\n\r\n<script>\r\nexport default{\r\n    name: \"Classification\",\r\n\r\n    props:{\r\n        classTags: Array\r\n    },\r\n\r\n    date(){\r\n        return {\r\n            classTags: []\r\n        }\r\n    },\r\n\r\n    computed:{\r\n        hasloaded(){\r\n            if(this.classTags.length !== 0){\r\n                return true;\r\n            }\r\n        }\r\n    },\r\n\r\n    route: {\r\n        data: function(){\r\n            console.log(\"sss\");\r\n        }\r\n    }\r\n}\r\n</script>\r\n\r\n<style>\r\n.class-tags{\r\n    width: 20%;\r\n    float: left;\r\n    background-color: #fff;\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1rem;\r\n    margin: .5rem 0 1.5rem 0;\r\n}\r\n.class-tags h4{\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #ea7bf7;\r\n}\r\n.tag{\r\n    padding: .3rem 0 0 0;\r\n    color: #666;\r\n    position: relative;\r\n}\r\n.tag:hover{\r\n    color: #d514fc;\r\n}\r\n.number{\r\n    display: inline-block;\r\n    text-align: center;\r\n    width: 1rem;\r\n    height: 1rem;\r\n    line-height: 1rem;\r\n    border-radius: 50%;\r\n    background-color: #fb8da6;\r\n    color: #fff;\r\n    font-size: .5rem;\r\n    position: absolute;\r\n    right: .5rem;\r\n    bottom: .1rem;\r\n}\r\n.number:hover{\r\n    background-color: #666;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
+/* 34 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//     <div class="class-tags" v-if="hasloaded">
+	//         <h4>分类</h4>
+	//         <p  v-for="classTag in classTags"
+	//             class="tag"
+	//             :index="$index"
+	//             track-by="$index">
+	//             <a :href="'#/tagArticle/' + classTag.name">{{classTag.name}}</a>
+	//             <span class="number">{{classTag.number}}</span>
+	//         </p>
+	//     </div>
+	//
+	// </template>
+	//
+	// <script>
+	exports.default = {
+	    name: "Classification",
+	
+	    props: {
+	        classTags: Array
+	    },
+	
+	    date: function date() {
+	        return {
+	            classTags: []
+	        };
+	    },
+	
+	    computed: {
+	        hasloaded: function hasloaded() {
+	            if (this.classTags.length !== 0) {
+	                return true;
+	            }
+	        }
+	    },
+	
+	    route: {
+	        data: function data() {
+	            console.log("sss");
+	        }
+	    }
+	};
+	// </script>
+	//
+	// <style>
+	// .class-tags{
+	//     width: 20%;
+	//     float: left;
+	//     background-color: #fff;
+	//     border-radius: .4rem;;
+	//     box-shadow: 2px 2px 3px #918b8b;
+	//     padding: 1rem;
+	//     margin: .5rem 0 1.5rem 0;
+	// }
+	// .class-tags h4{
+	//     padding-bottom: .5rem;
+	//     border-bottom: .1rem dashed #ea7bf7;
+	// }
+	// .tag{
+	//     padding: .3rem 0 0 0;
+	//     color: #666;
+	//     position: relative;
+	// }
+	// .tag:hover{
+	//     color: #d514fc;
+	// }
+	// .number{
+	//     display: inline-block;
+	//     text-align: center;
+	//     width: 1rem;
+	//     height: 1rem;
+	//     line-height: 1rem;
+	//     border-radius: 50%;
+	//     background-color: #fb8da6;
+	//     color: #fff;
+	//     font-size: .5rem;
+	//     position: absolute;
+	//     right: .5rem;
+	//     bottom: .1rem;
+	// }
+	// .number:hover{
+	//     background-color: #666;
+	// }
+	// </style>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 35 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"class-tags\" v-if=\"hasloaded\">\n    <h4>分类</h4>\n    <p  v-for=\"classTag in classTags\"\n        class=\"tag\"\n        :index=\"$index\"\n        track-by=\"$index\">\n        <a :href=\"'#/tagArticle/' + classTag.name\">{{classTag.name}}</a>\n        <span class=\"number\">{{classTag.number}}</span>\n    </p>\n</div>\n\n";
+
+/***/ },
+/* 36 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _es6Promise = __webpack_require__(37);
+	
+	var model = {};
+	
+	model.getArticleList = function (url) {
+	    return new _es6Promise.Promise(function (resolve, reject) {
+	        $.get(url, function (data) {
+	
+	            if (typeof data === "string") {
+	                data = JSON.parse(data);
+	            }
+	            resolve(data);
+	        });
+	    });
+	};
+	
+	model.getTagInfo = function (url) {
+	    return new _es6Promise.Promise(function (resolve, reject) {
+	        $.get(url, function (data) {
+	
+	            if (typeof data === "string") {
+	                data = JSON.parse(data);
+	            }
+	            resolve(data);
+	        });
+	    });
+	};
+	
+	model.getAll = function (articleUrl, tagUrl) {
+	    return _es6Promise.Promise.all([model.getArticleList(articleUrl), model.getTagInfo(tagUrl)]);
+	};
+	
+	model.handleDate = function (date) {
+	    var dateArr = date.split('T');
+	    return dateArr[0];
+	};
+	
+	model.toMarkdown = function (text) {
+	    var markdown = __webpack_require__(42).markdown;
+	    return markdown.toHTML(text);
+	};
+	
+	exports.default = model;
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
+	 * @overview es6-promise - a tiny implementation of Promises/A+.
+	 * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
+	 * @license   Licensed under MIT license
+	 *            See https://raw.githubusercontent.com/jakearchibald/es6-promise/master/LICENSE
+	 * @version   3.0.2
+	 */
+	
+	(function() {
+	    "use strict";
+	    function lib$es6$promise$utils$$objectOrFunction(x) {
+	      return typeof x === 'function' || (typeof x === 'object' && x !== null);
+	    }
+	
+	    function lib$es6$promise$utils$$isFunction(x) {
+	      return typeof x === 'function';
+	    }
+	
+	    function lib$es6$promise$utils$$isMaybeThenable(x) {
+	      return typeof x === 'object' && x !== null;
+	    }
+	
+	    var lib$es6$promise$utils$$_isArray;
+	    if (!Array.isArray) {
+	      lib$es6$promise$utils$$_isArray = function (x) {
+	        return Object.prototype.toString.call(x) === '[object Array]';
+	      };
+	    } else {
+	      lib$es6$promise$utils$$_isArray = Array.isArray;
+	    }
+	
+	    var lib$es6$promise$utils$$isArray = lib$es6$promise$utils$$_isArray;
+	    var lib$es6$promise$asap$$len = 0;
+	    var lib$es6$promise$asap$$toString = {}.toString;
+	    var lib$es6$promise$asap$$vertxNext;
+	    var lib$es6$promise$asap$$customSchedulerFn;
+	
+	    var lib$es6$promise$asap$$asap = function asap(callback, arg) {
+	      lib$es6$promise$asap$$queue[lib$es6$promise$asap$$len] = callback;
+	      lib$es6$promise$asap$$queue[lib$es6$promise$asap$$len + 1] = arg;
+	      lib$es6$promise$asap$$len += 2;
+	      if (lib$es6$promise$asap$$len === 2) {
+	        // If len is 2, that means that we need to schedule an async flush.
+	        // If additional callbacks are queued before the queue is flushed, they
+	        // will be processed by this flush that we are scheduling.
+	        if (lib$es6$promise$asap$$customSchedulerFn) {
+	          lib$es6$promise$asap$$customSchedulerFn(lib$es6$promise$asap$$flush);
+	        } else {
+	          lib$es6$promise$asap$$scheduleFlush();
+	        }
+	      }
+	    }
+	
+	    function lib$es6$promise$asap$$setScheduler(scheduleFn) {
+	      lib$es6$promise$asap$$customSchedulerFn = scheduleFn;
+	    }
+	
+	    function lib$es6$promise$asap$$setAsap(asapFn) {
+	      lib$es6$promise$asap$$asap = asapFn;
+	    }
+	
+	    var lib$es6$promise$asap$$browserWindow = (typeof window !== 'undefined') ? window : undefined;
+	    var lib$es6$promise$asap$$browserGlobal = lib$es6$promise$asap$$browserWindow || {};
+	    var lib$es6$promise$asap$$BrowserMutationObserver = lib$es6$promise$asap$$browserGlobal.MutationObserver || lib$es6$promise$asap$$browserGlobal.WebKitMutationObserver;
+	    var lib$es6$promise$asap$$isNode = typeof process !== 'undefined' && {}.toString.call(process) === '[object process]';
+	
+	    // test for web worker but not in IE10
+	    var lib$es6$promise$asap$$isWorker = typeof Uint8ClampedArray !== 'undefined' &&
+	      typeof importScripts !== 'undefined' &&
+	      typeof MessageChannel !== 'undefined';
+	
+	    // node
+	    function lib$es6$promise$asap$$useNextTick() {
+	      // node version 0.10.x displays a deprecation warning when nextTick is used recursively
+	      // see https://github.com/cujojs/when/issues/410 for details
+	      return function() {
+	        process.nextTick(lib$es6$promise$asap$$flush);
+	      };
+	    }
+	
+	    // vertx
+	    function lib$es6$promise$asap$$useVertxTimer() {
+	      return function() {
+	        lib$es6$promise$asap$$vertxNext(lib$es6$promise$asap$$flush);
+	      };
+	    }
+	
+	    function lib$es6$promise$asap$$useMutationObserver() {
+	      var iterations = 0;
+	      var observer = new lib$es6$promise$asap$$BrowserMutationObserver(lib$es6$promise$asap$$flush);
+	      var node = document.createTextNode('');
+	      observer.observe(node, { characterData: true });
+	
+	      return function() {
+	        node.data = (iterations = ++iterations % 2);
+	      };
+	    }
+	
+	    // web worker
+	    function lib$es6$promise$asap$$useMessageChannel() {
+	      var channel = new MessageChannel();
+	      channel.port1.onmessage = lib$es6$promise$asap$$flush;
+	      return function () {
+	        channel.port2.postMessage(0);
+	      };
+	    }
+	
+	    function lib$es6$promise$asap$$useSetTimeout() {
+	      return function() {
+	        setTimeout(lib$es6$promise$asap$$flush, 1);
+	      };
+	    }
+	
+	    var lib$es6$promise$asap$$queue = new Array(1000);
+	    function lib$es6$promise$asap$$flush() {
+	      for (var i = 0; i < lib$es6$promise$asap$$len; i+=2) {
+	        var callback = lib$es6$promise$asap$$queue[i];
+	        var arg = lib$es6$promise$asap$$queue[i+1];
+	
+	        callback(arg);
+	
+	        lib$es6$promise$asap$$queue[i] = undefined;
+	        lib$es6$promise$asap$$queue[i+1] = undefined;
+	      }
+	
+	      lib$es6$promise$asap$$len = 0;
+	    }
+	
+	    function lib$es6$promise$asap$$attemptVertx() {
+	      try {
+	        var r = require;
+	        var vertx = __webpack_require__(39);
+	        lib$es6$promise$asap$$vertxNext = vertx.runOnLoop || vertx.runOnContext;
+	        return lib$es6$promise$asap$$useVertxTimer();
+	      } catch(e) {
+	        return lib$es6$promise$asap$$useSetTimeout();
+	      }
+	    }
+	
+	    var lib$es6$promise$asap$$scheduleFlush;
+	    // Decide what async method to use to triggering processing of queued callbacks:
+	    if (lib$es6$promise$asap$$isNode) {
+	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useNextTick();
+	    } else if (lib$es6$promise$asap$$BrowserMutationObserver) {
+	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useMutationObserver();
+	    } else if (lib$es6$promise$asap$$isWorker) {
+	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useMessageChannel();
+	    } else if (lib$es6$promise$asap$$browserWindow === undefined && "function" === 'function') {
+	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$attemptVertx();
+	    } else {
+	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useSetTimeout();
+	    }
+	
+	    function lib$es6$promise$$internal$$noop() {}
+	
+	    var lib$es6$promise$$internal$$PENDING   = void 0;
+	    var lib$es6$promise$$internal$$FULFILLED = 1;
+	    var lib$es6$promise$$internal$$REJECTED  = 2;
+	
+	    var lib$es6$promise$$internal$$GET_THEN_ERROR = new lib$es6$promise$$internal$$ErrorObject();
+	
+	    function lib$es6$promise$$internal$$selfFulfillment() {
+	      return new TypeError("You cannot resolve a promise with itself");
+	    }
+	
+	    function lib$es6$promise$$internal$$cannotReturnOwn() {
+	      return new TypeError('A promises callback cannot return that same promise.');
+	    }
+	
+	    function lib$es6$promise$$internal$$getThen(promise) {
+	      try {
+	        return promise.then;
+	      } catch(error) {
+	        lib$es6$promise$$internal$$GET_THEN_ERROR.error = error;
+	        return lib$es6$promise$$internal$$GET_THEN_ERROR;
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$tryThen(then, value, fulfillmentHandler, rejectionHandler) {
+	      try {
+	        then.call(value, fulfillmentHandler, rejectionHandler);
+	      } catch(e) {
+	        return e;
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$handleForeignThenable(promise, thenable, then) {
+	       lib$es6$promise$asap$$asap(function(promise) {
+	        var sealed = false;
+	        var error = lib$es6$promise$$internal$$tryThen(then, thenable, function(value) {
+	          if (sealed) { return; }
+	          sealed = true;
+	          if (thenable !== value) {
+	            lib$es6$promise$$internal$$resolve(promise, value);
+	          } else {
+	            lib$es6$promise$$internal$$fulfill(promise, value);
+	          }
+	        }, function(reason) {
+	          if (sealed) { return; }
+	          sealed = true;
+	
+	          lib$es6$promise$$internal$$reject(promise, reason);
+	        }, 'Settle: ' + (promise._label || ' unknown promise'));
+	
+	        if (!sealed && error) {
+	          sealed = true;
+	          lib$es6$promise$$internal$$reject(promise, error);
+	        }
+	      }, promise);
+	    }
+	
+	    function lib$es6$promise$$internal$$handleOwnThenable(promise, thenable) {
+	      if (thenable._state === lib$es6$promise$$internal$$FULFILLED) {
+	        lib$es6$promise$$internal$$fulfill(promise, thenable._result);
+	      } else if (thenable._state === lib$es6$promise$$internal$$REJECTED) {
+	        lib$es6$promise$$internal$$reject(promise, thenable._result);
+	      } else {
+	        lib$es6$promise$$internal$$subscribe(thenable, undefined, function(value) {
+	          lib$es6$promise$$internal$$resolve(promise, value);
+	        }, function(reason) {
+	          lib$es6$promise$$internal$$reject(promise, reason);
+	        });
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$handleMaybeThenable(promise, maybeThenable) {
+	      if (maybeThenable.constructor === promise.constructor) {
+	        lib$es6$promise$$internal$$handleOwnThenable(promise, maybeThenable);
+	      } else {
+	        var then = lib$es6$promise$$internal$$getThen(maybeThenable);
+	
+	        if (then === lib$es6$promise$$internal$$GET_THEN_ERROR) {
+	          lib$es6$promise$$internal$$reject(promise, lib$es6$promise$$internal$$GET_THEN_ERROR.error);
+	        } else if (then === undefined) {
+	          lib$es6$promise$$internal$$fulfill(promise, maybeThenable);
+	        } else if (lib$es6$promise$utils$$isFunction(then)) {
+	          lib$es6$promise$$internal$$handleForeignThenable(promise, maybeThenable, then);
+	        } else {
+	          lib$es6$promise$$internal$$fulfill(promise, maybeThenable);
+	        }
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$resolve(promise, value) {
+	      if (promise === value) {
+	        lib$es6$promise$$internal$$reject(promise, lib$es6$promise$$internal$$selfFulfillment());
+	      } else if (lib$es6$promise$utils$$objectOrFunction(value)) {
+	        lib$es6$promise$$internal$$handleMaybeThenable(promise, value);
+	      } else {
+	        lib$es6$promise$$internal$$fulfill(promise, value);
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$publishRejection(promise) {
+	      if (promise._onerror) {
+	        promise._onerror(promise._result);
+	      }
+	
+	      lib$es6$promise$$internal$$publish(promise);
+	    }
+	
+	    function lib$es6$promise$$internal$$fulfill(promise, value) {
+	      if (promise._state !== lib$es6$promise$$internal$$PENDING) { return; }
+	
+	      promise._result = value;
+	      promise._state = lib$es6$promise$$internal$$FULFILLED;
+	
+	      if (promise._subscribers.length !== 0) {
+	        lib$es6$promise$asap$$asap(lib$es6$promise$$internal$$publish, promise);
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$reject(promise, reason) {
+	      if (promise._state !== lib$es6$promise$$internal$$PENDING) { return; }
+	      promise._state = lib$es6$promise$$internal$$REJECTED;
+	      promise._result = reason;
+	
+	      lib$es6$promise$asap$$asap(lib$es6$promise$$internal$$publishRejection, promise);
+	    }
+	
+	    function lib$es6$promise$$internal$$subscribe(parent, child, onFulfillment, onRejection) {
+	      var subscribers = parent._subscribers;
+	      var length = subscribers.length;
+	
+	      parent._onerror = null;
+	
+	      subscribers[length] = child;
+	      subscribers[length + lib$es6$promise$$internal$$FULFILLED] = onFulfillment;
+	      subscribers[length + lib$es6$promise$$internal$$REJECTED]  = onRejection;
+	
+	      if (length === 0 && parent._state) {
+	        lib$es6$promise$asap$$asap(lib$es6$promise$$internal$$publish, parent);
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$publish(promise) {
+	      var subscribers = promise._subscribers;
+	      var settled = promise._state;
+	
+	      if (subscribers.length === 0) { return; }
+	
+	      var child, callback, detail = promise._result;
+	
+	      for (var i = 0; i < subscribers.length; i += 3) {
+	        child = subscribers[i];
+	        callback = subscribers[i + settled];
+	
+	        if (child) {
+	          lib$es6$promise$$internal$$invokeCallback(settled, child, callback, detail);
+	        } else {
+	          callback(detail);
+	        }
+	      }
+	
+	      promise._subscribers.length = 0;
+	    }
+	
+	    function lib$es6$promise$$internal$$ErrorObject() {
+	      this.error = null;
+	    }
+	
+	    var lib$es6$promise$$internal$$TRY_CATCH_ERROR = new lib$es6$promise$$internal$$ErrorObject();
+	
+	    function lib$es6$promise$$internal$$tryCatch(callback, detail) {
+	      try {
+	        return callback(detail);
+	      } catch(e) {
+	        lib$es6$promise$$internal$$TRY_CATCH_ERROR.error = e;
+	        return lib$es6$promise$$internal$$TRY_CATCH_ERROR;
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$invokeCallback(settled, promise, callback, detail) {
+	      var hasCallback = lib$es6$promise$utils$$isFunction(callback),
+	          value, error, succeeded, failed;
+	
+	      if (hasCallback) {
+	        value = lib$es6$promise$$internal$$tryCatch(callback, detail);
+	
+	        if (value === lib$es6$promise$$internal$$TRY_CATCH_ERROR) {
+	          failed = true;
+	          error = value.error;
+	          value = null;
+	        } else {
+	          succeeded = true;
+	        }
+	
+	        if (promise === value) {
+	          lib$es6$promise$$internal$$reject(promise, lib$es6$promise$$internal$$cannotReturnOwn());
+	          return;
+	        }
+	
+	      } else {
+	        value = detail;
+	        succeeded = true;
+	      }
+	
+	      if (promise._state !== lib$es6$promise$$internal$$PENDING) {
+	        // noop
+	      } else if (hasCallback && succeeded) {
+	        lib$es6$promise$$internal$$resolve(promise, value);
+	      } else if (failed) {
+	        lib$es6$promise$$internal$$reject(promise, error);
+	      } else if (settled === lib$es6$promise$$internal$$FULFILLED) {
+	        lib$es6$promise$$internal$$fulfill(promise, value);
+	      } else if (settled === lib$es6$promise$$internal$$REJECTED) {
+	        lib$es6$promise$$internal$$reject(promise, value);
+	      }
+	    }
+	
+	    function lib$es6$promise$$internal$$initializePromise(promise, resolver) {
+	      try {
+	        resolver(function resolvePromise(value){
+	          lib$es6$promise$$internal$$resolve(promise, value);
+	        }, function rejectPromise(reason) {
+	          lib$es6$promise$$internal$$reject(promise, reason);
+	        });
+	      } catch(e) {
+	        lib$es6$promise$$internal$$reject(promise, e);
+	      }
+	    }
+	
+	    function lib$es6$promise$enumerator$$Enumerator(Constructor, input) {
+	      var enumerator = this;
+	
+	      enumerator._instanceConstructor = Constructor;
+	      enumerator.promise = new Constructor(lib$es6$promise$$internal$$noop);
+	
+	      if (enumerator._validateInput(input)) {
+	        enumerator._input     = input;
+	        enumerator.length     = input.length;
+	        enumerator._remaining = input.length;
+	
+	        enumerator._init();
+	
+	        if (enumerator.length === 0) {
+	          lib$es6$promise$$internal$$fulfill(enumerator.promise, enumerator._result);
+	        } else {
+	          enumerator.length = enumerator.length || 0;
+	          enumerator._enumerate();
+	          if (enumerator._remaining === 0) {
+	            lib$es6$promise$$internal$$fulfill(enumerator.promise, enumerator._result);
+	          }
+	        }
+	      } else {
+	        lib$es6$promise$$internal$$reject(enumerator.promise, enumerator._validationError());
+	      }
+	    }
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._validateInput = function(input) {
+	      return lib$es6$promise$utils$$isArray(input);
+	    };
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._validationError = function() {
+	      return new Error('Array Methods must be provided an Array');
+	    };
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._init = function() {
+	      this._result = new Array(this.length);
+	    };
+	
+	    var lib$es6$promise$enumerator$$default = lib$es6$promise$enumerator$$Enumerator;
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._enumerate = function() {
+	      var enumerator = this;
+	
+	      var length  = enumerator.length;
+	      var promise = enumerator.promise;
+	      var input   = enumerator._input;
+	
+	      for (var i = 0; promise._state === lib$es6$promise$$internal$$PENDING && i < length; i++) {
+	        enumerator._eachEntry(input[i], i);
+	      }
+	    };
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._eachEntry = function(entry, i) {
+	      var enumerator = this;
+	      var c = enumerator._instanceConstructor;
+	
+	      if (lib$es6$promise$utils$$isMaybeThenable(entry)) {
+	        if (entry.constructor === c && entry._state !== lib$es6$promise$$internal$$PENDING) {
+	          entry._onerror = null;
+	          enumerator._settledAt(entry._state, i, entry._result);
+	        } else {
+	          enumerator._willSettleAt(c.resolve(entry), i);
+	        }
+	      } else {
+	        enumerator._remaining--;
+	        enumerator._result[i] = entry;
+	      }
+	    };
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._settledAt = function(state, i, value) {
+	      var enumerator = this;
+	      var promise = enumerator.promise;
+	
+	      if (promise._state === lib$es6$promise$$internal$$PENDING) {
+	        enumerator._remaining--;
+	
+	        if (state === lib$es6$promise$$internal$$REJECTED) {
+	          lib$es6$promise$$internal$$reject(promise, value);
+	        } else {
+	          enumerator._result[i] = value;
+	        }
+	      }
+	
+	      if (enumerator._remaining === 0) {
+	        lib$es6$promise$$internal$$fulfill(promise, enumerator._result);
+	      }
+	    };
+	
+	    lib$es6$promise$enumerator$$Enumerator.prototype._willSettleAt = function(promise, i) {
+	      var enumerator = this;
+	
+	      lib$es6$promise$$internal$$subscribe(promise, undefined, function(value) {
+	        enumerator._settledAt(lib$es6$promise$$internal$$FULFILLED, i, value);
+	      }, function(reason) {
+	        enumerator._settledAt(lib$es6$promise$$internal$$REJECTED, i, reason);
+	      });
+	    };
+	    function lib$es6$promise$promise$all$$all(entries) {
+	      return new lib$es6$promise$enumerator$$default(this, entries).promise;
+	    }
+	    var lib$es6$promise$promise$all$$default = lib$es6$promise$promise$all$$all;
+	    function lib$es6$promise$promise$race$$race(entries) {
+	      /*jshint validthis:true */
+	      var Constructor = this;
+	
+	      var promise = new Constructor(lib$es6$promise$$internal$$noop);
+	
+	      if (!lib$es6$promise$utils$$isArray(entries)) {
+	        lib$es6$promise$$internal$$reject(promise, new TypeError('You must pass an array to race.'));
+	        return promise;
+	      }
+	
+	      var length = entries.length;
+	
+	      function onFulfillment(value) {
+	        lib$es6$promise$$internal$$resolve(promise, value);
+	      }
+	
+	      function onRejection(reason) {
+	        lib$es6$promise$$internal$$reject(promise, reason);
+	      }
+	
+	      for (var i = 0; promise._state === lib$es6$promise$$internal$$PENDING && i < length; i++) {
+	        lib$es6$promise$$internal$$subscribe(Constructor.resolve(entries[i]), undefined, onFulfillment, onRejection);
+	      }
+	
+	      return promise;
+	    }
+	    var lib$es6$promise$promise$race$$default = lib$es6$promise$promise$race$$race;
+	    function lib$es6$promise$promise$resolve$$resolve(object) {
+	      /*jshint validthis:true */
+	      var Constructor = this;
+	
+	      if (object && typeof object === 'object' && object.constructor === Constructor) {
+	        return object;
+	      }
+	
+	      var promise = new Constructor(lib$es6$promise$$internal$$noop);
+	      lib$es6$promise$$internal$$resolve(promise, object);
+	      return promise;
+	    }
+	    var lib$es6$promise$promise$resolve$$default = lib$es6$promise$promise$resolve$$resolve;
+	    function lib$es6$promise$promise$reject$$reject(reason) {
+	      /*jshint validthis:true */
+	      var Constructor = this;
+	      var promise = new Constructor(lib$es6$promise$$internal$$noop);
+	      lib$es6$promise$$internal$$reject(promise, reason);
+	      return promise;
+	    }
+	    var lib$es6$promise$promise$reject$$default = lib$es6$promise$promise$reject$$reject;
+	
+	    var lib$es6$promise$promise$$counter = 0;
+	
+	    function lib$es6$promise$promise$$needsResolver() {
+	      throw new TypeError('You must pass a resolver function as the first argument to the promise constructor');
+	    }
+	
+	    function lib$es6$promise$promise$$needsNew() {
+	      throw new TypeError("Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function.");
+	    }
+	
+	    var lib$es6$promise$promise$$default = lib$es6$promise$promise$$Promise;
+	    /**
+	      Promise objects represent the eventual result of an asynchronous operation. The
+	      primary way of interacting with a promise is through its `then` method, which
+	      registers callbacks to receive either a promise's eventual value or the reason
+	      why the promise cannot be fulfilled.
+	
+	      Terminology
+	      -----------
+	
+	      - `promise` is an object or function with a `then` method whose behavior conforms to this specification.
+	      - `thenable` is an object or function that defines a `then` method.
+	      - `value` is any legal JavaScript value (including undefined, a thenable, or a promise).
+	      - `exception` is a value that is thrown using the throw statement.
+	      - `reason` is a value that indicates why a promise was rejected.
+	      - `settled` the final resting state of a promise, fulfilled or rejected.
+	
+	      A promise can be in one of three states: pending, fulfilled, or rejected.
+	
+	      Promises that are fulfilled have a fulfillment value and are in the fulfilled
+	      state.  Promises that are rejected have a rejection reason and are in the
+	      rejected state.  A fulfillment value is never a thenable.
+	
+	      Promises can also be said to *resolve* a value.  If this value is also a
+	      promise, then the original promise's settled state will match the value's
+	      settled state.  So a promise that *resolves* a promise that rejects will
+	      itself reject, and a promise that *resolves* a promise that fulfills will
+	      itself fulfill.
+	
+	
+	      Basic Usage:
+	      ------------
+	
+	      ```js
+	      var promise = new Promise(function(resolve, reject) {
+	        // on success
+	        resolve(value);
+	
+	        // on failure
+	        reject(reason);
+	      });
+	
+	      promise.then(function(value) {
+	        // on fulfillment
+	      }, function(reason) {
+	        // on rejection
+	      });
+	      ```
+	
+	      Advanced Usage:
+	      ---------------
+	
+	      Promises shine when abstracting away asynchronous interactions such as
+	      `XMLHttpRequest`s.
+	
+	      ```js
+	      function getJSON(url) {
+	        return new Promise(function(resolve, reject){
+	          var xhr = new XMLHttpRequest();
+	
+	          xhr.open('GET', url);
+	          xhr.onreadystatechange = handler;
+	          xhr.responseType = 'json';
+	          xhr.setRequestHeader('Accept', 'application/json');
+	          xhr.send();
+	
+	          function handler() {
+	            if (this.readyState === this.DONE) {
+	              if (this.status === 200) {
+	                resolve(this.response);
+	              } else {
+	                reject(new Error('getJSON: `' + url + '` failed with status: [' + this.status + ']'));
+	              }
+	            }
+	          };
+	        });
+	      }
+	
+	      getJSON('/posts.json').then(function(json) {
+	        // on fulfillment
+	      }, function(reason) {
+	        // on rejection
+	      });
+	      ```
+	
+	      Unlike callbacks, promises are great composable primitives.
+	
+	      ```js
+	      Promise.all([
+	        getJSON('/posts'),
+	        getJSON('/comments')
+	      ]).then(function(values){
+	        values[0] // => postsJSON
+	        values[1] // => commentsJSON
+	
+	        return values;
+	      });
+	      ```
+	
+	      @class Promise
+	      @param {function} resolver
+	      Useful for tooling.
+	      @constructor
+	    */
+	    function lib$es6$promise$promise$$Promise(resolver) {
+	      this._id = lib$es6$promise$promise$$counter++;
+	      this._state = undefined;
+	      this._result = undefined;
+	      this._subscribers = [];
+	
+	      if (lib$es6$promise$$internal$$noop !== resolver) {
+	        if (!lib$es6$promise$utils$$isFunction(resolver)) {
+	          lib$es6$promise$promise$$needsResolver();
+	        }
+	
+	        if (!(this instanceof lib$es6$promise$promise$$Promise)) {
+	          lib$es6$promise$promise$$needsNew();
+	        }
+	
+	        lib$es6$promise$$internal$$initializePromise(this, resolver);
+	      }
+	    }
+	
+	    lib$es6$promise$promise$$Promise.all = lib$es6$promise$promise$all$$default;
+	    lib$es6$promise$promise$$Promise.race = lib$es6$promise$promise$race$$default;
+	    lib$es6$promise$promise$$Promise.resolve = lib$es6$promise$promise$resolve$$default;
+	    lib$es6$promise$promise$$Promise.reject = lib$es6$promise$promise$reject$$default;
+	    lib$es6$promise$promise$$Promise._setScheduler = lib$es6$promise$asap$$setScheduler;
+	    lib$es6$promise$promise$$Promise._setAsap = lib$es6$promise$asap$$setAsap;
+	    lib$es6$promise$promise$$Promise._asap = lib$es6$promise$asap$$asap;
+	
+	    lib$es6$promise$promise$$Promise.prototype = {
+	      constructor: lib$es6$promise$promise$$Promise,
+	
+	    /**
+	      The primary way of interacting with a promise is through its `then` method,
+	      which registers callbacks to receive either a promise's eventual value or the
+	      reason why the promise cannot be fulfilled.
+	
+	      ```js
+	      findUser().then(function(user){
+	        // user is available
+	      }, function(reason){
+	        // user is unavailable, and you are given the reason why
+	      });
+	      ```
+	
+	      Chaining
+	      --------
+	
+	      The return value of `then` is itself a promise.  This second, 'downstream'
+	      promise is resolved with the return value of the first promise's fulfillment
+	      or rejection handler, or rejected if the handler throws an exception.
+	
+	      ```js
+	      findUser().then(function (user) {
+	        return user.name;
+	      }, function (reason) {
+	        return 'default name';
+	      }).then(function (userName) {
+	        // If `findUser` fulfilled, `userName` will be the user's name, otherwise it
+	        // will be `'default name'`
+	      });
+	
+	      findUser().then(function (user) {
+	        throw new Error('Found user, but still unhappy');
+	      }, function (reason) {
+	        throw new Error('`findUser` rejected and we're unhappy');
+	      }).then(function (value) {
+	        // never reached
+	      }, function (reason) {
+	        // if `findUser` fulfilled, `reason` will be 'Found user, but still unhappy'.
+	        // If `findUser` rejected, `reason` will be '`findUser` rejected and we're unhappy'.
+	      });
+	      ```
+	      If the downstream promise does not specify a rejection handler, rejection reasons will be propagated further downstream.
+	
+	      ```js
+	      findUser().then(function (user) {
+	        throw new PedagogicalException('Upstream error');
+	      }).then(function (value) {
+	        // never reached
+	      }).then(function (value) {
+	        // never reached
+	      }, function (reason) {
+	        // The `PedgagocialException` is propagated all the way down to here
+	      });
+	      ```
+	
+	      Assimilation
+	      ------------
+	
+	      Sometimes the value you want to propagate to a downstream promise can only be
+	      retrieved asynchronously. This can be achieved by returning a promise in the
+	      fulfillment or rejection handler. The downstream promise will then be pending
+	      until the returned promise is settled. This is called *assimilation*.
+	
+	      ```js
+	      findUser().then(function (user) {
+	        return findCommentsByAuthor(user);
+	      }).then(function (comments) {
+	        // The user's comments are now available
+	      });
+	      ```
+	
+	      If the assimliated promise rejects, then the downstream promise will also reject.
+	
+	      ```js
+	      findUser().then(function (user) {
+	        return findCommentsByAuthor(user);
+	      }).then(function (comments) {
+	        // If `findCommentsByAuthor` fulfills, we'll have the value here
+	      }, function (reason) {
+	        // If `findCommentsByAuthor` rejects, we'll have the reason here
+	      });
+	      ```
+	
+	      Simple Example
+	      --------------
+	
+	      Synchronous Example
+	
+	      ```javascript
+	      var result;
+	
+	      try {
+	        result = findResult();
+	        // success
+	      } catch(reason) {
+	        // failure
+	      }
+	      ```
+	
+	      Errback Example
+	
+	      ```js
+	      findResult(function(result, err){
+	        if (err) {
+	          // failure
+	        } else {
+	          // success
+	        }
+	      });
+	      ```
+	
+	      Promise Example;
+	
+	      ```javascript
+	      findResult().then(function(result){
+	        // success
+	      }, function(reason){
+	        // failure
+	      });
+	      ```
+	
+	      Advanced Example
+	      --------------
+	
+	      Synchronous Example
+	
+	      ```javascript
+	      var author, books;
+	
+	      try {
+	        author = findAuthor();
+	        books  = findBooksByAuthor(author);
+	        // success
+	      } catch(reason) {
+	        // failure
+	      }
+	      ```
+	
+	      Errback Example
+	
+	      ```js
+	
+	      function foundBooks(books) {
+	
+	      }
+	
+	      function failure(reason) {
+	
+	      }
+	
+	      findAuthor(function(author, err){
+	        if (err) {
+	          failure(err);
+	          // failure
+	        } else {
+	          try {
+	            findBoooksByAuthor(author, function(books, err) {
+	              if (err) {
+	                failure(err);
+	              } else {
+	                try {
+	                  foundBooks(books);
+	                } catch(reason) {
+	                  failure(reason);
+	                }
+	              }
+	            });
+	          } catch(error) {
+	            failure(err);
+	          }
+	          // success
+	        }
+	      });
+	      ```
+	
+	      Promise Example;
+	
+	      ```javascript
+	      findAuthor().
+	        then(findBooksByAuthor).
+	        then(function(books){
+	          // found books
+	      }).catch(function(reason){
+	        // something went wrong
+	      });
+	      ```
+	
+	      @method then
+	      @param {Function} onFulfilled
+	      @param {Function} onRejected
+	      Useful for tooling.
+	      @return {Promise}
+	    */
+	      then: function(onFulfillment, onRejection) {
+	        var parent = this;
+	        var state = parent._state;
+	
+	        if (state === lib$es6$promise$$internal$$FULFILLED && !onFulfillment || state === lib$es6$promise$$internal$$REJECTED && !onRejection) {
+	          return this;
+	        }
+	
+	        var child = new this.constructor(lib$es6$promise$$internal$$noop);
+	        var result = parent._result;
+	
+	        if (state) {
+	          var callback = arguments[state - 1];
+	          lib$es6$promise$asap$$asap(function(){
+	            lib$es6$promise$$internal$$invokeCallback(state, child, callback, result);
+	          });
+	        } else {
+	          lib$es6$promise$$internal$$subscribe(parent, child, onFulfillment, onRejection);
+	        }
+	
+	        return child;
+	      },
+	
+	    /**
+	      `catch` is simply sugar for `then(undefined, onRejection)` which makes it the same
+	      as the catch block of a try/catch statement.
+	
+	      ```js
+	      function findAuthor(){
+	        throw new Error('couldn't find that author');
+	      }
+	
+	      // synchronous
+	      try {
+	        findAuthor();
+	      } catch(reason) {
+	        // something went wrong
+	      }
+	
+	      // async with promises
+	      findAuthor().catch(function(reason){
+	        // something went wrong
+	      });
+	      ```
+	
+	      @method catch
+	      @param {Function} onRejection
+	      Useful for tooling.
+	      @return {Promise}
+	    */
+	      'catch': function(onRejection) {
+	        return this.then(null, onRejection);
+	      }
+	    };
+	    function lib$es6$promise$polyfill$$polyfill() {
+	      var local;
+	
+	      if (typeof global !== 'undefined') {
+	          local = global;
+	      } else if (typeof self !== 'undefined') {
+	          local = self;
+	      } else {
+	          try {
+	              local = Function('return this')();
+	          } catch (e) {
+	              throw new Error('polyfill failed because global object is unavailable in this environment');
+	          }
+	      }
+	
+	      var P = local.Promise;
+	
+	      if (P && Object.prototype.toString.call(P.resolve()) === '[object Promise]' && !P.cast) {
+	        return;
+	      }
+	
+	      local.Promise = lib$es6$promise$promise$$default;
+	    }
+	    var lib$es6$promise$polyfill$$default = lib$es6$promise$polyfill$$polyfill;
+	
+	    var lib$es6$promise$umd$$ES6Promise = {
+	      'Promise': lib$es6$promise$promise$$default,
+	      'polyfill': lib$es6$promise$polyfill$$default
+	    };
+	
+	    /* global define:true module:true window: true */
+	    if ("function" === 'function' && __webpack_require__(40)['amd']) {
+	      !(__WEBPACK_AMD_DEFINE_RESULT__ = function() { return lib$es6$promise$umd$$ES6Promise; }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    } else if (typeof module !== 'undefined' && module['exports']) {
+	      module['exports'] = lib$es6$promise$umd$$ES6Promise;
+	    } else if (typeof this !== 'undefined') {
+	      this['ES6Promise'] = lib$es6$promise$umd$$ES6Promise;
+	    }
+	
+	    lib$es6$promise$polyfill$$default();
+	}).call(this);
+	
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), (function() { return this; }()), __webpack_require__(38)(module)))
+
+/***/ },
+/* 38 */
+/***/ function(module, exports) {
+
+	module.exports = function(module) {
+		if(!module.webpackPolyfill) {
+			module.deprecate = function() {};
+			module.paths = [];
+			// module.parent = undefined by default
+			module.children = [];
+			module.webpackPolyfill = 1;
+		}
+		return module;
+	}
+
+
+/***/ },
+/* 39 */
+/***/ function(module, exports) {
+
+	/* (ignored) */
+
+/***/ },
+/* 40 */
+/***/ function(module, exports) {
+
+	module.exports = function() { throw new Error("define cannot be used indirect"); };
+
+
+/***/ },
+/* 41 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var apiUrl = 'http://localhost:5000/api';
+	
+	var url = {
+	    articleUrl: apiUrl + '/articles/',
+	    tagUrl: apiUrl + '/tags/'
+	};
+	
+	exports.default = url;
+
+/***/ },
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// super simple module for the most common nodejs use case.
-	exports.markdown = __webpack_require__(95);
+	exports.markdown = __webpack_require__(43);
 	exports.parse = exports.markdown.toHTML;
 
 
 /***/ },
-/* 95 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Released under MIT license
@@ -13874,7 +14741,7 @@
 	
 	// node
 	function mk_block_inspect() {
-	  var util = __webpack_require__(96);
+	  var util = __webpack_require__(44);
 	  return "Markdown.mk_block( " +
 	          util.inspect(this.toString()) +
 	          ", " +
@@ -15473,7 +16340,7 @@
 
 
 /***/ },
-/* 96 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -16001,7 +16868,7 @@
 	}
 	exports.isPrimitive = isPrimitive;
 	
-	exports.isBuffer = __webpack_require__(97);
+	exports.isBuffer = __webpack_require__(45);
 	
 	function objectToString(o) {
 	  return Object.prototype.toString.call(o);
@@ -16045,7 +16912,7 @@
 	 *     prototype.
 	 * @param {function} superCtor Constructor function to inherit prototype from.
 	 */
-	exports.inherits = __webpack_require__(98);
+	exports.inherits = __webpack_require__(46);
 	
 	exports._extend = function(origin, add) {
 	  // Don't do anything if add isn't an object
@@ -16066,7 +16933,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(2)))
 
 /***/ },
-/* 97 */
+/* 45 */
 /***/ function(module, exports) {
 
 	module.exports = function isBuffer(arg) {
@@ -16077,7 +16944,7 @@
 	}
 
 /***/ },
-/* 98 */
+/* 46 */
 /***/ function(module, exports) {
 
 	if (typeof Object.create === 'function') {
@@ -16106,23 +16973,238 @@
 
 
 /***/ },
-/* 99 */,
-/* 100 */
+/* 47 */
 /***/ function(module, exports) {
 
-	module.exports = "\n    <div class=\"tagArticleList\">\n        <div class=\"\">\n\n        </div>\n        <div class=\"list\">\n            <div class=\"border\">\n                <h4>\n                    {{tagName}}\n                </h4>\n                <div\n                 v-for=\"item in items\"\n                 class=\"item\"\n                :item=\"item\"\n                :index=\"$index\"\n                track-by=\"$index\">\n                    <p>\n                        <a :href=\"'#/article/'\">{{item}}</a>\n                    </p>\n                    <!-- <span>{{item.date}}</span> -->\n                </div>\n        </div>\n    </div>\n\n</template>";
+	module.exports = "\n    <div>\n\n    <section id=\"header\">\n        <img class=\"b-title\" src=\"https://ooo.0o0.ooo/2016/01/27/56a88272da80e.png\" alt=\"SEEKFNL\" />\n        <p class=\"s-title\">\n            <span style=\"color: #3369e8\">Blog</span>\n            <span style=\"color: #eeb211\">of</span>\n            <span style=\"color: #d50f25\">ChangQi</span>\n        </p>\n        <div class=\"signature\">\n            <p>\n                情不知所起\n            </p>\n            <p>\n                一往而深\n            </p>\n        </div>\n    </section>\n    <hr id=\"divider\"></hr>\n\n    <section class=\"wrapper clearfix\" :class=\"{ loading: !items.length }\">\n        <div class=\"article-list\">\n            <item v-for=\"item in items\"\n            :item=\"item\"\n            :index=\"$index\"\n            track-by=\"_id\">\n            </item>\n        </div>\n        <classification :class-tags=\"classTags\"></classification>\n    </section>\n</div>\n\n";
 
 /***/ },
-/* 101 */
+/* 48 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(49)
+	__vue_script__ = __webpack_require__(51)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] public\\components\\Article.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(52)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) { (typeof module.exports === "function" ? (module.exports.options || {}) : module.exports).template = __vue_template__ }
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "F:\\github\\blog\\node\\app\\public\\components\\Article.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(102);
+	var content = __webpack_require__(50);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(8)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Article.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Article.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 50 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(7)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\r\n.article{\r\n    width: 75%;\r\n    margin: 2rem auto;\r\n    height: 100%;\r\n}\r\narticle {\r\n    background-color: rgb(255, 255, 255);\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1.5rem 2.5rem;\r\n}\r\n.a-date{\r\n    padding: .5rem .7rem;\r\n    font-weight: bolder;\r\n    color: #666;\r\n}\r\n.article h1{\r\n    text-align: center;\r\n    font-size: 1.6rem;\r\n    letter-spacing: .2rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #000;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #000;\r\n}\r\n\r\n.a-content{\r\n    padding: 1rem 0;\r\n    line-height: 1.7;\r\n}\r\n.a-content p{\r\n    text-indent: 2rem;\r\n}\r\n.a-content h1,h2,h3,h4{\r\n    margin-top: 1rem;\r\n    margin-bottom: .1rem;\r\n    color: #444955;\r\n}\r\n.a-content h1{\r\n    display: none;\r\n}\r\nh2{\r\n    padding-left: .4rem;\r\n    border-left: .2rem solid #c969ef;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/Article.vue?65c18f2e"],"names":[],"mappings":";AAgDA;IACA,WAAA;IACA,kBAAA;IACA,aAAA;CACA;AACA;IACA,qCAAA;IACA,qBAAA;IACA,gCAAA;IACA,uBAAA;CACA;AACA;IACA,qBAAA;IACA,oBAAA;IACA,YAAA;CACA;AACA;IACA,mBAAA;IACA,kBAAA;IACA,sBAAA;IACA,sBAAA;IACA,iCAAA;IACA,+BAAA;IACA,YAAA;CACA;;AAEA;IACA,gBAAA;IACA,iBAAA;CACA;AACA;IACA,kBAAA;CACA;AACA;IACA,iBAAA;IACA,qBAAA;IACA,eAAA;CACA;AACA;IACA,cAAA;CACA;AACA;IACA,oBAAA;IACA,iCAAA;CACA","file":"Article.vue","sourcesContent":["<template>\r\n    <div class=\"article\">\r\n        <div class=\"a-date\">\r\n            {{articleInfo.date}}\r\n        </div>\r\n        <article>\r\n            <h1>{{articleInfo.title}}</a></h1>\r\n            <div class=\"a-content\">\r\n                {{{articleInfo.article}}}\r\n            </div>\r\n        </article>\r\n    </div>\r\n\r\n</template>\r\n\r\n<script>\r\nimport url from '../url.js';\r\nimport model from '../model/model.js';\r\n\r\nexport default{\r\n    name: \"Article\",\r\n\r\n    data(){\r\n        return {\r\n            articleInfo: {}\r\n        }\r\n    },\r\n\r\n    route: {\r\n        data: function(transition){\r\n            var articleId = transition.to.params._id;\r\n            var articleUrl = url.articleUrl + '?_id=' + articleId;\r\n            var articleInfo = {};\r\n\r\n            model.getArticleList(articleUrl).then(data => {\r\n                data = data[0];\r\n\r\n                articleInfo.title = data.title;\r\n                articleInfo.article = model.toMarkdown(data.md);\r\n                articleInfo.date = data.date.split('T')[0];\r\n                this.articleInfo = articleInfo;\r\n            });\r\n        }\r\n    }\r\n}\r\n</script>\r\n\r\n<style>\r\n.article{\r\n    width: 75%;\r\n    margin: 2rem auto;\r\n    height: 100%;\r\n}\r\narticle {\r\n    background-color: rgb(255, 255, 255);\r\n    border-radius: .4rem;;\r\n    box-shadow: 2px 2px 3px #918b8b;\r\n    padding: 1.5rem 2.5rem;\r\n}\r\n.a-date{\r\n    padding: .5rem .7rem;\r\n    font-weight: bolder;\r\n    color: #666;\r\n}\r\n.article h1{\r\n    text-align: center;\r\n    font-size: 1.6rem;\r\n    letter-spacing: .2rem;\r\n    padding-bottom: .8rem;\r\n    border-bottom: .1rem dashed #000;\r\n    text-shadow: 1px 1px 0 #b0aeb0;\r\n    color: #000;\r\n}\r\n\r\n.a-content{\r\n    padding: 1rem 0;\r\n    line-height: 1.7;\r\n}\r\n.a-content p{\r\n    text-indent: 2rem;\r\n}\r\n.a-content h1,h2,h3,h4{\r\n    margin-top: 1rem;\r\n    margin-bottom: .1rem;\r\n    color: #444955;\r\n}\r\n.a-content h1{\r\n    display: none;\r\n}\r\nh2{\r\n    padding-left: .4rem;\r\n    border-left: .2rem solid #c969ef;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
+/* 51 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _url = __webpack_require__(41);
+	
+	var _url2 = _interopRequireDefault(_url);
+	
+	var _model = __webpack_require__(36);
+	
+	var _model2 = _interopRequireDefault(_model);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//     <div class="article">
+	//         <div class="a-date">
+	//             {{articleInfo.date}}
+	//         </div>
+	//         <article>
+	//             <h1>{{articleInfo.title}}</a></h1>
+	//             <div class="a-content">
+	//                 {{{articleInfo.article}}}
+	//             </div>
+	//         </article>
+	//     </div>
+	//
+	// </template>
+	//
+	// <script>
+	exports.default = {
+	    name: "Article",
+	
+	    data: function data() {
+	        return {
+	            articleInfo: {}
+	        };
+	    },
+	
+	    route: {
+	        data: function data(transition) {
+	            var _this = this;
+	
+	            var articleId = transition.to.params._id;
+	            var articleUrl = _url2.default.articleUrl + '?_id=' + articleId;
+	            var articleInfo = {};
+	
+	            _model2.default.getArticleList(articleUrl).then(function (data) {
+	                data = data[0];
+	
+	                articleInfo.title = data.title;
+	                articleInfo.article = _model2.default.toMarkdown(data.md);
+	                articleInfo.date = data.date.split('T')[0];
+	                _this.articleInfo = articleInfo;
+	            });
+	        }
+	    }
+	};
+	// </script>
+	//
+	// <style>
+	// .article{
+	//     width: 75%;
+	//     margin: 2rem auto;
+	//     height: 100%;
+	// }
+	// article {
+	//     background-color: rgb(255, 255, 255);
+	//     border-radius: .4rem;;
+	//     box-shadow: 2px 2px 3px #918b8b;
+	//     padding: 1.5rem 2.5rem;
+	// }
+	// .a-date{
+	//     padding: .5rem .7rem;
+	//     font-weight: bolder;
+	//     color: #666;
+	// }
+	// .article h1{
+	//     text-align: center;
+	//     font-size: 1.6rem;
+	//     letter-spacing: .2rem;
+	//     padding-bottom: .8rem;
+	//     border-bottom: .1rem dashed #000;
+	//     text-shadow: 1px 1px 0 #b0aeb0;
+	//     color: #000;
+	// }
+	//
+	// .a-content{
+	//     padding: 1rem 0;
+	//     line-height: 1.7;
+	// }
+	// .a-content p{
+	//     text-indent: 2rem;
+	// }
+	// .a-content h1,h2,h3,h4{
+	//     margin-top: 1rem;
+	//     margin-bottom: .1rem;
+	//     color: #444955;
+	// }
+	// .a-content h1{
+	//     display: none;
+	// }
+	// h2{
+	//     padding-left: .4rem;
+	//     border-left: .2rem solid #c969ef;
+	// }
+	// </style>
+
+	/* generated by vue-loader */
+
+/***/ },
+/* 52 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"article\">\n    <div class=\"a-date\">\n        {{articleInfo.date}}\n    </div>\n    <article>\n        <h1>{{articleInfo.title}}</a></h1>\n        <div class=\"a-content\">\n            {{{articleInfo.article}}}\n        </div>\n    </article>\n</div>\n\n";
+
+/***/ },
+/* 53 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__webpack_require__(54)
+	__vue_script__ = __webpack_require__(56)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] public\\components\\TagArticleList.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(57)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) { (typeof module.exports === "function" ? (module.exports.options || {}) : module.exports).template = __vue_template__ }
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), true)
+	  if (!hotAPI.compatible) return
+	  var id = "F:\\github\\blog\\node\\app\\public\\components\\TagArticleList.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 54 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(55);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(8)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -16139,21 +17221,21 @@
 	}
 
 /***/ },
-/* 102 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(7)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\r\n.tagArticleList{\r\n    width: 90%;\r\n    margin: 2rem auto;\r\n}\r\n.list{\r\n    width: 60%;\r\n    float: left;\r\n    background: -webkit-linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.7) 5%, rgba(255,255,255,.8) 10%, #fff 25%, #fff 75%, rgba(255,255,255,.7) 95%,rgba(255,255,255,.6));\r\n    background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.7) 5%, rgba(255,255,255,.8) 10%, #fff 25%, #fff 75%, rgba(255,255,255,.7) 95%,rgba(255,255,255,.6));\r\n    border-radius: .5rem;\r\n    padding: 1rem;\r\n    margin: 1rem;\r\n}\r\n.border{\r\n    border: .2rem solid #fb8da6;\r\n    padding: 2rem;\r\n    border-radius: .5rem;\r\n    position: relative;\r\n}\r\n.item p{\r\n    padding-top: 1rem;\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.item:hover{\r\n    color: #666;\r\n}\r\n.list h4{\r\n    width: 100%;\r\n    position: absolute;\r\n    top: 0;\r\n    text-align: center;\r\n    margin: 0;\r\n    padding: .1rem 0;\r\n}\r\n\r\n", "", {"version":3,"sources":["/./public/components/TagArticleList.vue?211e77d2"],"names":[],"mappings":";AA2DA;IACA,WAAA;IACA,kBAAA;CACA;AACA;IACA,WAAA;IACA,YAAA;IACA,gLAAA;IAAA,wKAAA;IACA,qBAAA;IACA,cAAA;IACA,aAAA;CACA;AACA;IACA,4BAAA;IACA,cAAA;IACA,qBAAA;IACA,mBAAA;CACA;AACA;IACA,kBAAA;IACA,sBAAA;IACA,oCAAA;CACA;AACA;IACA,YAAA;CACA;AACA;IACA,YAAA;IACA,mBAAA;IACA,OAAA;IACA,mBAAA;IACA,UAAA;IACA,iBAAA;CACA","file":"TagArticleList.vue","sourcesContent":["<template>\r\n    <div class=\"tagArticleList\">\r\n        <div class=\"\">\r\n\r\n        </div>\r\n        <div class=\"list\">\r\n            <div class=\"border\">\r\n                <h4>\r\n                    {{tagName}}\r\n                </h4>\r\n                <div\r\n                 v-for=\"item in items\"\r\n                 class=\"item\"\r\n                :item=\"item\"\r\n                :index=\"$index\"\r\n                track-by=\"$index\">\r\n                    <p>\r\n                        <a :href=\"'#/article/'\">{{item}}</a>\r\n                    </p>\r\n                    <!-- <span>{{item.date}}</span> -->\r\n                </div>\r\n        </div>\r\n    </div>\r\n\r\n</template>\r\n\r\n<script>\r\nimport url from '../url.js';\r\nimport model from '../model/model.js';\r\n\r\nexport default{\r\n    name: \"tagArticleList\",\r\n\r\n    data(){\r\n        return {\r\n            tagName: '',\r\n            items: []\r\n        }\r\n    },\r\n\r\n    route: {\r\n        data: function(transition){\r\n            var articleTagName = transition.to.params.tagName;\r\n            var tagUrl = url.tagUrl + '?tagName=' + articleTagName;\r\n            var items = [];\r\n\r\n            model.getTagInfo(tagUrl).then(data => {\r\n                data = data[0];\r\n\r\n                items = data.aritcleTitleList;\r\n                this.tagName = articleTagName;\r\n                this.items = items;\r\n            });\r\n        }\r\n    }\r\n}\r\n</script>\r\n\r\n<style>\r\n.tagArticleList{\r\n    width: 90%;\r\n    margin: 2rem auto;\r\n}\r\n.list{\r\n    width: 60%;\r\n    float: left;\r\n    background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.7) 5%, rgba(255,255,255,.8) 10%, #fff 25%, #fff 75%, rgba(255,255,255,.7) 95%,rgba(255,255,255,.6));\r\n    border-radius: .5rem;\r\n    padding: 1rem;\r\n    margin: 1rem;\r\n}\r\n.border{\r\n    border: .2rem solid #fb8da6;\r\n    padding: 2rem;\r\n    border-radius: .5rem;\r\n    position: relative;\r\n}\r\n.item p{\r\n    padding-top: 1rem;\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.item:hover{\r\n    color: #666;\r\n}\r\n.list h4{\r\n    width: 100%;\r\n    position: absolute;\r\n    top: 0;\r\n    text-align: center;\r\n    margin: 0;\r\n    padding: .1rem 0;\r\n}\r\n\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\r\n.tagArticleList{\r\n    width: 90%;\r\n    margin: 2rem auto;\r\n}\r\n.list{\r\n    width: 60%;\r\n    float: left;\r\n    background: -webkit-linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.7) 5%, rgba(255,255,255,.8) 10%, #fff 25%, #fff 75%, rgba(255,255,255,.7) 95%,rgba(255,255,255,.6));\r\n    background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.7) 5%, rgba(255,255,255,.8) 10%, #fff 25%, #fff 75%, rgba(255,255,255,.7) 95%,rgba(255,255,255,.6));\r\n    border-radius: .5rem;\r\n    padding: 1rem;\r\n    margin: 1rem;\r\n}\r\n.border{\r\n    border: .2rem solid #fb8da6;\r\n    padding: 2rem;\r\n    border-radius: .5rem;\r\n    position: relative;\r\n}\r\n.item{\r\n    position: relative;\r\n}\r\n.item p{\r\n    padding-top: 1rem;\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.item:hover{\r\n    color: #d514fc;\r\n}\r\n.list h4{\r\n    width: 100%;\r\n    position: absolute;\r\n    top: 0;\r\n    text-align: center;\r\n    margin: 0;\r\n    padding: .1rem 0;\r\n}\r\n", "", {"version":3,"sources":["/./public/components/TagArticleList.vue?fab954b8"],"names":[],"mappings":";AAoFA;IACA,WAAA;IACA,kBAAA;CACA;AACA;IACA,WAAA;IACA,YAAA;IACA,gLAAA;IAAA,wKAAA;IACA,qBAAA;IACA,cAAA;IACA,aAAA;CACA;AACA;IACA,4BAAA;IACA,cAAA;IACA,qBAAA;IACA,mBAAA;CACA;AACA;IACA,mBAAA;CACA;AACA;IACA,kBAAA;IACA,sBAAA;IACA,oCAAA;CACA;AACA;IACA,eAAA;CACA;AACA;IACA,YAAA;IACA,mBAAA;IACA,OAAA;IACA,mBAAA;IACA,UAAA;IACA,iBAAA;CACA","file":"TagArticleList.vue","sourcesContent":["<template>\r\n    <div class=\"tagArticleList\">\r\n        <div class=\"list\">\r\n            <div class=\"border\">\r\n                <h4>\r\n                    {{tagName}}\r\n                </h4>\r\n                <div\r\n                 v-for=\"item in items\"\r\n                 class=\"item\"\r\n                :item=\"item\"\r\n                :index=\"$index\"\r\n                track-by=\"$index\">\r\n                    <p>\r\n                        <a :href=\"'#/article/' + item.id\">{{item.title}}</a>\r\n                    </p>\r\n                    <span class=\"date\">{{item.date}}</span>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <classification :class-tags=\"classTags\"></classification>\r\n\r\n    </div>\r\n</template>\r\n\r\n<script>\r\nimport url from '../url.js';\r\nimport model from '../model/model.js';\r\nimport Classification from './Classification.vue';\r\n\r\n\r\nexport default{\r\n    name: \"tagArticleList\",\r\n\r\n    components: {\r\n        Classification\r\n    },\r\n\r\n    data(){\r\n        return {\r\n            tagName: '',\r\n            items: []\r\n        };\r\n    },\r\n\r\n    route: {\r\n        data: function(transition){\r\n            var articleTagName = transition.to.params.tagName;\r\n            var tagUrl = url.tagUrl + '?tagName=' + articleTagName;\r\n            var articleUrl = url.articleUrl;\r\n\r\n            model.getAll(articleUrl, tagUrl).then(data => {\r\n                var articleData = data[0];\r\n                var tagData = data[1];\r\n\r\n                this.tagName = articleTagName;\r\n                this.items = this.getDatas(articleData, tagData);\r\n            });\r\n        }\r\n    },\r\n\r\n    methods:{\r\n        getDatas: function(articleData, tagData){\r\n            var items = [];\r\n            var titleArr = tagData[0].aritcleTitleList;\r\n\r\n            for(let i = 0, len1 = titleArr.length; i < len1; i++){\r\n                for(let j = 0, len2 = articleData.length; j < len2; j++){\r\n                    if(titleArr[i] === articleData[j].title){\r\n                        var item = {};\r\n                        item.title = titleArr[i];\r\n                        item.date = model.handleDate(articleData[j].date);\r\n                        item.id = articleData[j]._id;\r\n                        items[i] = item;\r\n                    }\r\n                }\r\n            };\r\n            return items;\r\n        }\r\n    }\r\n}\r\n</script>\r\n\r\n<style>\r\n.tagArticleList{\r\n    width: 90%;\r\n    margin: 2rem auto;\r\n}\r\n.list{\r\n    width: 60%;\r\n    float: left;\r\n    background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.7) 5%, rgba(255,255,255,.8) 10%, #fff 25%, #fff 75%, rgba(255,255,255,.7) 95%,rgba(255,255,255,.6));\r\n    border-radius: .5rem;\r\n    padding: 1rem;\r\n    margin: 1rem;\r\n}\r\n.border{\r\n    border: .2rem solid #fb8da6;\r\n    padding: 2rem;\r\n    border-radius: .5rem;\r\n    position: relative;\r\n}\r\n.item{\r\n    position: relative;\r\n}\r\n.item p{\r\n    padding-top: 1rem;\r\n    padding-bottom: .5rem;\r\n    border-bottom: .1rem dashed #fb8da6;\r\n}\r\n.item:hover{\r\n    color: #d514fc;\r\n}\r\n.list h4{\r\n    width: 100%;\r\n    position: absolute;\r\n    top: 0;\r\n    text-align: center;\r\n    margin: 0;\r\n    padding: .1rem 0;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
-/* 103 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16162,45 +17244,26 @@
 	    value: true
 	});
 	
-	var _url = __webpack_require__(28);
+	var _url = __webpack_require__(41);
 	
 	var _url2 = _interopRequireDefault(_url);
 	
-	var _model = __webpack_require__(116);
+	var _model = __webpack_require__(36);
 	
 	var _model2 = _interopRequireDefault(_model);
 	
+	var _Classification = __webpack_require__(31);
+	
+	var _Classification2 = _interopRequireDefault(_Classification);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <template>
-	//     <div class="tagArticleList">
-	//         <div class="">
-	//
-	//         </div>
-	//         <div class="list">
-	//             <div class="border">
-	//                 <h4>
-	//                     {{tagName}}
-	//                 </h4>
-	//                 <div
-	//                  v-for="item in items"
-	//                  class="item"
-	//                 :item="item"
-	//                 :index="$index"
-	//                 track-by="$index">
-	//                     <p>
-	//                         <a :href="'#/article/'">{{item}}</a>
-	//                     </p>
-	//                     <!-- <span>{{item.date}}</span> -->
-	//                 </div>
-	//         </div>
-	//     </div>
-	//
-	// </template>
-	//
-	// <script>
 	exports.default = {
 	    name: "tagArticleList",
+	
+	    components: {
+	        Classification: _Classification2.default
+	    },
 	
 	    data: function data() {
 	        return {
@@ -16215,15 +17278,35 @@
 	
 	            var articleTagName = transition.to.params.tagName;
 	            var tagUrl = _url2.default.tagUrl + '?tagName=' + articleTagName;
-	            var items = [];
+	            var articleUrl = _url2.default.articleUrl;
 	
-	            _model2.default.getTagInfo(tagUrl).then(function (data) {
-	                data = data[0];
+	            _model2.default.getAll(articleUrl, tagUrl).then(function (data) {
+	                var articleData = data[0];
+	                var tagData = data[1];
 	
-	                items = data.aritcleTitleList;
 	                _this.tagName = articleTagName;
-	                _this.items = items;
+	                _this.items = _this.getDatas(articleData, tagData);
 	            });
+	        }
+	    },
+	
+	    methods: {
+	        getDatas: function getDatas(articleData, tagData) {
+	            var items = [];
+	            var titleArr = tagData[0].aritcleTitleList;
+	
+	            for (var i = 0, len1 = titleArr.length; i < len1; i++) {
+	                for (var j = 0, len2 = articleData.length; j < len2; j++) {
+	                    if (titleArr[i] === articleData[j].title) {
+	                        var item = {};
+	                        item.title = titleArr[i];
+	                        item.date = _model2.default.handleDate(articleData[j].date);
+	                        item.id = articleData[j]._id;
+	                        items[i] = item;
+	                    }
+	                }
+	            };
+	            return items;
 	        }
 	    }
 	};
@@ -16248,13 +17331,16 @@
 	//     border-radius: .5rem;
 	//     position: relative;
 	// }
+	// .item{
+	//     position: relative;
+	// }
 	// .item p{
 	//     padding-top: 1rem;
 	//     padding-bottom: .5rem;
 	//     border-bottom: .1rem dashed #fb8da6;
 	// }
 	// .item:hover{
-	//     color: #666;
+	//     color: #d514fc;
 	// }
 	// .list h4{
 	//     width: 100%;
@@ -16264,1074 +17350,41 @@
 	//     margin: 0;
 	//     padding: .1rem 0;
 	// }
-	//
 	// </style>
 
 	/* generated by vue-loader */
+	// <template>
+	//     <div class="tagArticleList">
+	//         <div class="list">
+	//             <div class="border">
+	//                 <h4>
+	//                     {{tagName}}
+	//                 </h4>
+	//                 <div
+	//                  v-for="item in items"
+	//                  class="item"
+	//                 :item="item"
+	//                 :index="$index"
+	//                 track-by="$index">
+	//                     <p>
+	//                         <a :href="'#/article/' + item.id">{{item.title}}</a>
+	//                     </p>
+	//                     <span class="date">{{item.date}}</span>
+	//                 </div>
+	//             </div>
+	//         </div>
+	//         <classification :class-tags="classTags"></classification>
+	//
+	//     </div>
+	// </template>
+	//
+	// <script>
 
 /***/ },
-/* 104 */,
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */,
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _es6Promise = __webpack_require__(122);
-	
-	var model = {};
-	
-	model.getArticleList = function (url) {
-	    return new _es6Promise.Promise(function (resolve, reject) {
-	        $.get(url, function (data) {
-	
-	            if (typeof data === "string") {
-	                data = JSON.parse(data);
-	            }
-	            resolve(data);
-	        });
-	    });
-	};
-	
-	model.getTagInfo = function (url) {
-	    return new _es6Promise.Promise(function (resolve, reject) {
-	        $.get(url, function (data) {
-	
-	            if (typeof data === "string") {
-	                data = JSON.parse(data);
-	            }
-	            resolve(data);
-	        });
-	    });
-	};
-	
-	model.getAll = function (aurl, turl) {
-	    return _es6Promise.Promise.all([model.getArticleList(aurl), model.getTagInfo(turl)]);
-	};
-	
-	exports.default = model;
-
-/***/ },
-/* 117 */,
-/* 118 */,
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
-	 * @overview es6-promise - a tiny implementation of Promises/A+.
-	 * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
-	 * @license   Licensed under MIT license
-	 *            See https://raw.githubusercontent.com/jakearchibald/es6-promise/master/LICENSE
-	 * @version   3.0.2
-	 */
-	
-	(function() {
-	    "use strict";
-	    function lib$es6$promise$utils$$objectOrFunction(x) {
-	      return typeof x === 'function' || (typeof x === 'object' && x !== null);
-	    }
-	
-	    function lib$es6$promise$utils$$isFunction(x) {
-	      return typeof x === 'function';
-	    }
-	
-	    function lib$es6$promise$utils$$isMaybeThenable(x) {
-	      return typeof x === 'object' && x !== null;
-	    }
-	
-	    var lib$es6$promise$utils$$_isArray;
-	    if (!Array.isArray) {
-	      lib$es6$promise$utils$$_isArray = function (x) {
-	        return Object.prototype.toString.call(x) === '[object Array]';
-	      };
-	    } else {
-	      lib$es6$promise$utils$$_isArray = Array.isArray;
-	    }
-	
-	    var lib$es6$promise$utils$$isArray = lib$es6$promise$utils$$_isArray;
-	    var lib$es6$promise$asap$$len = 0;
-	    var lib$es6$promise$asap$$toString = {}.toString;
-	    var lib$es6$promise$asap$$vertxNext;
-	    var lib$es6$promise$asap$$customSchedulerFn;
-	
-	    var lib$es6$promise$asap$$asap = function asap(callback, arg) {
-	      lib$es6$promise$asap$$queue[lib$es6$promise$asap$$len] = callback;
-	      lib$es6$promise$asap$$queue[lib$es6$promise$asap$$len + 1] = arg;
-	      lib$es6$promise$asap$$len += 2;
-	      if (lib$es6$promise$asap$$len === 2) {
-	        // If len is 2, that means that we need to schedule an async flush.
-	        // If additional callbacks are queued before the queue is flushed, they
-	        // will be processed by this flush that we are scheduling.
-	        if (lib$es6$promise$asap$$customSchedulerFn) {
-	          lib$es6$promise$asap$$customSchedulerFn(lib$es6$promise$asap$$flush);
-	        } else {
-	          lib$es6$promise$asap$$scheduleFlush();
-	        }
-	      }
-	    }
-	
-	    function lib$es6$promise$asap$$setScheduler(scheduleFn) {
-	      lib$es6$promise$asap$$customSchedulerFn = scheduleFn;
-	    }
-	
-	    function lib$es6$promise$asap$$setAsap(asapFn) {
-	      lib$es6$promise$asap$$asap = asapFn;
-	    }
-	
-	    var lib$es6$promise$asap$$browserWindow = (typeof window !== 'undefined') ? window : undefined;
-	    var lib$es6$promise$asap$$browserGlobal = lib$es6$promise$asap$$browserWindow || {};
-	    var lib$es6$promise$asap$$BrowserMutationObserver = lib$es6$promise$asap$$browserGlobal.MutationObserver || lib$es6$promise$asap$$browserGlobal.WebKitMutationObserver;
-	    var lib$es6$promise$asap$$isNode = typeof process !== 'undefined' && {}.toString.call(process) === '[object process]';
-	
-	    // test for web worker but not in IE10
-	    var lib$es6$promise$asap$$isWorker = typeof Uint8ClampedArray !== 'undefined' &&
-	      typeof importScripts !== 'undefined' &&
-	      typeof MessageChannel !== 'undefined';
-	
-	    // node
-	    function lib$es6$promise$asap$$useNextTick() {
-	      // node version 0.10.x displays a deprecation warning when nextTick is used recursively
-	      // see https://github.com/cujojs/when/issues/410 for details
-	      return function() {
-	        process.nextTick(lib$es6$promise$asap$$flush);
-	      };
-	    }
-	
-	    // vertx
-	    function lib$es6$promise$asap$$useVertxTimer() {
-	      return function() {
-	        lib$es6$promise$asap$$vertxNext(lib$es6$promise$asap$$flush);
-	      };
-	    }
-	
-	    function lib$es6$promise$asap$$useMutationObserver() {
-	      var iterations = 0;
-	      var observer = new lib$es6$promise$asap$$BrowserMutationObserver(lib$es6$promise$asap$$flush);
-	      var node = document.createTextNode('');
-	      observer.observe(node, { characterData: true });
-	
-	      return function() {
-	        node.data = (iterations = ++iterations % 2);
-	      };
-	    }
-	
-	    // web worker
-	    function lib$es6$promise$asap$$useMessageChannel() {
-	      var channel = new MessageChannel();
-	      channel.port1.onmessage = lib$es6$promise$asap$$flush;
-	      return function () {
-	        channel.port2.postMessage(0);
-	      };
-	    }
-	
-	    function lib$es6$promise$asap$$useSetTimeout() {
-	      return function() {
-	        setTimeout(lib$es6$promise$asap$$flush, 1);
-	      };
-	    }
-	
-	    var lib$es6$promise$asap$$queue = new Array(1000);
-	    function lib$es6$promise$asap$$flush() {
-	      for (var i = 0; i < lib$es6$promise$asap$$len; i+=2) {
-	        var callback = lib$es6$promise$asap$$queue[i];
-	        var arg = lib$es6$promise$asap$$queue[i+1];
-	
-	        callback(arg);
-	
-	        lib$es6$promise$asap$$queue[i] = undefined;
-	        lib$es6$promise$asap$$queue[i+1] = undefined;
-	      }
-	
-	      lib$es6$promise$asap$$len = 0;
-	    }
-	
-	    function lib$es6$promise$asap$$attemptVertx() {
-	      try {
-	        var r = require;
-	        var vertx = __webpack_require__(124);
-	        lib$es6$promise$asap$$vertxNext = vertx.runOnLoop || vertx.runOnContext;
-	        return lib$es6$promise$asap$$useVertxTimer();
-	      } catch(e) {
-	        return lib$es6$promise$asap$$useSetTimeout();
-	      }
-	    }
-	
-	    var lib$es6$promise$asap$$scheduleFlush;
-	    // Decide what async method to use to triggering processing of queued callbacks:
-	    if (lib$es6$promise$asap$$isNode) {
-	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useNextTick();
-	    } else if (lib$es6$promise$asap$$BrowserMutationObserver) {
-	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useMutationObserver();
-	    } else if (lib$es6$promise$asap$$isWorker) {
-	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useMessageChannel();
-	    } else if (lib$es6$promise$asap$$browserWindow === undefined && "function" === 'function') {
-	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$attemptVertx();
-	    } else {
-	      lib$es6$promise$asap$$scheduleFlush = lib$es6$promise$asap$$useSetTimeout();
-	    }
-	
-	    function lib$es6$promise$$internal$$noop() {}
-	
-	    var lib$es6$promise$$internal$$PENDING   = void 0;
-	    var lib$es6$promise$$internal$$FULFILLED = 1;
-	    var lib$es6$promise$$internal$$REJECTED  = 2;
-	
-	    var lib$es6$promise$$internal$$GET_THEN_ERROR = new lib$es6$promise$$internal$$ErrorObject();
-	
-	    function lib$es6$promise$$internal$$selfFulfillment() {
-	      return new TypeError("You cannot resolve a promise with itself");
-	    }
-	
-	    function lib$es6$promise$$internal$$cannotReturnOwn() {
-	      return new TypeError('A promises callback cannot return that same promise.');
-	    }
-	
-	    function lib$es6$promise$$internal$$getThen(promise) {
-	      try {
-	        return promise.then;
-	      } catch(error) {
-	        lib$es6$promise$$internal$$GET_THEN_ERROR.error = error;
-	        return lib$es6$promise$$internal$$GET_THEN_ERROR;
-	      }
-	    }
-	
-	    function lib$es6$promise$$internal$$tryThen(then, value, fulfillmentHandler, rejectionHandler) {
-	      try {
-	        then.call(value, fulfillmentHandler, rejectionHandler);
-	      } catch(e) {
-	        return e;
-	      }
-	    }
-	
-	    function lib$es6$promise$$internal$$handleForeignThenable(promise, thenable, then) {
-	       lib$es6$promise$asap$$asap(function(promise) {
-	        var sealed = false;
-	        var error = lib$es6$promise$$internal$$tryThen(then, thenable, function(value) {
-	          if (sealed) { return; }
-	          sealed = true;
-	          if (thenable !== value) {
-	            lib$es6$promise$$internal$$resolve(promise, value);
-	          } else {
-	            lib$es6$promise$$internal$$fulfill(promise, value);
-	          }
-	        }, function(reason) {
-	          if (sealed) { return; }
-	          sealed = true;
-	
-	          lib$es6$promise$$internal$$reject(promise, reason);
-	        }, 'Settle: ' + (promise._label || ' unknown promise'));
-	
-	        if (!sealed && error) {
-	          sealed = true;
-	          lib$es6$promise$$internal$$reject(promise, error);
-	        }
-	      }, promise);
-	    }
-	
-	    function lib$es6$promise$$internal$$handleOwnThenable(promise, thenable) {
-	      if (thenable._state === lib$es6$promise$$internal$$FULFILLED) {
-	        lib$es6$promise$$internal$$fulfill(promise, thenable._result);
-	      } else if (thenable._state === lib$es6$promise$$internal$$REJECTED) {
-	        lib$es6$promise$$internal$$reject(promise, thenable._result);
-	      } else {
-	        lib$es6$promise$$internal$$subscribe(thenable, undefined, function(value) {
-	          lib$es6$promise$$internal$$resolve(promise, value);
-	        }, function(reason) {
-	          lib$es6$promise$$internal$$reject(promise, reason);
-	        });
-	      }
-	    }
-	
-	    function lib$es6$promise$$internal$$handleMaybeThenable(promise, maybeThenable) {
-	      if (maybeThenable.constructor === promise.constructor) {
-	        lib$es6$promise$$internal$$handleOwnThenable(promise, maybeThenable);
-	      } else {
-	        var then = lib$es6$promise$$internal$$getThen(maybeThenable);
-	
-	        if (then === lib$es6$promise$$internal$$GET_THEN_ERROR) {
-	          lib$es6$promise$$internal$$reject(promise, lib$es6$promise$$internal$$GET_THEN_ERROR.error);
-	        } else if (then === undefined) {
-	          lib$es6$promise$$internal$$fulfill(promise, maybeThenable);
-	        } else if (lib$es6$promise$utils$$isFunction(then)) {
-	          lib$es6$promise$$internal$$handleForeignThenable(promise, maybeThenable, then);
-	        } else {
-	          lib$es6$promise$$internal$$fulfill(promise, maybeThenable);
-	        }
-	      }
-	    }
-	
-	    function lib$es6$promise$$internal$$resolve(promise, value) {
-	      if (promise === value) {
-	        lib$es6$promise$$internal$$reject(promise, lib$es6$promise$$internal$$selfFulfillment());
-	      } else if (lib$es6$promise$utils$$objectOrFunction(value)) {
-	        lib$es6$promise$$internal$$handleMaybeThenable(promise, value);
-	      } else {
-	        lib$es6$promise$$internal$$fulfill(promise, value);
-	      }
-	    }
-	
-	    function lib$es6$promise$$internal$$publishRejection(promise) {
-	      if (promise._onerror) {
-	        promise._onerror(promise._result);
-	      }
-	
-	      lib$es6$promise$$internal$$publish(promise);
-	    }
-	
-	    function lib$es6$promise$$internal$$fulfill(promise, value) {
-	      if (promise._state !== lib$es6$promise$$internal$$PENDING) { return; }
-	
-	      promise._result = value;
-	      promise._state = lib$es6$promise$$internal$$FULFILLED;
-	
-	      if (promise._subscribers.length !== 0) {
-	        lib$es6$promise$asap$$asap(lib$es6$promise$$internal$$publish, promise);
-	      }
-	    }
-	
-	    function lib$es6$promise$$internal$$reject(promise, reason) {
-	      if (promise._state !== lib$es6$promise$$internal$$PENDING) { return; }
-	      promise._state = lib$es6$promise$$internal$$REJECTED;
-	      promise._result = reason;
-	
-	      lib$es6$promise$asap$$asap(lib$es6$promise$$internal$$publishRejection, promise);
-	    }
-	
-	    function lib$es6$promise$$internal$$subscribe(parent, child, onFulfillment, onRejection) {
-	      var subscribers = parent._subscribers;
-	      var length = subscribers.length;
-	
-	      parent._onerror = null;
-	
-	      subscribers[length] = child;
-	      subscribers[length + lib$es6$promise$$internal$$FULFILLED] = onFulfillment;
-	      subscribers[length + lib$es6$promise$$internal$$REJECTED]  = onRejection;
-	
-	      if (length === 0 && parent._state) {
-	        lib$es6$promise$asap$$asap(lib$es6$promise$$internal$$publish, parent);
-	      }
-	    }
-	
-	    function lib$es6$promise$$internal$$publish(promise) {
-	      var subscribers = promise._subscribers;
-	      var settled = promise._state;
-	
-	      if (subscribers.length === 0) { return; }
-	
-	      var child, callback, detail = promise._result;
-	
-	      for (var i = 0; i < subscribers.length; i += 3) {
-	        child = subscribers[i];
-	        callback = subscribers[i + settled];
-	
-	        if (child) {
-	          lib$es6$promise$$internal$$invokeCallback(settled, child, callback, detail);
-	        } else {
-	          callback(detail);
-	        }
-	      }
-	
-	      promise._subscribers.length = 0;
-	    }
-	
-	    function lib$es6$promise$$internal$$ErrorObject() {
-	      this.error = null;
-	    }
-	
-	    var lib$es6$promise$$internal$$TRY_CATCH_ERROR = new lib$es6$promise$$internal$$ErrorObject();
-	
-	    function lib$es6$promise$$internal$$tryCatch(callback, detail) {
-	      try {
-	        return callback(detail);
-	      } catch(e) {
-	        lib$es6$promise$$internal$$TRY_CATCH_ERROR.error = e;
-	        return lib$es6$promise$$internal$$TRY_CATCH_ERROR;
-	      }
-	    }
-	
-	    function lib$es6$promise$$internal$$invokeCallback(settled, promise, callback, detail) {
-	      var hasCallback = lib$es6$promise$utils$$isFunction(callback),
-	          value, error, succeeded, failed;
-	
-	      if (hasCallback) {
-	        value = lib$es6$promise$$internal$$tryCatch(callback, detail);
-	
-	        if (value === lib$es6$promise$$internal$$TRY_CATCH_ERROR) {
-	          failed = true;
-	          error = value.error;
-	          value = null;
-	        } else {
-	          succeeded = true;
-	        }
-	
-	        if (promise === value) {
-	          lib$es6$promise$$internal$$reject(promise, lib$es6$promise$$internal$$cannotReturnOwn());
-	          return;
-	        }
-	
-	      } else {
-	        value = detail;
-	        succeeded = true;
-	      }
-	
-	      if (promise._state !== lib$es6$promise$$internal$$PENDING) {
-	        // noop
-	      } else if (hasCallback && succeeded) {
-	        lib$es6$promise$$internal$$resolve(promise, value);
-	      } else if (failed) {
-	        lib$es6$promise$$internal$$reject(promise, error);
-	      } else if (settled === lib$es6$promise$$internal$$FULFILLED) {
-	        lib$es6$promise$$internal$$fulfill(promise, value);
-	      } else if (settled === lib$es6$promise$$internal$$REJECTED) {
-	        lib$es6$promise$$internal$$reject(promise, value);
-	      }
-	    }
-	
-	    function lib$es6$promise$$internal$$initializePromise(promise, resolver) {
-	      try {
-	        resolver(function resolvePromise(value){
-	          lib$es6$promise$$internal$$resolve(promise, value);
-	        }, function rejectPromise(reason) {
-	          lib$es6$promise$$internal$$reject(promise, reason);
-	        });
-	      } catch(e) {
-	        lib$es6$promise$$internal$$reject(promise, e);
-	      }
-	    }
-	
-	    function lib$es6$promise$enumerator$$Enumerator(Constructor, input) {
-	      var enumerator = this;
-	
-	      enumerator._instanceConstructor = Constructor;
-	      enumerator.promise = new Constructor(lib$es6$promise$$internal$$noop);
-	
-	      if (enumerator._validateInput(input)) {
-	        enumerator._input     = input;
-	        enumerator.length     = input.length;
-	        enumerator._remaining = input.length;
-	
-	        enumerator._init();
-	
-	        if (enumerator.length === 0) {
-	          lib$es6$promise$$internal$$fulfill(enumerator.promise, enumerator._result);
-	        } else {
-	          enumerator.length = enumerator.length || 0;
-	          enumerator._enumerate();
-	          if (enumerator._remaining === 0) {
-	            lib$es6$promise$$internal$$fulfill(enumerator.promise, enumerator._result);
-	          }
-	        }
-	      } else {
-	        lib$es6$promise$$internal$$reject(enumerator.promise, enumerator._validationError());
-	      }
-	    }
-	
-	    lib$es6$promise$enumerator$$Enumerator.prototype._validateInput = function(input) {
-	      return lib$es6$promise$utils$$isArray(input);
-	    };
-	
-	    lib$es6$promise$enumerator$$Enumerator.prototype._validationError = function() {
-	      return new Error('Array Methods must be provided an Array');
-	    };
-	
-	    lib$es6$promise$enumerator$$Enumerator.prototype._init = function() {
-	      this._result = new Array(this.length);
-	    };
-	
-	    var lib$es6$promise$enumerator$$default = lib$es6$promise$enumerator$$Enumerator;
-	
-	    lib$es6$promise$enumerator$$Enumerator.prototype._enumerate = function() {
-	      var enumerator = this;
-	
-	      var length  = enumerator.length;
-	      var promise = enumerator.promise;
-	      var input   = enumerator._input;
-	
-	      for (var i = 0; promise._state === lib$es6$promise$$internal$$PENDING && i < length; i++) {
-	        enumerator._eachEntry(input[i], i);
-	      }
-	    };
-	
-	    lib$es6$promise$enumerator$$Enumerator.prototype._eachEntry = function(entry, i) {
-	      var enumerator = this;
-	      var c = enumerator._instanceConstructor;
-	
-	      if (lib$es6$promise$utils$$isMaybeThenable(entry)) {
-	        if (entry.constructor === c && entry._state !== lib$es6$promise$$internal$$PENDING) {
-	          entry._onerror = null;
-	          enumerator._settledAt(entry._state, i, entry._result);
-	        } else {
-	          enumerator._willSettleAt(c.resolve(entry), i);
-	        }
-	      } else {
-	        enumerator._remaining--;
-	        enumerator._result[i] = entry;
-	      }
-	    };
-	
-	    lib$es6$promise$enumerator$$Enumerator.prototype._settledAt = function(state, i, value) {
-	      var enumerator = this;
-	      var promise = enumerator.promise;
-	
-	      if (promise._state === lib$es6$promise$$internal$$PENDING) {
-	        enumerator._remaining--;
-	
-	        if (state === lib$es6$promise$$internal$$REJECTED) {
-	          lib$es6$promise$$internal$$reject(promise, value);
-	        } else {
-	          enumerator._result[i] = value;
-	        }
-	      }
-	
-	      if (enumerator._remaining === 0) {
-	        lib$es6$promise$$internal$$fulfill(promise, enumerator._result);
-	      }
-	    };
-	
-	    lib$es6$promise$enumerator$$Enumerator.prototype._willSettleAt = function(promise, i) {
-	      var enumerator = this;
-	
-	      lib$es6$promise$$internal$$subscribe(promise, undefined, function(value) {
-	        enumerator._settledAt(lib$es6$promise$$internal$$FULFILLED, i, value);
-	      }, function(reason) {
-	        enumerator._settledAt(lib$es6$promise$$internal$$REJECTED, i, reason);
-	      });
-	    };
-	    function lib$es6$promise$promise$all$$all(entries) {
-	      return new lib$es6$promise$enumerator$$default(this, entries).promise;
-	    }
-	    var lib$es6$promise$promise$all$$default = lib$es6$promise$promise$all$$all;
-	    function lib$es6$promise$promise$race$$race(entries) {
-	      /*jshint validthis:true */
-	      var Constructor = this;
-	
-	      var promise = new Constructor(lib$es6$promise$$internal$$noop);
-	
-	      if (!lib$es6$promise$utils$$isArray(entries)) {
-	        lib$es6$promise$$internal$$reject(promise, new TypeError('You must pass an array to race.'));
-	        return promise;
-	      }
-	
-	      var length = entries.length;
-	
-	      function onFulfillment(value) {
-	        lib$es6$promise$$internal$$resolve(promise, value);
-	      }
-	
-	      function onRejection(reason) {
-	        lib$es6$promise$$internal$$reject(promise, reason);
-	      }
-	
-	      for (var i = 0; promise._state === lib$es6$promise$$internal$$PENDING && i < length; i++) {
-	        lib$es6$promise$$internal$$subscribe(Constructor.resolve(entries[i]), undefined, onFulfillment, onRejection);
-	      }
-	
-	      return promise;
-	    }
-	    var lib$es6$promise$promise$race$$default = lib$es6$promise$promise$race$$race;
-	    function lib$es6$promise$promise$resolve$$resolve(object) {
-	      /*jshint validthis:true */
-	      var Constructor = this;
-	
-	      if (object && typeof object === 'object' && object.constructor === Constructor) {
-	        return object;
-	      }
-	
-	      var promise = new Constructor(lib$es6$promise$$internal$$noop);
-	      lib$es6$promise$$internal$$resolve(promise, object);
-	      return promise;
-	    }
-	    var lib$es6$promise$promise$resolve$$default = lib$es6$promise$promise$resolve$$resolve;
-	    function lib$es6$promise$promise$reject$$reject(reason) {
-	      /*jshint validthis:true */
-	      var Constructor = this;
-	      var promise = new Constructor(lib$es6$promise$$internal$$noop);
-	      lib$es6$promise$$internal$$reject(promise, reason);
-	      return promise;
-	    }
-	    var lib$es6$promise$promise$reject$$default = lib$es6$promise$promise$reject$$reject;
-	
-	    var lib$es6$promise$promise$$counter = 0;
-	
-	    function lib$es6$promise$promise$$needsResolver() {
-	      throw new TypeError('You must pass a resolver function as the first argument to the promise constructor');
-	    }
-	
-	    function lib$es6$promise$promise$$needsNew() {
-	      throw new TypeError("Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function.");
-	    }
-	
-	    var lib$es6$promise$promise$$default = lib$es6$promise$promise$$Promise;
-	    /**
-	      Promise objects represent the eventual result of an asynchronous operation. The
-	      primary way of interacting with a promise is through its `then` method, which
-	      registers callbacks to receive either a promise's eventual value or the reason
-	      why the promise cannot be fulfilled.
-	
-	      Terminology
-	      -----------
-	
-	      - `promise` is an object or function with a `then` method whose behavior conforms to this specification.
-	      - `thenable` is an object or function that defines a `then` method.
-	      - `value` is any legal JavaScript value (including undefined, a thenable, or a promise).
-	      - `exception` is a value that is thrown using the throw statement.
-	      - `reason` is a value that indicates why a promise was rejected.
-	      - `settled` the final resting state of a promise, fulfilled or rejected.
-	
-	      A promise can be in one of three states: pending, fulfilled, or rejected.
-	
-	      Promises that are fulfilled have a fulfillment value and are in the fulfilled
-	      state.  Promises that are rejected have a rejection reason and are in the
-	      rejected state.  A fulfillment value is never a thenable.
-	
-	      Promises can also be said to *resolve* a value.  If this value is also a
-	      promise, then the original promise's settled state will match the value's
-	      settled state.  So a promise that *resolves* a promise that rejects will
-	      itself reject, and a promise that *resolves* a promise that fulfills will
-	      itself fulfill.
-	
-	
-	      Basic Usage:
-	      ------------
-	
-	      ```js
-	      var promise = new Promise(function(resolve, reject) {
-	        // on success
-	        resolve(value);
-	
-	        // on failure
-	        reject(reason);
-	      });
-	
-	      promise.then(function(value) {
-	        // on fulfillment
-	      }, function(reason) {
-	        // on rejection
-	      });
-	      ```
-	
-	      Advanced Usage:
-	      ---------------
-	
-	      Promises shine when abstracting away asynchronous interactions such as
-	      `XMLHttpRequest`s.
-	
-	      ```js
-	      function getJSON(url) {
-	        return new Promise(function(resolve, reject){
-	          var xhr = new XMLHttpRequest();
-	
-	          xhr.open('GET', url);
-	          xhr.onreadystatechange = handler;
-	          xhr.responseType = 'json';
-	          xhr.setRequestHeader('Accept', 'application/json');
-	          xhr.send();
-	
-	          function handler() {
-	            if (this.readyState === this.DONE) {
-	              if (this.status === 200) {
-	                resolve(this.response);
-	              } else {
-	                reject(new Error('getJSON: `' + url + '` failed with status: [' + this.status + ']'));
-	              }
-	            }
-	          };
-	        });
-	      }
-	
-	      getJSON('/posts.json').then(function(json) {
-	        // on fulfillment
-	      }, function(reason) {
-	        // on rejection
-	      });
-	      ```
-	
-	      Unlike callbacks, promises are great composable primitives.
-	
-	      ```js
-	      Promise.all([
-	        getJSON('/posts'),
-	        getJSON('/comments')
-	      ]).then(function(values){
-	        values[0] // => postsJSON
-	        values[1] // => commentsJSON
-	
-	        return values;
-	      });
-	      ```
-	
-	      @class Promise
-	      @param {function} resolver
-	      Useful for tooling.
-	      @constructor
-	    */
-	    function lib$es6$promise$promise$$Promise(resolver) {
-	      this._id = lib$es6$promise$promise$$counter++;
-	      this._state = undefined;
-	      this._result = undefined;
-	      this._subscribers = [];
-	
-	      if (lib$es6$promise$$internal$$noop !== resolver) {
-	        if (!lib$es6$promise$utils$$isFunction(resolver)) {
-	          lib$es6$promise$promise$$needsResolver();
-	        }
-	
-	        if (!(this instanceof lib$es6$promise$promise$$Promise)) {
-	          lib$es6$promise$promise$$needsNew();
-	        }
-	
-	        lib$es6$promise$$internal$$initializePromise(this, resolver);
-	      }
-	    }
-	
-	    lib$es6$promise$promise$$Promise.all = lib$es6$promise$promise$all$$default;
-	    lib$es6$promise$promise$$Promise.race = lib$es6$promise$promise$race$$default;
-	    lib$es6$promise$promise$$Promise.resolve = lib$es6$promise$promise$resolve$$default;
-	    lib$es6$promise$promise$$Promise.reject = lib$es6$promise$promise$reject$$default;
-	    lib$es6$promise$promise$$Promise._setScheduler = lib$es6$promise$asap$$setScheduler;
-	    lib$es6$promise$promise$$Promise._setAsap = lib$es6$promise$asap$$setAsap;
-	    lib$es6$promise$promise$$Promise._asap = lib$es6$promise$asap$$asap;
-	
-	    lib$es6$promise$promise$$Promise.prototype = {
-	      constructor: lib$es6$promise$promise$$Promise,
-	
-	    /**
-	      The primary way of interacting with a promise is through its `then` method,
-	      which registers callbacks to receive either a promise's eventual value or the
-	      reason why the promise cannot be fulfilled.
-	
-	      ```js
-	      findUser().then(function(user){
-	        // user is available
-	      }, function(reason){
-	        // user is unavailable, and you are given the reason why
-	      });
-	      ```
-	
-	      Chaining
-	      --------
-	
-	      The return value of `then` is itself a promise.  This second, 'downstream'
-	      promise is resolved with the return value of the first promise's fulfillment
-	      or rejection handler, or rejected if the handler throws an exception.
-	
-	      ```js
-	      findUser().then(function (user) {
-	        return user.name;
-	      }, function (reason) {
-	        return 'default name';
-	      }).then(function (userName) {
-	        // If `findUser` fulfilled, `userName` will be the user's name, otherwise it
-	        // will be `'default name'`
-	      });
-	
-	      findUser().then(function (user) {
-	        throw new Error('Found user, but still unhappy');
-	      }, function (reason) {
-	        throw new Error('`findUser` rejected and we're unhappy');
-	      }).then(function (value) {
-	        // never reached
-	      }, function (reason) {
-	        // if `findUser` fulfilled, `reason` will be 'Found user, but still unhappy'.
-	        // If `findUser` rejected, `reason` will be '`findUser` rejected and we're unhappy'.
-	      });
-	      ```
-	      If the downstream promise does not specify a rejection handler, rejection reasons will be propagated further downstream.
-	
-	      ```js
-	      findUser().then(function (user) {
-	        throw new PedagogicalException('Upstream error');
-	      }).then(function (value) {
-	        // never reached
-	      }).then(function (value) {
-	        // never reached
-	      }, function (reason) {
-	        // The `PedgagocialException` is propagated all the way down to here
-	      });
-	      ```
-	
-	      Assimilation
-	      ------------
-	
-	      Sometimes the value you want to propagate to a downstream promise can only be
-	      retrieved asynchronously. This can be achieved by returning a promise in the
-	      fulfillment or rejection handler. The downstream promise will then be pending
-	      until the returned promise is settled. This is called *assimilation*.
-	
-	      ```js
-	      findUser().then(function (user) {
-	        return findCommentsByAuthor(user);
-	      }).then(function (comments) {
-	        // The user's comments are now available
-	      });
-	      ```
-	
-	      If the assimliated promise rejects, then the downstream promise will also reject.
-	
-	      ```js
-	      findUser().then(function (user) {
-	        return findCommentsByAuthor(user);
-	      }).then(function (comments) {
-	        // If `findCommentsByAuthor` fulfills, we'll have the value here
-	      }, function (reason) {
-	        // If `findCommentsByAuthor` rejects, we'll have the reason here
-	      });
-	      ```
-	
-	      Simple Example
-	      --------------
-	
-	      Synchronous Example
-	
-	      ```javascript
-	      var result;
-	
-	      try {
-	        result = findResult();
-	        // success
-	      } catch(reason) {
-	        // failure
-	      }
-	      ```
-	
-	      Errback Example
-	
-	      ```js
-	      findResult(function(result, err){
-	        if (err) {
-	          // failure
-	        } else {
-	          // success
-	        }
-	      });
-	      ```
-	
-	      Promise Example;
-	
-	      ```javascript
-	      findResult().then(function(result){
-	        // success
-	      }, function(reason){
-	        // failure
-	      });
-	      ```
-	
-	      Advanced Example
-	      --------------
-	
-	      Synchronous Example
-	
-	      ```javascript
-	      var author, books;
-	
-	      try {
-	        author = findAuthor();
-	        books  = findBooksByAuthor(author);
-	        // success
-	      } catch(reason) {
-	        // failure
-	      }
-	      ```
-	
-	      Errback Example
-	
-	      ```js
-	
-	      function foundBooks(books) {
-	
-	      }
-	
-	      function failure(reason) {
-	
-	      }
-	
-	      findAuthor(function(author, err){
-	        if (err) {
-	          failure(err);
-	          // failure
-	        } else {
-	          try {
-	            findBoooksByAuthor(author, function(books, err) {
-	              if (err) {
-	                failure(err);
-	              } else {
-	                try {
-	                  foundBooks(books);
-	                } catch(reason) {
-	                  failure(reason);
-	                }
-	              }
-	            });
-	          } catch(error) {
-	            failure(err);
-	          }
-	          // success
-	        }
-	      });
-	      ```
-	
-	      Promise Example;
-	
-	      ```javascript
-	      findAuthor().
-	        then(findBooksByAuthor).
-	        then(function(books){
-	          // found books
-	      }).catch(function(reason){
-	        // something went wrong
-	      });
-	      ```
-	
-	      @method then
-	      @param {Function} onFulfilled
-	      @param {Function} onRejected
-	      Useful for tooling.
-	      @return {Promise}
-	    */
-	      then: function(onFulfillment, onRejection) {
-	        var parent = this;
-	        var state = parent._state;
-	
-	        if (state === lib$es6$promise$$internal$$FULFILLED && !onFulfillment || state === lib$es6$promise$$internal$$REJECTED && !onRejection) {
-	          return this;
-	        }
-	
-	        var child = new this.constructor(lib$es6$promise$$internal$$noop);
-	        var result = parent._result;
-	
-	        if (state) {
-	          var callback = arguments[state - 1];
-	          lib$es6$promise$asap$$asap(function(){
-	            lib$es6$promise$$internal$$invokeCallback(state, child, callback, result);
-	          });
-	        } else {
-	          lib$es6$promise$$internal$$subscribe(parent, child, onFulfillment, onRejection);
-	        }
-	
-	        return child;
-	      },
-	
-	    /**
-	      `catch` is simply sugar for `then(undefined, onRejection)` which makes it the same
-	      as the catch block of a try/catch statement.
-	
-	      ```js
-	      function findAuthor(){
-	        throw new Error('couldn't find that author');
-	      }
-	
-	      // synchronous
-	      try {
-	        findAuthor();
-	      } catch(reason) {
-	        // something went wrong
-	      }
-	
-	      // async with promises
-	      findAuthor().catch(function(reason){
-	        // something went wrong
-	      });
-	      ```
-	
-	      @method catch
-	      @param {Function} onRejection
-	      Useful for tooling.
-	      @return {Promise}
-	    */
-	      'catch': function(onRejection) {
-	        return this.then(null, onRejection);
-	      }
-	    };
-	    function lib$es6$promise$polyfill$$polyfill() {
-	      var local;
-	
-	      if (typeof global !== 'undefined') {
-	          local = global;
-	      } else if (typeof self !== 'undefined') {
-	          local = self;
-	      } else {
-	          try {
-	              local = Function('return this')();
-	          } catch (e) {
-	              throw new Error('polyfill failed because global object is unavailable in this environment');
-	          }
-	      }
-	
-	      var P = local.Promise;
-	
-	      if (P && Object.prototype.toString.call(P.resolve()) === '[object Promise]' && !P.cast) {
-	        return;
-	      }
-	
-	      local.Promise = lib$es6$promise$promise$$default;
-	    }
-	    var lib$es6$promise$polyfill$$default = lib$es6$promise$polyfill$$polyfill;
-	
-	    var lib$es6$promise$umd$$ES6Promise = {
-	      'Promise': lib$es6$promise$promise$$default,
-	      'polyfill': lib$es6$promise$polyfill$$default
-	    };
-	
-	    /* global define:true module:true window: true */
-	    if ("function" === 'function' && __webpack_require__(125)['amd']) {
-	      !(__WEBPACK_AMD_DEFINE_RESULT__ = function() { return lib$es6$promise$umd$$ES6Promise; }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-	    } else if (typeof module !== 'undefined' && module['exports']) {
-	      module['exports'] = lib$es6$promise$umd$$ES6Promise;
-	    } else if (typeof this !== 'undefined') {
-	      this['ES6Promise'] = lib$es6$promise$umd$$ES6Promise;
-	    }
-	
-	    lib$es6$promise$polyfill$$default();
-	}).call(this);
-	
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), (function() { return this; }()), __webpack_require__(123)(module)))
-
-/***/ },
-/* 123 */
+/* 57 */
 /***/ function(module, exports) {
 
-	module.exports = function(module) {
-		if(!module.webpackPolyfill) {
-			module.deprecate = function() {};
-			module.paths = [];
-			// module.parent = undefined by default
-			module.children = [];
-			module.webpackPolyfill = 1;
-		}
-		return module;
-	}
-
-
-/***/ },
-/* 124 */
-/***/ function(module, exports) {
-
-	/* (ignored) */
-
-/***/ },
-/* 125 */
-/***/ function(module, exports) {
-
-	module.exports = function() { throw new Error("define cannot be used indirect"); };
-
+	module.exports = "\n<div class=\"tagArticleList\">\n    <div class=\"list\">\n        <div class=\"border\">\n            <h4>\n                {{tagName}}\n            </h4>\n            <div\n             v-for=\"item in items\"\n             class=\"item\"\n            :item=\"item\"\n            :index=\"$index\"\n            track-by=\"$index\">\n                <p>\n                    <a :href=\"'#/article/' + item.id\">{{item.title}}</a>\n                </p>\n                <span class=\"date\">{{item.date}}</span>\n            </div>\n        </div>\n    </div>\n    <classification :class-tags=\"classTags\"></classification>\n\n</div>\n";
 
 /***/ }
 /******/ ]);

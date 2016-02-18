@@ -3,13 +3,12 @@
         <h4>分类</h4>
         <p  v-for="classTag in classTags"
             class="tag"
-            :classTag="classTag"
             :index="$index"
             track-by="$index">
             <a :href="'#/tagArticle/' + classTag.name">{{classTag.name}}</a>
             <span class="number">{{classTag.number}}</span>
         </p>
-</div>
+    </div>
 
 </template>
 
@@ -21,6 +20,12 @@ export default{
         classTags: Array
     },
 
+    date(){
+        return {
+            classTags: []
+        }
+    },
+
     computed:{
         hasloaded(){
             if(this.classTags.length !== 0){
@@ -28,6 +33,12 @@ export default{
             }
         }
     },
+
+    route: {
+        data: function(){
+            console.log("sss");
+        }
+    }
 }
 </script>
 
@@ -51,7 +62,7 @@ export default{
     position: relative;
 }
 .tag:hover{
-    color: rgb(191, 112, 220);
+    color: #d514fc;
 }
 .number{
     display: inline-block;

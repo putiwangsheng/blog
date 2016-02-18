@@ -95,6 +95,10 @@ export default{
     color: #444955;
 }
 
+.article-content h1{
+    display: none;
+}
+
 .article-content p{
     text-indent: 2rem;
 }
