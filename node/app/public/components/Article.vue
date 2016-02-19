@@ -1,11 +1,12 @@
 <template>
     <div class="article">
-        <div class="a-date">
-            {{articleInfo.date}}
+        <div class="detail">
+            <span>{{articleInfo.date}}</span>
+            <a :href="'#/tagArticle/' + articleInfo.parentTagName">{{articleInfo.parentTagName}}</a>
         </div>
         <article>
             <h1>{{articleInfo.title}}</a></h1>
-            <div class="a-content">
+            <div class="a-content hljs">
                 {{{articleInfo.article}}}
             </div>
         </article>
@@ -16,7 +17,6 @@
 <script>
 import url from '../url.js';
 import model from '../model/model.js';
-
 export default{
     name: "Article",
 
@@ -35,13 +35,13 @@ export default{
             model.getArticleList(articleUrl).then(data => {
                 data = data[0];
 
-                articleInfo.title = data.title;
-                articleInfo.article = model.toMarkdown(data.md);
-                articleInfo.date = data.date.split('T')[0];
-                this.articleInfo = articleInfo;
+                data.article = model.toMarkdown(data.md);
+                data.date = model.handleDate(data.date);
+                this.articleInfo = data;
             });
         }
     }
+
 }
 </script>
 
@@ -57,10 +57,36 @@ article {
     box-shadow: 2px 2px 3px #918b8b;
     padding: 1.5rem 2.5rem;
 }
-.a-date{
+.detail{
     padding: .5rem .7rem;
-    font-weight: bolder;
+    font-weight: bold;
+}
+.detail span{
     color: #666;
+}
+.detail a{
+    background-color: #d274f7;
+    padding: .1rem .7rem .1rem 1.7rem;
+    margin: 0 1rem;
+    border-radius: 2rem;
+    color: #fff;
+    font-size: .9rem;
+    position: relative;
+
+}
+.detail a::before{
+    content: '';
+    display: inline-block;
+    width: .85rem;
+    height: .85rem;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: .3rem;
+    left: .5rem;
+}
+.detail a:hover{
+    background-color: #666;
 }
 .article h1{
     text-align: center;
@@ -87,8 +113,5 @@ article {
 .a-content h1{
     display: none;
 }
-h2{
-    padding-left: .4rem;
-    border-left: .2rem solid #c969ef;
-}
+
 </style>

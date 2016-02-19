@@ -1,9 +1,9 @@
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, img, ins, kbd, q, s, samp, small, strike, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, abbr, acronym, address, big, cite, img, ins, kbd, q, s, samp, small, strike, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
     margin: 0;
     padding: 0;
     border: 0;
     outline: 0;
-    font-family: Lato, "Microsoft YaHei", "kaiti", sans-serif;
+    font-family: "Microsoft YaHei", "kaiti", sans-serif;
     vertical-align: baselinebaseline;
 }
 ol, ul {
@@ -37,3 +37,9 @@ body {
 img{
     max-width: 100%;
 }
+body,html{
+    height:100%;
+}
+/*h1, h2, h3, h4, h5, h6, p{
+    font-family: "Microsoft YaHei";
+}*/

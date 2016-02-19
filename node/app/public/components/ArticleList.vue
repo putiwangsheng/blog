@@ -27,7 +27,7 @@
             track-by="_id">
             </item>
         </div>
-        <classification :class-tags="classTags"></classification>
+        <classification></classification>
     </section>
 </div>
 
@@ -50,63 +50,30 @@ export default{
 
     data () {
       return {
-          items: [],
-          classTags: []
+          items: []
       };
     },
 
     route: {
         data: function(){
             var articleUrl = url.articleUrl;
-            var tagUrl = url.tagUrl;
 
-            model.getAll(articleUrl, tagUrl).then(data => {
-                var articleData = data[0];
-                var tagData = data[1];
-
+            model.getArticleList(articleUrl).then(data => {
+                var articleData = data;
                 this.handleData(articleData);
                 this.items = articleData;
-
-                this.classTags = this.getNumber(articleData, tagData);
             });
         }
     },
 
     methods: {
-      uniqTagArr: function(arr){
-          var uniqArr = {};
-          for(let i = 0, len = arr.length; i < len; i++){
-              uniqArr[arr[i].parentTagName] = true;
-          };
-
-          return Object.keys(uniqArr);
-      },
-
       handleData: function(arr){
           arr.forEach(function(element){
               element.date = model.handleDate(element.date);
               element.md = model.toMarkdown(element.md);
           });
-      },
-
-      getNumber: function(articleData, tagData){
-          var tagArr = this.uniqTagArr(articleData);
-          var classTags = [];
-
-          for(let i = 0, len1 = tagArr.length;i < len1;i++){
-              for(let j = 0, len2 = tagData.length;j < len2; j++){
-                  if(tagArr[i] === tagData[j].tagName){
-                      var classTag = {};
-
-                      classTag.name = tagArr[i];
-                      classTag.number = tagData[j].aritcleTitleList.length;
-                      classTags[i] = classTag;
-                  }
-              }
-          }
-          return classTags;
       }
-    }
+  }
 }
 </script>
 
@@ -161,12 +128,6 @@ export default{
     display: inline-block;
 }
 
-.loading::before{
-    content: 'Loading...';
-    position: absolute;
-    left: 45%;
-    top: 40%;
-}
 .wrapper{
     padding: 3rem 8%;
 }

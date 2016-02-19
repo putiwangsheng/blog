@@ -1,5 +1,5 @@
 <template>
-    <div class="tagArticleList">
+    <div class="tagArticleList clearfix">
         <div class="list">
             <div class="border">
                 <h4>
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <classification :class-tags="classTags"></classification>
+        <classification></classification>
 
     </div>
 </template>
@@ -27,7 +27,6 @@
 import url from '../url.js';
 import model from '../model/model.js';
 import Classification from './Classification.vue';
-
 
 export default{
     name: "tagArticleList",
@@ -83,7 +82,8 @@ export default{
 
 <style>
 .tagArticleList{
-    width: 90%;
+    width: 85%;
+    height: 100%;
     margin: 2rem auto;
 }
 .list{
@@ -92,7 +92,7 @@ export default{
     background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.7) 5%, rgba(255,255,255,.8) 10%, #fff 25%, #fff 75%, rgba(255,255,255,.7) 95%,rgba(255,255,255,.6));
     border-radius: .5rem;
     padding: 1rem;
-    margin: 1rem;
+    margin: .5rem 10% 1rem 0;
 }
 .border{
     border: .2rem solid #fb8da6;

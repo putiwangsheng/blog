@@ -13,17 +13,30 @@
 </template>
 
 <script>
+import model from '../model/model.js';
+import url from '../url.js';
+
 export default{
     name: "Classification",
 
-    props:{
-        classTags: Array
-    },
-
-    date(){
+    data(){
         return {
             classTags: []
         }
+    },
+
+    created(){
+        var articleUrl = url.articleUrl;
+        var tagUrl = url.tagUrl;
+
+        model.getAll(articleUrl, tagUrl).then(data => {
+            var articleData = data[0];
+            var tagData = data[1];
+
+            this.classTags = this.getNumber(articleData, tagData);
+        });
+
+
     },
 
     computed:{
@@ -34,15 +47,44 @@ export default{
         }
     },
 
-    route: {
-        data: function(){
-            console.log("sss");
+    methods: {
+        uniqTagArr: function(arr){
+            var uniqArr = {};
+            for(let i = 0, len = arr.length; i < len; i++){
+                uniqArr[arr[i].parentTagName] = true;
+            };
+
+            return Object.keys(uniqArr);
+        },
+
+        getNumber: function(articleData, tagData){
+            var tagArr = this.uniqTagArr(articleData);
+            var classTags = [];
+
+            for(let i = 0, len1 = tagArr.length;i < len1;i++){
+                for(let j = 0, len2 = tagData.length;j < len2; j++){
+                    if(tagArr[i] === tagData[j].tagName){
+                        var classTag = {};
+
+                        classTag.name = tagArr[i];
+                        classTag.number = tagData[j].aritcleTitleList.length;
+                        classTags[i] = classTag;
+                    }
+                }
+            }
+            return classTags;
         }
     }
 }
 </script>
 
 <style>
+.loading::before{
+    content: 'Loading...';
+    position: absolute;
+    left: 45%;
+    top: 40%;
+}
 .class-tags{
     width: 20%;
     float: left;
@@ -60,6 +102,7 @@ export default{
     padding: .3rem 0 0 0;
     color: #666;
     position: relative;
+    font-family: monospace;
 }
 .tag:hover{
     color: #d514fc;
@@ -68,8 +111,8 @@ export default{
     display: inline-block;
     text-align: center;
     width: 1rem;
-    height: 1rem;
-    line-height: 1rem;
+    /*height: 1rem;
+    line-height: 1rem;*/
     border-radius: 50%;
     background-color: #fb8da6;
     color: #fff;

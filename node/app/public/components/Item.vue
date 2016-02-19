@@ -9,7 +9,7 @@
             {{item.date}}
         </div>
 
-        <div class="article-content">
+        <div class="article-content hljs">
             {{{item.md}}}
         </div>
     </article>
@@ -98,7 +98,6 @@ export default{
 .article-content h1{
     display: none;
 }
-
 .article-content p{
     text-indent: 2rem;
 }
