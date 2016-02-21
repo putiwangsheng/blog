@@ -1,21 +1,15 @@
 <template>
     <div>
-
     <section id="header">
-        <img class="b-title" src="https://ooo.0o0.ooo/2016/01/27/56a88272da80e.png" alt="SEEKFNL" />
-        <p class="s-title">
-            <span style="color: #3369e8">Blog</span>
-            <span style="color: #eeb211">of</span>
-            <span style="color: #d50f25">ChangQi</span>
-        </p>
-        <div class="signature">
-            <p>
-                情不知所起
-            </p>
-            <p>
-                一往而深
+        <div class="head-title">
+            <!-- <img class="b-title" src="https://ooo.0o0.ooo/2016/01/27/56a88272da80e.png" alt="SEEKFNL" /> -->
+            <p class="s-title">
+                <span style="color: #3369e8">Blog</span>
+                <span style="color: #eeb211">of</span>
+                <span style="color: #d50f25">ChangQi</span>
             </p>
         </div>
+
     </section>
     <hr id="divider"></hr>
 
@@ -26,6 +20,11 @@
             :index="$index"
             track-by="_id">
             </item>
+
+            <div class="page" v-show="items.length > 0">
+                <a v-if="page > 1" class="pre" :href="#">prev</a>
+                <a class="next" :href="#">next</a>
+            </div>
         </div>
         <classification></classification>
     </section>
@@ -50,12 +49,14 @@ export default{
 
     data () {
       return {
-          items: []
+          items: [],
+          page: 1
       };
     },
 
     route: {
-        data: function(){
+        data: function(transition){
+            var page = transition.to.params.page;
             var articleUrl = url.articleUrl;
 
             model.getArticleList(articleUrl).then(data => {
@@ -79,43 +80,28 @@ export default{
 
 <style>
 #header{
-    background-image: url("https://ooo.0o0.ooo/2016/01/26/56a76938f09fb.jpg");
-    height: 40rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.8;
-}
-.b-title{
+    height: 10rem;
     position: relative;
-    top: 1rem;
+}
+.head-title{
+    position: absolute;
+    top:1rem;
     left: 1rem;
 }
+.b-title{
+
+}
 .s-title{
-    position: absolute;
     color: #fff;
     font-weight: 700;
-    font-size: 2rem;
-    -webkit-transform: rotate(-12deg) translate(255px, -10px);
+    font-size: 1.5rem;
+    /*-webkit-transform: rotate(-12deg) translate(255px, -10px);
     -moz-transform: rotate(-12deg) translate(255px, -10px);
-    transform: rotate(-12deg) translate(255px, -10px);
-}
-.signature{
-    display: inline-block;
-    border: .3rem solid #ea7bf7;
-    position: absolute;;
-    top: 3rem;
-    right: 8%;
-    padding: .3rem;
-}
-.signature p{
-    display: inline-block;
-    vertical-align: top;
-    width: 1rem;
-    color: #fff;
+    transform: rotate(-12deg) translate(255px, -10px);*/
 }
 
 #divider{
-    margin: 4.5rem 0 0 0;
+    margin-top: 3rem;
     border: none;
     border-top: .1rem solid #fff;
     text-align: center;
@@ -142,5 +128,17 @@ export default{
     width: 70%;
     margin: 0 7% 0 0;
     float: left;
+}
+.page{
+    background-color: #fff;
+    height: 1.9rem;
+    line-height: 1.9rem;
+    border-radius: .3rem;
+}
+.page .pre,.page .next{
+    padding: 0 .5rem;
+}
+.page .next{
+    float: right;
 }
 </style>

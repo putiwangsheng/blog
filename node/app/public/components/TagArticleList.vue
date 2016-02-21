@@ -1,38 +1,44 @@
 <template>
-    <div class="tagArticleList clearfix">
-        <div class="list">
-            <div class="border">
-                <h4>
-                    {{tagName}}
-                </h4>
-                <div
-                 v-for="item in items"
-                 class="item"
-                :item="item"
-                :index="$index"
-                track-by="$index">
-                    <p>
-                        <a :href="'#/article/' + item.id">{{item.title}}</a>
-                    </p>
-                    <span class="date">{{item.date}}</span>
+    <div>
+        <navigation></navigation>
+
+        <div class="tagArticleList clearfix">
+            <div class="list">
+                <div class="border">
+                    <h4>
+                        {{tagName}}
+                    </h4>
+                    <div
+                     v-for="item in items"
+                     class="item"
+                    :item="item"
+                    :index="$index"
+                    track-by="$index">
+                        <p>
+                            <a :href="'#/article/' + item.id">{{item.title}}</a>
+                        </p>
+                        <span class="date">{{item.date}}</span>
+                    </div>
                 </div>
             </div>
+            <classification></classification>
         </div>
-        <classification></classification>
-
     </div>
+
 </template>
 
 <script>
 import url from '../url.js';
 import model from '../model/model.js';
 import Classification from './Classification.vue';
+import Navigation from './Navigation.vue';
 
 export default{
     name: "tagArticleList",
 
     components: {
-        Classification
+        Classification,
+        Navigation
     },
 
     data(){
@@ -84,7 +90,7 @@ export default{
 .tagArticleList{
     width: 85%;
     height: 100%;
-    margin: 2rem auto;
+    margin: 4rem auto;
 }
 .list{
     width: 60%;

@@ -10,7 +10,7 @@ Vue.use(VueRouter);
 var router = new VueRouter();
 
 router.map({
-    '/': {
+    '/articles/:page': {
         component: ArticleList,
     },
     '/article/:_id': {
@@ -23,6 +23,10 @@ router.map({
 
 router.beforeEach(function () {
     window.scrollTo(0, 0);
+});
+
+router.redirect({
+  '*': '/articles/1'
 });
 
 router.start(App, '#app');

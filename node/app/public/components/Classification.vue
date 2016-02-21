@@ -1,6 +1,6 @@
 <template>
     <div class="class-tags" v-if="hasloaded">
-        <h4>分类</h4>
+        <h4>Tag</h4>
         <p  v-for="classTag in classTags"
             class="tag"
             :index="$index"
@@ -28,7 +28,7 @@ export default{
     created(){
         var articleUrl = url.articleUrl;
         var tagUrl = url.tagUrl;
-
+        
         model.getAll(articleUrl, tagUrl).then(data => {
             var articleData = data[0];
             var tagData = data[1];

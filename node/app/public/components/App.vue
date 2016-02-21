@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+    <div>
         <router-view
             keep-alive
             transition
@@ -11,8 +11,21 @@
     		    © 2016 changqi
             </p>
         </section>
+        <button class="top" v-on:click="scrollTop">
+
+        </button>
     </div>
 </template>
+
+<script>
+export default{
+    methods: {
+        scrollTop(){
+            $("body").animate({scrollTop: 0},400);
+        }
+    }
+}
+</script>
 
 <style>
 #footer{
@@ -25,5 +38,15 @@
 
 #footer p{
     font-size: .5rem;
+}
+
+.top{
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #fff;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 3.5rem;
 }
 </style>

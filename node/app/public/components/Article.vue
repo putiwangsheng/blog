@@ -1,15 +1,19 @@
 <template>
-    <div class="article">
-        <div class="detail">
-            <span>{{articleInfo.date}}</span>
-            <a :href="'#/tagArticle/' + articleInfo.parentTagName">{{articleInfo.parentTagName}}</a>
-        </div>
-        <article>
-            <h1>{{articleInfo.title}}</a></h1>
-            <div class="a-content hljs">
-                {{{articleInfo.article}}}
+    <div>
+        <navigation></navigation>
+
+        <div class="article">
+            <div class="detail">
+                <span>{{articleInfo.date}}</span>
+                <a :href="'#/tagArticle/' + articleInfo.parentTagName">{{articleInfo.parentTagName}}</a>
             </div>
-        </article>
+            <article>
+                <h1>{{articleInfo.title}}</a></h1>
+                <div class="a-content hljs">
+                    {{{articleInfo.article}}}
+                </div>
+            </article>
+        </div>
     </div>
 
 </template>
@@ -17,8 +21,14 @@
 <script>
 import url from '../url.js';
 import model from '../model/model.js';
+import Navigation from './Navigation.vue';
+
 export default{
     name: "Article",
+
+    components: {
+        Navigation
+    },
 
     data(){
         return {
@@ -48,7 +58,7 @@ export default{
 <style>
 .article{
     width: 75%;
-    margin: 2rem auto;
+    margin: 5rem auto;
     height: 100%;
 }
 article {
