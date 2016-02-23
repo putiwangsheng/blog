@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import model from '../model/model.js';
+import store from '../store/store.js';
 import url from '../url.js';
 
 export default{
@@ -28,8 +28,8 @@ export default{
     created(){
         var articleUrl = url.articleUrl;
         var tagUrl = url.tagUrl;
-        
-        model.getAll(articleUrl, tagUrl).then(data => {
+
+        store.getAll(articleUrl, tagUrl).then(data => {
             var articleData = data[0];
             var tagData = data[1];
 
@@ -79,12 +79,7 @@ export default{
 </script>
 
 <style>
-.loading::before{
-    content: 'Loading...';
-    position: absolute;
-    left: 45%;
-    top: 40%;
-}
+
 .class-tags{
     width: 20%;
     float: left;

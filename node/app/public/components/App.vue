@@ -47,6 +47,6 @@ export default{
     border-radius: 50%;
     position: fixed;
     bottom: 1.5rem;
-    right: 3.5rem;
+    right: 3rem;
 }
 </style>

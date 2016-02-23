@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import model from '../model/model.js';
+import store from '../store/store.js';
 import url from '../url.js';
 
 export default{
@@ -32,10 +32,9 @@ export default{
     },
 
     created(){
-        model.getTagInfo(url.tagUrl).then(data => {
+        store.getRequestInfo(url.tagUrl).then(data => {
             this.firstTags = this.getLevelInfo(data, 1);
             this.multiMenu = this.createMultiMenu(this.firstTags, data);
-            console.log(this.multiMenu);
         });
     },
 

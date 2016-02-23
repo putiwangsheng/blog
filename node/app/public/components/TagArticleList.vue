@@ -13,7 +13,7 @@
                      class="item"
                     :item="item"
                     :index="$index"
-                    track-by="$index">
+                    track-by="id">
                         <p>
                             <a :href="'#/article/' + item.id">{{item.title}}</a>
                         </p>
@@ -29,7 +29,7 @@
 
 <script>
 import url from '../url.js';
-import model from '../model/model.js';
+import store from '../store/store.js';
 import Classification from './Classification.vue';
 import Navigation from './Navigation.vue';
 
@@ -54,12 +54,13 @@ export default{
             var tagUrl = url.tagUrl + '?tagName=' + articleTagName;
             var articleUrl = url.articleUrl;
 
-            model.getAll(articleUrl, tagUrl).then(data => {
+            store.getAll(articleUrl, tagUrl).then(data => {
                 var articleData = data[0];
                 var tagData = data[1];
 
                 this.tagName = articleTagName;
                 this.items = this.getDatas(articleData, tagData);
+                console.log(this.items);
             });
         }
     },
@@ -74,7 +75,7 @@ export default{
                     if(titleArr[i] === articleData[j].title){
                         var item = {};
                         item.title = titleArr[i];
-                        item.date = model.handleDate(articleData[j].date);
+                        item.date = store.getDate(articleData[j].date);
                         item.id = articleData[j]._id;
                         items[i] = item;
                     }

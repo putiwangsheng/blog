@@ -10,7 +10,7 @@
             <article>
                 <h1>{{articleInfo.title}}</a></h1>
                 <div class="a-content hljs">
-                    {{{articleInfo.article}}}
+                    {{{articleInfo.md}}}
                 </div>
             </article>
         </div>
@@ -20,7 +20,8 @@
 
 <script>
 import url from '../url.js';
-import model from '../model/model.js';
+import store from '../store/store.js';
+import util from '../util/markdown.js';
 import Navigation from './Navigation.vue';
 
 export default{
@@ -39,14 +40,10 @@ export default{
     route: {
         data: function(transition){
             var articleId = transition.to.params._id;
-            var articleUrl = url.articleUrl + '?_id=' + articleId;
-            var articleInfo = {};
 
-            model.getArticleList(articleUrl).then(data => {
-                data = data[0];
-
-                data.article = model.toMarkdown(data.md);
-                data.date = model.handleDate(data.date);
+            store.getItem(articleId).then(data => {
+                data.date = store.getDate(data.date);
+                // data.md = util.toMarkdown(data.md);
                 this.articleInfo = data;
             });
         }
