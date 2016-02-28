@@ -10,6 +10,11 @@
             <p>
     		    &copy;2016 changqi
             </p>
+            <p>
+                <span>空山清梦</span>
+                <a href="https://github.com/putiwangsheng"><i class="iconfont icon-github"></i></a>
+                <span>向死而生</span>
+            </p>
         </section>
         <button class="top" v-on:click="scrollTop">
             <i class="iconfont icon-arrowup"></i>
@@ -38,8 +43,16 @@ export default{
 
 #footer p{
     font-size: .5rem;
+    margin-top: .5rem;
 }
 
+#footer span{
+    margin: 0 .5rem;
+}
+
+.icon-github:hover{
+    color: #cf86e0;
+}
 .top{
     width: 2.2rem;
     height: 2.2rem;
@@ -49,6 +62,7 @@ export default{
     position: fixed;
     bottom: 1.5rem;
     right: 2.8rem;
+    cursor: pointer;
 }
 .iconfont.icon-arrowup{
     font-size: 1.4rem;

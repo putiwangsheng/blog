@@ -1,5 +1,5 @@
 # 博客
-- 后端：由Simply编写，采用express + mongodb + node-restful
+- 后端：由SimplyY编写，采用express + mongodb + node-restful
 - 前端：采用vue + vue-router + vue-loader + webpack,完成spa.
 
 ## 搭建流程
@@ -23,16 +23,17 @@
 #### 基本功能
 - 首页文章列表
 - 单个文章显示
-<!-- - 评论 -->
 - 标签列表
 - 属于单个tag的所有文章列表显示
 - 回到顶部
 - 多级下拉菜单
+- 评论（未完成）
 
 #### 组件
 1. 入口组件App
-2. main view(ArticleList)
-    - Item
+2. main view
+    - ArticleList(Item)
     - Classification
 3. Article
 4. TagArticleList
+5. Navigation

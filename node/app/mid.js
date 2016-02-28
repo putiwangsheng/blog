@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 module.exports.useMid = function (app) {
     app.use(compress())
-        // .use(favicon(path.join(__dirname, 'static', 'favicon.ico.png')))
+        .use(favicon(path.join(__dirname, 'static', 'favicon.ico.png')))
         .use(bodyParser.json())
         .use(bodyParser.urlencoded({ extended: false }))
         .use('/static', express.static(path.join(__dirname, 'static'),{

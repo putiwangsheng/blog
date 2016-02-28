@@ -31,7 +31,7 @@
 
 <script>
 import store from '../store/store.js';
-import url from '../url.js';
+import url from '../util/url.js';
 
 export default{
     data(){

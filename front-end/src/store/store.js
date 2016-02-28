@@ -1,5 +1,5 @@
 import { Promise } from 'es6-promise';
-import url from '../url.js';
+import url from '../util/url.js';
 
 var store = {};
 const perPage = store.perPage = 10;

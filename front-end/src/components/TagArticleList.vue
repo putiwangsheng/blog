@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import url from '../url.js';
+import url from '../util/url.js';
 import store from '../store/store.js';
 import Classification from './Classification.vue';
 import Navigation from './Navigation.vue';

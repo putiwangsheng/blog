@@ -42,7 +42,7 @@ import Item from './Item.vue';
 import Classification from './Classification.vue';
 import store from '../store/store.js';
 import util from '../util/markdown.js';
-import url from '../url.js';
+import url from '../util/url.js';
 
 export default{
 

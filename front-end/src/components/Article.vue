@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import url from '../url.js';
+import url from '../util/url.js';
 import store from '../store/store.js';
 import util from '../util/markdown.js';
 import Navigation from './Navigation.vue';
