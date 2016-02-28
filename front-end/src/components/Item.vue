@@ -5,12 +5,12 @@
             <a :href="'#/tagArticle/' + item.parentTagName"><p>{{item.parentTagName}}</p></a>
 
         </div>
-        <div class="date">
+        <div class="date iconfont icon-calendar">
             {{item.date}}
         </div>
 
         <div class="article-content hljs">
-            {{{item.md}}}
+            {{{item.md | limitShow}}}
         </div>
     </article>
 
@@ -22,6 +22,14 @@ export default{
 
     props: {
         item: Object
+    },
+
+    filters: {
+        limitShow(text){
+            var end = text.indexOf("</p>");
+            var newText = text.substring(0, end + 4);
+            return newText;
+        }
     }
 
 }
@@ -85,9 +93,8 @@ export default{
     right: .5rem;
     bottom: .5rem;
 }
-
 .article-content{
-    max-height: 20rem;
+    /*max-height: 20rem;*/
     overflow: hidden;
     margin-bottom: 1.2rem;
     padding: 1rem 0;
@@ -101,5 +108,4 @@ export default{
 .article-content p{
     text-indent: 2rem;
 }
-
 </style>

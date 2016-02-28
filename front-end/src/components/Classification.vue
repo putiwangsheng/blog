@@ -106,8 +106,6 @@ export default{
     display: inline-block;
     text-align: center;
     width: 1rem;
-    /*height: 1rem;
-    line-height: 1rem;*/
     border-radius: 50%;
     background-color: #fb8da6;
     color: #fff;

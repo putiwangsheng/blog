@@ -13,9 +13,9 @@
     </section>
     <hr id="divider"></hr>
 
-    <section class="wrapper clearfix" :class="{ loading: !items.length }">
+    <section class="wrapper clearfix">
         <div class="article-list">
-            <item v-for="item in items"
+            <item v-for="item in items | orderBy 'date' -1"
             :item="item"
             :index="$index | formatItemIndex"
             track-by="_id">
@@ -23,11 +23,14 @@
         </div>
         <classification></classification>
     </section>
+
     <div class="page" v-show="items.length > 0">
         <ul>
-            <li><a v-if="page > 1" :href="'#/articles/' + (page - 1)">prev</a></li>
+            <li><a v-if="page > 1" :href="'#/articles/' + (page - 1)" class="iconfont icon-double-arrow-up"></a></li>
+
             <li v-for="pageItem in pages"><a :href="'#/articles/' + (pageItem + 1)" :class="{currentPage: page === (pageItem + 1)}">{{pageItem + 1}}</a></li>
-            <li><a v-if="page < limit" :href="'#/articles/' + (page + 1)">next</a></li>
+
+            <li><a v-if="page < limit" :href="'#/articles/' + (page + 1)" class="iconfont icon-double-arrow-down"></a></li>
         </ul>
     </div>
 </div>
@@ -40,7 +43,6 @@ import Classification from './Classification.vue';
 import store from '../store/store.js';
 import util from '../util/markdown.js';
 import url from '../url.js';
-
 
 export default{
 
@@ -76,8 +78,8 @@ export default{
                 return ids;
 
             }).then(ids => {
+                // when the data changes,trigger the view change
                 store.getArticlesByPage(page, ids).then(data => {
-                    // when the data changes,trigger the view change
                     self.handleData(data);
                     self.items = data;
                     self.page = page;
@@ -88,19 +90,18 @@ export default{
     },
 
     methods: {
-      handleData: function(arr){
+      handleData(arr){
           arr.forEach(function(element){
               element.date = store.getDate(element.date);
-            //   element.md = util.toMarkdown(element.md);
+              element.md = util.toMarkdown(element.md);
           });
       },
 
-     getPages (ids){
+     getPages(ids){
          var limit = Math.ceil(ids.length/store.perPage);
          this.pages = limit;
          this.limit = limit;
-      }
-
+     }
   },
 
   filters: {
@@ -112,12 +113,6 @@ export default{
 </script>
 
 <style>
-.loading::before{
-    content: url(require("../imgs/loading.png"));
-    position: absolute;
-    left: 45%;
-    top: 40%;
-}
 #header{
     height: 11rem;
     background-color: #cf86e0;
@@ -169,16 +164,23 @@ export default{
 .page{
     position: fixed;
     right: 1rem;
-    top:50%;
+    top:45%;
 }
 .page li{
-    padding: .15rem .5rem;
+    padding: .15rem 0;
     font-size: .8rem;
-    font-weight: bold;
+    text-align: center;
     color: #666;
+}
+.page a{
+    display: block;
+    padding: .1rem;
+}
+.page a:hover{
+    background-color: #eee;
 }
 .currentPage{
     color: #cf86e0;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 </style>

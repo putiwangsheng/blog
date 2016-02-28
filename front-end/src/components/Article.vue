@@ -43,7 +43,7 @@ export default{
 
             store.getItem(articleId).then(data => {
                 data.date = store.getDate(data.date);
-                // data.md = util.toMarkdown(data.md);
+                data.md = util.toMarkdown(data.md);
                 this.articleInfo = data;
             });
         }
@@ -119,6 +119,14 @@ article {
 }
 .a-content h1{
     display: none;
+}
+.a-content h2{
+    font-family:"iconfont" !important;
+}
+.a-content h2::before{
+    content: "\e740";
+    font-size: 1.2rem;
+    color: #cf86e0;
 }
 
 </style>

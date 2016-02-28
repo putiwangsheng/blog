@@ -8,6 +8,7 @@
                     <h4>
                         {{tagName}}
                     </h4>
+
                     <div
                      v-for="item in items"
                      class="item"
@@ -17,7 +18,7 @@
                         <p>
                             <a :href="'#/article/' + item.id">{{item.title}}</a>
                         </p>
-                        <span class="date">{{item.date}}</span>
+                        <span class="date iconfont icon-calendar i-style">{{item.date}}</span>
                     </div>
                 </div>
             </div>
@@ -60,7 +61,6 @@ export default{
 
                 this.tagName = articleTagName;
                 this.items = this.getDatas(articleData, tagData);
-                console.log(this.items);
             });
         }
     },
@@ -125,5 +125,8 @@ export default{
     text-align: center;
     margin: 0;
     padding: .1rem 0;
+}
+.i-style::before{
+    padding-right: .4rem;
 }
 </style>

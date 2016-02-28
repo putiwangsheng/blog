@@ -4,16 +4,25 @@
             <h1>Qi</h1>
         </div>
         <div class="menu">
+            <!-- top menu -->
             <ul>
                 <li><a :href="'#/articles/' + '1'">首页</a></li>
                 <li><a :href="href" target="_blank">分类</a>
+
+                    <!-- the first menu start -->
                     <ul class="menu-level-one" v-if="hasTag">
                         <li v-for="first in multiMenu"><a :href="'#/tagArticle/' + first.firstTag">{{first.firstTag}}</a>
+
+                            <!-- the second menu start -->
                             <ul class="menu-level-two">
                                 <li v-for="second in first.secondTag"><a :href="'#/tagArticle/' + second">{{second}}</a></li>
                             </ul>
+                            <!-- the second menu end -->
+
                         </li>
                     </ul>
+                    <!-- the first menu end -->
+
                 </li>
             </ul>
         </div>
@@ -33,7 +42,7 @@ export default{
 
     created(){
         store.getRequestInfo(url.tagUrl).then(data => {
-            this.firstTags = this.getLevelInfo(data, 1);
+            this.firstTags = this.getFirstMenu(data, 1);
             this.multiMenu = this.createMultiMenu(this.firstTags, data);
         });
     },
@@ -45,7 +54,7 @@ export default{
     },
 
     methods: {
-        getLevelInfo(arr, level){
+        getFirstMenu(arr, level){
             var tagNames = [];
             for(let i = 0, len = arr.length; i < len; i++){
                 if(arr[i].tagRank === level){

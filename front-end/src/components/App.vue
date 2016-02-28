@@ -8,11 +8,11 @@
 
         <section id="footer">
             <p>
-    		    © 2016 changqi
+    		    &copy;2016 changqi
             </p>
         </section>
         <button class="top" v-on:click="scrollTop">
-
+            <i class="iconfont icon-arrowup"></i>
         </button>
     </div>
 </template>
@@ -41,12 +41,17 @@ export default{
 }
 
 .top{
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: #fff;
+    width: 2.2rem;
+    height: 2.2rem;
+    line-height: 2rem;
+    background-color: #cf86e0;
     border-radius: 50%;
     position: fixed;
     bottom: 1.5rem;
-    right: 3rem;
+    right: 2.8rem;
+}
+.iconfont.icon-arrowup{
+    font-size: 1.4rem;
+    color: #fff;
 }
 </style>
