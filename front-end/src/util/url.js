@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:5000/api';
+const apiUrl = 'http://121.40.224.83:8001/api';
 
 const url = {
     articleUrl: apiUrl + '/articles/',
