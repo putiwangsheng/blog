@@ -67,7 +67,7 @@ export default{
                         var classTag = {};
 
                         classTag.name = tagArr[i];
-                        classTag.number = tagData[j].aritcleTitleList.length;
+                        classTag.number = tagData[j].articleTitleList.length;
                         classTags[i] = classTag;
                     }
                 }

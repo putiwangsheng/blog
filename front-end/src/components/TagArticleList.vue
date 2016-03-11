@@ -68,7 +68,7 @@ export default{
     methods:{
         getDatas: function(articleData, tagData){
             var items = [];
-            var titleArr = tagData[0].aritcleTitleList;
+            var titleArr = tagData[0].articleTitleList;
 
             for(let i = 0, len1 = titleArr.length; i < len1; i++){
                 for(let j = 0, len2 = articleData.length; j < len2; j++){

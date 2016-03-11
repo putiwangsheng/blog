@@ -30,7 +30,7 @@
 - 评论（未完成）
 
 #### 组件
-1. 入口组件App
+1. 根组件App
 2. main view
     - ArticleList(Item)
     - Classification

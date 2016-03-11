@@ -94,7 +94,6 @@ export default{
     bottom: .5rem;
 }
 .article-content{
-    /*max-height: 20rem;*/
     overflow: hidden;
     margin-bottom: 1.2rem;
     padding: 1rem 0;

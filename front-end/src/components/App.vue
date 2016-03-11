@@ -8,7 +8,7 @@
 
         <section id="footer">
             <p>
-    		    &copy;2016 changqi
+    		    &copy; 2016 changqi
             </p>
             <p>
                 <span>空山清梦</span>

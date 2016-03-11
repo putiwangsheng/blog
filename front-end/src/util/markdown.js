@@ -1,5 +1,4 @@
 var marked = require("marked");
-// var hljs = require("highlight.js");
 var util = {};
 util.toMarkdown = text => {
     return marked(text);
