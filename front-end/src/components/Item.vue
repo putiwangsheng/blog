@@ -10,7 +10,7 @@
         </div>
 
         <div class="article-content hljs">
-            {{{item.md | limitShow}}}
+            {{{item.html | limitShow}}}
         </div>
     </article>
 

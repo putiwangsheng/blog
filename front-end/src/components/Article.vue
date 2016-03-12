@@ -10,7 +10,7 @@
             <article>
                 <h1>{{articleInfo.title}}</a></h1>
                 <div class="a-content hljs">
-                    {{{articleInfo.md}}}
+                    {{{articleInfo.html}}}
                 </div>
             </article>
         </div>
@@ -21,7 +21,6 @@
 <script>
 import url from '../util/url.js';
 import store from '../store/store.js';
-import util from '../util/markdown.js';
 import Navigation from './Navigation.vue';
 
 export default{
@@ -43,7 +42,6 @@ export default{
 
             store.getItem(articleId).then(data => {
                 data.date = store.getDate(data.date);
-                data.md = util.toMarkdown(data.md);
                 this.articleInfo = data;
             });
         }
@@ -112,8 +110,8 @@ article {
 .a-content p{
     text-indent: 2rem;
 }
-.a-content h1,h2,h3,h4{
-    margin-top: 1rem;
+.a-content h1,.a-content h2,.a-content h3,.a-content h4{
+    margin-top: .1rem;
     margin-bottom: .1rem;
     color: #444955;
 }

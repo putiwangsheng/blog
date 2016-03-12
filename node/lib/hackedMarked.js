@@ -801,9 +801,6 @@ Renderer.prototype.heading = function(text, level, raw) {
     } else {
         anchor = text
     }
-    var ANCHOR_ICONFONT = '&#xe600;'
-    var tagA = '<a href="#' + anchor + '" class="iconfont article-anchor">'+ ANCHOR_ICONFONT + '</a>'
-
 
   return '<h'
     + level
@@ -811,7 +808,6 @@ Renderer.prototype.heading = function(text, level, raw) {
     + anchor
     + '">'
     + text
-    + tagA
     + '</h'
     + level
     + '>\n';

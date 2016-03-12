@@ -1,16 +1,24 @@
+var path = require('path');
 var webpack = require('webpack');
 
-var path = require('path');
 var SRC_PATH = path.join(__dirname, 'src');
+var FONT_PATH = path.join(__dirname, 'font');
 
 module.exports = {
-    entry: [
-        './src/main.js',
-    ],
+    entry: {
+        app: './src/main.js'
+    },
     output: {
-        path: path.join(__dirname, 'dist'),
-        publicPath: '/static/',
+        path: '../node/app/static',
         filename: 'bundle.js'
+    },
+    plugins: [
+        //这个使用uglifyJs压缩你的js代码
+        new webpack.optimize.UglifyJsPlugin({minimize: true}),
+        new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
+    ],
+    resolve: {
+        extensions: ['', '.js', '.vue']
     },
     module: {
         loaders: [{
@@ -43,21 +51,3 @@ module.exports = {
         plugins: ['transform-runtime']
     }
 };
-
-if (process.env.NODE_ENV === 'production') {
-    module.exports.plugins = [
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"production"'
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        }),
-        new webpack.optimize.OccurenceOrderPlugin()
-    ];
-} else {
-    module.exports.devtool = '#source-map';
-}

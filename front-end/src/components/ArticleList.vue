@@ -41,7 +41,6 @@
 import Item from './Item.vue';
 import Classification from './Classification.vue';
 import store from '../store/store.js';
-import util from '../util/markdown.js';
 import url from '../util/url.js';
 
 export default{
@@ -93,7 +92,6 @@ export default{
       handleData(arr){
           arr.forEach(function(element){
               element.date = store.getDate(element.date);
-              element.md = util.toMarkdown(element.md);
           });
       },
 
