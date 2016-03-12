@@ -15,7 +15,7 @@
 
     <section class="wrapper clearfix">
         <div class="article-list">
-            <item v-for="item in items | orderBy 'date' -1"
+            <item v-for="item in items"
             :item="item"
             :index="$index | formatItemIndex"
             track-by="_id">
@@ -56,8 +56,8 @@ export default{
       return {
           items: [],
           page: 1,
-          pages: undefined,
-          limit: undefined
+          pages: null,
+          limit: null
       };
     },
 
@@ -65,20 +65,16 @@ export default{
         data: function(transition){
             var page = +transition.to.params.page;
             var articleUrl = url.articleUrl;
-            var ids = [];
             var self = this;
 
-            store.getRequestInfo(articleUrl).then(data => {
-                for(let i = 0, len = data.length;i < len; i++){
-                    ids[i] = data[i]._id;
-                }
-
-                self.getPages(ids);
-                return ids;
-
-            }).then(ids => {
+            store.getRequestInfo(articleUrl)
+            .then(data => {
+                var allPages = data.length;
+                self.getPages(allPages);
+            })
+            .then(() => {
                 // when the data changes,trigger the view change
-                store.getArticlesByPage(page, ids).then(data => {
+                store.getArticlesByPage(page).then(data => {
                     self.handleData(data);
                     self.items = data;
                     self.page = page;
@@ -95,8 +91,8 @@ export default{
           });
       },
 
-     getPages(ids){
-         var limit = Math.ceil(ids.length/store.perPage);
+     getPages(allPages){
+         var limit = Math.ceil(allPages/store.perPage);
          this.pages = limit;
          this.limit = limit;
      }

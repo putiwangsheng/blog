@@ -6,8 +6,8 @@
         <div class="menu">
             <!-- top menu -->
             <ul>
-                <li><a :href="'#/articles/' + '1'">首页</a></li>
-                <li><a :href="href" target="_blank">分类</a>
+                <li class="top-menu"><a :href="'#/articles/' + '1'">首页</a></li>
+                <li class="top-menu"><a :href="href" target="_blank">分类</a>
 
                     <!-- the first menu start -->
                     <ul class="menu-level-one" v-if="hasTag">
@@ -97,6 +97,13 @@ nav{
     border-bottom: .4rem solid #fb8da6;
     position: relative;
 }
+.top-menu{
+    font-size: 1.15rem;
+}
+.top-menu li{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
 .head h1{
     color: #fff;
     font-size: 4rem;
@@ -118,7 +125,7 @@ nav{
 }
 .menu a{
     display: block;
-    padding: .25rem .6rem;
+    padding: .3rem .6rem;
     color: #fff;
     font-weight: bolder;
 }

@@ -5,9 +5,9 @@
         <div class="tagArticleList clearfix">
             <div class="list">
                 <div class="border">
-                    <h4>
+                    <h3>
                         {{tagName}}
-                    </h4>
+                    </h3>
 
                     <div
                      v-for="item in items"
@@ -118,7 +118,7 @@ export default{
 .item:hover{
     color: #d514fc;
 }
-.list h4{
+.list h3{
     width: 100%;
     position: absolute;
     top: 0;

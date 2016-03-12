@@ -39,8 +39,10 @@ export default{
     route: {
         data: function(transition){
             var articleId = transition.to.params._id;
+            var singleArticleUrl = url.articleUrl + '?_id=' + articleId;
 
-            store.getItem(articleId).then(data => {
+            store.getRequestInfo(singleArticleUrl).then(data => {
+                var data = data[0];
                 data.date = store.getDate(data.date);
                 this.articleInfo = data;
             });
@@ -58,6 +60,7 @@ export default{
     color: #444955;
     font-size: 1.1rem;
 }
+
 article {
     background-color: rgb(255, 255, 255);
     border-radius: .4rem;;
@@ -109,6 +112,9 @@ article {
     padding: 1rem 0;
     line-height: 1.7;
 }
+.a-content a{
+    color: #8c41a3;
+}
 .a-content p{
     text-indent: 2rem;
 }
@@ -116,9 +122,12 @@ article {
 .a-content h2,
 .a-content h3,
 .a-content h4{
-    margin-top: .1rem;
-    margin-bottom: .1rem;
+    margin-top: .5rem;
+    margin-bottom: .2rem;
     color: #444955;
+}
+.a-content h2{
+    margin-top: 1.5rem;
 }
 .a-content h1{
     display: none;

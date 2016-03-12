@@ -2,28 +2,7 @@ import { Promise } from 'es6-promise';
 import url from '../util/url.js';
 
 var store = {};
-const perPage = store.perPage = 10;
-
-store.getItem = id => {
-    return new Promise((resolve, reject) => {
-        $.get(url.articleUrl + '?_id=' + id, function(data){
-            isString(data);
-            resolve(data[0]);
-      });
-    });
-};
-
-// get items according to given ids
-store.getItems = ids => {
-    return Promise.all(ids.map(id => store.getItem(id)));
-};
-
-store.getArticlesByPage = (page, articleIds) => {
-    const start = (page - 1) * perPage;
-    const end = page * perPage;
-    const ids = articleIds.slice(start, end);
-    return store.getItems(ids);
-};
+const perPage = store.perPage = 5;
 
 store.getRequestInfo = url => {
     return new Promise((resolve, reject) => {
@@ -34,6 +13,13 @@ store.getRequestInfo = url => {
     });
 };
 
+// get items according to page
+store.getArticlesByPage = (page) => {
+    var pageUrl = url.articleUrl + '?limit=' + perPage + '&skip=' + (page - 1) * perPage;
+    return store.getRequestInfo(pageUrl);
+};
+
+//get infomation of articles and tags
 store.getAll = (articleUrl, tagUrl) => {
     return Promise.all([store.getRequestInfo(articleUrl), store.getRequestInfo(tagUrl)]);
 };
