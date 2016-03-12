@@ -2,7 +2,6 @@ var path = require('path');
 var webpack = require('webpack');
 
 var SRC_PATH = path.join(__dirname, 'src');
-var FONT_PATH = path.join(__dirname, 'font');
 
 module.exports = {
     entry: {

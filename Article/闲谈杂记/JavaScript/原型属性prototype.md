@@ -1,7 +1,5 @@
 # 原型属性prototype
 
-@(web前端)
-
 每一个`Function()`实例都有一个`prototype`属性，即函数原型属性。
 #### 原型继承
 JavaScript有两种继承方式，一种是原型继承（或者称基于类的继承，是JavaScript的核心特征），另一种是基于对象的继承。而原型继承就是有赖于`prototype`属性。
