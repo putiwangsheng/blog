@@ -55,6 +55,8 @@ export default{
     width: 75%;
     margin: 5rem auto;
     height: 100%;
+    color: #444955;
+    font-size: 1.1rem;
 }
 article {
     background-color: rgb(255, 255, 255);
@@ -95,7 +97,7 @@ article {
 }
 .article h1{
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.9rem;
     letter-spacing: .2rem;
     padding-bottom: .8rem;
     border-bottom: .1rem dashed #000;
@@ -110,7 +112,10 @@ article {
 .a-content p{
     text-indent: 2rem;
 }
-.a-content h1,.a-content h2,.a-content h3,.a-content h4{
+.a-content h1,
+.a-content h2,
+.a-content h3,
+.a-content h4{
     margin-top: .1rem;
     margin-bottom: .1rem;
     color: #444955;
@@ -118,13 +123,7 @@ article {
 .a-content h1{
     display: none;
 }
-.a-content h2{
-    font-family:"iconfont" !important;
+.a-content strong{
+    color: #8c41a3;
 }
-.a-content h2::before{
-    content: "\e740";
-    font-size: 1.2rem;
-    color: #cf86e0;
-}
-
 </style>

@@ -12,7 +12,7 @@ console.log(object.getName());//'lala'
 
 这里的this指向object对象
 ```
-#### 判断this值的几种情况
+## 判断this值的几种情况
 - `this`的值**随函数调用的上下文**而改变，即`this`绑定上下文对象（隐式绑定）。
 
 ```

@@ -86,12 +86,15 @@ export default{
     background-color: #fff;
     border-radius: .4rem;;
     box-shadow: 2px 2px 3px #918b8b;
-    padding: 1rem;
-    margin: .5rem 0 1.5rem 0;
+    padding: 1%;
+    margin: .5rem 0 1% 0;
 }
 .class-tags h4{
     padding-bottom: .5rem;
     border-bottom: .1rem dashed #ea7bf7;
+}
+.class-tags p{
+    font-size: 1rem;
 }
 .tag{
     padding: .3rem 0 0 0;

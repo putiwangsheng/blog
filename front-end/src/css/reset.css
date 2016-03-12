@@ -3,7 +3,7 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, abbr, acronym, 
     padding: 0;
     border: 0;
     outline: 0;
-    font-family: "Microsoft YaHei", "kaiti", sans-serif;
+    font-family: Lato, "Microsoft YaHei", "kaiti", sans-serif;
     vertical-align: baselinebaseline;
 }
 ol, ul {
@@ -11,7 +11,7 @@ ol, ul {
 }
 a {
     text-decoration: none;
-    color: inherit;
+    color: #8c41a3;
 }
 blockquote, q {
     quotes: none;
@@ -21,8 +21,9 @@ table {
     border-spacing: 0;
 }
 p {
-    font-size: 16px;
+    font-size: 1.1rem;;
     font-weight: 400;
+    color: #444955;
 }
 input[type=number] {
     -moz-appearance: textfield;
@@ -40,6 +41,3 @@ img{
 body,html{
     height:100%;
 }
-/*h1, h2, h3, h4, h5, h6, p{
-    font-family: "Microsoft YaHei";
-}*/

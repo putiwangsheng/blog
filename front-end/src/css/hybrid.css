@@ -103,7 +103,7 @@ vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
   font-weight: bold;
 }
 
-pre code {
+pre code{
     font-family: 'Input Mono', 'PT Mono', Consolas, Monaco, Menlo, monospace;
     margin: 1em 0 1.5em;
 }
@@ -113,6 +113,6 @@ p code{
     padding: 0 .5rem;
     border-radius: .3rem;
 }
-pre span,p code{
+pre span,p code, li code,a{
     font-family: 'Input Mono', 'PT Mono', Consolas, Monaco, Menlo, monospace;
 }

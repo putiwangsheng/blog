@@ -98,7 +98,6 @@ export default{
     margin-bottom: 1.2rem;
     padding: 1rem 0;
     line-height: 1.8;
-    color: #444955;
 }
 
 .article-content h1{

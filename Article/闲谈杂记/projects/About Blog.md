@@ -35,7 +35,8 @@ vue组件类似于自定义元素
 es6 module
 
 ### Promise
-[http://simplyy.space/article/56da6d841795204c56032e21#说说你对Promise的理解]()
+[http://simplyy.space/article/56da6d841795204c56032e21#说说你对Promise的理解](http://simplyy.space/article/56da6d841795204c56032e21#说说你对Promise的理解)
+
 解决异步操作
 
 

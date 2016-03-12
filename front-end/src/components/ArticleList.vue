@@ -156,7 +156,7 @@ export default{
 }
 .article-list{
     width: 70%;
-    margin: 0 7% 0 0;
+    margin: 0 6% 0 0;
     float: left;
 }
 .page{
