@@ -93,6 +93,9 @@ export default{
     right: .5rem;
     bottom: .5rem;
 }
+.date{
+    font-family: 'iconfont';
+}
 .article-content{
     overflow: hidden;
     margin-bottom: 1.2rem;
