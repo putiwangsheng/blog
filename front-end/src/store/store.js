@@ -2,7 +2,7 @@ import { Promise } from 'es6-promise';
 import url from '../util/url.js';
 
 var store = {};
-const perPage = store.perPage = 5;
+const perPage = store.perPage = 10;
 
 store.getRequestInfo = url => {
     return new Promise((resolve, reject) => {

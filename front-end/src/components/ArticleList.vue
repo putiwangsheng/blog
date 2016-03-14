@@ -15,7 +15,7 @@
 
     <section class="wrapper clearfix">
         <div class="article-list">
-            <item v-for="item in items"
+            <item v-for="item in items | orderBy 'date' -1"
             :item="item"
             :index="$index | formatItemIndex"
             track-by="_id">
