@@ -13685,7 +13685,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var store = {};
-	var perPage = store.perPage = 10;
+	var perPage = store.perPage = 5;
 	
 	store.getRequestInfo = function (url) {
 	    return new _es6Promise.Promise(function (resolve, reject) {
