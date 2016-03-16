@@ -9,7 +9,7 @@
             </div>
             <article>
                 <h1>{{articleInfo.title}}</a></h1>
-                <div class="a-content hljs">
+                <div class="a-content markdown-body">
                     {{{articleInfo.html}}}
                 </div>
             </article>

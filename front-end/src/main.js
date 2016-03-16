@@ -5,6 +5,7 @@ import ArticleList from './components/ArticleList.vue';
 import Article from './components/Article.vue';
 import TagArticleList from './components/TagArticleList.vue';
 
+import './css/github-markdown.css';
 import './css/hybrid.css';
 import './css/iconfont.css';
 import './css/reset.css';

@@ -9,7 +9,7 @@
             {{item.date}}
         </div>
 
-        <div class="article-content hljs">
+        <div class="article-content markdown-body">
             {{{item.html | limitShow}}}
         </div>
     </article>

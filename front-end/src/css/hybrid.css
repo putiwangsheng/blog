@@ -9,7 +9,6 @@ vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #1d1f21;
 }
 
 /*selection color*/
@@ -26,8 +25,7 @@ vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
 /*foreground color*/
 .hljs pre{
   color: #c5c8c6;
-  border: 15px solid #1d1f21;
-  border-radius: 7px;
+
 }
 
 /*color: fg_yellow*/
@@ -101,26 +99,4 @@ vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
 
 .hljs-strong {
   font-weight: bold;
-}
-
-.hljs code,
-.hljs code span,
-a{
-    font-family: 'Input Mono', 'PT Mono', Consolas, Monaco, Menlo, monospace;
-}
-
-.hljs code{
-    background-color: #f5e0fc;
-    color: #8c41a3;
-    padding: 0 .5rem;
-    border-radius: .3rem;
-}
-
-.hljs pre code{
-    color: #c5c8c6;
-}
-
-.hljs pre code{
-    margin: 1em 0 1.5em;
-    background-color: #1d1f21;
 }
