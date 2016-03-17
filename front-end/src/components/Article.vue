@@ -115,9 +115,9 @@ article {
 .a-content a{
     color: #8c41a3;
 }
-.a-content p{
+/*.a-content p{
     text-indent: 2rem;
-}
+}*/
 .a-content h1,
 .a-content h2,
 .a-content h3,
