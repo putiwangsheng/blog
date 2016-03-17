@@ -157,12 +157,12 @@ export default{
 }
 .page{
     position: fixed;
-    right: 1rem;
+    right: 2rem;
     top:45%;
 }
 .page li{
     padding: .15rem 0;
-    font-size: .8rem;
+    font-size: 1rem;
     text-align: center;
     color: #666;
 }
@@ -175,6 +175,6 @@ export default{
 }
 .currentPage{
     color: #cf86e0;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 }
 </style>

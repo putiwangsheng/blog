@@ -52,7 +52,7 @@ export default{
     box-shadow: 4px 4px 5px #918b8b;
 }
 .article-title{
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding-bottom: .8rem;
     border-bottom: .1rem dashed #ea7bf7;
     text-shadow: 1px 1px 0 #b0aeb0;
