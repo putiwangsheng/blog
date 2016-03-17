@@ -15,7 +15,7 @@ store.getRequestInfo = url => {
 
 // get items according to page
 store.getArticlesByPage = (page) => {
-    var pageUrl = url.articleUrl + '?limit=' + perPage + '&skip=' + (page - 1) * perPage;
+    var pageUrl = url.articleUrl + '?sort=-date&limit=' + perPage + '&skip=' + (page - 1) * perPage;
     return store.getRequestInfo(pageUrl);
 };
 
