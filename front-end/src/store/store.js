@@ -18,8 +18,12 @@ store.getArticlesByPage = (page) => {
 };
 
 //get infomation of articles and tags
-store.getAll = (articleUrl, tagUrl) => {
+store.getAll = () => {
     return Promise.all([store.getArticles, store.getTags]);
+};
+
+store.getAllInfo = (articleUrl, tagUrl) => {
+    return Promise.all([store.getArticles, store.getRequestInfo(tagUrl)]);
 };
 
 store.getDate = date => {

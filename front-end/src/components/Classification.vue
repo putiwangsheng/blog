@@ -26,10 +26,10 @@ export default{
     },
 
     created(){
-        var articleUrl = url.articleUrl;
-        var tagUrl = url.tagUrl;
+        // var articleUrl = url.articleUrl;
+        // var tagUrl = url.tagUrl;
 
-        store.getAll(articleUrl, tagUrl).then(data => {
+        store.getAll().then(data => {
             var articleData = data[0];
             var tagData = data[1];
 

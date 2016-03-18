@@ -55,7 +55,7 @@ export default{
             var tagUrl = url.tagUrl + '?tagName=' + articleTagName;
             var articleUrl = url.articleUrl;
 
-            store.getAll(articleUrl, tagUrl).then(data => {
+            store.getAllInfo(articleUrl, tagUrl).then(data => {
                 var articleData = data[0];
                 var tagData = data[1];
 
