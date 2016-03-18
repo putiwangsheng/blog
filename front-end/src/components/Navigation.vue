@@ -41,7 +41,8 @@ export default{
     },
 
     created(){
-        store.getRequestInfo(url.tagUrl).then(data => {
+        store.getTags
+        .then(data => {
             this.firstTags = this.getFirstMenu(data, 1);
             this.multiMenu = this.createMultiMenu(this.firstTags, data);
         });

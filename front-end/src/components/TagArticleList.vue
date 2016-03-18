@@ -120,7 +120,7 @@ export default{
 }
 .list h3{
     width: 100%;
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     text-align: center;
     margin: 0;

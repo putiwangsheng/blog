@@ -41,7 +41,6 @@
 import Item from './Item.vue';
 import Classification from './Classification.vue';
 import store from '../store/store.js';
-import url from '../util/url.js';
 
 export default{
 
@@ -64,10 +63,9 @@ export default{
     route: {
         data: function(transition){
             var page = +transition.to.params.page;
-            var articleUrl = url.articleUrl;
             var self = this;
 
-            store.getRequestInfo(articleUrl)
+            store.getArticles
             .then(data => {
                 var allPages = data.length;
                 self.getPages(allPages);

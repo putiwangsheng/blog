@@ -16,21 +16,11 @@
                 <span>向死而生</span>
             </p>
         </section>
-        <button class="top" v-on:click="scrollTop">
+        <a class="top" href="#">
             <i class="iconfont icon-arrowup"></i>
-        </button>
+        </a>
     </div>
 </template>
-
-<script>
-export default{
-    methods: {
-        scrollTop(){
-            $("body").animate({scrollTop: 0},400);
-        }
-    }
-}
-</script>
 
 <style>
 #footer{
@@ -57,6 +47,7 @@ export default{
     width: 2.2rem;
     height: 2.2rem;
     line-height: 2rem;
+    text-align: center;
     background-color: #cf86e0;
     border-radius: 50%;
     position: fixed;

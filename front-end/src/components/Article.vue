@@ -100,7 +100,7 @@ article {
 }
 .article h1{
     text-align: center;
-    font-size: 1.9rem;
+    font-size: 2.1rem;
     letter-spacing: .2rem;
     padding-bottom: .8rem;
     border-bottom: .1rem dashed #000;
