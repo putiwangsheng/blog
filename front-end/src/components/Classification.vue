@@ -14,7 +14,6 @@
 
 <script>
 import store from '../store/store.js';
-import url from '../util/url.js';
 
 export default{
     name: "Classification",
@@ -26,9 +25,6 @@ export default{
     },
 
     created(){
-        // var articleUrl = url.articleUrl;
-        // var tagUrl = url.tagUrl;
-
         store.getAll().then(data => {
             var articleData = data[0];
             var tagData = data[1];
