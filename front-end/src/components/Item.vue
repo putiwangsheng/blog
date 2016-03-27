@@ -5,8 +5,8 @@
             <a :href="'#/tagArticle/' + item.parentTagName"><p>{{item.parentTagName}}</p></a>
 
         </div>
-        <div class="date iconfont icon-calendar">
-            {{item.date}}
+        <div class="date">
+            <i class="iconfont icon-calendar"></i>{{item.date}}
         </div>
 
         <div class="article-content markdown-body">

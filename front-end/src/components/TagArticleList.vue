@@ -18,7 +18,7 @@
                         <p>
                             <a :href="'#/article/' + item.id">{{item.title}}</a>
                         </p>
-                        <span class="date iconfont icon-calendar i-style">{{item.date}}</span>
+                        <span class="date"><i class="iconfont icon-calendar"></i>{{item.date}}</span>
                     </div>
                 </div>
             </div>
@@ -120,13 +120,10 @@ export default{
 }
 .list h3{
     width: 100%;
-    /*position: absolute;*/
     top: 0;
     text-align: center;
     margin: 0;
     padding: .1rem 0;
 }
-.i-style::before{
-    padding-right: .4rem;
-}
+
 </style>

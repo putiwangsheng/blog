@@ -12,6 +12,7 @@
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
+  padding-right: .3rem;
 }
 .icon-arrowup:before { content: "\e635"; }
 .icon-calendar:before { content: "\e656"; }
