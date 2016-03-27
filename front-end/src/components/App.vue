@@ -58,5 +58,6 @@
 .iconfont.icon-arrowup{
     font-size: 1.4rem;
     color: #fff;
+    padding-right: 0;
 }
 </style>
