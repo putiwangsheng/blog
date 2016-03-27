@@ -60,5 +60,5 @@ xhr.send(data);
 - 对搜索引擎的支持比较弱
 - 破坏了程序的异常机制，不容易调试
 
-## 一些具体的细节
+## 一些具体的属性和方法
 [http://javascript.ruanyifeng.com/bom/ajax.html#toc0]()
