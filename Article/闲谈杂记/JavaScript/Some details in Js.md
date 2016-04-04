@@ -46,10 +46,12 @@ function cloneObject(src) {
 
 ## 获取页面元素位置
 - **绝对位置**，应该指的是相对于文档左上角的位置。
+
 	1. 利用元素的`offsetTop`，`offsetLeft`属性，表示元素左上角到其父元素（offsetParent对象）左上角的距离。计算绝对位置，将元素的这两个属性和其父元素的两个属性相加。
+
 	2. ```
-	element.getBoundingClientRect().left + docment.docmentElement.scrollLeft;
-	element.getBoundingClientRect().top + docment.docmentElement.scrollTop;
+	element.getBoundingClientRect().left + docment.documentElement.scrollLeft;
+	element.getBoundingClientRect().top + docment.documentElement.scrollTop;
 
 		```
 - **相对位置**，指相对于浏览器窗口（viewport，即视口）的位置。滚动条滚动的垂直距离，是document对象的`scrollTop`属性；滚动条滚动的水平距离是document对象的`scrollLeft`属性。

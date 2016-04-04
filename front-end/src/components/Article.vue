@@ -15,7 +15,6 @@
             </article>
         </div>
     </div>
-
 </template>
 
 <script>
