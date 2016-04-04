@@ -13629,7 +13629,7 @@
 /* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var require;var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
+	var __WEBPACK_AMD_DEFINE_RESULT__;var require;/* WEBPACK VAR INJECTION */(function(process, global, module) {/*!
 	 * @overview es6-promise - a tiny implementation of Promises/A+.
 	 * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
 	 * @license   Licensed under MIT license
@@ -17361,7 +17361,7 @@
 	
 	
 	// module
-	exports.push([module.id, "html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, abbr, acronym, address, big, cite, img, ins, kbd, q, s, samp, small, strike, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td ,button{\n    margin: 0;\n    padding: 0;\n    border: 0;\n    outline: 0;\n    font-family: Lato, \"Microsoft YaHei\", \"kaiti\", sans-serif;\n    vertical-align: baselinebaseline;\n}\nol, ul {\n    list-style: none;\n}\na {\n    text-decoration: none;\n    color: inherit;\n}\nblockquote, q {\n    quotes: none;\n}\ntable {\n    border-collapse: collapse;\n    border-spacing: 0;\n}\np {\n    font-size: 1rem;\n    font-weight: 400;\n    color: #444955;\n}\ninput[type=number] {\n    -moz-appearance: textfield;\n}\ninput[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n}\nbody {\n    background-color: #e2e2e2;\n}\nimg{\n    max-width: 100%;\n}\nbody,html{\n    height:100%;\n}\n", ""]);
+	exports.push([module.id, "html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, abbr, acronym, address, big, cite, img, ins, kbd, q, s, samp, small, strike, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td ,button{\n    margin: 0;\n    padding: 0;\n    border: 0;\n    outline: 0;\n    font-family: Lato, \"Microsoft YaHei\", \"kaiti\", sans-serif;\n    vertical-align: baselinebaseline;\n}\nol, ul {\n    list-style: none;\n}\na {\n    text-decoration: none;\n    color: inherit;\n}\nblockquote, q {\n    quotes: none;\n}\ntable {\n    border-collapse: collapse;\n    border-spacing: 0;\n}\np {\n    font-size: 1.1rem;\n    font-weight: 400;\n    color: #444955;\n}\ninput[type=number] {\n    -moz-appearance: textfield;\n}\ninput[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {\n    -webkit-appearance: none;\n    margin: 0;\n}\nbody {\n    background-color: #e2e2e2;\n}\nimg{\n    max-width: 100%;\n}\nbody,html{\n    height:100%;\n}\n", ""]);
 	
 	// exports
 
